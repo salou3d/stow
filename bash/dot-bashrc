@@ -1,0 +1,206 @@
+# Sample .bashrc for SUSE Linux
+# Copyright (c) SUSE Software Solutions Germany GmbH
+
+# There are 3 different types of shells in bash: the login shell, normal shell
+# and interactive shell. Login shells read ~/.profile and interactive shells
+# read ~/.bashrc; in our setup, /etc/profile sources ~/.bashrc - thus all
+# settings made here will also take effect in a login shell.
+#
+# NOTE: It is recommended to make language settings in ~/.profile rather than
+# here, since multilingual X sessions would not work properly if LANG is over-
+# ridden in every subshell.
+
+test -s ~/.alias && . ~/.alias || true
+
+export HISTCONTROL=erasedups:ignoredups:ignoreboth
+export HISTTIMEFORMAT="%Y-%m-%d %T "
+
+
+if [ -d ~/.cargo/bin ]; then
+	export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
+alias ping-cf="ping -c 3 1.1.1.1"
+alias ping-ggl="ping -c 3 8.8.8.8"
+
+alias zyref="sudo zypper ref"
+alias zydup="sudo zypper dup"
+alias mytcc="python3 -i /media/Apps/so-config/local/bin/ytcc-subs.py"
+
+alias python="python3"
+#alias ls="eza --group-directories-first --icons"
+alias ls="lsd --group-directories-first"
+alias cp="cp -i"
+alias mv="mv -i"
+alias mkdir='mkdir -p'
+#alias ps='ps auxf'
+alias less='less -R'
+alias rt="trash put"
+
+if ! command -v tp; then
+	alias tp="trash put"
+fi
+
+
+extract() {
+	for archive in "$@"; do
+		if [ -f "$archive" ]; then
+			case $archive in
+			*.tar.bz2) tar xvjf $archive ;;
+			*.tar.gz) tar xvzf $archive ;;
+			*.bz2) bunzip2 $archive ;;
+			*.rar) rar x $archive ;;
+			*.gz) gunzip $archive ;;
+			*.tar) tar xvf $archive ;;
+			*.tbz2) tar xvjf $archive ;;
+			*.tgz) tar xvzf $archive ;;
+			*.zip) unzip $archive ;;
+			*.Z) uncompress $archive ;;
+			*.7z) 7z x $archive ;;
+			*) echo "don't know how to extract '$archive'..." ;;
+			esac
+		else
+			echo "'$archive' is not a valid file!"
+		fi
+	done
+}
+
+# Show the current distribution
+distribution ()
+{
+	local dtype="unknown"  # Default to unknown
+
+	# Use /etc/os-release for modern distro identification
+	if [ -r /etc/os-release ]; then
+		source /etc/os-release
+		case $ID in
+			fedora|rhel|centos)
+				dtype="redhat"
+				;;
+			sles|opensuse*)
+				dtype="suse"
+				;;
+			ubuntu|debian)
+				dtype="debian"
+				;;
+			gentoo)
+				dtype="gentoo"
+				;;
+			arch)
+				dtype="arch"
+				;;
+			slackware)
+				dtype="slackware"
+				;;
+			*)
+				# If ID is not recognized, keep dtype as unknown
+				;;
+		esac
+	fi
+
+	echo $dtype
+}
+
+# Show the current version of the operating system
+ver() {
+	local dtype
+	dtype=$(distribution)
+
+	case $dtype in
+		"redhat")
+			if [ -s /etc/redhat-release ]; then
+				cat /etc/redhat-release
+			else
+				cat /etc/issue
+			fi
+			uname -a
+			;;
+		"suse")
+			#cat /etc/SuSE-release
+			cat /etc/os-release
+			;;
+		"debian")
+			lsb_release -a
+			;;
+		"gentoo")
+			cat /etc/gentoo-release
+			;;
+		"arch")
+			cat /etc/os-release
+			;;
+		"slackware")
+			cat /etc/slackware-version
+			;;
+		*)
+			if [ -s /etc/issue ]; then
+				cat /etc/issue
+			else
+				echo "Error: Unknown distribution"
+				exit 1
+			fi
+			;;
+	esac
+}
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
+# eval "$(jay generate-completion bash)"
+
+export _ZO_ECHO=1
+export _ZO_FZF_OPTS='fd -u -td'
+eval "$(zoxide init --cmd cd bash)"
+
+export FZF_DEFAULT_COMMAND='fd -u'
+export FZF_DEFAULT_OPTS='--multi --reverse --border --cycle'
+# '--color=dark
+# --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
+# --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7'
+eval "$(fzf --bash)"
+
+# ripgrep->fzf->vim [QUERY]
+rfv() (
+  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+  OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+            vim {1} +{2}     # No selection. Open the current line in Vim.
+          else
+            vim +cw -q {+f}  # Build quickfix list for the selected items.
+          fi'
+  fzf --disabled --ansi --multi \
+      --bind "start:$RELOAD" --bind "change:$RELOAD" \
+      --bind "enter:become:$OPENER" \
+      --bind "ctrl-o:execute:$OPENER" \
+      --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+      --delimiter : \
+      --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+      --preview-window '~4,+{2}+4/3,<80(up)' \
+      --query "$*"
+)
+
+
+# export MCFLY_LIGHT=TRUE
+# export MCFLY_KEY_SCHEME=vim # Default; emacs
+# export MCFLY_FUZZY=3
+export MCFLY_RESULTS=20
+# export MCFLY_DELETE_WITHOUT_CONFIRM=true
+# export MCFLY_INTERFACE_VIEW=TOP
+# export MCFLY_DISABLE_MENU=TRUE
+# export MCFLY_RESULTS_SORT=LAST_RUN # Default: RANK
+# export MCFLY_PROMPT="❯ "
+eval "$(mcfly init bash)"
+
+eval "$(navi widget bash)"
+
+# eval "$(eww shell-completions --shell bash)"
+
+eval -- "$(/usr/bin/starship init bash --print-full-init)"
+
+source /home/salo/.config/broot/launcher/bash/br

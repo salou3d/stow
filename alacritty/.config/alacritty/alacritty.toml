@@ -1,0 +1,12 @@
+[window]
+opacity = 0.9
+padding = { x = 5, y = 3 }
+
+[font]
+size = 10
+
+[bell]
+duration = 1
+
+[terminal]
+osc52 = "CopyPaste"

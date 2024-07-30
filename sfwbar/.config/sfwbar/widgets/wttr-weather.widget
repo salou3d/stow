@@ -1,0 +1,27 @@
+
+define tanger = Exec "curl fr.wttr.in/Tangier?format=3"
+define rissni = Exec "curl fr.wttr.in/Rissani?format=3"
+
+
+PopUp "WeatherPopup" {
+  style = "frame"
+  label {
+    css = "* { font: 0.5cm Sans; font-weight: 700; -GtkWidget-align: 0.5; padding-left: 1mm; padding-right: 1mm; }"
+    value = Str(tanger)
+  }
+  label {
+    interval = 50000
+    css = "* { font: 0.5cm Sans; font-weight: 700; -GtkWidget-align: 0.5; padding-left: 1mm; padding-right: 1mm; }"
+    value = Str(rissni)
+  }
+}
+
+layout {
+  label {
+    interval = 50000
+    css = "* { min-height: 24px; min-width: 24px; padding: 4px; }"
+    value = Exec "curl fr.wttr.in/Tangier?format=3"
+    action[1] = PopUp "WeatherPopup"
+    tooltip = "Press for more"
+  }
+}

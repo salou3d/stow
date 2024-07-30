@@ -1,0 +1,8 @@
+layout {
+  image {
+    value = "system-shutdown"
+    action = Exec "wleave"
+    tooltip = "Logout"
+    css = "* { background-color: alpha(red, 0.70); min-height: 16px; min-width: 20px; padding: 0 4px; }"
+  }
+}

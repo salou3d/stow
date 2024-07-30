@@ -1,0 +1,33 @@
+
+systemctl --user start sobmenu-monitor.path
+
+# start pulseaudio
+#if ! ps -e | grep pulseaudio; then
+#  pulseaudio --start
+#fi
+
+# set wallpaper
+feh --bg-fill /media/SDisque/Disque-S/Images/JPEG/walls/astronaut-minimal.jpg
+
+# Set tapping on touchpad on: (see xinput manpage)
+# touchpad-conf.sh &
+
+# Start tint2 panel(s)
+#tint2 &
+tint2 -c ~/.config/tint2/top.tint2rc &
+#tint2 -c ~/.config/tint2/dock.tint2rc &
+
+# xcape Window button : configured with home-manager in nixos
+#if ! pgrep xcape; then
+#  xcape -e 'Super_L=Control_L|Super_L|R'
+#fi
+
+# configured in configuration.nix in nixos
+redshift-gtk &
+
+#parcellite & # recplaced by clipit
+clipit &
+
+# keyboard layout indicator and switcher
+gxkb &
+

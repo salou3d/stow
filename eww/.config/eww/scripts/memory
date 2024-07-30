@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+free -m | grep Mem | awk '{printf "%.0" ($3/$2)*100}'

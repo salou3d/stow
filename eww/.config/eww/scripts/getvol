@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if command -v pactl &>/dev/null; then
+    if [ true == $(LANG=C pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}') ]; then
+        echo 0
+        exit
+    else
+        pactl get-sink-volume @DEFAULT_SINK@ | grep "Volume:" | awk '{gsub(/%/, "", $5); print $5}'
+    fi
+else
+    amixer -D default sget Master | awk -F '[^0-9]+' '/Left:/{print $3}'
+fi

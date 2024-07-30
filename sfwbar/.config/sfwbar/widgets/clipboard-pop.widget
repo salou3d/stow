@@ -1,0 +1,72 @@
+Function ("ClipboardPopup") {
+  ClearWidget "ClipboardPopupGrid"
+  PipeRead "$HOME/.config/sfwbar/scripts/sfwbar-clipboard.py"
+  PopUp "ClipboardPopup"
+}
+
+
+layout {
+  style = "module"
+  image {
+    value = "edit-paste"
+    style = "module"
+    tooltip = "Clipboard Manager"
+    action[1] = Function "ClipboardPopup"
+  }
+}
+
+#CSS
+#clip_pop_style {
+  -GtkWidget-direction: bottom;
+  -GtkWidget-hexpand: false;
+  border: 1px solid @borders;
+  padding: 5px 10px;
+  background-color: @theme_bg_color;
+}
+
+#clip_header_style {
+  border-bottom: 1px solid @borders;
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+}
+
+#clip_pop_grid_style {
+  -GtkWidget-direction: bottom;
+  -GtkWidget-max-width: 400px;
+}
+
+#clip_item_style {
+  border-left: 3px solid @borders;
+  margin: 3px 0 3px 0;
+  /*padding: 3px 0 3px 10px;*/
+  padding-left: 10px;
+}
+
+#clip_item_label_style {
+  -GtkWidget-align: 0;
+  -GtkWidget-hexpand: true;
+  -GtkWidget-vexpand: false;
+  -GtkWidget-ellipsize: true;
+  margin-right: 5px;
+  border: 1px solid @theme_bg_color;
+  border-radius: 3px;
+}
+
+#clip_item_button_style {
+  -GtkWidget-hexpand: false;
+  -GtkWidget-vexpand: false;
+  -GtkWidget-valign: start;
+  padding: 5px;
+  margin-left: 5px;
+  border: 1px solid @borders;
+  border-radius: 3px;
+}
+
+#clip_item_button_style:hover {
+  border: 1px solid @theme_selected_bg_color;
+  background-color: alpha(@theme_selected_bg_color, 0.333);
+}
+
+#clip_item_button_style image {
+  -ScaleImage-symbolic: true;
+}

@@ -1,0 +1,39 @@
+#Scanner {
+#    Exec("swaync-client -c") {
+#        count = Grab()
+#    }
+#}
+
+scanner {
+  ExecClient("swaync-client -swb", "swaync") {
+    SwayncLabel = Json(".text")
+    SwayncTooltip = Json(".tooltip")
+  }
+}
+
+layout {
+  grid {
+    #style = If($SwayncLabel!="","notif_label","hidden")
+    action[1] = Exec "swaync-client -t -sw"
+    tooltip = "Notifications center: " + Str(SwayncTooltip)
+    image {
+      value = "notifications-symbolic"
+      style = "notif_img"
+    }
+    label {
+      style = If($SwayncLabel!="","notif_label","hidden")
+      value = SwayncLabel
+      #trigger = "Swaync"
+    }
+  }
+}
+
+#CSS
+#notif_img, #notif_label {
+  background-color: alpha(white, 0.70);
+  color: black;
+}
+
+#notif_label {
+    font-size: xx-small;
+}

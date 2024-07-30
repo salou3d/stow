@@ -1,0 +1,202 @@
+include("cpu-temp.source")
+include("cpu.source")
+include("memory.source")
+
+Scanner {
+  file("/sys/class/backlight/*/actual_brightness") {
+    BacklightActual = Grab(Sum)
+  }
+  file("/sys/class/backlight/*/max_brightness") {
+    BacklightMax = Grab(Sum)
+  }
+}
+
+module("bsdctl")
+
+Set XBacklight = If(!Ident(BSDCtl),
+      BacklightActual/BacklightMax*100,
+      Val(BSDCtl("hw.acpi.video.lcd0.brightness")))
+
+scanner {
+# Poll motherboard temperature
+  file("/sys/class/hwmon/hwmon2/temp1_input") {
+    MBTemp = Grab(First)
+  }
+}
+
+Set CPU_P = XCpuUtilization*100
+Set CPU_T = XCPUTemp/1000
+Set MEM_P = XMemUtilization*100
+
+PopUp "UsageWindow" {
+  AutoClose = true
+  style = "UsagePopup"
+  grid {
+    label {
+      style = "usage_popup_title"
+      value = "CPU Usage: "
+    }
+    label {
+      style = "usage_popup_value"
+      value = Str(CPU_P) + '%'
+    }
+  }
+  grid {
+    label {
+      style = "usage_popup_title"
+      value = "CPU Temperature: "
+    }
+    label {
+      style = "usage_popup_value"
+      value = Str(CPU_T)+'°C'
+    }
+  }
+  grid {
+    label {
+      style = "usage_popup_title"
+      value = "Motherboard Temperature: "
+    }
+    label {
+      style = "usage_popup_value"
+      value = Str(MBTemp/1000,0)+"°C"
+    }
+  }
+  grid {
+    label {
+      style = "usage_popup_title"
+      value = "Memory Usage: "
+    }
+    label {
+      style = "usage_popup_value"
+      value = Str(MEM_P) + '% (' + Str((XMemTotal-XMemFree-XMemCache-XMemBuff)/1048576, 1) + '/' + Str(XMemTotal/1048576, 1) + ' Gb)'
+    }
+  }
+  grid {
+    label {
+      style = "usage_popup_title"
+      value = "Backlight: "
+    }
+    label {
+      style = "usage_popup_value"
+      value = $XBacklight + '%'
+    }
+  }
+}
+
+layout {
+  css = "* { -GtkWidget-direction: right; -GtkWidget-vexpand: false; -GtkWidget-hexpand: false; }"
+  style = "grid_temp_cpu"
+  #action = Exec $Term + " -e htop"
+  action[1] = PopUp "UsageWindow"
+  action[3] = Exec "konsole -e htop"
+
+  tooltip = "<span face='Monospace'>" +
+              "Backlight:               " + Pad($XBacklight + '%', 10) + "\n" +
+              "CPU:                     " + Pad(Str(CPU_P) + "%", 10) +
+                "\n" +
+              "CPU Temperature:         " + Pad(Str(CPU_T) + '°C', 10) + "\n" +
+              "Motherboard Temperature: " + Pad(Str(MBTemp/1000,0) + '°C', 10) + "\n" +
+              "Memory Usage:            " + Pad(Str(MEM_P) + "%", 10) +
+              "</span>"
+
+  image {
+    style = "cpu_icon"
+    #value = "icons/misc/cpu.svg"
+    value = "cpu"
+    tooltip = "CPU: " + Str(CPU_P) + '%'
+  }
+
+  label {
+    style = "cpu"
+    interval = 1000
+
+    #value = Str(CPU_P) + '%'
+
+    value = If(CPU_P < 10, "0" + Str(CPU_P), Str(CPU_P) ) + "%"
+    #tooltip = "CPU: " + Str(CPU_P) + '%'
+  }
+
+  image {
+    style = "cpu_icon"
+    #value = "icons/misc/cpu.svg"
+    value = "temperature" + Lookup(CPU_T,
+            80, "-warm",
+            40, "-normal",
+            -1, "-cold",
+            ""
+            )
+    #tooltip = "CPU Temperature: " + Str(CPU_T) + '°C'
+  }
+  label {
+    style = "temperature"
+    interval = 1000
+
+    #value = Str(XCPUTemp/1000)+'°C ' #+Lookup(XCpuTemp/1000,40,"",20,"","")
+
+    #value = Lookup(CPU_T,40,"",20,"","") + If(CPU_T < 10, "00" + Str(CPU_T), If(CPU_T < 100, "0" + Str(CPU_T), Str(CPU_T) )) + '°C '
+
+    value = If(CPU_T < 10, "0" + Str(CPU_T), Str(CPU_T) ) + '°C'
+
+    #tooltip = "CPU Temperature: " + Str(CPU_T) + '°C'
+
+  }
+
+  image {
+    style = "cpu_icon"
+    #value = "icons/misc/cpu.svg"
+    value = "memory"
+    #tooltip = "Memory Usage: " + Str(MEM_P) + '%'
+  }
+  label {
+    style = "memory"
+    interval = 1000
+    #value = ' ' + Str(XMemUtilization*100) + '%'
+    #value = ' ' + If(MEM_P < 10, "00" + Str(MEM_P), If(MEM_P < 100, "0" + Str(MEM_P), Str(MEM_P) )) + "%"
+    value = If(MEM_P < 10, "0" + Str(MEM_P), Str(MEM_P) ) + "%"
+    #tooltip = "Memory Usage: " + Str(MEM_P) + '%'
+  }
+}
+
+
+#CSS
+#cpu_icon image {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 0;
+}
+
+#cpu,
+#memory,
+#temperature {
+  padding: 0;
+}
+
+#grid_temp_cpu {
+
+}
+
+window#UsageWindow {
+  /*background: rgba(0,0,0,0);*/
+  padding: 5px;
+}
+#UsagePopup {
+  -GtkWidget-direction: bottom;
+  -GtkWidget-hexpand: false;
+  /*min-width: 200px;*/
+  min-height: 100px;
+  /*margin: 5px;*/
+  /*border-radius: 10px;*/
+  border: 1px solid @borders;
+  padding: 5px 10px;
+  background-color: @theme_bg_color;
+}
+
+#usage_popup_title {
+  -GtkWidget-hexpand: false;
+  -GtkWidget-halign: start;
+}
+#usage_popup_value {
+  -GtkWidget-hexpand: true;
+  -GtkWidget-halign: end;
+  -GtkWidget-align: 1;
+}

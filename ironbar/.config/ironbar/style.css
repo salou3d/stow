@@ -1,0 +1,355 @@
+@define-color color_bg #31363B;
+@define-color color_bg_dark grey; /* #1c1c1c;*/
+@define-color color_border #424242;
+@define-color color_border_active #3daee9; /*rgb(61,174,233)*/
+@define-color color_text #FBFBFB;
+@define-color color_urgent #8f0a0a;
+
+/* -- base styles -- */
+
+* {
+    font-family: Noto Sans Nerd Font, sans-serif;
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+}
+
+box, menubar, button {
+    background-color: @color_bg;
+    background-image: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+button, label {
+    color: @color_text;
+}
+
+button:hover {
+/*     background-color: @color_bg_dark; */
+    background-color: @color_bg;
+}
+
+scale trough {
+    min-width: 1px;
+    min-height: 2px;
+
+}
+
+scale trough highlight  {
+    background-color: @color_border_active;
+    background-image: none;
+    /*background-clip: content-box;*/
+}
+
+scale slider {
+    background-color: @color_text;
+}
+
+#bar {
+    border-bottom: 1px solid @color_bg_dark ;
+    padding: 2px 5px 2px 5px;
+}
+
+.popup {
+    border: 1px solid @color_border;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+
+/* -- clipboard -- */
+
+.clipboard {
+    margin-left: 5px;
+    /*font-size: 1.1em;*/
+    font-size: 1em;
+}
+
+.popup-clipboard .item {
+    padding-bottom: 0.3em;
+    /*border-bottom: 1px solid @color_border;  When bar in in bottom screen*/
+    border-top: 1px solid @color_border;
+}
+
+
+/* -- clock -- */
+
+.clock {
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.popup-clock .calendar-clock {
+    color: @color_text;
+    font-size: 2em;
+    padding-bottom: 0.1em;
+}
+
+.popup-clock .calendar {
+    background-color: @color_bg;
+    color: @color_text;
+}
+
+.popup-clock .calendar .header {
+    padding-top: 1em;
+    border-top: 1px solid @color_border;
+    font-size: 1.5em;
+}
+
+.popup-clock .calendar:selected {
+    background-color: @color_border_active;
+}
+
+
+/* -- launcher -- */
+
+.launcher .item {
+    margin: 0 3px;
+    padding: 0 3px;
+}
+
+.launcher .item:hover {
+     background-color: @color_bg_dark;
+}
+
+.launcher .ifix examtem:not(.focused):hover {
+    background-color: @color_bg_dark;
+}
+
+.launcher .open {
+    border-bottom: 1px solid @color_text;
+}
+
+.launcher .focused {
+    border-bottom: 2px solid @color_border_active;
+/*     background-color: @color_bg_dark; */
+}
+
+.launcher .urgent {
+    border-bottom-color: @color_urgent;
+}
+
+.popup-launcher {
+    padding: 0;
+}
+
+.popup-launcher .popup-item:not(:first-child) {
+    border-top: 1px solid @color_border;
+}
+
+
+/* -- music -- */
+
+.music {
+    margin: 0 5px
+}
+
+.music:hover * {
+    background-color: @color_bg_dark;
+}
+
+.popup-music  {
+    border-radius: 5px;
+}
+
+.popup-music .album-art {
+    margin-right: 1em;
+}
+
+.popup-music .icon-box {
+    margin-right: 0.4em;
+}
+
+.popup-music .title .icon, .popup-music .title .label {
+    font-size: 1.7em;
+}
+
+.popup-music .controls *:disabled {
+    color: @color_border;
+}
+
+.popup-music .controls *  {
+    font-size: 1.2em;
+}
+
+.popup-music .volume .slider slider {
+    border-radius: 100%;
+    color: @color_text;
+}
+
+.popup-music .volume .icon {
+    margin-left: 4px;
+    font-size: 1.2em;
+}
+
+.popup-music .progress .slider slider {
+    border-radius: 100%;
+
+}
+
+/* -- script -- */
+
+.script {
+    padding-left: 10px;
+}
+
+
+/* -- sys_info -- */
+
+.sysinfo {
+    margin: 0 5px;
+}
+
+.sysinfo .item {
+    margin-left: 2px;
+}
+
+/* -- tray -- */
+
+.tray {
+    margin: 0 5px 0 5px;
+}
+.tray .item {
+    padding: 2px 3px;
+}
+.tray .item:hover {
+    background-color: rgba(61,174,233, 0.5);
+}
+
+/* -- workspaces -- */
+
+.workspaces .item.focused {
+    box-shadow: inset 0 -3px;
+    background-color: @color_bg_dark;
+}
+
+.workspaces .item:hover {
+    box-shadow: inset 0 -3px;
+}
+
+/* -- custom: power menu -- */
+.power-menu {
+    margin: 0 5px;
+}
+#power-btn {
+    margin: 0 5px;
+}
+
+.popup-power-menu #header {
+    font-size: 1.4em;
+    padding-bottom: 0.4em;
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid @color_border;
+}
+
+.popup-power-menu .power-btn {
+    border: 1px solid @color_border;
+    padding: 0.6em 1em;
+}
+
+.popup-power-menu .power-btn:hover {
+    border: 1px solid @color_border_active;
+}
+
+.popup-power-menu #buttons > *:nth-child(1) .power-btn {
+    margin-right: 1em;
+}
+
+#sosep {
+    padding: 0;
+    margin: 0 0 2px 0;
+    color: darkgrey;
+}
+
+#focused-window {
+/*     border: 1px solid @color_bg_darkborder-radius: 5px;; */
+/* border-radius: 5px; */
+    padding: 2px 4px;
+    font-weight: bold;
+}
+
+.upower {
+    margin: 0 5px;
+}
+
+.popup-upower {
+    border-radius: 5px;
+}
+
+#sovolume-btn {
+    padding: 0;
+    margin: 0 5px;
+}
+
+.popup-sovolume #header {
+    font-size: 1.4em;
+    color: @color_text;
+    padding-bottom: 0.4em;
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid @color_border;
+}
+
+.popup-sovolume {
+    padding: 1em;
+}
+
+#sovol-box {
+    padding: 0.5em;
+/*     border: 1px solid red; */
+
+}
+
+.popup-sovolume .vol-box {
+     margin: 0.2em;
+/*    border: 1px solid green; */
+}
+
+.popup-sovolume .vol-btn {
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 1px solid @color_border;
+    padding: 0.5em 2em;
+    margin: 0.5em;
+    border-radius: 5px;
+}
+
+.popup-sovolume .vol-btn:hover, .vol-slider:hover {
+    border: 1px solid @color_border_active;
+}
+
+.vol-slider {
+    border: 1px solid @color_bg;
+     padding: 0 2em 1.5em 2em ;
+    margin: 0.5em;
+    border-radius: 5px;
+}
+
+/*.vol-slider:hover {
+    border: 1px solid @color_border_active;
+}*/
+
+.popup-sovolume .vol-slider slider {
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.vol-label {
+    font-size: 1.2em;
+    /*border: 1px solid @color_border;*/
+    padding: 0.5em 2em;
+    margin: 0.5em;
+    border-radius: 5px;
+}
+
+#reload-conf {
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.ws-lbl {
+    margin: 0 5px;
+    /*border: 1px solid @color_border_active;
+    border-radius: 100%;*/
+}

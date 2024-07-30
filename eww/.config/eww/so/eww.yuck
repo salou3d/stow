@@ -1,0 +1,298 @@
+
+(defvar eww "eww -c $HOME/.config/eww/so")
+(defvar wifi_rev false)
+(defvar power_rev false)
+
+(defpoll sonet :interval "30s" "../scripts/so-wifi")
+(defpoll sotasks :interval "1s" "lswt -j")
+(defpoll soactivetask :interval "1s" "lswt -j | jq '.[] | select(.activated == true)'")
+
+(deflisten music :initial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+(defpoll volume :interval "1s" "../scripts/getvol")
+(defpoll brightness_percent :interval "5s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll so_time :interval "1s" "date '+%H:%M %b %d-%m'")
+(defpoll so_time_tooltip :interval "1s" "date '+%H:%M, %B %d-%m-%Y'")
+
+;;(defpoll COL_WLAN :interval "1m" "../scripts/wifi --COL")
+;;(defpoll ESSID_WLAN :interval "1m" "../scripts/wifi --ESSID")
+;;(defpoll WLAN_ICON :interval "1m" "../scripts/wifi --ICON")
+
+(defwidget sosep []
+  (label :class "sosep" :text "|")
+)
+
+(defwidget sowidget1 [label tooltip value onhover onhoverlost onscroll onclick onrightclick ]
+  (box :orientation "h"
+       :class "sowidget"
+       :space-evenly false
+       :spacing 2
+    (box (label :text label))
+    (eventbox
+        :active {onscroll != "" || onclick != "" || onrightclick != "" || onhover != "" || onhoverlost != ""}
+        :tooltip tooltip
+        :onhover onhover
+        :onhoverlost onhoverlost
+        :onscroll onscroll
+        :onclick onclick
+        :onrightclick onrightclick
+        (label :text value)
+    )
+    ))
+
+(defwidget sowidget [label tooltip value onhover onhoverlost onscroll onclick onrightclick ]
+  (box :orientation "h"
+       :class "sowidget"
+       :space-evenly false
+       :spacing 2
+    ;;(label :text label)
+    (eventbox
+        :active {onscroll != "" || onclick != "" || onrightclick != "" || onhover != "" || onhoverlost != ""}
+        :tooltip tooltip
+        :onhover onhover
+        :onhoverlost onhoverlost
+        :onscroll onscroll
+        :onclick onclick
+        :onrightclick onrightclick
+        (label  :text "${label} ${value}")
+    )
+    ))
+
+(defwidget sotask [label isactive isminimised ismaximized isfullscreen tooltip value onhover onhoverlost onscroll onclick onrightclick onmiddleclick ]
+  (box :orientation "h"
+       :class "sotask"
+       :space-evenly false
+       :spacing 3
+      (box (label :class "soicon"
+                :text ""
+                ;;:image-width: 1
+                ;;:image-height: 1
+                ))
+      (eventbox
+        :active {onscroll != "" || onclick != "" || onrightclick != "" || onhover != "" || onhoverlost != ""}
+        :tooltip tooltip
+        :onhover onhover
+        :onhoverlost onhoverlost
+        :onscroll onscroll
+        :onclick onclick
+        :onrightclick onrightclick
+        :onmiddleclick onmiddleclick
+        :css "label {white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }"
+        (label :class "task-label"
+            :text value
+            ;;:wrap true
+            ;;:limit-width 200
+            ;;:yalign 0.5
+            ;;:style "white-space: nowrap; overflow: hidden; text-overflow: ellipsis; "
+            )
+    )
+    ))
+
+(defwidget metric [label tooltip value onchange]
+  (box :class "metric"
+    :orientation "h":space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active {onchange != ""}
+           :value value
+           :tooltip tooltip
+           :onchange onchange)))
+
+(defwidget wifi []
+  (eventbox
+        :onhover "${eww} update wifi_rev=true"
+        :onhoverlost "${eww} update wifi_rev=false"
+        :onclick  "konsole -e nmtui"
+        :onrightclick ""
+        :onscroll ""
+		(box :vexpand "false" :hexpand "false" :space-evenly "false"
+                 :spacing 2
+				(label :class "sowifi"
+                      :text " ${sonet.SIGNAL}%")
+                (revealer :transition "slideright"
+                      :reveal wifi_rev
+                      :duration "350ms"
+                      (label :class "soeventbox" :text {sonet.connection})
+                  ))))
+
+(defwidget sopower []
+  (eventbox
+        :onhover "${eww} update power_rev=true"
+        :onhoverlost "${eww} update power_rev=false"
+        ;;:onclick: "notify-send 'clicked'"
+        :onrightclick ""
+        :onscroll ""
+        :tooltip "Session Magement"
+		(box :vexpand "false" :hexpand "false" :space-evenly "false"
+                 :spacing 5
+				(label :text "")
+                (revealer :transition "slideleft"
+                      :reveal power_rev
+                      :duration "350ms"
+                      (box :class "soeventbox" :orientation "h"
+                          :spacing 5
+                          (button :tooltip "Lock" :onclick "so-confirm-logout-yad.sh lock" "")
+                          (button :tooltip "Log out" :onclick "so-confirm-logout-yad.sh logout" "")
+                          (button :tooltip "Hibernate" :onclick "so-confirm-logout-yad.sh hibernate" "")
+                          (button :tooltip "Suspend" :onclick "so-confirm-logout-yad.sh suspend" "")
+                          (button :tooltip "Reboot" :onclick "so-confirm-logout-yad.sh reboot" "")
+                          (button :tooltip "Shutdown" :onclick "so-confirm-logout-yad.sh shutdown" "")
+                      ))
+)))
+
+(defwidget sosidestuff []
+  (box :class "sosidestuff"
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+    :hexpand true
+    :spacing 5
+    (sosep)
+    (sowidget :label ""
+      :value "${brightness_percent}%"
+      :tooltip "Brightness on ${brightness_percent}%"
+      :onhover ""
+      :onhoverlost ""
+      :onscroll "so-brightnessctl.sh {}"
+      :onclick ""
+      :onrightclick "wdisplays")
+    (sowidget :label ""
+            :value "${round(EWW_RAM.used_mem_perc, 2)}%"
+            :tooltip "${round(EWW_RAM.used_mem/1073741824,2)}gb, ${round(EWW_RAM.used_mem_perc, 2)}% of ${round(EWW_RAM.total_mem/1073741824,2)}gb of RAM used"
+            :onhover ""
+            :onhoverlost ""
+            :onscroll ""
+            :onclick ""
+            :onrightclick "xfce4-terminal -e htop"
+            )
+    (sosep)
+    (sowidget :label ""
+            :value "${volume}%"
+            :tooltip "Volume ${volume}%"
+            :onhover ""
+            :onhoverlost ""
+             :onscroll "so-volume-yad.sh {}"
+            :onclick "so-volumeicon-yad.sh"
+            :onrightclick "pavucontrol")
+    (wifi)
+    (sosep)
+    (sowidget :label ""
+            :value so_time
+            :tooltip so_time_tooltip
+            :onhover ""
+            :onhoverlost ""
+            :onscroll ""
+            :onclick "so-calendar-yad.sh"
+            :onrightclick "")
+        (sosep)
+        (sopower)
+    ))
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :hexpand true
+       ;;:spacing 5
+    (button :tooltip "Go to workspace 1" :onclick "wtype -M win -P F1" 1)
+    (button :tooltip "Go to workspace 2" :onclick "wtype -M win -P F2" 2)
+    (button :tooltip "Go to workspace 3" :onclick "wtype -M win -P F3" 3)
+    (button :tooltip "Go to workspace 4" :onclick "wtype -M win -P F4" 4)
+    (sosep)
+    ))
+
+(defwidget taskbar []
+    (box
+      :class "sotaskbar"
+      :orientation "h"
+       :space-evenly false
+       ;;:halign "center"
+       ;;:hexpand true
+       :spacing 5
+      (for entry in sotasks
+            (sotask :label ""
+                :value { entry.activated  ? entry.title  : entry.app_id }
+                :tooltip "${entry.app_id}: ${entry.title}"
+                :isactive {entry.activated}
+                :isminimised {entry.minimized}
+                :ismaximized {entry.maximized}
+                :isfullscreen {entry.fullscreen}
+                :onhover ""
+                :onhoverlost ""
+                :onclick "wlrctl window focus app_id:${entry.app_id} title:${entry.title}"
+                :onrightclick ""
+                :onmiddleclick ""
+                :onscroll { {} == "up" ? "wtype -M alt -M shift -k tab -m shift -m alt" : "wtype -M alt -k tab -m alt"}
+            ))))
+
+(defwidget activewindow []
+    (box :class "activewindow"
+       :orientation "h"
+       :space-evenly false
+       :halign "end"
+       :hexpand true
+      (sotask :label ""
+                :value { soactivetask.title }
+                :tooltip "${soactivetask.app_id}  ${soactivetask.title}"
+                :isactive {soactivetask.activated}
+                :isminimised {soactivetask.minimized}
+                :ismaximized {soactivetask.maximized}
+                :isfullscreen {soactivetask.fullscreen}
+                :onhover ""
+                :onhoverlost ""
+                :onclick "wlrctl window focus title:'${soactivetask.title}'; wtype -M win -k i"
+                :onrightclick  "wlrctl window focus title:'${soactivetask.title}'; wtype -M win -k m"
+                :onmiddleclick "wlrctl window focus title:'${soactivetask.title}'; wtype -M ctrl -k q"
+                :onscroll { {} == "up" ? "wtype -M alt -M shift -k tab -m shift -m alt" : "wtype -M alt -k tab -m alt"}
+            ))
+)
+
+(defwidget left []
+    (box :orientation "h"
+        :space-evenly false
+        :halign "start"
+        :hexpand true
+        :spacing 3
+        :style "white-space: nowrap; overflow: hidden; text-overflow: ellipsis; "
+        (workspaces)
+        (sosep)
+        (activewindow)
+    ))
+
+(defwidget music []
+  (box :class "music"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music != "" ? "🎵${music}" : ""}))
+
+(defwidget bar_layout []
+  (centerbox :class "bar-layout"
+    :orientation "h"
+    (workspaces)
+    (activewindow)
+    (sosidestuff)
+))
+
+(defwidget layout []
+  (box :class "bar-layout"
+    :orientation "h"
+    (left)
+    ;;(activewindow)
+    (sosidestuff)
+))
+
+(defwindow yikhbar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "26px"
+                      :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  :focusable false
+  (bar_layout))
+

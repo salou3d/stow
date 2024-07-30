@@ -1,0 +1,34 @@
+
+Scanner {
+  file("/tmp/current_ws.txt", CheckTime) {
+    CurrentWS = Grab()
+  }
+}
+
+layout {
+
+    action[0] = PipeRead "~/.local/bin/labwc-workspaces.py --ws-sfwbar"
+    grid "labwc_ws" {
+		style = "desktops"
+        css = "* { -GtkWidget-direction: right; }"
+	}
+
+
+}
+
+#CSS
+label#desk, label#desk_active {
+    padding: 0 6px;
+}
+
+#desktops {
+    padding: 0 5px;
+    margin: 1px 0;
+}
+
+label#desk_active {
+    font-weight: bold;
+    border: 1px solid @theme_selected_bg_color;
+    border-radius: 3px;
+    background-color: alpha(@theme_selected_bg_color, 0.50);
+}

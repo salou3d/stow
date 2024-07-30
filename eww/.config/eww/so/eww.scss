@@ -1,0 +1,84 @@
+ 
+* { all: unset; }
+
+.bar-layout {
+    font-family: Noto Sans, Phosphor ;
+    background-color: rgba(#313438, 1);
+    //background-color: @theme_bg_color;
+    //padding: 0.2em 1em;
+    padding: 0px 5px ;
+    color: rgba(#ffffff, 0.9); //#b0b4bc
+    border: 1px solid #5f6265;
+    border-radius: 10px;
+
+}
+
+.left {
+    // width: 70%;
+}
+
+/** tooltip!! **/
+tooltip.background {
+    background-color: #313438; //#0f0f17;
+    font-size: 1em;
+    color: #eff0f1; //#bfc9db;
+    border: 1px solid #5f6265;
+    border-radius: 3px;
+    padding: 0em 1em;
+}
+
+.workspaces {
+    button {
+        background: inherit;
+        margin: 1px 0;
+        padding: 0 3px;
+        border: 1px none #3daee9;
+        &:hover {
+            color: #3daee9;
+            margin: 0;
+            border-bottom: 1px solid #3daee9;
+        }
+    }
+}
+
+.activewindow {
+    padding: 0;
+    margin: 0;
+    // text-overflow: ellipsis;
+    // display: inline-block;
+    // max-width: 90%;
+    // white-space: nowrap;
+    // overflow: hidden;
+    label {
+        font-size:  1em;
+    }
+}
+
+.sosep {
+    color: grey;
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0px 0px 2px 0px;
+    padding: 0;
+  }
+
+.soeventbox {
+    padding: 0.2em 0.5em;
+    color: rgba(#ffffff, 0.9); //#b0b4bc
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.soicon {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+// .module-essid {
+//     //font-size: 16;
+//     //color: #a1bdce;
+//     color: #ffffff
+//     margin: 0px 5px 0px 5px;
+// }
+

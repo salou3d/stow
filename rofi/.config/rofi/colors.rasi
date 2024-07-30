@@ -1,0 +1,38 @@
+/**
+ * Base16 Generated ROFI Color theme
+ *
+ * Authors
+ *  Scheme: Flavours
+ *  Template: Jordi Pakey-Rodriguez (https://github.com/0xdec), Andrea Scarpino (https://github.com/ilpianista)
+ */
+
+* {
+    red:                         rgba ( 226, 25, 142, 100 % );
+    blue:                        rgba ( 187, 64, 210, 100 % );
+    lightfg:                     rgba ( 238, 238, 243, 100 % );
+    lightbg:                     rgba ( 99, 71, 97, 100 % );
+    foreground:                  rgba ( 236, 236, 241, 100 % );
+    background:                  rgba ( 65, 30, 62, 100 % );
+    background-color:            rgba ( 65, 30, 62, 0 % );
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+
+}

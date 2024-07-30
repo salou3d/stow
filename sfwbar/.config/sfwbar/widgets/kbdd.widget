@@ -1,0 +1,17 @@
+Scanner {
+  File("/tmp/layout.json") {
+    KBDD = Json(".name")
+  }
+}
+
+layout {
+
+
+    label "kbdd" {
+		style = "kbdd_layout"
+        value = $KBDD
+	}
+
+
+}
+

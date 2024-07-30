@@ -1,0 +1,53 @@
+end:
+  - class: power-menu
+    tooltip: 'Up: {{30000:uptime | cut -d'','' -f1 | cut -d'' '' -f5-}}'
+    type: custom
+    bar:
+      - label: 
+        name: power-btn
+        on_click: popup:toggle
+        type: button
+    popup:
+      - orientation: vertical
+        type: box
+        widgets:
+          - label: Power menu
+            name: header
+            type: label
+          - type: box
+            widgets:
+              - class: power-btn
+                label: <span font-size='20pt'></span>
+                on_click: '!so-confirm-logout-yad.sh lock'
+                tooltip: Lock screen
+                type: button
+              - class: power-btn
+                label: <span font-size='20pt'>󰬩</span>
+                on_click: '!so-confirm-logout-yad.sh logout'
+                tooltip: Log out
+                type: button
+              - class: power-btn
+                label: <span font-size='20pt'></span>
+                on_click: '!so-confirm-logout-yad.sh hibernate'
+                tooltip: Hibernate
+                type: button
+              - class: power-btn
+                label: <span font-size='20pt'></span>
+                on_click: '!so-confirm-logout-yad.sh suspend'
+                tooltip: Suspend
+                type: button
+              - class: power-btn
+                label: <span font-size='20pt'></span>
+                tooltip: Restart
+                on_click: '!so-confirm-logout-yad.sh reboot'
+                type: button
+              - class: power-btn
+                label: <span font-size='20pt'></span>
+                on_click: '!so-confirm-logout-yad.sh shutdown'
+                tooltip: Shutdown
+                type: button
+          - label: |-
+
+              Uptime: {{30000:uptime | cut -d',' -f1 | cut -d' ' -f5-}}
+            name: uptime
+            type: label

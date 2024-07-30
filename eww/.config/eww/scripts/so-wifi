@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+con=$(LANG=C nmcli -t device status | grep "connected" | awk '{s=split($0, A, /:/); if (A[2] != "loopback" ) {print $0}}')
+
+device=$(echo $con | cut -d':' -f1)
+contype=$(echo $con | cut -d':' -f2)
+state=$(echo $con | cut -d':' -f3)
+conname=$(echo $con | cut -d':' -f4)
+
+sojson="{ \"device\": \"$device\", \"type\": \"$contype\", \"state\": \"$state\", \"connection\": \"$conname\", "
+
+coninfo=""
+if [ "$contype" == "wifi" ]; then
+    coninfo=$(nmcli -t -f SSID,BSSID,RATE,SIGNAL,BARS device wifi | grep $conname | awk '{gsub(/\\:/, "-"); print}')
+    sojson=$(echo $sojson"\"BSSID\": \"`echo $coninfo | cut -d':' -f2`\", \"RATE\": \"`echo $coninfo | cut -d':' -f3`\", \"SIGNAL\": \"`echo $coninfo | cut -d':' -f4`\", \"BARS\": \"`echo $coninfo | cut -d':' -f5`\"" )
+fi
+
+details=$(nmcli -f GENERAL.HWADDR,IP4.ADDRESS,IP4.GATEWAY device show $device | awk '{split($1, A, /[:\.]/); printf(", \"%s\": \"%s\"", A[2], $2)}')
+
+sojson=$(echo "$sojson$details }")
+echo "$sojson"

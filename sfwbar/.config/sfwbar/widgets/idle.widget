@@ -1,0 +1,17 @@
+Module("idleinhibit");
+
+layout {
+  button {
+    style = If(!Ident(IdleInhibitState),"hidden",
+        If(IdleInhibitState()="on",
+          "idle_inhibitor_activated",
+          "idle_inhibitor"))
+    value = If(IdleInhibitState()="on",
+          "lock",
+          "unlock")
+    tooltip = If(IdleInhibitState()="on", "Idle Inhibit activated", "Idle Inhibit deactivated")
+    trigger = "idleinhibitor"
+    action[1] = SetIdleInhibitor "toggle"
+  }
+}
+

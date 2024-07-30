@@ -1,0 +1,15 @@
+wc
+filemanager
+gotham-colors
+fzf: https://github.com/samdmarshall/micro-fzf-plugin
+nordcolors: https://github.com/KiranWells/micro-nord-tc-colors/
+quoter: https://github.com/sparques/micro-quoter
+detectindent: https://github.com/dmaluka/micro-detectindent
+wakatime: https://github.com/wakatime/micro-wakatime
+palettero: https://terokarvinen.com/tags/micro-editor/
+jump: https://github.com/terokarvinen/micro-jump
+autofmt: https://github.com/a11ce/micro-autofmt
+manipulator: https://github.com/NicolaiSoeborg/manipulator-plugin
+lsp: https://github.com/AndCake/micro-plugin-lsp
+aspell: https://github.com/priner/micro-aspell-plugin
+cheat: https://terokarvinen.com/micro

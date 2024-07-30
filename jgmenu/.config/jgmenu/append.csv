@@ -1,0 +1,9 @@
+^sep()
+Lock,so-confirm-logout-yad.sh lock,system-lock-screen
+Session,^checkout(Exit),system-shutdown
+^tag(Exit)
+Log out,so-confirm-logout-yad.sh logout,system-log-out
+Hibernate,so-confirm-logout-yad.sh hibernate,system-hibernate
+Reboot,so-confirm-logout-yad.sh reboot,system-reboot
+Suspend,so-confirm-logout-yad.sh suspend,system-log-out
+Shutdown,so-confirm-logout-yad.sh shutdown,system-shutdown

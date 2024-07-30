@@ -1,0 +1,17 @@
+shell = "bash -c '{}'"
+
+[[item]]
+    file = '~/.config/rofi/colors.rasi'
+    template = 'rofi'
+    subtemplate = "colors"
+    rewrite = true
+
+[[item]]
+    file = '~/.config/dunst/dunstrc'
+    template = 'dunst'
+    subtemplate = "custom"
+    rewrite = false
+    hook = 'systemctl --user restart dunst.service'
+    start = "# flavours starts here"
+    end = "# flavours ends here"
+

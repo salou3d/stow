@@ -1,0 +1,8 @@
+
+Calendar widget: georgian - V;  herji - X
+Weather widget
+Prayer and quran progress widget
+Notifications widget - V
+Clipboard: rofi - V ; pop - V
+
+Keyboard layout

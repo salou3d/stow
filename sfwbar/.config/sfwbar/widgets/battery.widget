@@ -1,0 +1,60 @@
+set XBatteryLevel = If(!Ident(BSDCtl),
+    XBatteryLeft / XBatteryTotal * 100,
+    BSDCtl("hw.acpi.battery.life"))
+set XBatteryDischarging = If(!Ident(BSDCtl),
+    $XBatteryState="Discharging",
+    BSDCtl("hw.acpi.battery.state")="1")
+set XBatteryTime = If(!Ident(BSDCtl),
+    If(XBatteryCurrent,XBatteryLeft/XBatteryCurrent*60,0),
+    Val(BSDCtl("hw.acpi.battery.time")))
+
+set BatteryIcon = "battery-" + Lookup(XBatteryLevel,
+    99, "full",
+    39, "good",
+    10, "low",
+    9, "caution",
+    0, "caution",
+    -1, "empty",
+    "missing") + If( XBatteryDischarging, "", "-charging" )
+
+define XBatteryInit = "/usr/bin/env python3 << END
+import os
+sysdir = '/sys/class/power_supply'
+list = os.scandir(sysdir)
+batdir=''
+for entry in list:
+  if(entry.name.startswith('BAT')):
+    batdir = os.path.join(sysdir,entry.name)
+if(batdir==''):
+  exit(1)
+list = os.scandir(batdir)
+print('scanner {')
+for entry in list:
+  if(entry.name.endswith('_full')):
+    print('file(\"' + os.path.join(batdir,entry.name) +
+          '\") { XBatteryTotal = Grab(First) }')
+  if(entry.name.endswith('_now') and
+          ('charge' in entry.name or 'energy' in entry.name)):
+    print('file(\"' + os.path.join(batdir,entry.name) +
+          '\") { XBatteryLeft = Grab(First) }')
+  if(entry.name == 'current_now'):
+    print('file(\"' + os.path.join(batdir,entry.name) +
+          '\") { XBatteryCurrent = Grab(First) }')
+  if(entry.name == 'status'):
+    print('file(\"' + os.path.join(batdir,entry.name) +
+          '\") { XBatteryState = RegEx(\"^(.*)$\",First) }')
+print('}')
+END"
+
+layout {
+  style = "module"
+  button "XBatteryModule" {
+    action[0] = PipeRead If(!Ident(BSDCtl),XBatteryInit,"")
+    value = $BatteryIcon
+    style = If(!Ident($XBatteryState) & !Ident(BSDCtl),"hidden","module")
+    tooltip = "Battery  (" +  If (XBatteryDischarging, "Discharging", "Charging")  + ") at " + Str(XBatteryLevel) + "%" + If(XBatteryTime, " " +
+          Str(XBatteryTime/60 - XBatteryTime%60/60) + "h" +
+          Str(XBatteryTime%60) + "m", "")
+    interval = 1000
+  }
+}

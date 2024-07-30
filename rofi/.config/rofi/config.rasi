@@ -1,0 +1,15 @@
+configuration {
+    modi: "drun,window,run";
+    drun-display-format: "{icon} {name}";
+    display-drun: "   Apps ";
+    display-window: "Windows";
+    font: "Noto Sans 10";
+    show-icons: true;
+    terminal: "konsole";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    sidebar-mode: true;
+}
+
+@theme "/home/salo/.local/share/rofi/themes/breeze-dark.rasi"

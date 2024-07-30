@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/">
+  <menu id="root-menu" label="Openbox 3">
+    <separator label="Openbox 3 Menu" />
+    <item label="Run command" icon="">
+      <action name="Execute">
+        <command>rofi -show run</command>
+      </action>
+    </item>
+    <item label="File Manager" icon="">
+      <action name="Execute">
+        <command>dolphin</command>
+      </action>
+    </item>
+    <item label="Terminal" icon="">
+      <action name="Execute">
+        <command>konsole</command>
+      </action>
+    </item>
+    <item label="Web Browser" icon="">
+      <action name="Execute">
+        <command>xdg-open http:///</command>
+      </action>
+    </item>
+    <separator />
+    <menu id="apps-menu" label="Applications" icon="" execute="/home/salo/.config/labwc/sobmenu.py -p" />
+    <menu id="openbox-pref-menu" label="Labwc" icon="">
+      <menu id="ob-commands" label="Labwc commands" icon="">
+        <item label="Reconfigure Labwc">
+          <action name="Reconfigure" />
+        </item>
+        <item label="Exit Labwc">
+          <action name="Exit" />
+        </item>
+      </menu>
+      <menu id="ob-keybinds-menu" label="Labwc Keybindings" icon="" execute="/home/salo/.config/labwc/ob-keybindings-1.py" />
+    </menu>
+    <separator />
+    <menu id="session-menu" label="Session" icon="">
+      <item label="Logout" icon="">
+        <action name="Execute">
+          <command>so-confirm-logout-yad.sh logout</command>
+        </action>
+      </item>
+      <item label="Hibernate" icon="">
+        <action name="Execute">
+          <command>so-confirm-logout-yad.sh hibernate</command>
+        </action>
+      </item>
+      <item label="Suspend" icon="">
+        <action name="Execute">
+          <command>so-confirm-logout-yad.sh suspend</command>
+        </action>
+      </item>
+      <item label="Reboot" icon="">
+        <action name="Execute">
+          <command>so-confirm-logout-yad.sh reboot</command>
+        </action>
+      </item>
+      <item label="Shutdown" icon="">
+        <action name="Execute">
+          <command>so-confirm-logout-yad.sh shutdown</command>
+        </action>
+      </item>
+      <item label="Lock" icon="">
+        <action name="Execute">
+          <command>so-confirm-logout-yad.sh lock</command>
+        </action>
+      </item>
+    </menu>
+    <separator />
+  </menu>
+</openbox_menu>

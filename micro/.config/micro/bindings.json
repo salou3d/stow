@@ -1,0 +1,10 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "CtrlP": "command:palettero",
+    "CtrlSpace": "command:palettero",
+    "CtrlUnderscore": "lua:comment.comment",
+    "CtrlW": "Quit",
+    "F1": "command:cheat",
+    "F4": "command:jumptag",
+    "F5": "lua:wc.wordCount"
+}

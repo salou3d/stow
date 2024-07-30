@@ -1,0 +1,141 @@
+
+PopUp "WindowPowerMenu" {
+  AutoClose = true
+  style = "power_menu_style"
+
+  grid {
+    css = "* { -GtkWidget-direction: bottom; }"
+    grid {
+      #css = "* { -GtkWidget-direction: right; }"
+      style = "power_item"
+      action = Exec "so-confirm-logout-yad.sh lock"
+      image {
+        style = "power_menu_icon"
+        value = "system-lock-screen"
+
+      }
+      label {
+        style = "power_menu_label"
+        value = "Lock Screen"
+        css = "* { color: alpha(white, 0.80); }"
+      }
+    }
+
+    grid {
+      #css = "* { -GtkWidget-direction: right; }"
+      style = "power_item"
+      action = Exec "so-confirm-logout-yad.sh logout"
+      image {
+        style = "power_menu_icon"
+        value = "system-log-out"
+        #
+      }
+      label {
+        style = "power_menu_label"
+        value = "Log out"
+        css = "* { color: alpha(white, 0.80); }"
+      }
+    }
+
+    grid {
+      #css = "* { -GtkWidget-direction: right; }"
+      style = "power_item"
+      action = Exec "so-confirm-logout-yad.sh hibernate"
+      image {
+        style = "power_menu_icon"
+        value = "system-hibernate"
+
+      }
+      label {
+        style = "power_menu_label"
+        value = "Hibernate"
+        css = "* { color: alpha(white, 0.80); }"
+      }
+    }
+    grid {
+      #css = "* { -GtkWidget-direction: right; }"
+      style = "power_item"
+      action = Exec "so-confirm-logout-yad.sh suspend"
+      image {
+        style = "power_menu_icon"
+        value = "system-suspend"
+
+      }
+      label {
+        style = "power_menu_label"
+        value = "Suspend"
+        css = "* { color: alpha(white, 0.80); }"
+      }
+    }
+    grid {
+      #css = "* { -GtkWidget-direction: right; }"
+      style = "power_item"
+      action = Exec "so-confirm-logout-yad.sh reboot"
+      image {
+        style = "power_menu_icon"
+        value = "system-reboot"
+
+      }
+      label {
+        style = "power_menu_label"
+        value = "Reboot"
+        css = "* { color: alpha(white, 0.80); }"
+      }
+    }
+    grid {
+      #css = "* { -GtkWidget-direction: right; }"
+      style = "power_item"
+      action = Exec "so-confirm-logout-yad.sh shutdown"
+      image {
+        style = "power_menu_icon"
+        value = "system-shutdown"
+
+      }
+      label {
+        style = "power_menu_label"
+        value = "Shutdown"
+        css = "* { color: alpha(white, 0.80); }"
+      }
+    }
+
+  }
+}
+
+layout {
+  image {
+    value = "system-shutdown"
+    action = PopUp "WindowPowerMenu"
+    tooltip = "Logout"
+    css = "* { background-color: alpha(red, 0.70); min-height: 16px; min-width: 20px; padding: 0 4px; }"
+  }
+}
+
+#CSS
+
+#power_menu_style {
+  -GtkWidget-direction: bottom;
+  -GtkWidget-hexpand: false;
+  border-radius: 3px;
+  border: 1px solid @borders;
+  padding: 5px 10px;
+  background-color: @theme_bg_color;
+}
+
+#power_menu_style grid {
+  margin: 2px 0;
+}
+
+#power_menu_icon {
+  -GtkWidget-halign: start;
+  -ScaleImage-symbolic: true;
+  min-height: 24px;
+  min-width: 24px;
+
+}
+#power_menu_label {
+  -GtkWidget-hexpand: true;
+  -GtkWidget-halign: start;
+  -GtkWidget-align: 0;
+  padding-left: 8px;
+}
+

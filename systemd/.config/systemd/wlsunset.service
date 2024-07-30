@@ -1,0 +1,11 @@
+[Unit]
+Description=wlsunset display colour temperature adjustment
+Documentation=https://sr.ht/~kennylevinsen/wlsunset/
+After=graphical-session.target
+
+[Service]
+ExecStart=@bindir@/wlsunset -l 35.7808 -L -5.8176 -T 3901 -t 3900
+Restart=always
+
+[Install]
+WantedBy=graphical-session.target

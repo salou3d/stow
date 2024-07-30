@@ -1,0 +1,80 @@
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar {
+  all: unset;
+  background-color: #313438;
+  color: #b0b4bc;
+  padding: 0px 5px;
+}
+
+/** tooltip!! **/
+tooltip.background {
+  all: unset;
+    background-color: #313438; //#0f0f17;
+    font-size: 1em;
+    color: #eff0f1; //#bfc9db;
+    border: 1px solid #5f6265;
+    border-radius: 3px;
+}
+
+tooltip label {
+    margin: 3px 5px;
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff slider {
+  all: unset;
+  color: #ffd5cd;
+}
+
+.sosidestuff  {
+  all: unset;
+  margin-right: 5px
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.label-ram {
+  font-size: large;
+}
+
+.workspaces {
+  margin-left: 5px;
+}
+
+.workspaces button:hover {
+  color: #3daee9;
+}
+

@@ -1,0 +1,5 @@
+File manager,dolphin,system-file-manager
+Terminal,xfce4-terminal,utilities-terminal
+Web Browser,xdg-open https:///,internet-web-browser
+^sep()
+

@@ -1,0 +1,76 @@
+#openbox themerc edited with obtheme
+border.width: 2
+padding.width: 2
+
+# Menu
+menu.border.width: 1
+#menu.border.color: #313438
+menu.border.color: #ffffff
+menu.items.active.bg: flat
+#menu.items.active.bg.color: #4A90D9
+menu.items.active.bg.color: #3daee9
+menu.items.active.text.color: #ffffff
+menu.items.bg: Solid Flat
+menu.items.bg.color: #31363B
+menu.items.disabled.text.color: #90918C
+menu.items.font: shadow=n
+menu.items.text.color: #FBFBFB
+menu.overlap.x: -3
+menu.overlap.y: 0
+menu.title.bg: flat
+menu.title.bg.color: #4A90D9
+menu.title.text.color: #FFFFFF
+menu.title.text.justify: center
+
+# Windows
+window.handle.width: 0
+window.label.text.justify: center
+
+# Active window
+window.active.border.color: #3daee9
+window.active.button.disabled.bg: parentrelative
+window.active.button.disabled.image.color: #dee2e6
+window.active.button.hover.image.color: #ACB0B2
+window.active.button.pressed.bg: parentrelative
+window.active.button.pressed.image.color: #999c9e
+window.active.button.unpressed.bg: parentrelative
+window.active.button.unpressed.image.color: #BDC0C3
+window.active.button.close.hover.image.color: #ff98a2
+window.active.button.close.pressed.image.color: #6d2229
+window.active.client.color: #FFFFFF
+window.active.label.bg: parentrelative
+window.active.label.text.color: #cfd1d4
+window.active.title.bg: gradient vertical gradient flat
+window.active.title.bg.color: #31363b
+window.active.title.bg.colorTo: #31363b
+
+# Inactive window
+window.inactive.border.color: #5f6265
+window.inactive.button.disabled.bg: parentrelative
+window.inactive.button.disabled.image.color: #dee2e6
+window.inactive.button.toggled.hover.bg: parentrelative
+window.inactive.button.toggled.hover.bg: parentrelative
+window.inactive.button.toggled.unpressed.bg: parentrelative
+window.inactive.button.unpressed.bg: parentrelative
+window.inactive.button.unpressed.image.color: #ccd1d4
+window.inactive.client.color: #DCDED6
+window.inactive.grip.bg: Solid Flat
+window.inactive.grip.bg.color: #2A2E32
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #90918C
+window.inactive.title.bg: Gradient Vertical Flat
+window.inactive.title.bg.color: #2A2E32
+window.inactive.title.bg.colorTo: #2A2E32
+
+# OSD
+osd.bg: Solid Flat
+osd.bg.color: #31363b
+#osd.border.color: #3daee9
+#osd.border.width: 2
+osd.hilight.bg: Solid Raised
+osd.hilight.bg.color: #4A90D9
+osd.unhilight.bg: Solid Sunken Bevel2 Border
+osd.unhilight.bg.color: #5f6265
+osd.label.bg: Solid Flat
+osd.label.bg.color: #3daee9
+osd.label.text.color: white

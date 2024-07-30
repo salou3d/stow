@@ -1,0 +1,12 @@
+
+
+layout {
+    style = "module"
+  image {
+    value = "edit-paste"
+    style = "module"
+    tooltip = "Clipboard Manager:\n   Left click: select entry from history\n   Right click: delete entry from history"
+    action[1] = Exec "dmenu-wrapper select"
+    action[3] = Exec "dmenu-wrapper delete"
+  }
+}

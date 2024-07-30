@@ -1,0 +1,12 @@
+daemonize
+image="/media/SDisque/Disque-S/Images/JPEG/walls/dark/cyberpunk.jpg"
+ignore-empty-password
+show-keyboard-layout
+indicator-caps-lock
+show-failed-attempts
+color="#4d4d4d"
+font="Noto Sans"
+font-size=20
+indicator-radius=100
+line-uses-ring
+line-color="#31363B"

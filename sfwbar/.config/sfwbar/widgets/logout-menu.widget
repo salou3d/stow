@@ -1,0 +1,18 @@
+
+menu("PowerMenu") {
+  item("  Lock %system-lock-screen", Exec "so-confirm-logout-yad.sh lock")
+  item("  Logout %system-log-out", Exec "so-confirm-logout-yad.sh logout")
+  item("  Hibernate %system-hibernate", Exec "so-confirm-logout-yad.sh hibernate")
+  item("  Suspend %system-suspend", Exec "so-confirm-logout-yad.sh suspend")
+  item("  Reboot %system-reboot", Exec "so-confirm-logout-yad.sh reboot")
+  item("  Shutdown %system-shutdown", Exec "so-confirm-logout-yad.sh shutdown")
+}
+
+layout {
+  image {
+    value = "system-shutdown"
+    action = Menu "PowerMenu"
+    tooltip = "Logout"
+    css = "* { background-color: alpha(red, 0.70); min-height: 16px; min-width: 20px; padding: 0 4px; }"
+  }
+}

@@ -1,0 +1,101 @@
+
+Function ("Funcal") {
+  ClearWidget "CalendarPopupGrid"
+  PipeRead "$HOME/.config/sfwbar/scripts/sfwbar-calendar.py"
+  PopUp "CalendarPopup"
+}
+
+
+layout {
+  grid {
+    style = "frame"
+    label {
+      style = "date"
+      interval = 1000
+      value = Time("%a %d %b")
+      action[1] = Function "Funcal"
+      tooltip = Time("%A  %H:%M %Z \n%d %B %Y")
+    }
+    label {
+      style = "time"
+      interval = 1000
+      value = Time("%H:%M")
+      action[1] = Function "Funcal"
+      #tooltip = Time("%H:%M %Z \n%A %d %B %Y")
+      tooltip = Time("%A  %H:%M %Z \n%d %B %Y")
+    }
+  }
+}
+
+
+#CSS
+#frame {
+  margin-right: 7px;
+}
+
+label#date {
+	padding: 0 3px 0 4px;
+	margin-bottom: 2px;
+	-GtkWidget-align: 0.5;
+	-GtkWidget-hexpand: true;
+	-GtkWidget-vexpand: true;
+	font: 0.3cm Sans;
+	font-weight: 400;
+}
+
+label#time {
+    font: 0.3cm Sans;
+    font-weight: 400;
+    -GtkWidget-align: 0.5;
+    -GtkWidget-hexpand: true;
+    -GtkWidget-vexpand: true;
+	padding: 0 4px 0 3px;
+	margin: 0;
+}
+
+#cal_pop_style {
+  -GtkWidget-direction: bottom;
+  -GtkWidget-hexpand: false;
+  /*min-width: 200px;*/
+  /*min-height: 100px;*/
+  /*margin: 5px;*/
+  /*border-radius: 10px;*/
+  border: 1px solid @borders;
+  padding: 5px 10px;
+  background-color: @theme_bg_color;
+}
+
+
+#cal_pop_grid_style {
+  -GtkWidget-direction: bottom;
+}
+
+#header_time {
+  font-weight: 700;
+}
+
+#header_date {
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 1px solid @borders;
+}
+
+#cal_line {
+  -GtkWidget-direction: right;
+}
+
+#today, #aday {
+  font-family: Monospace;
+  -GtkWidget-align: 1;
+  /*-GtkWidget-hexpand: true;*/
+  margin: 2px 2px;
+  padding: 2px 2px;
+  /*border: 1px solid @borders;*/
+}
+
+#today {
+  font-weight: 600;
+  border: 1px solid @theme_selected_bg_color;
+  background-color: alpha(@theme_selected_bg_color, 0.333);
+}
+
