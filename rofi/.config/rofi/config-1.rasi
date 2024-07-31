@@ -1,0 +1,17 @@
+/** Basic config file **/
+
+configuration {
+  modi: "drun,run,window";
+  show-icons: true;
+  icon-theme: "Breeze-dark";
+  font: "Noto Sans Regular 12";
+  show-icons: true;
+  terminal: "konsole";
+  drun-display-format: "{icon} {name}";
+  location: 0;
+  display-drun: "  ";
+  display-window: "﩯 ";
+  display-combi: "  ";
+}
+// @theme "themes/sidetab-nord.rasi"
+@theme "/home/salo/.local/share/rofi/themes/breeze-dark.rasi"

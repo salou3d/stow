@@ -25,7 +25,7 @@ alias ping-ggl="ping -c 3 8.8.8.8"
 
 alias zyref="sudo zypper ref"
 alias zydup="sudo zypper dup"
-alias mytcc="python3 -i /media/Apps/so-config/local/bin/ytcc-subs.py"
+alias mytcc="python3 -i /media/Apps/so-config/divs/local/bin/ytcc-subs.py"
 
 alias python="python3"
 #alias ls="eza --group-directories-first --icons"
@@ -36,10 +36,7 @@ alias mkdir='mkdir -p'
 #alias ps='ps auxf'
 alias less='less -R'
 alias rt="trash put"
-
-if ! command -v tp; then
-	alias tp="trash put"
-fi
+alias tp="trash put"
 
 
 extract() {
@@ -156,8 +153,9 @@ function yy() {
 # eval "$(jay generate-completion bash)"
 
 export _ZO_ECHO=1
-export _ZO_FZF_OPTS='fd -u -td'
-eval "$(zoxide init --cmd cd bash)"
+export _ZO_FZF_OPTS='--no-multi'
+#eval "$(zoxide init --cmd cd bash)"
+eval "$(zoxide init bash)"
 
 export FZF_DEFAULT_COMMAND='fd -u'
 export FZF_DEFAULT_OPTS='--multi --reverse --border --cycle'

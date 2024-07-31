@@ -1,6 +1,6 @@
 # Example autostart file
 
-(sleep 1 && $HOME/.config/labwc/run-atstart.sh) &
+at-start.sh &
 
 # Set background color.
 # swaybg -c '#113344' >/dev/null 2>&1 &
@@ -41,5 +41,5 @@ sfwbar -f ~/.config/sfwbar/sflab.config >/dev/null 2>&1 &
 #	before-sleep 'hyprlock' >/dev/null 2>&1 &
 
 # swayidle -w >/dev/null 2>&1 &
-
-hypridle &
+# hypridle &
+## see at-start.sh script
