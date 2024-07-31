@@ -1,0 +1,63 @@
+# Sample .profile for SUSE Linux
+# rewritten by Christian Steinruecken <cstein@suse.de>
+#
+# This file is read each time a login shell is started.
+# All other interactive shells will only read .bashrc; this is particularly
+# important for language settings, see below.
+
+test -z "$PROFILEREAD" && . /etc/profile || true
+
+# Some applications read the EDITOR variable to determine your favourite text
+# editor. So uncomment the line below and enter the editor of your choice :-)
+#export EDITOR=/usr/bin/vim
+#export EDITOR=/usr/bin/mcedit
+
+# For some news readers it makes sense to specify the NEWSSERVER variable here
+#export NEWSSERVER=your.news.server
+
+# Some people don't like fortune. If you uncomment the following lines,
+# you will have a fortune each time you log in ;-)
+
+#if [ -x /usr/bin/fortune ] ; then
+#    echo
+#    /usr/bin/fortune
+#    echo
+#fi
+
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+export EDITOR=/usr/bin/micro
+export Terminal=/usr/bin/konsole
+export TERMINAL=/usr/bin/konsole
+
+if [ -z "$QT_QPA_PLATFORMTHEME" ]; then
+    export QT_QPA_PLATFORMTHEME=kde
+fi
+
+if [ -z "$QT_AUTO_SCREEN_SCALE_FACTOR" ]; then
+    export QT_AUTO_SCREEN_SCALE_FACTOR=0
+fi
+
+if [ -z "$QT_EXCLUDE_GENERIC_BEARER" ]; then
+    export QT_EXCLUDE_GENERIC_BEARER=1
+fi
+
+if [ -z "$QT_ACCESSIBILITY" ]; then
+    export QT_ACCESSIBILITY=1
+fi
+
+if [ -z "$QT_QUICK_CONTROLS_STYLE" ]; then
+    export QT_QUICK_CONTROLS_STYLE=org.kde.desktop
+fi
+
+if [ -z "$XCURSOR_THEME" ]; then
+    export XCURSOR_THEME=Breeze_Light
+fi
+
+if [ -z "$XCURSOR_SIZE" ]; then
+    export XCURSOR_SIZE=24
+fi
