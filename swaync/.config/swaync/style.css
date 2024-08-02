@@ -45,6 +45,7 @@
 
 .notification-row .notification-background .notification.low {
   /* Low Priority Notification */
+  border: 1px solid @theme_selected_bg_color;
 }
 
 .notification-row .notification-background .notification.normal {
