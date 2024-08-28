@@ -1,0 +1,15 @@
+default:
+    extension: .conf
+    output: themes
+
+# bar-colors:
+#     extension: .conf
+#     output: bar-colors
+
+# client-properties:
+#     extension: .conf
+#     output: client-properties
+#
+# colors:
+#     extension: .conf
+#     output: colors

@@ -202,4 +202,4 @@ eval "$(navi widget bash)"
 eval -- "$(/usr/bin/starship init bash --print-full-init)"
 
 source ~/.config/broot/launcher/bash/br
-#source ~/.fzfcolors.sh
+source ~/.fzfcolors.sh

@@ -1,3 +1,6 @@
+import = [
+    "~/.config/alacritty/colors.toml",
+    ]
 [window]
 opacity = 0.9
 padding = { x = 5, y = 3 }
@@ -10,3 +13,8 @@ duration = 1
 
 [terminal]
 osc52 = "CopyPaste"
+
+### Here starts alacritty colors
+#[general]
+
+### Here ends alacritty colors

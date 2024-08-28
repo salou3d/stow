@@ -20,7 +20,7 @@ swaybg `so-bg-dialog.sh get` >/dev/null 2>&1 &
 # $HOME/.config/eww/so/launch_bar # Launch eww
 # ironbar &
 
-sfwbar -f ~/.config/sfwbar/sflab.config >/dev/null 2>&1 &
+#sfwbar -f ~/.config/sfwbar/sflab.config >/dev/null 2>&1 &
 
 (sleep 1 && nm-applet) &
 

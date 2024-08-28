@@ -6,7 +6,7 @@ configuration {
   sidebar-mode: true;
   show-icons: true;
   icon-theme: "Breeze-dark";
-  font: "Noto Sans Regular 12";
+  font: "Noto Sans Regular 10";
   show-icons: true;
   terminal: "konsole";
   location: 0;
@@ -33,6 +33,5 @@ configuration {
 
 }
 
-// @theme "/home/salo/.local/share/rofi/themes/breeze-dark-2.rasi"
 @theme "layout.rasi"
 

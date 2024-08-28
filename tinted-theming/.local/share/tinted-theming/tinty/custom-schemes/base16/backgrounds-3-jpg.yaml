@@ -1,0 +1,23 @@
+system: base16
+name: backgrounds-3-jpg
+slug: backgrounds-3-jpg
+author: Tinty
+description: null
+variant: dark
+palette:
+  base00: 0a2228
+  base01: 263a3d
+  base02: '425253'
+  base03: 5e6a68
+  base04: 7b827e
+  base05: 979a93
+  base06: b3b2a9
+  base07: d0cabf
+  base08: 9b3037
+  base09: dd6a64
+  base0A: f7a345
+  base0B: 038e3c
+  base0C: 3ccdc8
+  base0D: 085cba
+  base0E: 8f1863
+  base0F: 603f35

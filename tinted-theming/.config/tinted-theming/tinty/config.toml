@@ -1,0 +1,56 @@
+# Global settings
+shell = "bash -c '{}'"
+# default-scheme = "base16-mocha"
+#hooks = [ "command1", "command2" ]
+
+# Item configurations
+[[items]]
+name = "base16-rofi"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-rofi"
+themes-dir = "colors"
+hook = "cp -r %f ~/.config/rofi/colors.rasi"
+
+[[items]]
+name = "base16-fzf"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-fzf"
+themes-dir = "bash"
+hook = "cp -r %f ~/.fzfcolors.sh && source ~/.fzfcolors.sh"
+supported-systems = ["base16"]
+
+[[items]]
+name = "base16-alacritty"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-alacritty"
+themes-dir = "colors"
+hook = "cp -r %f ~/.config/alacritty/colors.toml"
+supported-systems = ["base16"]
+
+[[items]]
+name = "base16-konsole"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-konsole"
+themes-dir = "colorscheme"
+hook = "cp -r %f ~/.local/share/konsole/mykonsole.colorscheme && cp -r %f ~/.local/konsole/custom.colorscheme"
+supported-systems = ["base16"]
+
+[[items]]
+name = "base16-hyprland"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-hyprland"
+themes-dir = "colors"
+hook = "cp -r %f ~/.config/hypr/colors.conf"
+supported-systems = ["base16"]
+
+### using flavours to config other tools
+[[items]]
+name = "base16-flavours"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-flavours"
+themes-dir = "colors"
+hook = "cp -r %f ~/.local/share/flavours/base16/schemes/generated/"
+supported-systems = ["base16"]
+### end flavours
+
+[[items]]
+name = "base16-sway"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-sway"
+themes-dir = "themes"
+hook = "cp -r %f ~/.config/sway/config.d/colors.conf && swaymsg reload"
+supported-systems = ["base16"]
+

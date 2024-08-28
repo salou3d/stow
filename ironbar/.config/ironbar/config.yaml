@@ -2,7 +2,7 @@
 name: soironbatop
 anchor_to_edges: true
 icon_theme: breeze-dark
-position: top
+position: bottom
 height: 20
 popup_gap: 0
 start:
@@ -69,8 +69,10 @@ end:
       max_length: 100
       mode: end
   - format:
-      -  {cpu_percent}% | {temp_c:coretemp-Package-id-0}°C
-      -  {memory_used} GB ({memory_percent}%)
+      -   {cpu_percent}% | {temp_c:coretemp-Package-id-0}°C
+      -   {memory_percent}%
+      # -   {cpu_percent}% | {temp_c:coretemp-Package-id-0}°C
+      # -   {memory_used} GB ({memory_percent}%)
     type: sys_info
     interval:
       cpu: 1
@@ -79,14 +81,6 @@ end:
   - name: sosep
     label: '|'
     type: label
-  # - class: sonetwork
-  #   tooltip: Network
-  #   type: custom
-  #   bar:
-  #     - name: sovolume-btn
-  #       on_click: '!rofi-wifi.sh'
-  #       label: '{{so-volumeicon.sh}}'
-  #       type: button
   - class: sovolume
     tooltip: Volume
     type: custom
@@ -171,4 +165,4 @@ end:
     tooltip: 'Up: {{30000:uptime | cut -d'','' -f1 | cut -d'' '' -f5-}}'
     type: label
     label: 
-    on_click_left: wlogout -r 5 -c 5
+    on_click_left: wleave

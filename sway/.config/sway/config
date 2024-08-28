@@ -30,7 +30,8 @@ workspace_layout tabbed
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg ~/.wallpaper fill
+# swaybg_command -
 
 
 #
@@ -55,6 +56,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
     # Start your launcher
     bindsym $mod+r exec $menu
+    bindsym --no-repeat --release Super_L exec pkill $menu || $menu
 
     bindsym $mod+f exec xdg-open ~
     bindsym $mod+b exec xdg-open "http://"

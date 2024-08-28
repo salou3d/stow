@@ -1,0 +1,38 @@
+# base16 adapta-png - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x20282f'
+foreground = '0x9aa0a7'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x20282f'
+cursor = '0x9aa0a7'
+
+# Normal colors
+[colors.normal]
+black = '0x20282f'
+red = '0xa44c3b'
+green = '0x497e26'
+yellow = '0xad9b7f'
+blue = '0x526480'
+magenta = '0x6c5484'
+cyan = '0x5bb3c4'
+#white = '0x9aa0a7'
+white = '0xcbd1d8'
+
+# Bright colors
+[colors.bright]
+black = '0x697077'
+red = '0xae6858'
+green = '0x384047'
+yellow = '0x50585f'
+blue = '0x81888f'
+magenta = '0xb2b8bf'
+cyan = '0xa44c3b'
+white = '0xcbd1d8'

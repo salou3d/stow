@@ -1,0 +1,32 @@
+## Base16 nature-7-jpg
+# Scheme author: Tinty
+# Template author: Tinted Theming (https://github.com/tinted-theming)
+# In file gtk-2.0/gtkrc, delete "gtk-color-scheme" including everything between quotes (don't delete gtk-auto-mnemonics) and inject this.
+
+gtk-color-scheme = "bg_color:#34231d
+color0:#34231d
+color1:#4e3f39
+color2:#685c56
+color3:#827972
+color4:#9d958f
+color5:#b7b2ab
+color6:#d1cfc8
+color7:#ecece5
+color8:#7a554a
+color9:#98a749
+color10:#addc57
+color11:#5de34d
+color12:#23c3c3
+color13:#1f36da
+color14:#6a2472
+color15:#715849
+text_color:#ecece5
+selected_bg_color:#6a247288
+selected_fg_color:#ecece5
+tooltip_bg_color:#34231d
+tooltip_fg_color:#ecece5
+titlebar_bg_color:#34231d
+titlebar_fg_color:#ecece5
+menu_bg_color:#34231d
+menu_fg_color:#b7b2ab
+link_color:#685c56"

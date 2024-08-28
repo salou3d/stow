@@ -1,12 +1,45 @@
 daemonize
-image="/media/SDisque/Disque-S/Images/JPEG/walls/arch/adapta.png"
+image="/media/SDisque/Disque-S/Images/JPEG/walls/light/nature-7.jpg"
+font="Noto Sans"
+font-size=20
 ignore-empty-password
 show-keyboard-layout
 indicator-caps-lock
 show-failed-attempts
-color="#4d4d4d"
-font="Noto Sans"
-font-size=20
 indicator-radius=100
+#indicator-thickness=5
+line-uses-inside
 line-uses-ring
-line-color="#31363B"
+
+### Flavours starts here
+# COLOUR (base16)
+color=34231d
+bs-hl-color=715849
+caps-lock-bs-hl-color=715849
+caps-lock-key-hl-color=5de34d
+inside-color=82797288
+#inside-clear-color=82797288
+inside-clear-color=23c3c388
+inside-ver-color=1f36da88
+inside-wrong-color=7a554a88
+key-hl-color=5de34d
+layout-bg-color=82797288
+layout-border-color=b7b2ab
+layout-text-color=ecece5
+line-color=827972
+line-clear-color=827972
+line-caps-lock-color=715849
+line-ver-color=1f36da
+line-wrong-color=7a554a
+ring-color=addc57
+ring-caps-lock-color=addc57
+ring-clear-color=23c3c3
+ring-ver-color=1f36da
+ring-wrong-color=7a554a
+text-color=ecece5
+#text-clear-color=23c3c3
+text-clear-color=ecece5
+text-caps-lock-color=ecece5
+text-ver-color=ecece5
+text-wrong-color=ecece5
+### Flavours ends here

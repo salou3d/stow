@@ -1,0 +1,13 @@
+legacy:
+    extension: .config
+    output: bash
+
+base16-default:
+    extension: .sh
+    output: sh
+
+base24-default:
+    extension: .sh
+    output: sh
+    supported-systems: [base24]
+

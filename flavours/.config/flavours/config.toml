@@ -1,17 +1,22 @@
 shell = "bash -c '{}'"
 
 [[item]]
-    file = '~/.config/rofi/colors.rasi'
-    template = 'rofi'
-    subtemplate = "colors"
+    file = '~/.config/swaylock/config'
+    template = 'swaylock'
+    rewrite = false
+    start = "### Flavours starts here"
+    end = "### Flavours ends here"
+
+
+[[item]]
+    file = '~/.local/share/themes/FlatColor/colors2'
+    template = 'gtk-flatcolor'
+    subtemplate = 'gtk-2'
     rewrite = true
 
 [[item]]
-    file = '~/.config/dunst/dunstrc'
-    template = 'dunst'
-    subtemplate = "custom"
-    rewrite = false
-    hook = 'systemctl --user restart dunst.service'
-    start = "# flavours starts here"
-    end = "# flavours ends here"
-
+    file = '~/.local/share/themes/FlatColor/colors3'
+    template = 'gtk-flatcolor'
+    subtemplate = 'gtk-3'
+    rewrite = true
+    hook = 'gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme FlatColor'

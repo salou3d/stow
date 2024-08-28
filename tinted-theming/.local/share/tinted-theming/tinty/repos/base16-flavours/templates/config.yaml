@@ -1,0 +1,10 @@
+base16:
+  extension: .yaml
+  output: colors
+  supported-systems: [base16]
+
+base16-256:
+  extension: .yaml
+  output: colors
+  supported-systems: [base16]
+
