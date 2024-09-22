@@ -1,0 +1,47 @@
+# General screen options
+[screen]
+# Display inline (under the current line) or in full screen
+mode = "full" # "inline" of "full"
+# Max number of lines to display the whole UI. Only used in inline mode
+# lines = 8
+
+# The prompt is where you type your query
+[prompt]
+# Symbol displayed before the text you will type
+symbol = "❯ "
+# Style for the query (your text)
+style = "bold underline"
+# Style for the symbol
+style_symbol = "fg:green"
+
+# The gauge indicates the number of matches vs total number of lines
+[gauge]
+# Symbol used to separate both numbers
+symbol = " ⚡"
+# Text before the numbers
+prefix = "- "
+# Style for the numbers
+# style = "fg:bright-yellow"
+style = "fg:yellow"
+
+# A candidate is an item in the list that is not selected
+[candidate]
+# Symbol displayed before the candidate's text
+symbol = "❔ "
+# Style for the candidate's text
+#style = "bg:red fg:black"
+# Style for the symbol
+#style_symbol = "bg:red"
+# A match is a character that is in both the query and the candidate
+style_match = "underline bg:black fg:red bold"
+
+# The selected candidate
+[selection]
+# Symbol displayed before the selection's text
+symbol = "✅ "
+# Style for the selection's text
+style = "bg:green fg:black"
+# Style for the symbol
+style_symbol = "bg:green fg:white"
+# A match is a character that is in both the query and the selection
+style_match = "underline fg:red bg:green bold"

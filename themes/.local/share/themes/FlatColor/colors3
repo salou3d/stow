@@ -1,34 +1,34 @@
 /*
-Base16 nature-7-jpg
+Base16 1-png
 Scheme author: Tinty
 Template author: Tinted Theming (https://github.com/tinted-theming)
 In files gtk-3.0/gtk.css and gtk-3.20/gtk.css, delete section "Default color scheme" and inject this
 */
 
-@define-color color0 #34231d;
-@define-color color1 #4e3f39;
-@define-color color2 #685c56;
-@define-color color3 #827972;
-@define-color color4 #9d958f;
-@define-color color5 #b7b2ab;
-@define-color color6 #d1cfc8;
-@define-color color7 #ecece5;
-@define-color color8 #7a554a;
-@define-color color9 #98a749;
-@define-color color10 #addc57;
-@define-color color11 #5de34d;
-@define-color color12 #23c3c3;
-@define-color color13 #1f36da;
-@define-color color14 #6a2472;
-@define-color color15 #715849;
+@define-color color0 #0d2732;
+@define-color color1 #273d44;
+@define-color color2 #425357;
+@define-color color3 #5d6a6a;
+@define-color color4 #78807d;
+@define-color color5 #939790;
+@define-color color6 #aeada3;
+@define-color color7 #c9c4b6;
+@define-color color8 #e5173e;
+@define-color color9 #d99070;
+@define-color color10 #edb47d;
+@define-color color11 #1ebc89;
+@define-color color12 #14ecd4;
+@define-color color13 #1738c3;
+@define-color color14 #862c60;
+@define-color color15 #b62440;
 
-@define-color bg_color #34231d;
-/*@define-color fg_color #b7b2ab;*/
-@define-color fg_color #ecece588;
-@define-color base_color #4e3f39;
-@define-color text_color #ecece5;
-@define-color text_color_disabled #827972;
-@define-color selected_bg_color #6a2472;
-@define-color selected_fg_color #ecece5;
-@define-color tooltip_bg_color #34231d;
-@define-color tooltip_fg_color #ecece5;
+@define-color bg_color #0d2732;
+/*@define-color fg_color #939790;*/
+@define-color fg_color #c9c4b6;
+@define-color base_color #273d44;
+@define-color text_color #c9c4b6;
+@define-color text_color_disabled #5d6a6a;
+@define-color selected_bg_color #862c60;
+@define-color selected_fg_color #c9c4b6;
+@define-color tooltip_bg_color #0d2732;
+@define-color tooltip_fg_color #c9c4b6;

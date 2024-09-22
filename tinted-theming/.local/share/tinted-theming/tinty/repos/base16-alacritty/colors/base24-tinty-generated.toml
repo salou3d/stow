@@ -1,0 +1,39 @@
+# base24 Tinty Generated - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x34231d'
+foreground = '0xb7b2ab'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x34231d'
+cursor = '0xb7b2ab'
+
+# Normal colors
+[colors.normal]
+black = '0x34231d'
+red = '0x7a554a'
+green = '0x5de34d'
+yellow = '0xaddc57'
+blue = '0x1f36da'
+magenta = '0x6a2472'
+cyan = '0x23c3c3'
+#white = '0xb7b2ab'
+white = '0xecece5'
+#
+# Bright colors
+[colors.bright]
+black = '0x827972'
+red = '0xa3ba78'
+green = '0x4b9a9a'
+yellow = '0x7bbc73'
+blue = '0x5a375e'
+magenta = '0x665a53'
+cyan = '0x4e59aa'
+white = '0xecece5'
+

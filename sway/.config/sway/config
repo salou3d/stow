@@ -31,8 +31,6 @@ workspace_layout tabbed
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg ~/.wallpaper fill
-# swaybg_command -
-
 
 #
 # Example configuration:
@@ -61,7 +59,7 @@ workspace_layout tabbed
     bindsym $mod+f exec xdg-open ~
     bindsym $mod+b exec xdg-open "http://"
     bindsym $mod+m exec flatpak run org.mozilla.Thunderbird
-    bindsym $mod+p exec bash -c "`grep TryExec .local/share/applications/*Sayonara.desktop | cut -d'=' -f2`"
+    bindsym $mod+p exec bash -c "`grep TryExec ~/.local/share/applications/*Sayonara.desktop | cut -d'=' -f2`"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

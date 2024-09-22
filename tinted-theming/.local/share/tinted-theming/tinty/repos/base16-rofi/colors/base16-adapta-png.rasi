@@ -3,8 +3,8 @@
 
     default-background: #20282f;
     default-foreground: #cbd1d8;
-    // default-border:              #6c5484;
-    default-border:              #5bb3c4;
+    default-border:              #6c5484;
+    // default-border:              #5bb3c4;
 
     foreground:                  rgba ( 154, 160, 167, 100 % );
     background:                  rgba ( 32, 40, 47, 100 % );

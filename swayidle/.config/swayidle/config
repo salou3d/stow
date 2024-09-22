@@ -1,0 +1,3 @@
+timeout 600 'pidof hyprlock || hyprlock'
+timeout 900 'wlopm --off \*' resume 'wlopm --on \*'
+before-sleep 'pidof hyprlock || hyprlock'
