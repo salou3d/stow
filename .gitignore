@@ -2,3 +2,6 @@ fonts/.local/share/fonts/*
 vdhcoapp/*
 ytcc/.local/share/ytcc/ytcc.db
 helix/.config/helix/runtime/*
+anyrun/.config/anyrun/plugins/*
+tinted-theming/.local/share/tinted-theming/tinty/custom-schemes/*
+tinted-theming/.local/share/tinted-theming/tinty/repos/schemes/*
