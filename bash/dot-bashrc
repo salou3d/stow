@@ -24,6 +24,9 @@ if [ ! -f ~/.local/bin/python ]; then
 	ln -s $(which python3) ~/.local/bin/python
 fi
 
+alias shutdown="systemctl shutdown"
+alias reboot="systemctl reboot"
+
 alias ping-cf="ping -c 3 1.1.1.1"
 alias ping-ggl="ping -c 3 8.8.8.8"
 
@@ -41,29 +44,7 @@ alias less='less -R'
 alias rt="trash put"
 alias tp="trash put"
 
-
-extract() {
-	for archive in "$@"; do
-		if [ -f "$archive" ]; then
-			case $archive in
-			*.tar.bz2) tar xvjf $archive ;;
-			*.tar.gz) tar xvzf $archive ;;
-			*.bz2) bunzip2 $archive ;;
-			*.rar) rar x $archive ;;
-			*.gz) gunzip $archive ;;
-			*.tar) tar xvf $archive ;;
-			*.tbz2) tar xvjf $archive ;;
-			*.tgz) tar xvzf $archive ;;
-			*.zip) unzip $archive ;;
-			*.Z) uncompress $archive ;;
-			*.7z) 7z x $archive ;;
-			*) echo "don't know how to extract '$archive'..." ;;
-			esac
-		else
-			echo "'$archive' is not a valid file!"
-		fi
-	done
-}
+#alias sweep="sweep --altscreen"
 
 # Show the current distribution
 distribution ()
@@ -153,10 +134,17 @@ function yy() {
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
+eval "$(batman --export-env)"
+
+alias bathelp='bat --plain --language=help'
+help() {
+    "$@" --help 2>&1 | bathelp
+}
+
 # eval "$(jay generate-completion bash)"
 
 export _ZO_ECHO=1
-export _ZO_FZF_OPTS='--no-multi'
+export _ZO_FZF_OPTS='--no-multi --reverse --border'
 #eval "$(zoxide init --cmd cd bash)"
 eval "$(zoxide init bash)"
 
@@ -168,9 +156,9 @@ eval "$(fzf --bash)"
 rfv() (
   RELOAD='reload:rg --column --color=always --smart-case {q} || :'
   OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
-            vim {1} +{2}     # No selection. Open the current line in Vim.
+            hx {1} +{2}     # No selection. Open the current line in Vim.
           else
-            vim +cw -q {+f}  # Build quickfix list for the selected items.
+            hx +cw -q {+f}  # Build quickfix list for the selected items.
           fi'
   fzf --disabled --ansi --multi \
       --bind "start:$RELOAD" --bind "change:$RELOAD" \
@@ -192,14 +180,24 @@ export MCFLY_RESULTS=20
 # export MCFLY_INTERFACE_VIEW=TOP
 # export MCFLY_DISABLE_MENU=TRUE
 # export MCFLY_RESULTS_SORT=LAST_RUN # Default: RANK
-# export MCFLY_PROMPT="❯ "
+export MCFLY_PROMPT="❯ "
 eval "$(mcfly init bash)"
 
 eval "$(navi widget bash)"
 
-# eval "$(eww shell-completions --shell bash)"
+eval "$(eww shell-completions --shell bash)"
 
 eval -- "$(/usr/bin/starship init bash --print-full-init)"
 
-source ~/.config/broot/launcher/bash/br
-source ~/.fzfcolors.sh
+
+if [ -f  ~/.config/broot/launcher/bash/br ]; then
+	source ~/.config/broot/launcher/bash/br
+fi
+
+if [ -f  ~/.fzfcolors.sh ]; then
+	source ~/.fzfcolors.sh
+fi
+
+if [ -f  ~/.sweep.sh ]; then
+  source ~/.sweep.sh
+fi

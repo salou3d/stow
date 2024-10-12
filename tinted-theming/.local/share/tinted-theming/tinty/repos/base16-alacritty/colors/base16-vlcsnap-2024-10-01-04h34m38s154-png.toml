@@ -1,0 +1,38 @@
+# base16 vlcsnap-2024-10-01-04h34m38s154-png - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x25253a'
+foreground = '0x9f9d9a'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x25253a'
+cursor = '0x9f9d9a'
+
+# Normal colors
+[colors.normal]
+black = '0x25253a'
+red = '0xc72b0d'
+green = '0x479b3c'
+yellow = '0xbdad67'
+blue = '0x1335d6'
+magenta = '0x424162'
+cyan = '0x33a6da'
+#white = '0x9f9d9a'
+white = '0xd1cec1'
+
+# Bright colors
+[colors.bright]
+black = '0x6e6d73'
+red = '0xe4a65c'
+green = '0x3d3d4d'
+yellow = '0x565560'
+blue = '0x878587'
+magenta = '0xb8b5ad'
+cyan = '0x904b5b'
+white = '0xd1cec1'

@@ -1,0 +1,23 @@
+system: base16
+name: 2-jpg
+slug: 2-jpg
+author: Tinty
+description: null
+variant: dark
+palette:
+  base00: '202542'
+  base01: 3a3d57
+  base02: 55556c
+  base03: '706e81'
+  base04: 8b8696
+  base05: a69fab
+  base06: c1b7c0
+  base07: dcd0d6
+  base08: c4595a
+  base09: c6a93c
+  base0A: d1b950
+  base0B: 0f764a
+  base0C: 3ba6a5
+  base0D: 2e46af
+  base0E: 524a63
+  base0F: 9d5455

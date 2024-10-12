@@ -1,0 +1,10 @@
+[any]
+path = "/usr/share/wallpapers"
+# duration = "10m"
+# sorting = "ascending" # ascending, descending, random
+# group = 1 # assign multiple displays to same group to share the same wallpaper when using 'random'
+# mode = "fit" # fit-border-color, center, stretch, tile
+# transaction-time = "300" # milliseconds
+# offset = 0.0 # Optional, 0.0 by default for tile mode and 0.5 for all the other modes
+# queue-size = 10
+# initial-transition = true

@@ -1,6 +1,11 @@
 default:
     extension: .colorscheme
     output: colorscheme
+
+tty:
+    extension: .sh
+    output: colorscheme-tty
+
 # vim:
 #     extension: .colorscheme
 #     output: colorscheme-vim

@@ -1,9 +1,3 @@
-#Scanner {
-#    Exec("swaync-client -c") {
-#        count = Grab()
-#    }
-#}
-
 scanner {
   ExecClient("swaync-client -swb", "swaync") {
     SwayncLabel = Json(".text")
@@ -23,7 +17,6 @@ layout {
     label {
       style = If($SwayncLabel!="","notif_label","hidden")
       value = SwayncLabel
-      #trigger = "Swaync"
     }
   }
 }

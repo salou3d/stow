@@ -1,32 +1,32 @@
-## Base16 1-png
+## Base16 10-jpg
 # Scheme author: Tinty
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 # In file gtk-2.0/gtkrc, delete "gtk-color-scheme" including everything between quotes (don't delete gtk-auto-mnemonics) and inject this.
 
-gtk-color-scheme = "bg_color:#0d2732
-color0:#0d2732
-color1:#273d44
-color2:#425357
-color3:#5d6a6a
-color4:#78807d
-color5:#939790
-color6:#aeada3
-color7:#c9c4b6
-color8:#e5173e
-color9:#d99070
-color10:#edb47d
-color11:#1ebc89
-color12:#14ecd4
-color13:#1738c3
-color14:#862c60
-color15:#b62440
-text_color:#c9c4b6
-selected_bg_color:#862c6088
-selected_fg_color:#c9c4b6
-tooltip_bg_color:#0d2732
-tooltip_fg_color:#c9c4b6
-titlebar_bg_color:#0d2732
-titlebar_fg_color:#c9c4b6
-menu_bg_color:#0d2732
-menu_fg_color:#939790
-link_color:#425357"
+gtk-color-scheme = "bg_color:#172932
+color0:#172932
+color1:#2f4048
+color2:#47585f
+color3:#5f6f75
+color4:#77878c
+color5:#8f9ea2
+color6:#a7b6b9
+color7:#bfced0
+color8:#b8414e
+color9:#c78839
+color10:#cc9a66
+color11:#57a061
+color12:#13bde1
+color13:#0714c2
+color14:#791469
+color15:#8f2249
+text_color:#bfced0
+selected_bg_color:#79146988
+selected_fg_color:#bfced0
+tooltip_bg_color:#172932
+tooltip_fg_color:#bfced0
+titlebar_bg_color:#172932
+titlebar_fg_color:#bfced0
+menu_bg_color:#172932
+menu_fg_color:#8f9ea2
+link_color:#47585f"

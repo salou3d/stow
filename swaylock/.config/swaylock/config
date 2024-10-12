@@ -1,5 +1,5 @@
 daemonize
-image="/media/SDisque/Disque-S/Images/JPEG/walls/backgrounds/1.png"
+image="/home/salo/Images/blured-wallpaper"
 font="Noto Sans"
 font-size=20
 ignore-empty-password
@@ -13,33 +13,33 @@ line-uses-ring
 
 ### Flavours starts here
 # COLOUR (base16)
-color=0d2732
-bs-hl-color=b62440
-caps-lock-bs-hl-color=b62440
-caps-lock-key-hl-color=1ebc89
-inside-color=5d6a6a88
-#inside-clear-color=5d6a6a88
-inside-clear-color=14ecd488
-inside-ver-color=1738c388
-inside-wrong-color=e5173e88
-key-hl-color=1ebc89
-layout-bg-color=5d6a6a88
-layout-border-color=939790
-layout-text-color=c9c4b6
-line-color=5d6a6a
-line-clear-color=5d6a6a
-line-caps-lock-color=b62440
-line-ver-color=1738c3
-line-wrong-color=e5173e
-ring-color=edb47d
-ring-caps-lock-color=edb47d
-ring-clear-color=14ecd4
-ring-ver-color=1738c3
-ring-wrong-color=e5173e
-text-color=c9c4b6
-#text-clear-color=14ecd4
-text-clear-color=c9c4b6
-text-caps-lock-color=c9c4b6
-text-ver-color=c9c4b6
-text-wrong-color=c9c4b6
+color=202542
+bs-hl-color=9d5455
+caps-lock-bs-hl-color=9d5455
+caps-lock-key-hl-color=0f764a
+inside-color=706e8188
+#inside-clear-color=706e8188
+inside-clear-color=3ba6a588
+inside-ver-color=2e46af88
+inside-wrong-color=c4595a88
+key-hl-color=0f764a
+layout-bg-color=706e8188
+layout-border-color=a69fab
+layout-text-color=dcd0d6
+line-color=706e81
+line-clear-color=706e81
+line-caps-lock-color=9d5455
+line-ver-color=2e46af
+line-wrong-color=c4595a
+ring-color=d1b950
+ring-caps-lock-color=d1b950
+ring-clear-color=3ba6a5
+ring-ver-color=2e46af
+ring-wrong-color=c4595a
+text-color=dcd0d6
+#text-clear-color=3ba6a5
+text-clear-color=dcd0d6
+text-caps-lock-color=dcd0d6
+text-ver-color=dcd0d6
+text-wrong-color=dcd0d6
 ### Flavours ends here

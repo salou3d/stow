@@ -59,7 +59,10 @@ workspace_layout tabbed
     bindsym $mod+f exec xdg-open ~
     bindsym $mod+b exec xdg-open "http://"
     bindsym $mod+m exec flatpak run org.mozilla.Thunderbird
-    bindsym $mod+p exec bash -c "`grep TryExec ~/.local/share/applications/*Sayonara.desktop | cut -d'=' -f2`"
+    bindsym $mod+p exec flatpak run org.kde.vvave
+    bindsym $mod+Shift+p exec elisa
+
+    # bindsym $mod+p exec bash -c "`grep TryExec ~/.local/share/applications/*Sayonara.desktop | cut -d'=' -f2`"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -72,7 +75,7 @@ workspace_layout tabbed
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -222,30 +225,30 @@ bindsym $mod+Ctrl+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 # it is set in config.d/50-openSUSE.conf
-bar {
-    # When the status_command prints a new line to stdout, swaybar updates.
+# bar {
+#     # When the status_command prints a new line to stdout, swaybar updates.
     # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-    #id mytopsb
-    #pango_markup enabled
-    #position top
-    #height 18
-    #status_padding 0
-    #tray_padding 2
-    #tray_output *
-    #icon_theme "breeze-dark"
-    #status_command i3status-rs
+#     id mytopsb
+#     pango_markup enabled
+#     position top
+#     height 18
+#     status_padding 0
+#     tray_padding 2
+#     tray_output *
+#     icon_theme "breeze-dark"
+#     status_command i3status-rs
 
-    swaybar_command sfwbar
+#     swaybar_command sfwbar
 
-    colors {
-        statusline #00ff00
-        # background #676767
-        background #2a2e32
-        focused_workspace #087b69FF #087b6988 #ffffff
-        inactive_workspace #5f626588 #2a2e3288 #fcfcfc
-        urgent_workspace #f67400FF #63391488 #fcfcfc
-    }
-}
+#     colors {
+#         statusline #00ff00
+# #          background #676767
+#         background #2a2e32
+#         focused_workspace #087b69FF #087b6988 #ffffff
+#         inactive_workspace #5f626588 #2a2e3288 #fcfcfc
+#         urgent_workspace #f67400FF #63391488 #fcfcfc
+#     }
+# }
 
 # include /etc/sway/config.d/*.conf
 include ~/.config/sway/config.d/*

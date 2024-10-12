@@ -1,0 +1,31 @@
+.background {
+  border-radius: 10px;
+  border: 2px solid #7e9cd8;
+  background: rgba(38, 38, 38, 0.8);
+}
+
+.workspaces .item {
+  background: transparent;
+}
+
+.clock {
+  background: transparent;
+}
+
+.sysinfo .item {
+  border-radius: 10px;
+  background: #7e9cd8;
+  color: rgba(38, 38, 38, 1);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sysinfo {
+  margin-right: 5px;
+}
+
+.workspaces .item.focused {
+  background: #7e9cd8;
+  color: rgba(38, 38, 38, 1);
+  border-radius: 10px;
+}

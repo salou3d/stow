@@ -8,15 +8,15 @@ shell = "bash -c '{}'"
     end = "### Flavours ends here"
 
 
-[[item]]
-    file = '~/.local/share/themes/FlatColor/colors2'
-    template = 'gtk-flatcolor'
-    subtemplate = 'gtk-2'
-    rewrite = true
+# [[item]]
+#     file = '~/.local/share/themes/FlatColor/colors2'
+#     template = 'gtk-flatcolor'
+#     subtemplate = 'gtk-2'
+#     rewrite = true
 
-[[item]]
-    file = '~/.local/share/themes/FlatColor/colors3'
-    template = 'gtk-flatcolor'
-    subtemplate = 'gtk-3'
-    rewrite = true
-    hook = 'gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme FlatColor'
+# [[item]]
+#     file = '~/.local/share/themes/FlatColor/colors3'
+#     template = 'gtk-flatcolor'
+#     subtemplate = 'gtk-3'
+#     rewrite = true
+#     hook = 'gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme FlatColor'

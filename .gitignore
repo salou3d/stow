@@ -1,3 +1,4 @@
 fonts/.local/share/fonts/*
 vdhcoapp/*
 ytcc/.local/share/ytcc/ytcc.db
+helix/.config/helix/runtime/*

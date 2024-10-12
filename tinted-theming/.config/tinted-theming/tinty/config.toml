@@ -5,6 +5,13 @@ shell = "bash -c '{}'"
 
 # Item configurations
 [[items]]
+name = "tinted-shell"
+path = "~/.local/share/tinted-theming/tinty/repos/tinted-shell"
+themes-dir = "scripts"
+hook = "source %f"
+supported-systems = ["base16"]
+
+[[items]]
 name = "base16-rofi"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-rofi"
 themes-dir = "colors"
@@ -18,6 +25,13 @@ hook = "cp -r %f ~/.fzfcolors.sh && source ~/.fzfcolors.sh"
 supported-systems = ["base16"]
 
 [[items]]
+name = "base16-sweep"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-sweep"
+themes-dir = "themes"
+hook = "cp -r %f ~/.sweep.sh && source ~/.sweep.sh"
+supported-systems = ["base16"]
+
+[[items]]
 name = "base16-alacritty"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-alacritty"
 themes-dir = "colors"
@@ -28,14 +42,14 @@ supported-systems = ["base16"]
 name = "base16-konsole"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-konsole"
 themes-dir = "colorscheme"
-hook = "cp -r %f ~/.local/share/konsole/mykonsole.colorscheme && cp -r %f ~/.local/konsole/custom.colorscheme"
+hook = "cp -r %f ~/.local/share/konsole/mykonsole.colorscheme"
 supported-systems = ["base16"]
 
 [[items]]
-name = "base16-hyprland"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-hyprland"
-themes-dir = "colors"
-hook = "cp -r %f ~/.config/hypr/colors.conf"
+name = "base16-helix"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-helix"
+themes-dir = "themes"
+hook = "cp -r %f ~/.config/helix/themes/tinted-helix.toml"
 supported-systems = ["base16"]
 
 ### using flavours to config other tools
@@ -46,6 +60,14 @@ themes-dir = "colors"
 hook = "cp -r %f ~/.local/share/flavours/base16/schemes/generated/"
 supported-systems = ["base16"]
 ### end flavours
+
+
+[[items]]
+name = "base16-hyprland"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-hyprland"
+themes-dir = "colors"
+hook = "cp -r %f ~/.config/hypr/colors.conf"
+supported-systems = ["base16"]
 
 [[items]]
 name = "base16-sway"

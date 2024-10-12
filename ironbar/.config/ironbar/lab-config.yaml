@@ -1,0 +1,168 @@
+#   󰝝      󰝞      󰝟
+name: soironbatop
+anchor_to_edges: true
+icon_theme: breeze-dark
+position: bottom
+height: 20
+popup_gap: 0
+start:
+  - type: label
+    name: 'reload-conf'
+    label: 
+    tooltip: 'Reload bar configuration'
+    on_click_left: 'ironbar reload'
+  - name: sosep
+    label: '|'
+    type: label
+  - type: custom
+    name: soworkspace
+    bar:
+      - type: box
+        widgets:
+        - type: label
+          label: '1'
+          class: ws-lbl
+          tooltip: 'Go to workspace 1'
+          on_click_left: 'wtype -M win -P F1'
+        - type: label
+          label: '2'
+          class: ws-lbl
+          tooltip: 'Go to workspace 2'
+          on_click_left: 'wtype -M win -P F2'
+        - type: label
+          label: '3'
+          class: ws-lbl
+          tooltip: 'Go to workspace 3'
+          on_click_left: 'wtype -M win -P F3'
+        - type: label
+          label: '4'
+          class: ws-lbl
+          tooltip: 'Go to workspace 4'
+          on_click_left: 'wtype -M win -P F4'
+  - name: sosep
+    label: '|'
+    type: label
+  - icon_size: 18
+    show_icons: true
+    show_names: false
+    type: launcher
+  - name: sosep
+    label: '|'
+    type: label
+  - name: focused-window
+    type: focused
+    show_icon: true
+    show_title: true
+    icon_size: 16
+    truncate: end
+end:
+  - name: sosep
+    label: '|'
+    type: label
+  - music_dir: /media/SDisque/Disque-S/Audio
+    player_type: mpris
+    format: ''
+    show_status_icon: true
+    icon_size: 14
+    type: music
+    truncate:
+      max_length: 100
+      mode: end
+  - format:
+      -   {cpu_percent}% | {temp_c:coretemp-Package-id-0}°C
+      -   {memory_percent}%
+      # -   {cpu_percent}% | {temp_c:coretemp-Package-id-0}°C
+      # -   {memory_used} GB ({memory_percent}%)
+    type: sys_info
+    interval:
+      cpu: 1
+      memory: 30
+      temps: 5
+  - name: sosep
+    label: '|'
+    type: label
+  - class: sovolume
+    tooltip: Volume
+    type: custom
+    bar:
+      - name: sovolume-btn
+        on_click: popup:toggle
+        label: '{{so-volumeicon.sh}}'
+        type: button
+    popup:
+      - orientation: v
+        type: box
+        widgets:
+          - label: Volume Settings
+            name: header
+            type: label
+          - name: sovol-box
+            type: box
+            orientation: h
+            widgets:
+              - type: box
+                orientation: v
+                class: vol-box
+                widgets:
+                  - type: label
+                    label: 'Speakers:'
+                    class: vol-label
+                  - type: label
+                    label: 'Microphone:'
+                    class: vol-label
+              - type: box
+                class: vol-box
+                orientation: v
+                widgets:
+                  - class: vol-slider
+                    tooltip: Change Volume
+                    type: slider
+                    orientation: h
+                    max: 100
+                    on_change: '!iron-volume.sh sink set volume ${0}%'
+                    show_label: true
+                    length: 150
+                    value: |-
+                        iron-volume.sh sink get volume
+                    step: 5
+                  - class: vol-slider
+                    tooltip: Change Volume
+                    type: slider
+                    orientation: h
+                    max: 100
+                    length: 150
+                    step: 5
+                    show_label: true
+                    value: |-
+                        iron-volume.sh source get volume
+                    on_change: '!iron-volume.sh source set volume ${0}%'
+              - type: box
+                orientation: v
+                class: vol-box
+                widgets:
+                  - type: button
+                    class: vol-btn
+                    label: '{{iron-volume.sh sink get mute}}'
+                    on_click: '!iron-volume.sh sink set mute'
+                  - type: button
+                    class: vol-btn
+                    label: '{{iron-volume.sh source get mute}}'
+                    on_click: '!iron-volume.sh source set mute'
+  - format: '{percentage}%'
+    icon_size: 14
+    tooltip: 'UPower'
+    type: upower
+  - max_items: 10
+    type: clipboard
+  - direction: left_to_right
+    type: tray
+  - format: '%H:%M — %a %d-%m'
+    format_popup: |-
+      %H:%M
+      %B %d-%m
+    type: clock
+  - class: power-menu
+    tooltip: 'Up: {{30000:uptime | cut -d'','' -f1 | cut -d'' '' -f5-}}'
+    type: label
+    label: 
+    on_click_left: wleave

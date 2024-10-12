@@ -57,6 +57,13 @@ scale slider {
     border-radius: 5px;
 }
 
+/* -- Notifications -- */
+
+.notifications {
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
 
 /* -- clipboard -- */
 

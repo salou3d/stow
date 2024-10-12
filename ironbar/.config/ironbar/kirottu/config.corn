@@ -1,0 +1,98 @@
+let {
+  $position = "top"
+  $height = 20
+  $margin = {
+    top = 10
+    left = 10
+    right = 10
+  }
+  $icon_theme = "Papirus-Dark"
+  
+  $clock = {
+    type = "clock"
+    format = "%A, %B %d. %H:%M:%S"
+  }
+
+  $sys_info = {
+    type = "sys_info"
+
+    interval.memory = 10
+    interval.cpu = 1
+    interval.temps = 5
+    interval.networks = 3
+
+
+    format = [
+      "{cpu_percent}%"
+      "{memory_used}/{memory_total} GB"
+      "{net_down:enp8s0}↓ {net_up:enp8s0}↑ Mbps"
+    ]
+  }
+
+  $tray = {
+    type = "tray"
+  }
+
+  $center = [$clock]
+  $end = [$sys_info $tray]
+} in {
+  monitors.HDMI-A-2 = {
+    position = $position
+    height = $height
+    margin = $margin
+    icon_theme = $icon_theme
+    start = [
+      {
+        type = "workspaces"
+        name_map.21 = "1"
+        name_map.22 = "2"
+        name_map.23 = "3"
+        name_map.24 = "4"
+        name_map.25 = "5"
+        name_map.26 = "6"
+        name_map.27 = "7"
+        name_map.28 = "8"
+        name_map.29 = "9"
+        name_map.30 = "10"
+      }
+    ]
+    center = $center
+    end = $end
+  }
+  monitors.HDMI-A-1 = {
+    position = $position
+    height = $height
+    margin = $margin
+    icon_theme = $icon_theme
+    start = [
+      {
+        type = "workspaces"
+        name_map.11 = "1"
+        name_map.12 = "2"
+        name_map.13 = "3"
+        name_map.14 = "4"
+        name_map.15 = "5"
+        name_map.16 = "6"
+        name_map.17 = "7"
+        name_map.18 = "8"
+        name_map.19 = "9"
+        name_map.20 = "10"
+      }
+    ]
+    center = $center
+    end = $end
+  }
+  monitors.DP-2 = {
+    position = $position
+    height = $height
+    margin = $margin
+    icon_theme = $icon_theme
+    start = [
+      {
+        type = "workspaces"
+      }
+    ]
+    center = $center
+    end = $end
+  }
+}

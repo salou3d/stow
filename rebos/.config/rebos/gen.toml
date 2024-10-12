@@ -11,16 +11,65 @@ imports = [
 [managers.system]
 items = [
     # "git",
+    "flatpak",
+    "opi",
+    "pipx"
+    "labwc", "hyprland", "sway", "jay",
+    "rofi-wayland", "libnotify-tools", "SwayNotificationCenter", "waycheck",
+    "wob", "wev", "lswt", "wtype", "wlrctl", "brightnessctl", "grim" "slurp",
+    "kanshi", "gammastep", "gammastep-indicator", "wlr-randr", "wlopm", "wl-clipboard",
+    "swaybg", "swayidle", "swaylock", "xdg-desktop-portal-wlr",
+    "hypridle", "hyprlock", "hyprpicker", "hyprshot", "hyprland-bash-completion", "xdg-desktop-portal-hyprland",
+    "swayidle-bash-completion", "swaylock-bash-completion", "wl-clipboard-bash-completion",
+    "starship", "eza", "lsd", "bat", "bat-extras", "fd", "sd", "igrep", "ripgrep",
+    "zoxide", "mcfly", "dust", "dysk", "tealdeer", "jless", "procs", "tokei",
+    "hyperfine", "ouch", "bottom", "macchina", "grex", "pastel", "git-delta",
+    "jaq", "onefetch", "trippy", "broot", "yazi", "yazi-bash-completion",
+    "wayshot", "waysip",
+    "git", "git-core", "git-email", "stow", "jq", "aria2", "zsync", "fastfetch",
+    "fzf", "fzf-bash-integration", "libsixel-utils",
+    "python311-pyxdg", "python311-pipx", "python311-yt-dlp", "python311-Kivy",
+  	"python311-html5lib", "python311-beautifulsoup4", "python311-PyQt6",
+	  "python311-python-lsp-server", 
+    "pavucontrol", "playerctl", "mpv", "libopenh264-7", "poppler-tools", "xdg-user-dirs",
+    "clamav", "java-22-openjdk", "sl", "podman", "meson", "micro-editor", "helix", "lapce",
+
+    "gparted", "featherpad", "bleachbit", "sqlitebrowser", "NetworkManager-applet",
+    "patterns-kde-kde_plasma", "polkit-kde-agent-6", "kde-cli-tools6", "diskmonitor",
+	"systemsettings6", "kdialog", "plasma6-systemmonitor", "kdeconnect-kde",
+	"dolphin", "konsole", "okular", "gwenview", "ark", "kate", "partitionmanager",
+	"filelight", "spectacle", "ghostwriter", "elisa"
 ]
 
 # Packages to be installed via Flatpak.
 [managers.flatpak]
 items = [
     # "com.github.tchx84.Flatseal",
+    "org.mozilla.firefox",
+    "org.mozilla.Thunderbird",
+    "org.videolan.VLC",
+    "io.github.hakuneko.HakuNeko",
+    "org.kde.falkon",
+    "org.kde.kcalc",
+    "org.kde.ktorrent",
+    "org.kde.vvave"
 ]
 
 # Packages to be installed via Cargo.
 [managers.cargo]
 items = [
     # "bacon",
+    "amp",
+    "mprocs",
+    "nucleo-ui",
+    "navi",
+    "rebos",
+    "runiq"
+    "rusti-cal",
+    "topie",
+    "trashy",
+    "wayout",
+    "xcp",
+    #"wpaperd",
+    #"wpaperctl"
 ]
