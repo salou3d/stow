@@ -30,6 +30,8 @@ test -z "$PROFILEREAD" && . /etc/profile || true
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
+export PATH="$PATH:$HOME/.local/bin"
+
 export EDITOR=/usr/bin/micro
 export Terminal=/usr/bin/konsole
 export TERMINAL=/usr/bin/konsole

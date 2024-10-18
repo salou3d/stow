@@ -134,6 +134,7 @@ function yy() {
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
+eval "$(register-python-argcomplete pipx)"
 eval "$(batman --export-env)"
 
 alias bathelp='bat --plain --language=help'
@@ -185,9 +186,11 @@ eval "$(mcfly init bash)"
 
 eval "$(navi widget bash)"
 
-eval "$(eww shell-completions --shell bash)"
+# eval "$(eww shell-completions --shell bash)"
 
 eval -- "$(/usr/bin/starship init bash --print-full-init)"
+
+# eval "$(wl-screenrec --generate-completions bash)"
 
 
 if [ -f  ~/.config/broot/launcher/bash/br ]; then
@@ -201,3 +204,4 @@ fi
 if [ -f  ~/.sweep.sh ]; then
   source ~/.sweep.sh
 fi
+

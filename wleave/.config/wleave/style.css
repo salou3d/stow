@@ -21,6 +21,7 @@ button {
 	background-color: @theme_bg_color; /*#1E1E1E;*/
 	border-style: solid;
 	border-width: 2px;
+/* 	border-radius: 100%; */
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;

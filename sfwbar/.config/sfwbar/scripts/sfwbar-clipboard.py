@@ -41,6 +41,7 @@ res = cur.execute("SELECT MAX(id), REPLACE(contents, '', '') FROM c GROUP BY con
 #res = cur.execute("SELECT * FROM c")
 items = res.fetchall()
 
+
 if items:
     for item in items:
         sitem = item[1].replace('"', '\\"').replace("'", "\\'")
@@ -54,9 +55,8 @@ if items:
         style = "clip_item_style"
         label {
             style = "clip_item_label_style"
-            value = "''' + sitem[:-1] + '''"
+            value = "''' + sitem.rstrip('\n') + '''"
             action[1] = Exec 'bash -c "wl-clipboard-history -p ''' + str(item[0]) + ''' | wl-copy"'
-            tooltip = "Click on item to copy it to clipboard."
         }
         button {
             style = "clip_item_button_style"
