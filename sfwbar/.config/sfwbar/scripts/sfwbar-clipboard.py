@@ -44,7 +44,7 @@ items = res.fetchall()
 
 if items:
     for item in items:
-        sitem = item[1].replace('"', '\\"').replace("'", "\\'")
+        sitem = item[1].replace('"', '\\"').replace("'", "\\'").replace("\\", '\\\\')
         lines = sitem.split("\n")
         if lines and len(lines) > 3:
             sitem = ""

@@ -38,12 +38,12 @@ themes-dir = "colors"
 hook = "cp -r %f ~/.config/alacritty/colors.toml"
 supported-systems = ["base16"]
 
-[[items]]
-name = "base16-konsole"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-konsole"
-themes-dir = "colorscheme"
-hook = "cp -r %f ~/.local/share/konsole/mykonsole.colorscheme"
-supported-systems = ["base16"]
+# [[items]]
+# name = "base16-konsole"
+# path = "~/.local/share/tinted-theming/tinty/repos/base16-konsole"
+# themes-dir = "colorscheme"
+# hook = "cp -r %f ~/.local/share/konsole/mykonsole.colorscheme"
+# supported-systems = ["base16"]
 
 [[items]]
 name = "base16-helix"

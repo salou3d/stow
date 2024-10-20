@@ -12,17 +12,13 @@
 
 test -s ~/.alias && . ~/.alias || true
 
-export HISTCONTROL=erasedups:ignoredups:ignoreboth
-export HISTTIMEFORMAT="%Y-%m-%d %T "
-
-
-if [ -d ~/.cargo/bin ]; then
-	export PATH="$PATH:$HOME/.cargo/bin"
-fi
-
-if [ ! -f ~/.local/bin/python ]; then
-	ln -s $(which python3) ~/.local/bin/python
-fi
+#alias ls="eza --group-directories-first --icons"
+alias ls="lsd --group-directories-first"
+alias dir='ls -l'
+alias ll='ls -l'
+alias la='ls -la'
+alias l='ls -alF'
+alias ls-l='ls -l'
 
 alias shutdown="systemctl shutdown"
 alias reboot="systemctl reboot"
@@ -34,8 +30,6 @@ alias zyref="sudo zypper ref"
 alias zydup="sudo zypper dup"
 alias mytcc="python3 -i ~/.local/bin/ytcc-subs.py"
 
-#alias ls="eza --group-directories-first --icons"
-alias ls="lsd --group-directories-first"
 alias cp="cp -i"
 alias mv="mv -i"
 alias mkdir='mkdir -p'
@@ -44,7 +38,27 @@ alias less='less -R'
 alias rt="trash put"
 alias tp="trash put"
 
+if ! command -v kate >/dev/null 2>&1; then
+	if command -v org.kde.kate >/dev/null 2>&1; then
+		alias kate="org.kde.kate"
+	elif flatpak list --app --columns=application | grep org.kde.kate >/dev/null 2>&1; then
+		alias kate="flatpak run org.kde.kate"
+	fi
+fi
+
 #alias sweep="sweep --altscreen"
+
+export HISTCONTROL=erasedups:ignoredups:ignoreboth
+export HISTTIMEFORMAT="%Y-%m-%d %T "
+
+
+if [ -d ~/.cargo/bin ]; then
+	export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
+if [ ! -f ~/.local/bin/python ]; then
+	ln -s $(which python3) ~/.local/bin/python
+fi
 
 # Show the current distribution
 distribution ()

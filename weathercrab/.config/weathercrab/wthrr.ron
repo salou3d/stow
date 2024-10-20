@@ -1,0 +1,23 @@
+(
+    address: "tangier",
+    language: "fr_FR",
+    forecast: [
+        week,
+    ],
+    units: (
+        temperature: celsius,
+        speed: kmh,
+        time: military,
+        precipitation: mm,
+    ),
+    gui: (
+        border: rounded,
+        color: default,
+        graph: (
+            style: lines(solid),
+            rowspan: double,
+            time_indicator: true,
+        ),
+        greeting: true,
+    ),
+)

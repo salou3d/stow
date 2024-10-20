@@ -1,0 +1,51 @@
+{
+  "greeting": "Hé mon ami. Je suis heureux que vous demandiez.",
+  "search_station": "Vous n'avez pas précisé de ville. Dois-je rechercher une station météo proche de chez vous ?",
+  "config": {
+    "confirm": "Oui s'il vous plait",
+    "next_time": "Non, demande-moi la prochaine fois",
+    "deny": "Non, ne me demande plus",
+    "always_auto": "Recherchez toujours une station météo",
+    "save_as_default": "Souhaitez-vous l'utiliser par défaut ?",
+    "reset_config": "Cela effacera la configuration de Wthrr. Continuer?",
+    "no_selection": "L'utilisateur n'a rien sélectionné ou a quitté"
+  },
+  "weather": {
+    "feels_like": "On a l'impression",
+    "felt_like": "J'avais l'impression",
+    "humidity": "Humidité",
+    "dew_point": "Point de rosée",
+    "hourly_forecast": "Prévisions horaires",
+    "daily_overview": "Aperçu quotidien",
+    "weather_code": {
+      "clear_sky": "Ciel clair",
+      "mostly_clear": "Généralement clair",
+      "partly_cloudy": "Partiellement nuageux",
+      "overcast": "Couvert",
+      "fog": "Brouillard",
+      "depositing_rime_fog": "Déposer du brouillard givré",
+      "light_drizzle": "Légère bruine",
+      "moderate_drizzle": "Bruine modérée",
+      "dense_drizzle": "Bruine dense",
+      "light_freezing_drizzle": "Légère bruine verglaçante",
+      "dense_freezing_drizzle": "Dense bruine verglaçante",
+      "slight_rain": "Légère pluie",
+      "moderate_rain": "Pluie modérée",
+      "heavy_rain": "Forte pluie",
+      "light_freezing_rain": "Légère pluie verglaçante",
+      "heavy_freezing_rain": "Fortes pluies verglaçantes",
+      "slight_snow_fall": "Légère chute de neige",
+      "moderate_snow_fall": "Chutes de neige modérées",
+      "heavy_snow_fall": "Fortes chutes de neige",
+      "snow_grains": "Grains de neige",
+      "slight_rain_showers": "Légères averses de pluie",
+      "moderate_rain_showers": "Averses de pluie modérées",
+      "violent_rain_showers": "Violentes averses de pluie",
+      "slight_snow_showers": "Légères averses de neige",
+      "heavy_snow_showers": "Fortes averses de neige",
+      "thunderstorm": "Orage",
+      "thunderstorm_slight_hail": "Orage, légère grêle",
+      "thunderstorm_heavy_hail": "Orage, forte grêle"
+    }
+  }
+}

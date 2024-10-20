@@ -1,0 +1,8 @@
+{
+  "color": ["red", "green", "blue", "purple"],
+  "info": [
+    ["os", "host", "shell", "user"],
+    ["term", "de", "cpu", "gpu", "mem"],
+    ["uptime", "res", "time", "disk"]
+  ]
+}

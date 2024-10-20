@@ -1,4 +1,5 @@
 timeout 300 'pidof hyprlock || hyprlock'
-# timeout 900 'wlopm --toggle \*' resume 'wlopm --toggle \*'
-timeout 900 'wayout --toggle $(wlr-randr --json | jq -r ".[].name")' resume 'wayout --toggle $(wlr-randr --json | jq -r ".[].name")'
+timeout 600 'wayout --off $(wlr-randr --json | jq -r ".[].name")' resume 'wayout --on $(wlr-randr --json | jq -r ".[].name")'
 before-sleep 'hyprlock'
+
+# timeout 600 'wlopm --toggle \*' resume 'wlopm --toggle \*'
