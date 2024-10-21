@@ -8,6 +8,13 @@ shell = "bash -c '{}'"
     end = "### Flavours ends here"
 
 
+[[item]]
+    file = '~/.config/satty/config.toml'
+    template = 'satty'
+    rewrite = false
+    start = "### Here starts flavours injection"
+    end = "### Here ends flavours injection"
+
 # [[item]]
 #     file = '~/.local/share/themes/FlatColor/colors2'
 #     template = 'gtk-flatcolor'
