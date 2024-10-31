@@ -23,11 +23,11 @@ elif ! echo $PATH | grep $HOME/.local/share/flatpak/exports/bin >/dev/null 2>&1;
     export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
 fi
 
-export EDITOR=/usr/bin/micro
-export Terminal=/usr/bin/konsole
-export TERMINAL=/usr/bin/konsole
+export EDITOR=micro
+export Terminal=/usr/bin/kitty
+export TERMINAL=/usr/bin/kitty
 
-if [ -z "$QT_QPA_PLATFORMTHEME" ]; then
+if [ -z "$QT_QPA_PLATFORMTHEME" -o "$QT_QPA_PLATFORMTHEME" != "kde" ]; then
     export QT_QPA_PLATFORMTHEME=kde
 fi
 

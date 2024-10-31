@@ -16,7 +16,7 @@ set $up Up
 set $right Right
 # Your preferred terminal emulator
 # set $term alacritty --config-file /etc/alacritty/alacritty.toml
-set $term konsole
+set $term kitty
 
 xwayland enable
 workspace_layout tabbed
@@ -57,10 +57,9 @@ workspace_layout tabbed
     bindsym --no-repeat --release Super_L exec pkill $menu || $menu
 
     bindsym $mod+f exec xdg-open ~
-    bindsym $mod+b exec xdg-open "http://"
-    bindsym $mod+m exec flatpak run org.mozilla.Thunderbird
-    bindsym $mod+p exec flatpak run org.kde.vvave
-    bindsym $mod+Shift+p exec elisa
+    # bindsym $mod+b exec xdg-open "http://"
+    # bindsym $mod+m exec flatpak run org.mozilla.Thunderbird
+    # bindsym $mod+p exec elisa
 
     # bindsym $mod+p exec bash -c "`grep TryExec ~/.local/share/applications/*Sayonara.desktop | cut -d'=' -f2`"
 

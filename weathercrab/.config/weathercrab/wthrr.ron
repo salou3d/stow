@@ -1,6 +1,6 @@
 (
     address: "tangier",
-    language: "fr_FR",
+    language: "en_US",
     forecast: [
         week,
     ],

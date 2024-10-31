@@ -1,0 +1,18 @@
+[global]
+target = "~/.local/bin"
+system = "linux/amd64"
+upgrade_only = true
+
+["zyedidia/micro"]
+    upgrade_only = true
+    download_only = true
+    show_hash = true
+    asset_filters = [ "static", ".tar.gz" ]
+    # target = "~/.local/bin/micro"
+
+["helix-editor/helix"]
+    upgrade_only = true
+    download_only = true
+    # show_hash = true
+    # asset_filters = [ "static", ".tar.gz" ]
+    # target = "~/.local/bin/micro"

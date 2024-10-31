@@ -19,9 +19,9 @@
 # Mode at startup (viewer/gallery)
 mode = viewer
 # Window position (parent or absolute coordinates, e.g. 100,200)
-position = parent
+position = 0,0
 # Window size (fullscreen/parent/image, or absolute size, e.g. 800,600)
-size = parent
+size = image
 # Action performed by SIGUSR1 signal (same format as for key bindings)
 sigusr1 = reload
 # Action performed by SIGUSR2 signal (same format as for key bindings)
@@ -34,7 +34,7 @@ app_id = swayimg
 ################################################################################
 [viewer]
 # Window background color (RGBA)
-window = #00000088
+window = #1e2833
 # Background for transparent images (grid/RGBA)
 transparency = grid
 # Default image scale (optimal/fit/width/height/fill/real)
@@ -42,7 +42,7 @@ scale = optimal
 # Fix position of the image on the window surface (yes/no)
 fixed = yes
 # Anti-aliasing (yes/no)
-antialiasing = no
+antialiasing = yes
 # Run slideshow at startup (yes/no)
 slideshow = no
 # Slideshow image display time (seconds)
@@ -57,7 +57,7 @@ preload = 1
 ################################################################################
 [gallery]
 # Max size of the thumbnail (pixels)
-size = 200
+size = 170
 # Max number of thumbnails in cache, 0 to unlimit
 cache = 100
 # Fill the entire tile with thumbnail (yes/no)
@@ -65,15 +65,15 @@ fill = yes
 # Use anti-aliasing for thumbnails (yes/no)
 antialiasing = no
 # Background color of the window (RGBA)
-window = #00000088
+window = #1e2833
 # Background color of the tile (RGBA)
 background = #202020ff
 # Background color of the selected tile (RGBA)
-select = #404040ff
+select = #632b72
 # Border color of the selected tile (RGBA)
-border = #000000ff
+border = #737b7e
 # Shadow color of the selected tile (RGBA)
-shadow = #000000ff
+shadow = #a76c34
 
 ################################################################################
 # Image list configuration
@@ -97,7 +97,7 @@ name = monospace
 # Font size (pt)
 size = 14
 # Font color (RGBA)
-color = #ccccccff
+color = #e6ebe4
 # Shadow color (RGBA)
 shadow = #000000a0
 

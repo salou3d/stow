@@ -430,10 +430,16 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>konsole</command>
+        <command>kitty</command>
       </action>
     </keybind>
-    <keybind key="W-b">
+    <keybind key="W-Backspace">
+      <action name="Execute">
+        <command>alacritty</command>
+      </action>
+    </keybind>
+
+    <!--<keybind key="W-b">
       <action name="Execute">
         <command>flatpak run org.mozilla.firefox</command>
       </action>
@@ -447,7 +453,8 @@
       <action name="Execute">
         <command>/media/Apps/appimages/sayonara-1.9.0-stable1-ge5e5dfc5.AppImage</command>
       </action>
-    </keybind>
+    </keybind>-->
+
     <!-- SnapToRegion via W-Numpad -->
     <!-- <keybind key="A-Left">
     <action name="MoveToEdge" direction="left" />

@@ -15,6 +15,13 @@ shell = "bash -c '{}'"
     start = "### Here starts flavours injection"
     end = "### Here ends flavours injection"
 
+[[item]]
+    file = '~/.config/starship.toml'
+    template = 'starship'
+    rewrite = false
+    start = "### Here starts Flavours colors"
+    end = "### Here ends Flavours colors"
+
 # [[item]]
 #     file = '~/.local/share/themes/FlatColor/colors2'
 #     template = 'gtk-flatcolor'

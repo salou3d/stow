@@ -32,6 +32,13 @@ hook = "cp -r %f ~/.sweep.sh && source ~/.sweep.sh"
 supported-systems = ["base16"]
 
 [[items]]
+name = "base16-kitty"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-kitty"
+themes-dir = "colors"
+hook = "cp -r %f ~/.config/kitty/tinted.conf"
+supported-systems = ["base16", "base24"]
+
+[[items]]
 name = "base16-alacritty"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-alacritty"
 themes-dir = "colors"

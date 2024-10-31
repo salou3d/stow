@@ -1,12 +1,17 @@
-
+Scanner {
+  Exec(" sqlite3 --json ~/.clipboard.sqlite \"SELECT MAX(id) as id, REPLACE(contents, '', '') as contents FROM c GROUP BY contents ORDER BY id DESC LIMIT 10\" ") {
+    #WthrTemp= Json(".properties.timeseries.1.data.instant.details.air_temperature")
+    ids= Json(".id")
+  }
+}
 
 layout {
     style = "module"
   image {
     value = "edit-paste"
     style = "module"
-    tooltip = "Clipboard Manager:\n   Left click: select entry from history\n   Right click: delete entry from history"
+    tooltip = "Clipboard Manager"
     action[1] = Exec "dmenu-wrapper select"
-    action[3] = Exec "dmenu-wrapper delete"
+    # action[3] = Exec "dmenu-wrapper delete"
   }
 }
