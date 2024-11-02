@@ -430,7 +430,7 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>kitty</command>
+        <command>konsole</command>
       </action>
     </keybind>
     <keybind key="W-Backspace">

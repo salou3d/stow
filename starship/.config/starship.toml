@@ -31,16 +31,16 @@ palette = 'tinted'
 
 [palettes.tinted]
 ### Here starts Flavours colors
-color_fg0 = '#e6ebe4'
-color_bg1 = '#1e2833'
-color_bg3 = '#737b7e'
-color_blue = '#080ff5'
-color_aqua = '#37c2eb'
-color_green = '#4e973e'
-color_orange = '#f1a42e'
+color_fg0 = '#dedbd3'
+color_bg1 = '#172838'
+color_bg3 = '#6c747a'
+color_blue = '#0c3e9c'
+color_aqua = '#1bc7f9'
+color_green = '#08785b'
+color_orange = '#c39a6b'
 color_purple = 'purple'
-color_red = '#ce482d'
-color_yellow = '#ffd04e'
+color_red = '#723a32'
+color_yellow = '#f3c163'
 ### Here ends Flavours colors
 
 [os]

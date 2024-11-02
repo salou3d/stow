@@ -1,0 +1,59 @@
+# base16 2715611-jpg 256 - alacritty color config
+# Tinty
+
+# Default colors
+[colors.primary]
+background = '0x172838'
+foreground = '0xa5a7a6'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x172838'
+cursor = '0xa5a7a6'
+
+# Normal colors
+[colors.normal]
+black = '0x172838'
+red = '0x723a32'
+green = '0x08785b'
+yellow = '0xf3c163'
+blue = '0x0c3e9c'
+magenta = '0x703c50'
+cyan = '0x1bc7f9'
+#white = '0xa5a7a6'
+white = '0xdedbd3'
+
+# Bright colors
+[colors.bright]
+black = '0x6c747a'
+red = '0x723a32'
+green = '0x08785b'
+yellow = '0xf3c163'
+blue = '0x0c3e9c'
+magenta = '0x703c50'
+cyan = '0x1bc7f9'
+white = '0xdedbd3'
+
+[[colors.indexed_colors]]
+index = 16
+color = "0xc39a6b"
+
+[[colors.indexed_colors]]
+index = 17
+color = "0xba6b4e"
+
+[[colors.indexed_colors]]
+index = 18
+color = "0x33414e"
+
+[[colors.indexed_colors]]
+index = 19
+color = "0x4f5b64"
+
+[[colors.indexed_colors]]
+index = 20
+color = "0x888e90"
+
+[[colors.indexed_colors]]
+index = 21
+color = "0xc1c1bc"

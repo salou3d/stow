@@ -1,6 +1,6 @@
-# Scheme name: 2715611-jpg
+# Scheme name: 77-jpg
 # Scheme system: base16
 # Scheme author: Tinty
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
-alias sweep="sweep --theme \"bg=#33414e,fg=#c1c1bc,accent=#703c50\""
+alias sweep="sweep --theme \"bg=#503b41,fg=#c8c7c0,accent=#583581\""

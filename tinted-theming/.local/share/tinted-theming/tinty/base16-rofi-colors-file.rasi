@@ -1,31 +1,31 @@
 
 * {
 
-    default-background: #1e2833;
-    default-foreground: #e6ebe4;
-    default-border:              #632b72;
-    // default-border:              #37c2eb;
+    default-background: #172838;
+    default-foreground: #dedbd3;
+    default-border:              #703c50;
+    // default-border:              #1bc7f9;
 
-    foreground:                  rgba ( 172, 179, 177, 100 % );
-    background:                  rgba ( 30, 40, 51, 100 % );
+    foreground:                  rgba ( 165, 167, 166, 100 % );
+    background:                  rgba ( 23, 40, 56, 100 % );
 
-    // background-color:            rgba ( 30, 40, 51, 0 % );
+    // background-color:            rgba ( 23, 40, 56, 0 % );
 
-    red:                         rgba ( 206, 72, 45, 100 % );
-    blue:                        rgba ( 8, 15, 245, 100 % );
-    green: rgba ( 78, 151, 62, 100 % );
-    lightfg:                     rgba ( 201, 207, 202, 100 % );
-    lightbg:                     rgba ( 58, 67, 76, 100 % );
+    red:                         rgba ( 114, 58, 50, 100 % );
+    blue:                        rgba ( 12, 62, 156, 100 % );
+    green: rgba ( 8, 120, 91, 100 % );
+    lightfg:                     rgba ( 193, 193, 188, 100 % );
+    lightbg:                     rgba ( 51, 65, 78, 100 % );
 
     // hard-blue: @blue;
-    hard-blue: rgba ( 99, 43, 114, 100 % );
+    hard-blue: rgba ( 112, 60, 80, 100 % );
     hard-green: @green;
     hard-red: @red;
 
-    // light-blue: rgba ( 8, 15, 245, 33 % );
-    light-blue: rgba ( 99, 43, 114, 33 % );
-    light-green: rgba ( 78, 151, 62, 33 % );
-    light-red: rgba ( 206, 72, 45, 100 % );
+    // light-blue: rgba ( 12, 62, 156, 33 % );
+    light-blue: rgba ( 112, 60, 80, 33 % );
+    light-green: rgba ( 8, 120, 91, 33 % );
+    light-red: rgba ( 114, 58, 50, 100 % );
 
     separatorcolor:              @foreground;
 
