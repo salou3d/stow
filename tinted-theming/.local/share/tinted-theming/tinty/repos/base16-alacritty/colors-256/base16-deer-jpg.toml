@@ -1,0 +1,59 @@
+# base16 deer-jpg 256 - alacritty color config
+# Tinty
+
+# Default colors
+[colors.primary]
+background = '0x1c2831'
+foreground = '0x9aa7a9'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x1c2831'
+cursor = '0x9aa7a9'
+
+# Normal colors
+[colors.normal]
+black = '0x1c2831'
+red = '0xff0509'
+green = '0x3d6a52'
+yellow = '0xd1b445'
+blue = '0x2e4bba'
+magenta = '0x8d157e'
+cyan = '0x93d9c8'
+#white = '0x9aa7a9'
+white = '0xcddad9'
+
+# Bright colors
+[colors.bright]
+black = '0x677479'
+red = '0xff0509'
+green = '0x3d6a52'
+yellow = '0xd1b445'
+blue = '0x2e4bba'
+magenta = '0x8d157e'
+cyan = '0x93d9c8'
+white = '0xcddad9'
+
+[[colors.indexed_colors]]
+index = 16
+color = "0xe38324"
+
+[[colors.indexed_colors]]
+index = 17
+color = "0xa62b2b"
+
+[[colors.indexed_colors]]
+index = 18
+color = "0x354149"
+
+[[colors.indexed_colors]]
+index = 19
+color = "0x4e5a61"
+
+[[colors.indexed_colors]]
+index = 20
+color = "0x818d91"
+
+[[colors.indexed_colors]]
+index = 21
+color = "0xb3c0c1"

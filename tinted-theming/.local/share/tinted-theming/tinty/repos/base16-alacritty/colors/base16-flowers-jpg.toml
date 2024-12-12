@@ -1,0 +1,38 @@
+# base16 flowers-jpg - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x1f2926'
+foreground = '0x9a9e9d'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x1f2926'
+cursor = '0x9a9e9d'
+
+# Normal colors
+[colors.normal]
+black = '0x1f2926'
+red = '0x9d6439'
+green = '0x668451'
+yellow = '0xc8a161'
+blue = '0x375e9e'
+magenta = '0x68537d'
+cyan = '0x629bc6'
+#white = '0x9a9e9d'
+white = '0xcccdcd'
+
+# Bright colors
+[colors.bright]
+black = '0x696f6d'
+red = '0xc18f52'
+green = '0x37403d'
+yellow = '0x505755'
+blue = '0x818685'
+magenta = '0xb3b5b5'
+cyan = '0x655452'
+white = '0xcccdcd'

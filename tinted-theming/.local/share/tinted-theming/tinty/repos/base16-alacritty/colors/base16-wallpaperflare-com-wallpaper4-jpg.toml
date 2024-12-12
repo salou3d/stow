@@ -1,0 +1,38 @@
+# base16 wallpaperflare-com_wallpaper4-jpg - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x252537'
+foreground = '0xaca7ac'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x252537'
+cursor = '0xaca7ac'
+
+# Normal colors
+[colors.normal]
+black = '0x252537'
+red = '0xa26119'
+green = '0x4a7259'
+yellow = '0xccbb4a'
+blue = '0x3344b5'
+magenta = '0x4b4c6c'
+cyan = '0x5d9ee6'
+#white = '0xaca7ac'
+white = '0xe2dbdb'
+
+# Bright colors
+[colors.bright]
+black = '0x76737d'
+red = '0xcd8f67'
+green = '0x403f4e'
+yellow = '0x5b5965'
+blue = '0x918d94'
+magenta = '0xc7c1c3'
+cyan = '0x846b45'
+white = '0xe2dbdb'

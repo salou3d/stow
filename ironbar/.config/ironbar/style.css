@@ -1,362 +1,286 @@
-@define-color color_bg #31363B;
-@define-color color_bg_dark grey; /* #1c1c1c;*/
-@define-color color_border #424242;
-@define-color color_border_active #3daee9; /*rgb(61,174,233)*/
-@define-color color_text #FBFBFB;
-@define-color color_urgent #8f0a0a;
-
-/* -- base styles -- */
-
+﻿
 * {
-    font-family: Noto Sans Nerd Font, sans-serif;
-    font-size: 12px;
-    border: none;
-    border-radius: 0;
+  font-family: "Noto Sans Regular";
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 }
 
-box, menubar, button {
-    background-color: @color_bg;
-    background-image: none;
-    box-shadow: none;
-    padding: 0;
+.background {
+  background: alpha(@theme_bg_color, 0.8);
 }
 
-button, label {
-    color: @color_text;
+/* -- workspaces -- */
+
+.workspaces {
+  margin-left: 2px;
+  margin-right: 5px;
 }
 
-button:hover {
-/*     background-color: @color_bg_dark; */
-    background-color: @color_bg;
+.workspaces .item {
+  background: alpha(@theme_bg_color, 0.33);
+  border: 1px solid alpha(@theme_fg_color, 0.333);
+  border-radius: 10px;
+  color: @theme_selected_fg_color;
+  padding: 1px 4px;
+  margin: 4px 2px;
 }
 
-scale trough {
-    min-width: 1px;
-    min-height: 2px;
-
+.workspaces .item.visible {
+  background: transparent;
+  color: @theme_bg_color;
 }
 
-scale trough highlight  {
-    background-color: @color_border_active;
-    background-image: none;
-    /*background-clip: content-box;*/
+/*.workspaces .item.inactive {
+}*/
+
+.workspaces .item.focused {
+  background: alpha(@theme_selected_bg_color, 0.666);
+  border-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
 }
 
-scale slider {
-    background-color: @color_text;
+/* -- launcher -- */
+
+.launcher {
+  background: @theme_bg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+  margin: 1px 0;
+  padding: 0;
 }
 
-#bar {
-    border-bottom: 1px solid @color_bg_dark ;
-    padding: 2px 5px 2px 5px;
+.launcher .item {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
 }
 
-.popup {
-    border: 1px solid @color_border;
-    padding: 1em;
-    border-radius: 5px;
+.launcher .item image {
+  padding: 3px 7px;
 }
 
-/* -- Notifications -- */
-
-.notifications {
-    margin: 0 5px;
-    padding: 0 5px;
+.launcher .item:hover {
+  background-color: alpha(@theme_selected_bg_color, 0.333);
+  border-bottom: 2px solid @theme_selected_bg_color;
 }
 
+.launcher .ifix examtem:not(.focused):hover {
+  background-color: @theme_selected_bg_color;
+}
+
+.launcher .open {
+  border-bottom: 2px solid @theme_bg_color;
+}
+
+.launcher .focused {
+  border-bottom: 2px solid @theme_selected_bg_color;
+}
+
+.launcher .focused image {
+  background-color: alpha(@theme_selected_bg_color, 0.333);
+}
+
+.launcher .urgent {
+  border-bottom-color: alpha(red, 0.333);
+}
+
+.popup-launcher {
+  padding: 0;
+  /*background: @theme_bg_color;*/
+  background: alpha(@theme_bg_color, 0.8);
+  border: 1px solid @borders;
+  border-radius: 5px;
+}
+
+.popup-launcher .popup-item {
+  border-bottom: 2px solid @theme_bg_color;
+}
+
+.popup-launcher .popup-item:hover {
+  border-bottom: 2px solid @theme_selected_bg_color;
+  background-color: alpha(@theme_selected_bg_color, 0.33);
+}
+
+/* -- focused -- */
+
+#focused-window {
+  color: @theme_selected_fg_color;
+  background-color: alpha(@theme_selected_bg_color, 0.5);
+  border: 1px solid @theme_selected_bg_color;
+  border-radius: 5px;
+  padding: 0 7px;
+  margin: 3px 5px;
+}
+
+/* -- sysinfo -- */
+
+.sysinfo {
+  border: 1px solid @theme_selected_bg_color;
+  border-radius: 10px;
+  background: alpha(@theme_selected_bg_color, 0.5);
+  padding: 0 7px;
+/*   margin: 1px 5px 1px 0; */
+  margin: 4px 0;
+}
+
+.sysinfo .item {
+  color: @theme_selected_fg_color;
+
+}
 
 /* -- clipboard -- */
 
 .clipboard {
-    margin-left: 5px;
-    /*font-size: 1.1em;*/
-    font-size: 1em;
+  font-size: 1em;
+  /*background: @theme_bg_color;*/
+  background: transparent;
+  border: 0;
+  border-radius: 0 ;
+  margin: 1px 0;
+}
+
+.popup-clipboard {
+  background: @theme_bg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+  padding: 5px 7px;
+
 }
 
 .popup-clipboard .item {
-    padding-bottom: 0.3em;
-    /*border-bottom: 1px solid @color_border;  When bar in in bottom screen*/
-    border-top: 1px solid @color_border;
+/*   padding-bottom: 0.3em; */
+  border-left: 3px solid @borders;
+  background: @theme_bg_color;
+  padding: 5px;
 }
 
-
-/* -- clock -- */
-
-.clock {
-    font-weight: bold;
-    margin: 0 5px;
+.popup-clipboard .item .btn-remove {
+  border: 1px solid @borders;
+  padding: 5px;
 }
 
-.popup-clock .calendar-clock {
-    color: @color_text;
-    font-size: 2em;
-    padding-bottom: 0.1em;
+.popup-clipboard .item .btn-remove:hover {
+  border: 1px solid @theme_selected_bg_color;
+  background: alpha( @theme_selected_bg_color, 0.333);
 }
 
-.popup-clock .calendar {
-    background-color: @color_bg;
-    color: @color_text;
+/* notifications */
+
+.notifications button {
+  font-size: 1.2rem;
+  color: @theme_fg_color;
+  margin: 1px 0 1px 5px;
+  /*background: @theme_bg_color;*/
+  background: transparent;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  padding: 0 5px 0 7px;
 }
 
-.popup-clock .calendar .header {
-    padding-top: 1em;
-    border-top: 1px solid @color_border;
-    font-size: 1.5em;
+.notifications .count {
+  font-size: 0.6rem;
+  font-weight: bold;
+/*   background-color: @warning_bg_color; */
+  background-color: @warning_color;
+  color: @warning_fg_color;
+  border-radius: 100%;
+  margin-right: 3px;
+  margin-top: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+/*   opacity: 0.7; */
 }
 
-.popup-clock .calendar:selected {
-    background-color: @color_border_active;
-}
+/* -- Upower -- */
 
-
-/* -- launcher -- */
-
-.launcher .item {
-    margin: 0 3px;
-    padding: 0 3px;
-}
-
-.launcher .item:hover {
-     background-color: @color_bg_dark;
-}
-
-.launcher .ifix examtem:not(.focused):hover {
-    background-color: @color_bg_dark;
-}
-
-.launcher .open {
-    border-bottom: 1px solid @color_text;
-}
-
-.launcher .focused {
-    border-bottom: 2px solid @color_border_active;
-/*     background-color: @color_bg_dark; */
-}
-
-.launcher .urgent {
-    border-bottom-color: @color_urgent;
-}
-
-.popup-launcher {
-    padding: 0;
-}
-
-.popup-launcher .popup-item:not(:first-child) {
-    border-top: 1px solid @color_border;
-}
-
-
-/* -- music -- */
-
-.music {
-    margin: 0 5px
-}
-
-.music:hover * {
-    background-color: @color_bg_dark;
-}
-
-.popup-music  {
-    border-radius: 5px;
-}
-
-.popup-music .album-art {
-    margin-right: 1em;
-}
-
-.popup-music .icon-box {
-    margin-right: 0.4em;
-}
-
-.popup-music .title .icon, .popup-music .title .label {
-    font-size: 1.7em;
-}
-
-.popup-music .controls *:disabled {
-    color: @color_border;
-}
-
-.popup-music .controls *  {
-    font-size: 1.2em;
-}
-
-.popup-music .volume .slider slider {
-    border-radius: 100%;
-    color: @color_text;
-}
-
-.popup-music .volume .icon {
-    margin-left: 4px;
-    font-size: 1.2em;
-}
-
-.popup-music .progress .slider slider {
-    border-radius: 100%;
+.upower {
+/*   margin: 0 3px; */
+  margin: 1px 0;
+  padding: 0;
+/*   background: @theme_bg_color; */
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: @theme_fg_color;
 
 }
 
-/* -- script -- */
-
-.script {
-    padding-left: 10px;
-}
-
-
-/* -- sys_info -- */
-
-.sysinfo {
-    margin: 0 5px;
-}
-
-.sysinfo .item {
-    margin-left: 2px;
+.popup-upower {
+  border-radius: 5px;
 }
 
 /* -- tray -- */
 
 .tray {
-    margin: 0 5px 0 5px;
+/*   margin: 0 5px; */
+  margin: 1px 0;
+  padding: 0 5px;
+  border-radius: 0 5px 5px 0;
+/*   background: @theme_bg_color; */
+  background: transparent;
 }
+
 .tray .item {
-    padding: 2px 3px;
+  padding: 0;
+  margin: 0;
 }
+
 .tray .item:hover {
-    background-color: rgba(61,174,233, 0.5);
+  background-color: @theme_selected_bg_color;
 }
 
-/* -- workspaces -- */
 
-.workspaces .item.focused {
-    box-shadow: inset 0 -3px;
-    background-color: @color_bg_dark;
+/* -- Date & Time -- */
+
+.clock {
+  background: alpha(@theme_bg_color, 0.8);
+
+  color: @theme_fg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+  padding: 0 7px;
+  margin: 3px 5px;
 }
 
-.workspaces .item:hover {
-    box-shadow: inset 0 -3px;
+.popup-clock {
+  background: @theme_bg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+
+  padding: 5px 7px;
+}
+.popup-clock .calendar-clock {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px;
 }
 
-/* -- custom: power menu -- */
-.power-menu {
-    margin: 0 5px;
-}
-#power-btn {
-    margin: 0 5px;
-}
+.popup-clock .calendar {
+  border: 1px solid @borders;
+  border-radius: 5px;
 
-.popup-power-menu #header {
-    font-size: 1.4em;
-    padding-bottom: 0.4em;
-    margin-bottom: 0.6em;
-    border-bottom: 1px solid @color_border;
+  padding: 5px;
 }
 
-.popup-power-menu .power-btn {
-    border: 1px solid @color_border;
-    padding: 0.6em 1em;
+.popup-clock .calendar .header {
+  border-radius: 0;
 }
 
-.popup-power-menu .power-btn:hover {
-    border: 1px solid @color_border_active;
+.popup-clock .calendar:selected {
+/*   background-color: alpha(@theme_selected_bg_color, 0.333); */
+  border: 1px solid @theme_selected_bg_color;
+  border-radius: 0;
 }
 
-.popup-power-menu #buttons > *:nth-child(1) .power-btn {
-    margin-right: 1em;
-}
+/* -- Logout button -- */
 
-#sosep {
-    padding: 0;
-    margin: 0 0 2px 0;
-    color: darkgrey;
-}
-
-#focused-window {
-/*     border: 1px solid @color_bg_darkborder-radius: 5px;; */
-/* border-radius: 5px; */
-    padding: 2px 4px;
-    font-weight: bold;
-}
-
-.upower {
-    margin: 0 5px;
-}
-
-.popup-upower {
-    border-radius: 5px;
-}
-
-#sovolume-btn {
-    padding: 0;
-    margin: 0 5px;
-}
-
-.popup-sovolume #header {
-    font-size: 1.4em;
-    color: @color_text;
-    padding-bottom: 0.4em;
-    margin-bottom: 0.6em;
-    border-bottom: 1px solid @color_border;
-}
-
-.popup-sovolume {
-    padding: 1em;
-}
-
-#sovol-box {
-    padding: 0.5em;
-/*     border: 1px solid red; */
-
-}
-
-.popup-sovolume .vol-box {
-     margin: 0.2em;
-/*    border: 1px solid green; */
-}
-
-.popup-sovolume .vol-btn {
-    font-size: 1.2em;
-    font-weight: bold;
-    border: 1px solid @color_border;
-    padding: 0.5em 2em;
-    margin: 0.5em;
-    border-radius: 5px;
-}
-
-.popup-sovolume .vol-btn:hover, .vol-slider:hover {
-    border: 1px solid @color_border_active;
-}
-
-.vol-slider {
-    border: 1px solid @color_bg;
-     padding: 0 2em 1.5em 2em ;
-    margin: 0.5em;
-    border-radius: 5px;
-}
-
-/*.vol-slider:hover {
-    border: 1px solid @color_border_active;
-}*/
-
-.popup-sovolume .vol-slider slider {
-    border-radius: 100%;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.vol-label {
-    font-size: 1.2em;
-    /*border: 1px solid @color_border;*/
-    padding: 0.5em 2em;
-    margin: 0.5em;
-    border-radius: 5px;
-}
-
-#reload-conf {
-    font-weight: bold;
-    margin: 0 5px;
-}
-
-.ws-lbl {
-    margin: 0 5px;
-    /*border: 1px solid @color_border_active;
-    border-radius: 100%;*/
+#logbutton {
+  background: alpha(red, 0.666);
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 0 4px;
+  margin: 3px 2px 3px 0;
 }

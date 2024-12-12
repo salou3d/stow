@@ -45,15 +45,17 @@ workspace_layout tabbed
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+BackSpace exec alacritty
-    bindsym $mod+t exec $term
+    # bindsym $mod+t exec $term
+    bindsym $mod+BackSpace exec $term
+    bindsym $mod+Shift+BackSpace exec kitty
 
     # Kill focused window
     bindsym $mod+Shift+q kill
-    bindsym Ctrl+q kill
+    bindsym $mod+q kill
+    #bindsym Ctrl+q kill
 
     # Start your launcher
-    bindsym $mod+r exec $menua
+    bindsym $mod+Return exec $menua
     bindsym --no-repeat --release Super_L exec pkill $menu || $menu
 
     bindsym $mod+f exec xdg-open ~

@@ -11,35 +11,35 @@ indicator-radius=100
 line-uses-inside
 line-uses-ring
 
-### Flavours starts here
+# TINTY START
 # COLOUR (base16)
-color=172838
-bs-hl-color=ba6b4e
-caps-lock-bs-hl-color=ba6b4e
-caps-lock-key-hl-color=08785b
-inside-color=6c747a88
-#inside-clear-color=6c747a88
-inside-clear-color=1bc7f988
-inside-ver-color=0c3e9c88
-inside-wrong-color=723a3288
-key-hl-color=08785b
-layout-bg-color=6c747a88
-layout-border-color=a5a7a6
-layout-text-color=dedbd3
-line-color=6c747a
-line-clear-color=6c747a
-line-caps-lock-color=ba6b4e
-line-ver-color=0c3e9c
-line-wrong-color=723a32
-ring-color=f3c163
-ring-caps-lock-color=f3c163
-ring-clear-color=1bc7f9
-ring-ver-color=0c3e9c
-ring-wrong-color=723a32
-text-color=dedbd3
-#text-clear-color=1bc7f9
-text-clear-color=dedbd3
-text-caps-lock-color=dedbd3
-text-ver-color=dedbd3
-text-wrong-color=dedbd3
-### Flavours ends here
+color=1a273f
+bs-hl-color=a74758
+caps-lock-bs-hl-color=a74758
+caps-lock-key-hl-color=2fcb6a
+inside-color=696c7888
+#inside-clear-color=696c7888
+inside-clear-color=3cd4bf88
+inside-ver-color=0b27e888
+inside-wrong-color=ff000088
+key-hl-color=2fcb6a
+layout-bg-color=696c7888
+layout-border-color=9e9b9e
+layout-text-color=d4cac4
+line-color=696c78
+line-clear-color=696c78
+line-caps-lock-color=a74758
+line-ver-color=0b27e8
+line-wrong-color=ff0000
+ring-color=dab83b
+ring-caps-lock-color=dab83b
+ring-clear-color=3cd4bf
+ring-ver-color=0b27e8
+ring-wrong-color=ff0000
+text-color=d4cac4
+#text-clear-color=3cd4bf
+text-clear-color=d4cac4
+text-caps-lock-color=d4cac4
+text-ver-color=d4cac4
+text-wrong-color=d4cac4
+# TINTY END

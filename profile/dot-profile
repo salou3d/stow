@@ -17,19 +17,38 @@ test -z "$PROFILEREAD" && . /etc/profile || true
 
 if ! echo $PATH | grep $HOME/.local/bin >/dev/null 2>&1; then
     export PATH="$PATH:$HOME/.local/bin"
-elif ! echo $PATH | grep $HOME/.cargo/bin >/dev/null 2>&1; then
+fi
+
+if ! echo $PATH | grep $HOME/.cargo/bin >/dev/null 2>&1; then
     export PATH="$PATH:$HOME/.cargo/bin"
-elif ! echo $PATH | grep $HOME/.local/share/flatpak/exports/bin >/dev/null 2>&1; then
+fi
+
+if ! echo $PATH | grep $HOME/.local/share/flatpak/exports/bin >/dev/null 2>&1; then
     export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
 fi
 
-export EDITOR=micro
-export Terminal=/usr/bin/kitty
-export TERMINAL=/usr/bin/kitty
-
-if [ -z "$QT_QPA_PLATFORMTHEME" -o "$QT_QPA_PLATFORMTHEME" != "kde" ]; then
-    export QT_QPA_PLATFORMTHEME=kde
+if type brew &>/dev/null
+then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
 fi
+
+
+export EDITOR=micro
+export Terminal=/usr/bin/konsole
+export TERMINAL=/usr/bin/konsole
+
+# if [ -z "$QT_QPA_PLATFORMTHEME" -o "$QT_QPA_PLATFORMTHEME" != "kde" ]; then
+#     export QT_QPA_PLATFORMTHEME=kde
+# fi
 
 if [ -z "$QT_AUTO_SCREEN_SCALE_FACTOR" ]; then
     export QT_AUTO_SCREEN_SCALE_FACTOR=0

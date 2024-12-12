@@ -30,18 +30,18 @@ $line_break$character """
 palette = 'tinted'
 
 [palettes.tinted]
-### Here starts Flavours colors
-color_fg0 = '#dedbd3'
-color_bg1 = '#172838'
-color_bg3 = '#6c747a'
-color_blue = '#0c3e9c'
-color_aqua = '#1bc7f9'
-color_green = '#08785b'
-color_orange = '#c39a6b'
+# TINTY START
+color_fg0 = '#d4cac4'
+color_bg1 = '#1a273f'
+color_bg3 = '#696c78'
+color_blue = '#0b27e8'
+color_aqua = '#3cd4bf'
+color_green = '#2fcb6a'
+color_orange = '#d88c30'
 color_purple = 'purple'
-color_red = '#723a32'
-color_yellow = '#f3c163'
-### Here ends Flavours colors
+color_red = '#ff0000'
+color_yellow = '#dab83b'
+# TINTY END
 
 [os]
 disabled = false

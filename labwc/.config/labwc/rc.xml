@@ -435,7 +435,7 @@
     </keybind>
     <keybind key="W-Backspace">
       <action name="Execute">
-        <command>alacritty</command>
+        <command>kitty</command>
       </action>
     </keybind>
 

@@ -1,0 +1,37 @@
+/** Basic config file **/
+
+configuration {
+  modi: "drun,run,filebrowser,window";
+  //modi: "drun,run,window";
+  sidebar-mode: true;
+  show-icons: true;
+  icon-theme: "Breeze-dark";
+  font: "Noto Sans Regular 10";
+  show-icons: true;
+  terminal: "konsole";
+  location: 0;
+
+  run-match-fields: "name,generic,exec,categories,keywords";
+  // drun-display-format: "{icon} {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+  drun-display-format: "{icon} {name}";
+  drun-url-launcher: "xdg-open";
+
+  // display-drun: "  ";
+  // display-window: "﩯 ";
+  // display-combi: "  ";
+  // display-run: "  ";
+  // display-filebrowser: "  ";
+
+  display-drun:               "   Apps";
+  display-run:                "   Run";
+  display-filebrowser:        "   Files";
+  display-window:             "   Windows";
+
+  run,drun {
+    fallback-icon: "application-x-addon";
+  }
+
+}
+
+@theme "layout.rasi"
+

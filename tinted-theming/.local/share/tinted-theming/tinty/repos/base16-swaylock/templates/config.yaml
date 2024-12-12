@@ -1,0 +1,3 @@
+base16:
+    extension: .config
+    output: colors

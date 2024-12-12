@@ -1,0 +1,284 @@
+﻿
+* {
+  font-family: "Noto Sans Regular";
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.background {
+  background: alpha(@theme_bg_color, 0.1);
+}
+
+/* -- workspaces -- */
+
+.workspaces {
+  margin-left: 2px;
+  margin-right: 5px;
+}
+
+.workspaces .item {
+  background: alpha(@theme_bg_color, 0.33);
+  border: 0;
+  border-radius: 10px;
+  color: @theme_selected_fg_color;
+  padding: 2px 5px;
+  margin: 4px 2px;
+}
+
+.workspaces .item.visible {
+  background: transparent;
+  color: @theme_bg_color;
+}
+
+/*.workspaces .item.inactive {
+}*/
+
+.workspaces .item.focused {
+  background: alpha(@theme_selected_bg_color, 0.666);
+  color: @theme_selected_fg_color;
+}
+
+/* -- launcher -- */
+
+.launcher {
+  background: @theme_bg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+  margin: 1px 0;
+  padding: 0;
+}
+
+.launcher .item {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.launcher .item image {
+  padding: 3px 7px;
+}
+
+.launcher .item:hover {
+  background-color: alpha(@theme_selected_bg_color, 0.333);
+  border-bottom: 2px solid @theme_selected_bg_color;
+}
+
+.launcher .ifix examtem:not(.focused):hover {
+  background-color: @theme_selected_bg_color;
+}
+
+.launcher .open {
+  border-bottom: 2px solid @theme_bg_color;
+}
+
+.launcher .focused {
+  border-bottom: 2px solid @theme_selected_bg_color;
+}
+
+.launcher .focused image {
+  background-color: alpha(@theme_selected_bg_color, 0.333);
+}
+
+.launcher .urgent {
+  border-bottom-color: alpha(red, 0.333);
+}
+
+.popup-launcher {
+  padding: 0;
+  background: @theme_bg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+}
+
+.popup-launcher .popup-item {
+  border-bottom: 2px solid @theme_bg_color;
+}
+
+.popup-launcher .popup-item:hover {
+  border-bottom: 2px solid @theme_selected_bg_color;
+  background-color: alpha(@theme_selected_bg_color, 0.33);
+}
+
+/* -- focused -- */
+
+#focused-window {
+  color: @theme_selected_fg_color;
+  background-color: alpha(@theme_selected_bg_color, 0.5);
+  border: 1px solid @theme_selected_bg_color;
+  border-radius: 5px;
+  padding: 0 7px;
+  margin: 3px 5px;
+}
+
+/* -- sysinfo -- */
+
+.sysinfo {
+  border: 1px solid @theme_selected_bg_color;
+  border-radius: 10px;
+  background: alpha(@theme_selected_bg_color, 0.5);
+  padding: 0 7px;
+/*   margin: 1px 5px 1px 0; */
+  margin: 4px 0;
+}
+
+.sysinfo .item {
+  color: @theme_selected_fg_color;
+
+}
+
+/* -- clipboard -- */
+
+.clipboard {
+  font-size: 1em;
+  /*background: @theme_bg_color;*/
+  background: transparent;
+  border: 0;
+  border-radius: 0 ;
+  margin: 1px 0;
+}
+
+.popup-clipboard {
+  background: @theme_bg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+  padding: 5px 7px;
+
+}
+
+.popup-clipboard .item {
+/*   padding-bottom: 0.3em; */
+  border-left: 3px solid @borders;
+  background: @theme_bg_color;
+  padding: 5px;
+}
+
+.popup-clipboard .item .btn-remove {
+  border: 1px solid @borders;
+  padding: 5px;
+}
+
+.popup-clipboard .item .btn-remove:hover {
+  border: 1px solid @theme_selected_bg_color;
+  background: alpha( @theme_selected_bg_color, 0.333);
+}
+
+/* notifications */
+
+.notifications button {
+  font-size: 1.2rem;
+  color: @theme_fg_color;
+  margin: 1px 0 1px 5px;
+  /*background: @theme_bg_color;*/
+  background: transparent;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  padding: 0 5px 0 7px;
+}
+
+.notifications .count {
+  font-size: 0.6rem;
+  font-weight: bold;
+/*   background-color: @warning_bg_color; */
+  background-color: @warning_color;
+  color: @warning_fg_color;
+  border-radius: 100%;
+  margin-right: 3px;
+  margin-top: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+/*   opacity: 0.7; */
+}
+
+/* -- Upower -- */
+
+.upower {
+/*   margin: 0 3px; */
+  margin: 1px 0;
+  padding: 0;
+/*   background: @theme_bg_color; */
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: @theme_bg_color;
+
+}
+
+.popup-upower {
+  border-radius: 5px;
+}
+
+/* -- tray -- */
+
+.tray {
+/*   margin: 0 5px; */
+  margin: 1px 0;
+  padding: 0 5px;
+  border-radius: 0 5px 5px 0;
+/*   background: @theme_bg_color; */
+  background: transparent;
+}
+
+.tray .item {
+  padding: 0;
+  margin: 0;
+}
+
+.tray .item:hover {
+  background-color: @theme_selected_bg_color;
+}
+
+
+/* -- Date & Time -- */
+
+.clock {
+  background: alpha(@theme_bg_color, 0.8);
+
+  color: @theme_fg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+  padding: 0 7px;
+  margin: 3px 5px;
+}
+
+.popup-clock {
+  background: @theme_bg_color;
+  border: 1px solid @borders;
+  border-radius: 5px;
+
+  padding: 5px 7px;
+}
+.popup-clock .calendar-clock {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.popup-clock .calendar {
+  border: 1px solid @borders;
+  border-radius: 5px;
+
+  padding: 5px;
+}
+
+.popup-clock .calendar .header {
+  border-radius: 0;
+}
+
+.popup-clock .calendar:selected {
+/*   background-color: alpha(@theme_selected_bg_color, 0.333); */
+  border: 1px solid @theme_selected_bg_color;
+  border-radius: 0;
+}
+
+/* -- Logout button -- */
+
+#logbutton {
+  background: alpha(red, 0.666);
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 0 4px;
+  margin: 3px 2px 3px 0;
+}

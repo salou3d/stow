@@ -1,0 +1,38 @@
+# base16 wave-jpg - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x182835'
+foreground = '0xa39a92'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x182835'
+cursor = '0xa39a92'
+
+# Normal colors
+[colors.normal]
+black = '0x182835'
+red = '0xab6238'
+green = '0x2c7e68'
+yellow = '0xb08b4d'
+blue = '0x4f74b2'
+magenta = '0x764955'
+cyan = '0x549dc7'
+#white = '0xa39a92'
+white = '0xdbc8b8'
+
+# Bright colors
+[colors.bright]
+black = '0x6b6c6d'
+red = '0xb87f4c'
+green = '0x333e47'
+yellow = '0x4f555a'
+blue = '0x87837f'
+magenta = '0xbfb1a5'
+cyan = '0x8d5452'
+white = '0xdbc8b8'

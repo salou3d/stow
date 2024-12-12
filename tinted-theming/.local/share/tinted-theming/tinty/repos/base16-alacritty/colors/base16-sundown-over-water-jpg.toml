@@ -1,0 +1,38 @@
+# base16 sundown-over-water-jpg - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x4c111b'
+foreground = '0xac9693'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x4c111b'
+cursor = '0xac9693'
+
+# Normal colors
+[colors.normal]
+black = '0x4c111b'
+red = '0xb08957'
+green = '0x10ac6a'
+yellow = '0xeec85b'
+blue = '0x1137a4'
+magenta = '0x685c7e'
+cyan = '0x20c0f4'
+#white = '0xac9693'
+white = '0xd3ccc3'
+
+# Bright colors
+[colors.bright]
+black = '0x856163'
+red = '0xbd955f'
+green = '0x5f2b33'
+yellow = '0x72464b'
+blue = '0x997b7b'
+magenta = '0xbfb1ab'
+cyan = '0x852535'
+white = '0xd3ccc3'

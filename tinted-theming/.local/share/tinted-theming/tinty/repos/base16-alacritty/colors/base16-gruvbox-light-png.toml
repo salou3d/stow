@@ -1,0 +1,38 @@
+# base16 gruvbox-light-png - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x351f0d'
+foreground = '0x9d9783'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x351f0d'
+cursor = '0x9d9783'
+
+# Normal colors
+[colors.normal]
+black = '0x351f0d'
+red = '0xfc4c34'
+green = '0x2b7963'
+yellow = '0x7c5067'
+blue = '0x0541cf'
+magenta = '0x684762'
+cyan = '0x03b6cc'
+#white = '0x9d9783'
+white = '0xc7c7b3'
+
+# Bright colors
+[colors.bright]
+black = '0x736754'
+red = '0xf4831c'
+green = '0x493724'
+yellow = '0x5e4f3c'
+blue = '0x887f6b'
+magenta = '0xb2af9b'
+cyan = '0x7a4f66'
+white = '0xc7c7b3'

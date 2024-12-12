@@ -12,6 +12,23 @@
 
 test -s ~/.alias && . ~/.alias || true
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+# [[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
+# if type brew &>/dev/null
+# then
+#   HOMEBREW_PREFIX="$(brew --prefix)"
+#   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+#   then
+#     source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+#   else
+#     for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+#     do
+#       [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+#     done
+#   fi
+# fi
+
+
 #alias ls="eza --group-directories-first --icons"
 alias ls="lsd --group-directories-first"
 alias dir='ls -l'
@@ -46,15 +63,18 @@ if ! command -v kate >/dev/null 2>&1; then
 	fi
 fi
 
+if ! command -v ark >/dev/null 2>&1; then
+	if command -v org.kde.ark >/dev/null 2>&1; then
+		alias ark="org.kde.ark"
+	elif flatpak list --app --columns=application | grep org.kde.ark >/dev/null 2>&1; then
+		alias ark="flatpak run org.kde.ark"
+	fi
+fi
+
 #alias sweep="sweep --altscreen"
 
 export HISTCONTROL=erasedups:ignoredups:ignoreboth
 export HISTTIMEFORMAT="%Y-%m-%d %T "
-
-
-if [ -d ~/.cargo/bin ]; then
-	export PATH="$PATH:$HOME/.cargo/bin"
-fi
 
 if [ ! -f ~/.local/bin/python ]; then
 	ln -s $(which python3) ~/.local/bin/python
@@ -149,7 +169,7 @@ function yy() {
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
 eval "$(register-python-argcomplete pipx)"
-eval "$(batman --export-env)"
+# eval "$(batman --export-env)"
 
 alias bathelp='bat --plain --language=help'
 help() {
@@ -198,11 +218,11 @@ export MCFLY_RESULTS=20
 export MCFLY_PROMPT="❯ "
 eval "$(mcfly init bash)"
 
-eval "$(navi widget bash)"
+# eval "$(navi widget bash)"
 
 # eval "$(eww shell-completions --shell bash)"
 
-eval -- "$(/usr/bin/starship init bash --print-full-init)"
+eval -- "$(starship init bash --print-full-init)"
 
 # eval "$(wl-screenrec --generate-completions bash)"
 

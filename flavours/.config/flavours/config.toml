@@ -4,8 +4,8 @@ shell = "bash -c '{}'"
     file = '~/.config/swaylock/config'
     template = 'swaylock'
     rewrite = false
-    start = "### Flavours starts here"
-    end = "### Flavours ends here"
+    start = "# TINTY START"
+    end = "# TINTY END"
 
 
 [[item]]
@@ -19,8 +19,8 @@ shell = "bash -c '{}'"
     file = '~/.config/starship.toml'
     template = 'starship'
     rewrite = false
-    start = "### Here starts Flavours colors"
-    end = "### Here ends Flavours colors"
+    start = "# TINTY START"
+    end = "# TINTY END"
 
 # [[item]]
 #     file = '~/.local/share/themes/FlatColor/colors2'

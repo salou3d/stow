@@ -1,0 +1,38 @@
+# base16 grass-jpg - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x2b2524'
+foreground = '0xa6a09a'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x2b2524'
+cursor = '0xa6a09a'
+
+# Normal colors
+[colors.normal]
+black = '0x2b2524'
+red = '0xc95528'
+green = '0x3fae75'
+yellow = '0xf7b74d'
+blue = '0x093ed4'
+magenta = '0x6a3f72'
+cyan = '0x36aad7'
+#white = '0xa6a09a'
+white = '0xd8d2ca'
+
+# Bright colors
+[colors.bright]
+black = '0x756f6b'
+red = '0xf67c26'
+green = '0x433d3b'
+yellow = '0x5c5653'
+blue = '0x8d8782'
+magenta = '0xbfb9b2'
+cyan = '0xa25563'
+white = '0xd8d2ca'

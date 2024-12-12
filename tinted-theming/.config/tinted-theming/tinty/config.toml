@@ -36,7 +36,7 @@ name = "base16-kitty"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-kitty"
 themes-dir = "colors"
 hook = "cp -r %f ~/.config/kitty/tinted.conf"
-supported-systems = ["base16", "base24"]
+supported-systems = ["base16"]
 
 [[items]]
 name = "base16-alacritty"
@@ -59,14 +59,14 @@ themes-dir = "themes"
 hook = "cp -r %f ~/.config/helix/themes/tinted-helix.toml"
 supported-systems = ["base16"]
 
-### using flavours to config other tools
+## using flavours to config other tools
 [[items]]
 name = "base16-flavours"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-flavours"
 themes-dir = "colors"
 hook = "cp -r %f ~/.local/share/flavours/base16/schemes/generated/"
 supported-systems = ["base16"]
-### end flavours
+## end flavours
 
 
 [[items]]
@@ -83,3 +83,17 @@ themes-dir = "themes"
 hook = "cp -r %f ~/.config/sway/config.d/colors.conf && swaymsg reload"
 supported-systems = ["base16"]
 
+# [[items]]
+# name = "base16-swaylock"
+# path = '~/.local/share/tinted-theming/tinty/repos/base16-swaylock'
+# themes-dir = 'colors'
+# hook = "sed -i '/^# TINTY START$/,/^# TINTY END$/{//!d}' ~/.config/swaylock/config && sed -i '/^# TINTY START$/r %f' ~/.config/swaylock/config"
+# supported-systems = ["base16"]
+#
+#
+# [[items]]
+# name = 'base16-starship'
+# path = '~/.local/share/tinted-theming/tinty/repos/base16-starship'
+# themes-dir = 'colors'
+# hook = "sed -i '/^# TINTY START$/,/^# TINTY END$/{//!d}' ~/.config/starship.toml && sed -i '/^# TINTY START$/r %f' ~/.config/starship.toml"
+# supported-systems = ["base16"]

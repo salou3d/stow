@@ -1,0 +1,121 @@
+let {
+  $position = "top"
+  $height = 20
+  $margin = {
+    top = 0
+    left = 0
+    right = 0
+  }
+  
+  $clock = {
+    type = "clock"
+    name = "time-widget"
+    format = "<span font-weight='bold'>%H:%M</span>, %a %d-%m-%y"
+  }
+
+  $launcher = {
+    type = "launcher"
+    show_names = false
+    show_icons = true
+    icon_size = 16
+    reversed = false
+  }
+
+  $focused = {
+    name = "focused-window"
+    type = "focused"
+    show_icon = true
+    show_title = true
+    icon_size = 16
+    truncate = "middle"
+  }
+
+  $sys_info = {
+    type = "sys_info"
+
+    interval.memory = 10
+    interval.cpu = 1
+    interval.temps = 5
+    interval.networks = 3
+
+
+    format = [
+      "C: {cpu_percent}%"
+      "R: {memory_percent}%"
+      "T: {temp_c:coretemp-Package-id-0}°C"
+    ]
+  }
+
+  $upower = {
+    type = "upower"
+    icon_size = 16
+  }
+
+  $clipboard = {
+      type = "clipboard"
+      icon = "icon:edit-paste"
+      icon_size = 16
+      max_items = 10
+      truncate.mode = "end"
+      truncate.length = 50
+    }
+
+  $tray = {
+    type = "tray"
+    icon_size = 16
+  }
+
+  $notifs = {
+    type = "notifications"
+    show_count = true
+
+    icons.closed_none = "󰍥"
+    icons.closed_some = "󱥂"
+    icons.closed_dnd = "󱅯"
+    icons.open_none = "󰍡"
+    icons.open_some = "󱥁"
+    icons.open_dnd = "󱅮"
+
+  }
+
+  $logimage = {
+    type = "image"
+    src = "system-shutdown"
+    name = "logimage"
+    size = 20
+  }
+
+  $logbutton = {
+    type = "button"
+    name = "logbutton"
+    widgets = [$logimage]
+    on_click = "!wleave"
+  }
+
+  $logout = {
+    type = "custom"
+    bar = [$logbutton]
+  }
+
+  $center = []
+  $end = [$sys_info $notifs $clipboard $upower $tray $clock $logout ]
+} in {
+  monitors.eDP-1 = {
+
+    position = $position
+    height = $height
+    margin = $margin
+    name = "ironbar-top"
+    popup_gap = 0
+    icon_theme = "Papirus-Dark"
+    start = [
+      {
+        type = "workspaces"
+      }
+      $launcher
+      $focused
+    ]
+    center = $center
+    end = $end
+  }
+}
