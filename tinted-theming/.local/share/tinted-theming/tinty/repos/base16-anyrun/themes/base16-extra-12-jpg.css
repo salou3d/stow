@@ -1,0 +1,13 @@
+/* Scheme name: extra-12-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #1d282f;
+@define-color fg-color #d5cbc7;
+@define-color primary-color #977388;
+@define-color secondary-color #956b79;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

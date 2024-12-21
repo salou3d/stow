@@ -11,11 +11,13 @@
     <reuseOutputMode>no</reuseOutputMode>
   </core>
   <placement>
-    <policy>center</policy>
+    <policy>cascade</policy>
+    <cascadeOffset x="40" y="30" />
   </placement>
   <!-- <font><theme> can be defined without an attribute to set all places -->
   <theme>
     <name>breeze-dark-ob-main</name>
+    <icon>breeze-dark</icon>
     <cornerRadius>8</cornerRadius>
     <keepBorder>yes</keepBorder>
     <font place="ActiveWindow">
@@ -354,19 +356,23 @@
     </keybind>-->
     <keybind key="XF86AudioNext">
       <action name="Execute">
-        <command>so-volume-yad.sh next</command>
+        <!--<command>so-volume-yad.sh next</command>-->
+        <command>playerctl next</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPlay">
       <action name="Execute">
-        <command>so-volume-yad.sh play-pause</command>
+<!--         <command>so-volume-yad.sh play-pause</command> -->
+        <command>playerctl play-pause</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPrev">
       <action name="Execute">
-        <command>so-volume-yad.sh prev</command>
+<!--         <command>so-volume-yad.sh prev</command> -->
+        <command>playerctl previous</command>
       </action>
     </keybind>
+
     <keybind key="XF86_AudioLowerVolume">
       <!--<action name="Execute" command="so-volume-yad.sh down"/>-->
       <action name="Execute" command="swayosd-client --output-volume lower"/>
@@ -392,50 +398,65 @@
         <command>bash -c 'wayshot -f "$(xdg-user-dir PICTURES)/wayshot_$(date +%F-%T)".png'</command>
       </action>
     </keybind>
-    <keybind key="W-Print">
-      <action name="Execute">
-        <command>bash -c 'grim -g "$(slurp)"'</command>
-      </action>
-    </keybind>
-    <keybind key="C-Print">
+    <keybind key="W-C-Print">
       <action name="Execute">
         <command>bash -c 'wayshot -s "$(waysip -d)" -f "$(xdg-user-dir PICTURES)/wayshot_$(date +%F-%T)".png'</command>
       </action>
     </keybind>
     <keybind key="Super_L" onRelease="yes">
       <action name="Execute">
-        <command>rofi -show drun -show-icons</command>
+        <command>anyrun</command>
       </action>
     </keybind>
-    <keybind key="W-r">
+    <keybind key="W-Return">
+      <action name="Execute">
+        <command>anyrun</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-Return">
       <action name="Execute">
         <command>rofi -show drun -show-icons</command>
       </action>
     </keybind>
-    <keybind key="W-A-r">
+    <keybind key="W-C-Return">
       <action name="Execute">
-        <command>rofi -show run</command>
+        <command>onagre -t ~/.config/onagre/tinted.scss</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-Return">
+      <action name="Execute">
+        <command>dmenu-wrapper select</command>
       </action>
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <!--<command>so-confirm-logout-yad.sh lock</command>-->
         <command>hyprlock</command>
       </action>
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>dolphin</command>
-      </action>
-    </keybind>
-    <keybind key="W-t">
-      <action name="Execute">
-        <command>konsole</command>
+        <command>pcmanfm-qt</command>
       </action>
     </keybind>
     <keybind key="W-Backspace">
       <action name="Execute">
+        <command>konsole</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-Backspace">
+      <action name="Execute">
         <command>kitty</command>
+      </action>
+    </keybind>
+
+    <keybind key="W-C-I">
+      <action name="Execute">
+        <command>vigiland</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-I">
+      <action name="Execute">
+        <command>killall vigiland</command>
       </action>
     </keybind>
 

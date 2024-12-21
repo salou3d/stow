@@ -1,0 +1,13 @@
+/* Scheme name: dimitri-jakubowski-foxy-girl-blue-illu-forest-artstation-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #17235c;
+@define-color fg-color #d3d9df;
+@define-color primary-color #5b0f3d;
+@define-color secondary-color #a72828;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

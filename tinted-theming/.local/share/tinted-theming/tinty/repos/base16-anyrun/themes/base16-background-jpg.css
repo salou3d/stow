@@ -1,0 +1,13 @@
+/* Scheme name: Background-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #0c2031;
+@define-color fg-color #c2c7b3;
+@define-color primary-color #71285d;
+@define-color secondary-color #953536;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

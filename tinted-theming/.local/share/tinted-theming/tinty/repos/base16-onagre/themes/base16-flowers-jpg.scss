@@ -1,0 +1,94 @@
+// Scheme name: flowers-jpg
+// Scheme system: base16
+// Scheme author: Tinty
+// Theme based on Onagre's Hollow theme
+// Template author: Tinted Theming (https://github.com/tinted-theming)
+
+.onagre {
+    --exit-unfocused: false;
+    height: 375px;
+    width: 600px;
+    // --icon-theme: "breeze-dark";
+    // --icon-size: 28px;
+    --font-family: "Iosevka Nerd Font Mono";
+    background: #1f2926;
+    color: #cccdcd;
+    // border-color: #696f6d;
+    // border-width: 2px;
+    border-radius: 0%;
+    padding: 5px;
+
+    .container {
+        padding: 8px;
+        .search {
+            --spacing: 1;
+            background: #818685;
+            border-radius: 10.0%;
+            color: #cccdcd;
+            --height: fill-portion 1;
+
+            .plugin-hint {
+                font-size: 14px;
+                background: #818685;
+                color: #cccdcd;
+                border-color: #696f6d;
+                --align-x: center;
+                --align-y: center;
+                --width: fill-portion 1;
+                --height: fill;
+            }
+
+            .input {
+                font-size: 14px;
+                --width: fill-portion 11;
+            }
+        }
+
+        .rows {
+            --height: fill-portion 8;
+            border-radius: 8.0%;
+
+            .row-selected {
+                background: #68537d;
+                color: #cccdcd;
+                --spacing: 3px;
+                --align-y: center;
+
+                border-radius: 8.0%;
+                .title {
+                    font-size: 14px;
+                }
+
+                .description {
+                    font-size: 12px;
+                }
+
+                .category-icon {
+                    --icon-size: 15px;
+                }
+            }
+
+            .row {
+                .title {
+                    font-size: 14px;
+                }
+
+                .description {
+                    font-size: 12px;
+                }
+
+                .category-icon {
+                    --icon-size: 15px;
+                }
+            }
+        }
+
+        .scrollable {
+            background: #1f2926;
+            .scroller {
+                color: #818685;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,13 @@
+/* Scheme name: colors-png */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #441a11;
+@define-color fg-color #dcd0d6;
+@define-color primary-color #653375;
+@define-color secondary-color #9c412e;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

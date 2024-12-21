@@ -1,4 +1,4 @@
-# Scheme name: 7-png
+# Scheme name: extra-12-jpg
 # Scheme author: Tinty
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
@@ -75,19 +75,19 @@
 "ui.window" = { bg = "base01" }
 
 [palette]
-base00 = "#22291a" # Default Background
-base01 = "#393f30" # Lighter Background (Used for status bars, line number and folding marks)
-base02 = "#515646" # Selection Background
-base03 = "#686d5c" # Comments, Invisibles, Line Highlighting
-base04 = "#808472" # Dark Foreground (Used for status bars)
-base05 = "#979b88" # Default Foreground, Caret, Delimiters, Operators
-base06 = "#afb29e" # Light Foreground (Not often used)
-base07 = "#c7c9b5" # Light Background (Not often used)
-base08 = "#7a7a3c" # Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
-base09 = "#928f58" # Integers, Boolean, Constants, XML Attributes, Markup Link Url
-base0A = "#b2b77f" # Classes, Markup Bold, Search Text Background
-base0B = "#61733f" # Strings, Inherited Class, Markup Code, Diff Inserted
-base0C = "#8585c3" # Support, Regular Expressions, Escape Characters, Markup Quotes
-base0D = "#4d4880" # Functions, Methods, Attribute IDs, Headings
-base0E = "#50477c" # Keywords, Storage, Selector, Markup Italic, Diff Changed
-base0F = "#534954" # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
+base00 = "#1d282f" # Default Background
+base01 = "#373f44" # Lighter Background (Used for status bars, line number and folding marks)
+base02 = "#51565a" # Selection Background
+base03 = "#6b6d70" # Comments, Invisibles, Line Highlighting
+base04 = "#868585" # Dark Foreground (Used for status bars)
+base05 = "#a09c9b" # Default Foreground, Caret, Delimiters, Operators
+base06 = "#bab3b1" # Light Foreground (Not often used)
+base07 = "#d5cbc7" # Light Background (Not often used)
+base08 = "#a75169" # Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
+base09 = "#ae917b" # Integers, Boolean, Constants, XML Attributes, Markup Link Url
+base0A = "#bbb491" # Classes, Markup Bold, Search Text Background
+base0B = "#38976d" # Strings, Inherited Class, Markup Code, Diff Inserted
+base0C = "#65b49e" # Support, Regular Expressions, Escape Characters, Markup Quotes
+base0D = "#5a6492" # Functions, Methods, Attribute IDs, Headings
+base0E = "#977388" # Keywords, Storage, Selector, Markup Italic, Diff Changed
+base0F = "#956b79" # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>

@@ -5,6 +5,7 @@
   border: none;
   border-radius: 0;
   padding: 0;
+  margin: 0;
 }
 
 .background {
@@ -282,5 +283,9 @@
   border: 1px solid red;
   border-radius: 5px;
   padding: 0 4px;
-  margin: 3px 2px 3px 0;
+  margin: 3px 3px 3px 0;
+}
+
+#logbutton:hover {
+  background: alpha(red, 1);
 }

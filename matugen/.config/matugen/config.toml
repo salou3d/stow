@@ -1,0 +1,27 @@
+[config]
+# version_check = true
+
+[config.wallpaper]
+## Setting this to false will skip setting wallpaper.
+
+set = false
+
+## Runs before setting wallpaper. for example, killing the wallpaper daemon.
+pre_hook = "pkill swaybg"
+command = "swaybg"
+arguments = ["-i"]
+
+[templates.rofi] # First way of adding template
+input_path = '~/.config/matugen/templates/so-rofi-colors.rasi'
+output_path = '~/.config/rofi/myrofi/colors.rasi'
+# pre_hook = 'echo "hello world"'
+# post_hook = "cat /some/file.txt"
+
+# [templates.gtk3]
+# input_path = '~/.config/matugen/templates/gtk-colors.css'
+# output_path = '~/.config/gtk-3.0/colors.css'
+#
+# [templates.gtk4]
+# input_path = '~/.config/matugen/templates/gtk-colors.css'
+# output_path = '~/.config/gtk-4.0/colors.css'
+

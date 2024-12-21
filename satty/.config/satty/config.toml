@@ -27,10 +27,10 @@ style = "Bold"
 # custom colours for the colour palette
 [color-palette]
 ### Here starts flavours injection
-first= "#ff0000"
-second= "#dab83b"
-third= "#2fcb6a"
-fourth= "#3cd4bf"
-fifth= "#0b27e8"
-custom= "#812781"
+first= "#a75169"
+second= "#bbb491"
+third= "#38976d"
+fourth= "#65b49e"
+fifth= "#5a6492"
+custom= "#977388"
 ### Here ends flavours injection

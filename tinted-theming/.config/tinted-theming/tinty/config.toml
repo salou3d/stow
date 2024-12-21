@@ -18,6 +18,20 @@ themes-dir = "colors"
 hook = "cp -r %f ~/.config/rofi/colors.rasi"
 
 [[items]]
+name = "base16-anyrun"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-anyrun"
+themes-dir = "themes"
+hook = "cp -r %f ~/.config/anyrun/colors.css"
+supported-systems = ["base16"]
+
+[[items]]
+name = "base16-onagre"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-onagre"
+themes-dir = "themes"
+hook = "cp -r %f ~/.config/onagre/tinted.scss"
+supported-systems = ["base16"]
+
+[[items]]
 name = "base16-fzf"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-fzf"
 themes-dir = "bash"

@@ -1,0 +1,13 @@
+/* Scheme name: sundown-over-water-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #4c111b;
+@define-color fg-color #d3ccc3;
+@define-color primary-color #685c7e;
+@define-color secondary-color #852535;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

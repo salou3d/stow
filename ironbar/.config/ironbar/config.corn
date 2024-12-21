@@ -27,7 +27,7 @@ let {
     show_icon = true
     show_title = true
     icon_size = 16
-    truncate = "middle"
+    truncate = "end"
   }
 
   $sys_info = {
@@ -101,7 +101,6 @@ let {
   $end = [$sys_info $notifs $clipboard $upower $tray $clock $logout ]
 } in {
   monitors.eDP-1 = {
-
     position = $position
     height = $height
     margin = $margin

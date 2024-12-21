@@ -73,6 +73,9 @@ fi
 
 #alias sweep="sweep --altscreen"
 
+alias iron-restart="pkill ironbar && ironbar"
+alias iron-reload="ironbar reload"
+
 export HISTCONTROL=erasedups:ignoredups:ignoreboth
 export HISTTIMEFORMAT="%Y-%m-%d %T "
 
@@ -225,6 +228,8 @@ eval "$(mcfly init bash)"
 eval -- "$(starship init bash --print-full-init)"
 
 # eval "$(wl-screenrec --generate-completions bash)"
+
+# eval "$(fx --init)"
 
 
 if [ -f  ~/.config/broot/launcher/bash/br ]; then

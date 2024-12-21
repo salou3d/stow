@@ -1,17 +1,8 @@
-/* GTK Vars */
-/* catputchin theme */
-/* @define-color bg-color #313244; */
-/* @define-color fg-color #cdd6f4; */
-/* @define-color primary-color #89b4fa; */
-/* @define-color secondary-color #cba6f7; */
-/* @define-color border-color @primary-color; */
-/* @define-color selected-bg-color @primary-color; */
-/* @define-color selected-fg-color @bg-color; */
+@import "colors.css";
 
 * {
   all: unset;
-/*   font-family: JetBrainsMono Nerd Font; */
-    font-family: Noto Sans Regular;
+  font-family: Noto Sans Regular Font;
 }
 
 #window {
@@ -20,32 +11,27 @@
 
 box#main {
   border-radius: 5px;
-  /* background-color: alpha(@bg-color, 0.6); */
-  /*border: 0.5px solid alpha(@theme_fg_color, 0.25);*/
-  background-color: alpha(@theme_bg_color, 0.9);
-  border: 2px solid @borders;
+  background-color: alpha(@bg-color, 0.8);
+  /*border: 0.5px solid alpha(@fg-color, 0.25);*/
+  border: 2px solid @secondary-color;
   padding: 7px;
 }
 
 entry#entry {
   font-size: 1.25rem;
-  background: transparent;
+  background: alpha(@secondary-color, 0.2);
   box-shadow: none;
-  /*border: none;
-  border-radius: 16px;
-  padding: 16px 24px;
-  min-height: 40px;*/
-  caret-color: @theme_selected_bg_color;
-  border: 1px solid @borders;
+/*   border: none; */
+  border: 1px solid @secondary-color;
   border-radius: 5px;
   padding: 5px 10px;
   min-height: 30px;
+  margin-bottom: 5px;
+  caret-color: @primary-color;
 }
 
 list#main {
   background-color: transparent;
-  margin-top: 7px;
-/*   min-height: 24px; */
 }
 
 #plugin {
@@ -60,32 +46,30 @@ list#main {
 
 #match:selected,
 #match:hover {
-  background-color: alpha(@theme_selected_bg_color, 0.333);
-  border: 1px solid @theme_selected_bg_color;
-  border-radius: 5px;
-  color: @theme_selected_fg_color;
+  background-color: @selected-bg-color;
+  color: @selected-fg-color;
 }
 
 #match:selected label#info,
 #match:hover label#info {
-  color: @theme_selected_fg_color;
+  color: @selected-fg-color;
 }
 
 #match:selected label#match-desc,
 #match:hover label#match-desc {
-  color: alpha(@theme_selected_fg_color, 0.9);
+  color: alpha(@selected-fg-color, 0.9);
 }
 
 #match label#info {
   color: transparent;
-  color: @theme_fg_color;
+  color: @fg-color;
 }
 
 label#match-desc {
   font-size: 1rem;
-  color: @theme_fg_color;
+  color: @fg-color;
 }
 
 label#plugin {
-  font-size: 14px;
+  font-size: 16px;
 }

@@ -15,17 +15,22 @@
 
 test -z "$PROFILEREAD" && . /etc/profile || true
 
-if ! echo $PATH | grep $HOME/.local/bin >/dev/null 2>&1; then
-    export PATH="$PATH:$HOME/.local/bin"
-fi
+## Copied from /etc/profile
+append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
 
-if ! echo $PATH | grep $HOME/.cargo/bin >/dev/null 2>&1; then
-    export PATH="$PATH:$HOME/.cargo/bin"
-fi
+append_path "$HOME/.local/bin"
+append_path "$HOME/.cargo/bin"
+append_path "$HOME/.local/share/flatpak/exports/bin"
 
-if ! echo $PATH | grep $HOME/.local/share/flatpak/exports/bin >/dev/null 2>&1; then
-    export PATH="$PATH:$HOME/.local/share/flatpak/exports/bin"
-fi
+# export PATH
+unset -f append_path
 
 if type brew &>/dev/null
 then

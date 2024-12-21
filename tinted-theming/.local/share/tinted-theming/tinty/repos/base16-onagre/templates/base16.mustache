@@ -1,0 +1,95 @@
+// Scheme name: {{scheme-name}}
+// Scheme system: {{scheme-system}}
+// Scheme author: {{scheme-author}}
+// Theme based on Onagre's Hollow theme
+// Template author: Tinted Theming (https://github.com/tinted-theming)
+
+.onagre {
+    --exit-unfocused: false;
+    height: 375px;
+    width: 600px;
+    // --icon-theme: "breeze-dark";
+    // --icon-size: 28px;
+    --font-family: "Iosevka Nerd Font Mono";
+    background: #{{base00-hex}};
+    color: #{{base07-hex}};
+    // border-color: #{{base03-hex}};
+    // border-width: 2px;
+    border-radius: 0%;
+    padding: 5px;
+
+    .container {
+        padding: 8px;
+        .search {
+            --spacing: 1;
+            background: #{{base02-hex}};
+            border-radius: 10.0%;
+            color: #{{base07-hex}};
+            --height: fill-portion 1;
+
+            .plugin-hint {
+                font-size: 14px;
+                background: #{{base04-hex}};
+                color: #{{base07-hex}};
+                border-color: #{{base03-hex}};
+                --align-x: center;
+                --align-y: center;
+                --width: fill-portion 1;
+                --height: fill;
+            }
+
+            .input {
+                font-size: 14px;
+                background: #{{base04-hex}};
+                --width: fill-portion 11;
+            }
+        }
+
+        .rows {
+            --height: fill-portion 8;
+            border-radius: 8.0%;
+
+            .row-selected {
+                background: #{{base0E-hex}};
+                color: #{{base07-hex}};
+                --spacing: 3px;
+                --align-y: center;
+
+                border-radius: 8.0%;
+                .title {
+                    font-size: 14px;
+                }
+
+                .description {
+                    font-size: 12px;
+                }
+
+                .category-icon {
+                    --icon-size: 15px;
+                }
+            }
+
+            .row {
+                .title {
+                    font-size: 14px;
+                }
+
+                .description {
+                    font-size: 12px;
+                }
+
+                .category-icon {
+                    --icon-size: 15px;
+                }
+            }
+        }
+
+        .scrollable {
+            background: #{{base00-hex}};
+            .scroller {
+                color: #{{base04-hex}};
+            }
+        }
+    }
+}
+

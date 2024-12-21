@@ -7,10 +7,10 @@
 @import "colors.rasi"
 
 #window {
-    background-color: @default-background;
+    background-color: @background;
     border: 1;
     border-radius: 3;
-    border-color: @default-border;
+    border-color: @border;
     padding: 7;
 }
 
@@ -60,6 +60,7 @@
 #element.selected.normal {
     background-color: @light-blue;
     border-color:     @hard-blue;
+    text-color:  @selected-active-foreground;
 }
 
 #element.selected.urgent {

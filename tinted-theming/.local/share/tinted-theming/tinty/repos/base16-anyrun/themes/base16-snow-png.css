@@ -1,0 +1,13 @@
+/* Scheme name: snow-png */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #0f3c3c;
+@define-color fg-color #cedadb;
+@define-color primary-color #c94c88;
+@define-color secondary-color #a0451b;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

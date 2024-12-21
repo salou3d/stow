@@ -1,0 +1,4 @@
+base16:
+    extension: .scss
+    output: themes
+

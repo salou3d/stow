@@ -31,16 +31,16 @@ palette = 'tinted'
 
 [palettes.tinted]
 # TINTY START
-color_fg0 = '#d4cac4'
-color_bg1 = '#1a273f'
-color_bg3 = '#696c78'
-color_blue = '#0b27e8'
-color_aqua = '#3cd4bf'
-color_green = '#2fcb6a'
-color_orange = '#d88c30'
+color_fg0 = '#d5cbc7'
+color_bg1 = '#1d282f'
+color_bg3 = '#6b6d70'
+color_blue = '#5a6492'
+color_aqua = '#65b49e'
+color_green = '#38976d'
+color_orange = '#ae917b'
 color_purple = 'purple'
-color_red = '#ff0000'
-color_yellow = '#dab83b'
+color_red = '#a75169'
+color_yellow = '#bbb491'
 # TINTY END
 
 [os]
@@ -163,9 +163,9 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
+success_symbol = '[►](bold fg:color_green)'
+error_symbol = '[►](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'  #  
 vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
 vimcmd_replace_symbol = '[](bold fg:color_purple)'
 vimcmd_visual_symbol = '[](bold fg:color_yellow)'

@@ -1,0 +1,13 @@
+/* Scheme name: inkblast-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #1f1d60;
+@define-color fg-color #d1d3dd;
+@define-color primary-color #483e93;
+@define-color secondary-color #9b3c27;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

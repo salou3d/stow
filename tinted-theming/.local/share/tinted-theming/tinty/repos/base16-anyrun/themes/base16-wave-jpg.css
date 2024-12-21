@@ -1,0 +1,13 @@
+/* Scheme name: wave-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #182835;
+@define-color fg-color #dbc8b8;
+@define-color primary-color #764955;
+@define-color secondary-color #8d5452;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

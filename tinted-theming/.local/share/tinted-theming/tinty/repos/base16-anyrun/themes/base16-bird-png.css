@@ -1,0 +1,13 @@
+/* Scheme name: bird-png */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #2c261e;
+@define-color fg-color #f6f6f4;
+@define-color primary-color #764d36;
+@define-color secondary-color #975c34;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;

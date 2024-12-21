@@ -1,0 +1,81 @@
+[window]
+width = 600
+height = 600
+anchor = "center"
+margin_top = 0
+margin_bottom = 0
+margin_left = 0
+margin_right = 0
+show_descriptions = false
+show_paths = true
+show_icons = true
+show_search = true
+show_actions = true
+show_border = true
+border_width = 1
+use_gtk_colors = false
+use_custom_css = false
+max_entries = 50
+
+[window.custom_navigate_keys]
+up = "k"
+down = "j"
+delete_word = "h"
+
+[theme.colors]
+border = "#f4dbd6"
+window_bg = "#24273a"
+search_bg = "#1e2030"
+search_bg_focused = "#1e2030"
+item_bg = "#24273a"
+item_bg_hover = "#1e2030"
+item_bg_selected = "#1e2030"
+search_text = "#cad3f5"
+search_caret = "#f4dbd6"
+item_name = "#cad3f5"
+item_name_selected = "#f4dbd6"
+item_description = "#a5adcb"
+item_description_selected = "#cad3f5"
+item_path = "#6e738d"
+item_path_selected = "#cad3f5"
+
+[theme.corners]
+window = 12
+search = 8
+list_item = 8
+
+[theme.spacing]
+search_margin = 12
+search_padding = 12
+item_margin = 6
+item_padding = 4
+
+[theme.typography]
+search_font_size = 16
+item_name_size = 14
+item_description_size = 12
+item_path_size = 12
+item_path_font_family = "monospace"
+
+[debug]
+disable_auto_focus = false
+enable_logging = false
+
+[dmenu]
+allow_invalid = false
+case_sensitive = false
+
+[calculator]
+enabled = false
+
+[web_search]
+enabled = true
+engine = "duckduckgo"
+
+[[web_search.prefixes]]
+prefix = "yt"
+url = "https://www.youtube.com/results?search_query="
+
+[[web_search.prefixes]]
+prefix = "gh"
+url = "https://github.com/search?q="
