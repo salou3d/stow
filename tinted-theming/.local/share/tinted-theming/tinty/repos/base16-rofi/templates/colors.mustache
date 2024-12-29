@@ -1,65 +1,21 @@
 
 * {
-
-    default-background: #{{base00-hex}};
-    default-foreground: #{{base07-hex}};
-    default-border:              #{{base0E-hex}};
-    // default-border:              #{{base0C-hex}};
-
-    foreground:                  rgba ( {{base05-rgb-r}}, {{base05-rgb-g}}, {{base05-rgb-b}}, 100 % );
-    background:                  rgba ( {{base00-rgb-r}}, {{base00-rgb-g}}, {{base00-rgb-b}}, 100 % );
-
-    // background-color:            rgba ( {{base00-rgb-r}}, {{base00-rgb-g}}, {{base00-rgb-b}}, 0 % );
-
-    red:                         rgba ( {{base08-rgb-r}}, {{base08-rgb-g}}, {{base08-rgb-b}}, 100 % );
-    blue:                        rgba ( {{base0D-rgb-r}}, {{base0D-rgb-g}}, {{base0D-rgb-b}}, 100 % );
-    green: rgba ( {{base0B-rgb-r}}, {{base0B-rgb-g}}, {{base0B-rgb-b}}, 100 % );
-    lightfg:                     rgba ( {{base06-rgb-r}}, {{base06-rgb-g}}, {{base06-rgb-b}}, 100 % );
-    lightbg:                     rgba ( {{base01-rgb-r}}, {{base01-rgb-g}}, {{base01-rgb-b}}, 100 % );
-
-    // hard-blue: @blue;
-    hard-blue: rgba ( {{base0E-rgb-r}}, {{base0E-rgb-g}}, {{base0E-rgb-b}}, 100 % );
-    hard-green: @green;
-    hard-red: @red;
-
-    // light-blue: rgba ( {{base0D-rgb-r}}, {{base0D-rgb-g}}, {{base0D-rgb-b}}, 33 % );
-    light-blue: rgba ( {{base0E-rgb-r}}, {{base0E-rgb-g}}, {{base0E-rgb-b}}, 33 % );
-    light-green: rgba ( {{base0B-rgb-r}}, {{base0B-rgb-g}}, {{base0B-rgb-b}}, 33 % );
-    light-red: rgba ( {{base08-rgb-r}}, {{base08-rgb-g}}, {{base08-rgb-b}}, 100 % );
-
-    separatorcolor:              @foreground;
-
-    selected-normal-foreground:  @lightfg;
-    selected-normal-background:  @lightbg;
-
-    selected-active-foreground:  @foreground;
-    selected-active-background:  @blue;
-
-    selected-urgent-foreground:  @foreground;
-    selected-urgent-background:  @red;
-
-    normal-foreground:           @foreground;
-    normal-background:           @background;
-
-    active-foreground:           @blue;
-    active-background:           @background;
-
-    urgent-foreground:           @red;
-    urgent-background:           @background;
-
-    alternate-normal-foreground: @foreground;
-    alternate-normal-background: @lightbg;
-
-    alternate-active-foreground: @blue;
-    alternate-active-background: @lightbg;
-
-    alternate-urgent-foreground: @red;
-    alternate-urgent-background: @lightbg;
-
-    alternative-background: @background;
-    invisible: rgba(0, 0, 0, 0%);
-
-    background-color: @invisible;
-    border-color: @default-border;
-    text-color: @default-foreground;
+    color0:     #{{base00-hex}};
+    color1:     #{{base01-hex}};
+    color2:     #{{base02-hex}};
+    color3:     #{{base03-hex}};
+    color4:     #{{base04-hex}};
+    color5:     #{{base05-hex}};
+    color6:     #{{base06-hex}};
+    color7:     #{{base07-hex}};
+    color8:     #{{base08-hex}};
+    color9:     #{{base09-hex}};
+    color10:    #{{base0A-hex}};
+    color11:    #{{base0B-hex}};
+    color12:    #{{base0C-hex}};
+    color12:    #{{base0D-hex}};
+    color14:    #{{base0E-hex}};
+    color15:    #{{base0F-hex}};
+    background: @color0;
+    foreground: @color7;
 }

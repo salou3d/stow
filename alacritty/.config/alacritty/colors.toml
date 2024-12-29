@@ -1,4 +1,4 @@
-# base16 extra-12-jpg - alacritty color config
+# base16 2715611-jpg - alacritty color config
 # Tinty
 
 [colors]
@@ -6,33 +6,33 @@ draw_bold_text_with_bright_colors = false
 
 # Default colors
 [colors.primary]
-background = '0x1d282f'
-foreground = '0xa09c9b'
+background = '0x172838'
+foreground = '0xa5a7a6'
 
 # Colors the cursor will use if `custom_cursor_colors` is true
 [colors.cursor]
-text = '0x1d282f'
-cursor = '0xa09c9b'
+text = '0x172838'
+cursor = '0xa5a7a6'
 
 # Normal colors
 [colors.normal]
-black = '0x1d282f'
-red = '0xa75169'
-green = '0x38976d'
-yellow = '0xbbb491'
-blue = '0x5a6492'
-magenta = '0x977388'
-cyan = '0x65b49e'
-#white = '0xa09c9b'
-white = '0xd5cbc7'
+black = '0x172838'
+red = '0x924a40'
+green = '0x087a5d'
+yellow = '0xf3c163'
+blue = '0x0b3e9c'
+magenta = '0x934e69'
+cyan = '0x1ac7f9'
+#white = '0xa5a7a6'
+white = '0xdedbd3'
 
 # Bright colors
 [colors.bright]
-black = '0x6b6d70'
-red = '0xae917b'
-green = '0x373f44'
-yellow = '0x51565a'
-blue = '0x868585'
-magenta = '0xbab3b1'
-cyan = '0x956b79'
-white = '0xd5cbc7'
+black = '0x6c747a'
+red = '0xc3996b'
+green = '0x33414e'
+yellow = '0x4f5b64'
+blue = '0x888e90'
+magenta = '0xc1c1bc'
+cyan = '0xba6b4e'
+white = '0xdedbd3'

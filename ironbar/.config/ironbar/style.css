@@ -8,8 +8,21 @@
   margin: 0;
 }
 
+@import "colors.css";
+/* Custom theme based on base16 system */           /* To Make Ironbar follow the GTK theme replace with colors bellow */
+@define-color bg-color @base00;                     /* @theme_bg_color */
+@define-color fg-color @base07;                     /* @theme_fg_color */
+@define-color primary-color @base0E;                /* @theme_selected_bg_color */
+@define-color secondary-color @base0F;
+@define-color border-color @base03;                 /* @borders */
+@define-color selected-bg-color @primary-color;     /* @theme_selected_bg_color */
+@define-color selected-fg-color @fg-color;          /* @theme_selected_fg_color */
+@define-color b-warning-color @base08;              /* @warning_color */
+@define-color b-warning-fg-color @fg-color;         /* @warning_fg_color */
+
+
 .background {
-  background: alpha(@theme_bg_color, 0.8);
+  background: alpha(@bg-color, 0.8);
 }
 
 /* -- workspaces -- */
@@ -20,33 +33,33 @@
 }
 
 .workspaces .item {
-  background: alpha(@theme_bg_color, 0.33);
-  border: 1px solid alpha(@theme_fg_color, 0.333);
+  background: alpha(@bg-color, 0.33);
+  border: 1px solid alpha(@fg-color, 0.333);
   border-radius: 10px;
-  color: @theme_selected_fg_color;
+  color: @selected-fg-color;
   padding: 1px 4px;
   margin: 4px 2px;
 }
 
 .workspaces .item.visible {
   background: transparent;
-  color: @theme_bg_color;
+  color: @bg-color;
 }
 
 /*.workspaces .item.inactive {
 }*/
 
 .workspaces .item.focused {
-  background: alpha(@theme_selected_bg_color, 0.666);
-  border-color: @theme_selected_bg_color;
-  color: @theme_selected_fg_color;
+  background: alpha(@selected-bg-color, 0.666);
+  border-color: @selected-bg-color;
+  color: @selected-fg-color;
 }
 
 /* -- launcher -- */
 
 .launcher {
-  background: @theme_bg_color;
-  border: 1px solid @borders;
+  background: @bg-color;
+  border: 1px solid @bg-color; /* @borders */
   border-radius: 5px;
   margin: 1px 0;
   padding: 0;
@@ -64,24 +77,24 @@
 }
 
 .launcher .item:hover {
-  background-color: alpha(@theme_selected_bg_color, 0.333);
-  border-bottom: 2px solid @theme_selected_bg_color;
+  background-color: alpha(@selected-bg-color, 0.333);
+  border-bottom: 2px solid @selected-bg-color;
 }
 
 .launcher .ifix examtem:not(.focused):hover {
-  background-color: @theme_selected_bg_color;
+  background-color: @selected-bg-color;
 }
 
 .launcher .open {
-  border-bottom: 2px solid @theme_bg_color;
+  border-bottom: 2px solid @bg-color;
 }
 
 .launcher .focused {
-  border-bottom: 2px solid @theme_selected_bg_color;
+  border-bottom: 2px solid @selected-bg-color;
 }
 
 .launcher .focused image {
-  background-color: alpha(@theme_selected_bg_color, 0.333);
+  background-color: alpha(@selected-bg-color, 0.333);
 }
 
 .launcher .urgent {
@@ -90,28 +103,31 @@
 
 .popup-launcher {
   padding: 0;
-  /*background: @theme_bg_color;*/
-  background: alpha(@theme_bg_color, 0.8);
-  border: 1px solid @borders;
+  /*background: @bg-color;*/
+  background: alpha(@bg-color, 0.8);
+  border: 1px solid @border-color;
   border-radius: 5px;
 }
 
 .popup-launcher .popup-item {
-  border-bottom: 2px solid @theme_bg_color;
+  border-bottom: 2px solid @bg-color;
 }
 
 .popup-launcher .popup-item:hover {
-  border-bottom: 2px solid @theme_selected_bg_color;
-  background-color: alpha(@theme_selected_bg_color, 0.33);
+  border-color: @selected-bg-color;
+  border-bottom-width: 2px;
+  background-color: alpha(@selected-bg-color, 0.33);
 }
 
 /* -- focused -- */
 
 #focused-window {
-  color: @theme_selected_fg_color;
-  background-color: alpha(@theme_selected_bg_color, 0.5);
-  border: 1px solid @theme_selected_bg_color;
+  /*
+  background-color: alpha(@selected-bg-color, 0.5);
+  border: 1px solid @selected-bg-color;
   border-radius: 5px;
+  */
+  color: @selected-fg-color;
   padding: 0 7px;
   margin: 3px 5px;
 }
@@ -119,16 +135,16 @@
 /* -- sysinfo -- */
 
 .sysinfo {
-  border: 1px solid @theme_selected_bg_color;
+  border: 1px solid @selected-bg-color;
   border-radius: 10px;
-  background: alpha(@theme_selected_bg_color, 0.5);
+  background: alpha(@selected-bg-color, 0.5);
   padding: 0 7px;
 /*   margin: 1px 5px 1px 0; */
   margin: 4px 0;
 }
 
 .sysinfo .item {
-  color: @theme_selected_fg_color;
+  color: @selected-fg-color;
 
 }
 
@@ -136,7 +152,7 @@
 
 .clipboard {
   font-size: 1em;
-  /*background: @theme_bg_color;*/
+  /*background: @bg-color;*/
   background: transparent;
   border: 0;
   border-radius: 0 ;
@@ -144,8 +160,8 @@
 }
 
 .popup-clipboard {
-  background: @theme_bg_color;
-  border: 1px solid @borders;
+  background: @bg-color;
+  border: 1px solid @border-color;
   border-radius: 5px;
   padding: 5px 7px;
 
@@ -153,28 +169,28 @@
 
 .popup-clipboard .item {
 /*   padding-bottom: 0.3em; */
-  border-left: 3px solid @borders;
-  background: @theme_bg_color;
+  border-left: 3px solid @border-color;
+  background: @bg-color;
   padding: 5px;
 }
 
 .popup-clipboard .item .btn-remove {
-  border: 1px solid @borders;
+  border: 1px solid @border-color;
   padding: 5px;
 }
 
 .popup-clipboard .item .btn-remove:hover {
-  border: 1px solid @theme_selected_bg_color;
-  background: alpha( @theme_selected_bg_color, 0.333);
+  border: 1px solid @selected-bg-color;
+  background: alpha( @selected-bg-color, 0.333);
 }
 
 /* notifications */
 
 .notifications button {
   font-size: 1.2rem;
-  color: @theme_fg_color;
+  color: @fg-color;
   margin: 1px 0 1px 5px;
-  /*background: @theme_bg_color;*/
+  /*background: @bg-color;*/
   background: transparent;
   border: 0;
   border-radius: 5px 0 0 5px;
@@ -184,9 +200,8 @@
 .notifications .count {
   font-size: 0.6rem;
   font-weight: bold;
-/*   background-color: @warning_bg_color; */
-  background-color: @warning_color;
-  color: @warning_fg_color;
+  background-color: @b-warning-color;
+  color: @b-warning-fg-color;
   border-radius: 100%;
   margin-right: 3px;
   margin-top: 3px;
@@ -201,11 +216,11 @@
 /*   margin: 0 3px; */
   margin: 1px 0;
   padding: 0;
-/*   background: @theme_bg_color; */
+/*   background: @bg-color; */
   background: transparent;
   border: 0;
   border-radius: 0;
-  color: @theme_fg_color;
+  color: @fg-color;
 
 }
 
@@ -220,7 +235,7 @@
   margin: 1px 0;
   padding: 0 5px;
   border-radius: 0 5px 5px 0;
-/*   background: @theme_bg_color; */
+/*   background: @bg-color; */
   background: transparent;
 }
 
@@ -230,25 +245,25 @@
 }
 
 .tray .item:hover {
-  background-color: @theme_selected_bg_color;
+  background-color: @selected-bg-color;
 }
 
 
 /* -- Date & Time -- */
 
 .clock {
-  background: alpha(@theme_bg_color, 0.8);
+  background: alpha(@bg-color, 0.8);
 
-  color: @theme_fg_color;
-  border: 1px solid @borders;
+  color: @fg-color;
+  border: 1px solid @border-color;
   border-radius: 5px;
   padding: 0 7px;
   margin: 3px 5px;
 }
 
 .popup-clock {
-  background: @theme_bg_color;
-  border: 1px solid @borders;
+  background: @bg-color;
+  border: 1px solid @border-color;
   border-radius: 5px;
 
   padding: 5px 7px;
@@ -260,7 +275,7 @@
 }
 
 .popup-clock .calendar {
-  border: 1px solid @borders;
+  border: 1px solid @border-color;
   border-radius: 5px;
 
   padding: 5px;
@@ -271,21 +286,21 @@
 }
 
 .popup-clock .calendar:selected {
-/*   background-color: alpha(@theme_selected_bg_color, 0.333); */
-  border: 1px solid @theme_selected_bg_color;
+/*   background-color: alpha(@selected-bg-color, 0.333); */
+  border: 1px solid @selected-bg-color;
   border-radius: 0;
 }
 
 /* -- Logout button -- */
 
 #logbutton {
-  background: alpha(red, 0.666);
-  border: 1px solid red;
+  background: alpha(@b-warning-color, 0.666);
+  border: 1px solid @b-warning-color;
   border-radius: 5px;
   padding: 0 4px;
   margin: 3px 3px 3px 0;
 }
 
 #logbutton:hover {
-  background: alpha(red, 1);
+  background: alpha(@b-warning-color, 1);
 }

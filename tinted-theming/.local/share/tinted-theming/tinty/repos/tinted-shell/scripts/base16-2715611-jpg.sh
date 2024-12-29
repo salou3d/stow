@@ -6,12 +6,12 @@
 export BASE16_THEME=2715611-jpg
 
 color00="17/28/38" # Base 00 - Black
-color01="72/3a/32" # Base 08 - Red
-color02="08/78/5b" # Base 0B - Green
+color01="92/4a/40" # Base 08 - Red
+color02="08/7a/5d" # Base 0B - Green
 color03="f3/c1/63" # Base 0A - Yellow
-color04="0c/3e/9c" # Base 0D - Blue
-color05="70/3c/50" # Base 0E - Magenta
-color06="1b/c7/f9" # Base 0C - Cyan
+color04="0b/3e/9c" # Base 0D - Blue
+color05="93/4e/69" # Base 0E - Magenta
+color06="1a/c7/f9" # Base 0C - Cyan
 color07="a5/a7/a6" # Base 05 - White
 color08="4f/5b/64" # Base 03 - Bright Black
 color09="$color01" # Base 08 - Bright Red
@@ -21,7 +21,7 @@ color12="$color04" # Base 0D - Bright Blue
 color13="$color05" # Base 0E - Bright Magenta
 color14="$color06" # Base 0C - Bright Cyan
 color15="de/db/d3" # Base 07 - Bright White
-color16="c3/9a/6b" # Base 09
+color16="c3/99/6b" # Base 09
 color17="ba/6b/4e" # Base 0F
 color18="33/41/4e" # Base 01
 color19="4f/5b/64" # Base 02
@@ -141,12 +141,12 @@ if [ -n "$TINTED_SHELL_ENABLE_BASE16_VARS" ] || [ -n "$BASE16_SHELL_ENABLE_VARS"
   export BASE16_COLOR_05_HEX="a5a7a6"
   export BASE16_COLOR_06_HEX="c1c1bc"
   export BASE16_COLOR_07_HEX="dedbd3"
-  export BASE16_COLOR_08_HEX="723a32"
-  export BASE16_COLOR_09_HEX="c39a6b"
+  export BASE16_COLOR_08_HEX="924a40"
+  export BASE16_COLOR_09_HEX="c3996b"
   export BASE16_COLOR_0A_HEX="f3c163"
-  export BASE16_COLOR_0B_HEX="08785b"
-  export BASE16_COLOR_0C_HEX="1bc7f9"
-  export BASE16_COLOR_0D_HEX="0c3e9c"
-  export BASE16_COLOR_0E_HEX="703c50"
+  export BASE16_COLOR_0B_HEX="087a5d"
+  export BASE16_COLOR_0C_HEX="1ac7f9"
+  export BASE16_COLOR_0D_HEX="0b3e9c"
+  export BASE16_COLOR_0E_HEX="934e69"
   export BASE16_COLOR_0F_HEX="ba6b4e"
 fi

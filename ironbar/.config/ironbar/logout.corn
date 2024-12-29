@@ -1,0 +1,18 @@
+$logimage = {
+    type = "image"
+    src = "system-shutdown"
+    name = "logimage"
+    size = 20
+  }
+
+  $logbutton = {
+    type = "button"
+    name = "logbutton"
+    widgets = [$logimage]
+    on_click = "!wleave"
+  }
+
+  $logout = {
+    type = "custom"
+    bar = [$logbutton]
+  }

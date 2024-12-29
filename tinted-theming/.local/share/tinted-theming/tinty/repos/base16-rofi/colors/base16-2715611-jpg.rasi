@@ -1,65 +1,21 @@
 
 * {
-
-    default-background: #172838;
-    default-foreground: #dedbd3;
-    default-border:              #703c50;
-    // default-border:              #1bc7f9;
-
-    foreground:                  rgba ( 165, 167, 166, 100 % );
-    background:                  rgba ( 23, 40, 56, 100 % );
-
-    // background-color:            rgba ( 23, 40, 56, 0 % );
-
-    red:                         rgba ( 114, 58, 50, 100 % );
-    blue:                        rgba ( 12, 62, 156, 100 % );
-    green: rgba ( 8, 120, 91, 100 % );
-    lightfg:                     rgba ( 193, 193, 188, 100 % );
-    lightbg:                     rgba ( 51, 65, 78, 100 % );
-
-    // hard-blue: @blue;
-    hard-blue: rgba ( 112, 60, 80, 100 % );
-    hard-green: @green;
-    hard-red: @red;
-
-    // light-blue: rgba ( 12, 62, 156, 33 % );
-    light-blue: rgba ( 112, 60, 80, 33 % );
-    light-green: rgba ( 8, 120, 91, 33 % );
-    light-red: rgba ( 114, 58, 50, 100 % );
-
-    separatorcolor:              @foreground;
-
-    selected-normal-foreground:  @lightfg;
-    selected-normal-background:  @lightbg;
-
-    selected-active-foreground:  @foreground;
-    selected-active-background:  @blue;
-
-    selected-urgent-foreground:  @foreground;
-    selected-urgent-background:  @red;
-
-    normal-foreground:           @foreground;
-    normal-background:           @background;
-
-    active-foreground:           @blue;
-    active-background:           @background;
-
-    urgent-foreground:           @red;
-    urgent-background:           @background;
-
-    alternate-normal-foreground: @foreground;
-    alternate-normal-background: @lightbg;
-
-    alternate-active-foreground: @blue;
-    alternate-active-background: @lightbg;
-
-    alternate-urgent-foreground: @red;
-    alternate-urgent-background: @lightbg;
-
-    alternative-background: @background;
-    invisible: rgba(0, 0, 0, 0%);
-
-    background-color: @invisible;
-    border-color: @default-border;
-    text-color: @default-foreground;
+    color0:     #172838
+    color1:     #33414e
+    color2:     #4f5b64
+    color3:     #6c747a
+    color4:     #888e90
+    color5:     #a5a7a6
+    color6:     #c1c1bc
+    color7:     #dedbd3
+    color8:     #924a40
+    color9:     #c3996b
+    color10:    #f3c163
+    color11:    #087a5d
+    color12:    #1ac7f9
+    color12:    #0b3e9c
+    color14:    #934e69
+    color15:    #ba6b4e
+    background: @color0;
+    foreground: @color7;
 }

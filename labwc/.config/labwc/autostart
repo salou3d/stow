@@ -18,9 +18,12 @@ swaybg -o "*" -m fill -i "$(xdg-user-dir PICTURES)/current-wallpaper"  >/dev/nul
 # Launch a panel such as yambar or waybar.
 # waybar >/dev/null 2>&1 &
 # $HOME/.config/eww/so/launch_bar # Launch eww
-# ironbar &
 
-sfwbar -f ~/.config/sfwbar/sflab.config >/dev/null 2>&1 &
+if command -v sfwbar >/dev/null 2>&1; then
+    sfwbar -f ~/.config/sfwbar/sflab.config >/dev/null 2>&1 &
+elif command -v waybar >/dev/null 2>&1; then
+    waybar >/dev/null 2>&1 &
+fi
 
 # Lock screen after 5 minutes; turn off display after another 5 minutes.
 #

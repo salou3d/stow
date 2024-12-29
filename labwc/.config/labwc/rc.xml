@@ -16,7 +16,7 @@
   </placement>
   <!-- <font><theme> can be defined without an attribute to set all places -->
   <theme>
-    <name>breeze-dark-ob-main</name>
+    <name>breeze-dark-ob-tinted</name>
     <icon>breeze-dark</icon>
     <cornerRadius>8</cornerRadius>
     <keepBorder>yes</keepBorder>
@@ -354,6 +354,11 @@
         <menu>client-list-combined-menu</menu>
       </action>
     </keybind>-->
+    <keybind key="W-Escape">
+      <action name="Execute">
+        <command>wleave</command>
+      </action>
+    </keybind>
     <keybind key="XF86AudioNext">
       <action name="Execute">
         <!--<command>so-volume-yad.sh next</command>-->

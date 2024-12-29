@@ -31,16 +31,16 @@ palette = 'tinted'
 
 [palettes.tinted]
 # TINTY START
-color_fg0 = '#d5cbc7'
-color_bg1 = '#1d282f'
-color_bg3 = '#6b6d70'
-color_blue = '#5a6492'
-color_aqua = '#65b49e'
-color_green = '#38976d'
-color_orange = '#ae917b'
+color_fg0 = '#dedbd3'
+color_bg1 = '#172838'
+color_bg3 = '#6c747a'
+color_blue = '#0b3e9c'
+color_aqua = '#1ac7f9'
+color_green = '#087a5d'
+color_orange = '#c3996b'
 color_purple = 'purple'
-color_red = '#a75169'
-color_yellow = '#bbb491'
+color_red = '#924a40'
+color_yellow = '#f3c163'
 # TINTY END
 
 [os]

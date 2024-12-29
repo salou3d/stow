@@ -18,6 +18,13 @@ themes-dir = "colors"
 hook = "cp -r %f ~/.config/rofi/colors.rasi"
 
 [[items]]
+name = "base16-ironbar"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-ironbar"
+themes-dir = "themes"
+hook = "cp -r %f ~/.config/ironbar/colors.css"
+supported-systems = ["base16"]
+
+[[items]]
 name = "base16-anyrun"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-anyrun"
 themes-dir = "themes"
@@ -88,6 +95,13 @@ name = "base16-hyprland"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-hyprland"
 themes-dir = "colors"
 hook = "cp -r %f ~/.config/hypr/colors.conf"
+supported-systems = ["base16"]
+
+[[items]]
+name = "base16-labwc"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-labwc"
+themes-dir = "colors"
+hook = "cp -r %f ~/.local/share/themes/breeze-dark-ob-tinted/openbox-3/themerc && labwc -r"
 supported-systems = ["base16"]
 
 [[items]]

@@ -11,18 +11,18 @@
 
 box#main {
   border-radius: 5px;
-  background-color: alpha(@bg-color, 0.8);
+  background-color: @bg-color;
   /*border: 0.5px solid alpha(@fg-color, 0.25);*/
-  border: 2px solid @secondary-color;
+  border: 2px solid @primary-color;
   padding: 7px;
 }
 
 entry#entry {
   font-size: 1.25rem;
-  background: alpha(@secondary-color, 0.2);
+  background: alpha(@primary-color, 0.2);
   box-shadow: none;
 /*   border: none; */
-  border: 1px solid @secondary-color;
+  border: 1px solid @primary-color;
   border-radius: 5px;
   padding: 5px 10px;
   min-height: 30px;

@@ -10,9 +10,64 @@ upgrade_only = true
     asset_filters = [ "static", ".tar.gz" ]
     # target = "~/.local/bin/micro"
 
-["helix-editor/helix"]
+["zyedidia/eget"]
     upgrade_only = true
     download_only = true
-    # show_hash = true
-    # asset_filters = [ "static", ".tar.gz" ]
-    # target = "~/.local/bin/micro"
+    show_hash = true
+    asset_filters = [ ".tar.gz" ]
+    target = "~/Downloads/eget-downs"
+
+# ["helix-editor/helix"]
+#     upgrade_only = true
+#     download_only = true
+#     show_hash = true
+#     asset_filters = [ "static", ".tar.gz" ]
+#     target = "~/.local/bin/hx"
+
+["amir1376/ab-download-manager"]
+    upgrade_only = true
+    download_only = true
+    show_hash = true
+    asset_filters = [ ".tar.gz" ]
+    target = "~/Downloads/eget-downs"
+
+["NoCrypt/migu"]
+    upgrade_only = true
+    download_only = true
+    show_hash = true
+    asset_filters = [ "AppImage" ]
+    target = "~/Downloads/eget-downs"
+
+["mierak/rmpc"]
+    upgrade_only = true
+    download_only = true
+    show_hash = true
+    asset_filters = [ ".tar.gz" ]
+    target = "~/Downloads/eget-downs"
+
+["rustic-rs/rustic"]
+    upgrade_only = true
+    download_only = true
+    show_hash = true
+    asset_filters = [ ".tar.gz" ]
+    target = "~/Downloads/eget-downs"
+
+["gabm/Satty"]
+    upgrade_only = true
+    download_only = true
+    show_hash = true
+    asset_filters = [ ".tar.gz" ]
+    target = "~/Downloads/eget-downs"
+
+["ducaale/xh"]
+    upgrade_only = true
+    download_only = true
+    show_hash = true
+    asset_filters = [ ".tar.gz" ]
+    target = "~/Downloads/eget-downs"
+
+["redhat-developer/vscode-xml"]
+    upgrade_only = true
+    download_only = false
+    show_hash = true
+    asset_filters = [ "zip" ]

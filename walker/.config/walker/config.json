@@ -208,7 +208,7 @@
     "placeholder": "Search...",
     "resume_last_query": false
   },
-  "theme": "default",
+  "theme": "tinted",
   "timeout": 0,
   "use_uwsm": false
 }

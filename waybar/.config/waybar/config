@@ -7,19 +7,23 @@
         "width": 1366,
         "spacing": 3,
         "ipc": false,
-        "modules-left": ["hyprland/workspaces",  "wlr/taskbar", "hyprland/window"],
-        //"modules-center":  ["hyprland/window"],
+        "modules-left": ["wlr/workspaces",  "wlr/taskbar", "wlr/window"],
         "modules-right": [
                 //"custom/weather", 
                 "idle_inhibitor",
                 //"backlight",
                 "cpu", "temperature", "memory",
                 "battery#bat1", "pulseaudio",
-                //"network#wifi", "network#ethernet", "network#disconnected",
-                "hyprland/language", "tray",
+                //"network#wifi", "network#ethernet", "network#disconnected","tray",
                 "clock", "custom/poweroff"
         ],
-        "hyprland/window": {
+        "wlr/workspaces": {
+            "format": "{name}",
+            "on-click": "activate",
+            "sort-by-number": true,
+            "active-only": true
+        },
+        "wlr/window": {
             "format": "> {}"
         },
         "wlr/taskbar": {
@@ -152,13 +156,13 @@
             "interval": 300,
             "on-click": "firefox https://wttr.in"
         },
-        "hyprland/language": {
-            "format": "{}",
-            "format-fr": "FR",
-            "format-ara": "ARA",
-            "keyboard-name": "at-translated-set-2-keyboard",
-            "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
-        },
+        //"hyprland/language": {
+        //    "format": "{}",
+        //    "format-fr": "FR",
+        //    "format-ara": "ARA",
+        //    "keyboard-name": "at-translated-set-2-keyboard",
+        //    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+        //},
         "custom/poweroff": {
             "tooltip": "Session Management",
             "format": "",

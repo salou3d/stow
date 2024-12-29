@@ -9,7 +9,7 @@
     </item>
     <item label="File Manager" icon="">
       <action name="Execute">
-        <command>dolphin</command>
+        <command>xdg-open ~</command>
       </action>
     </item>
     <item label="Terminal" icon="">

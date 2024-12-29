@@ -1,0 +1,6 @@
+"custom/athan": {
+    //shows the Athan/prayers times
+    "restart-interval": 500,
+    "exec": "python ~/.config/hypr/scripts/athan-api.py", // athan script location
+    "return-type": "json"
+ },

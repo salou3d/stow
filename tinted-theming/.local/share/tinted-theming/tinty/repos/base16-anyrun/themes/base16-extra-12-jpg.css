@@ -11,3 +11,21 @@
 @define-color border-color @primary-color;
 @define-color selected-bg-color @primary-color;
 @define-color selected-fg-color @bg-color;
+
+
+@define-color base00 #1d282f;
+@define-color base01 #373f44;
+@define-color base02 #51565a;
+@define-color base03 #6b6d70;
+@define-color base04 #868585;
+@define-color base05 #a09c9b;
+@define-color base06 #bab3b1;
+@define-color base07 #d5cbc7;
+@define-color base08 #a75169;
+@define-color base09 #ae917b;
+@define-color base0A #bbb491;
+@define-color base0B #38976d;
+@define-color base0C #65b49e;
+@define-color base0D #5a6492;
+@define-color base0E #977388;
+@define-color base0F #956b79;

@@ -78,27 +78,8 @@ let {
 
   }
 
-  $logimage = {
-    type = "image"
-    src = "system-shutdown"
-    name = "logimage"
-    size = 20
-  }
-
-  $logbutton = {
-    type = "button"
-    name = "logbutton"
-    widgets = [$logimage]
-    on_click = "!wleave"
-  }
-
-  $logout = {
-    type = "custom"
-    bar = [$logbutton]
-  }
-
   $center = []
-  $end = [$sys_info $notifs $clipboard $upower $tray $clock $logout ]
+  $end = [$sys_info $notifs $clipboard $upower $tray $clock ]
 } in {
   monitors.eDP-1 = {
     position = $position

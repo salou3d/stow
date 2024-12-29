@@ -14,28 +14,33 @@ test -s ~/.alias && . ~/.alias || true
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 # [[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
-# if type brew &>/dev/null
-# then
-#   HOMEBREW_PREFIX="$(brew --prefix)"
-#   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
-#   then
-#     source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-#   else
-#     for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
-#     do
-#       [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
-#     done
-#   fi
-# fi
+if type brew &>/dev/null
+then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
 
+
+export HISTCONTROL=erasedups:ignoredups:ignoreboth
+export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 #alias ls="eza --group-directories-first --icons"
 alias ls="lsd --group-directories-first"
+alias l="ls"
 alias dir='ls -l'
 alias ll='ls -l'
-alias la='ls -la'
-alias l='ls -alF'
-alias ls-l='ls -l'
+alias la='ls -a'
+alias laf='ls -alF'
+alias lal='ls -al'
+alias ..="cd .."
 
 alias shutdown="systemctl shutdown"
 alias reboot="systemctl reboot"
@@ -43,8 +48,8 @@ alias reboot="systemctl reboot"
 alias ping-cf="ping -c 3 1.1.1.1"
 alias ping-ggl="ping -c 3 8.8.8.8"
 
-alias zyref="sudo zypper ref"
-alias zydup="sudo zypper dup"
+# alias zyref="sudo zypper ref"
+# alias zydup="sudo zypper dup"
 alias mytcc="python3 -i ~/.local/bin/ytcc-subs.py"
 
 alias cp="cp -i"
@@ -64,20 +69,17 @@ if ! command -v kate >/dev/null 2>&1; then
 fi
 
 if ! command -v ark >/dev/null 2>&1; then
-	if command -v org.kde.ark >/dev/null 2>&1; then
-		alias ark="org.kde.ark"
+	if command -v org.kde.ark >/dev/null 2>&1 && [ -s "$(which org.kde.ark)" ] ; then
+		ln -s $(which org.kde.ark) ~/.local/bin/ark
 	elif flatpak list --app --columns=application | grep org.kde.ark >/dev/null 2>&1; then
-		alias ark="flatpak run org.kde.ark"
+		printf '#!/usr/bin/env bash\nflatpak run org.kde.ark "$@"\n' > ~/.local/bin/ark
+		chmod +x ~/.local/bin/ark
 	fi
 fi
 
-#alias sweep="sweep --altscreen"
 
 alias iron-restart="pkill ironbar && ironbar"
 alias iron-reload="ironbar reload"
-
-export HISTCONTROL=erasedups:ignoredups:ignoreboth
-export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 if [ ! -f ~/.local/bin/python ]; then
 	ln -s $(which python3) ~/.local/bin/python
@@ -171,7 +173,10 @@ function yy() {
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
-eval "$(register-python-argcomplete pipx)"
+if [ ! -f ~/.local/share/bash-completion/completions/pipx.bash ]; then
+	register-python-argcomplete pipx > ~/.local/share/bash-completion/completions/pipx.bash
+fi
+
 # eval "$(batman --export-env)"
 
 alias bathelp='bat --plain --language=help'
@@ -190,7 +195,10 @@ export FZF_DEFAULT_COMMAND='fd -u'
 export FZF_DEFAULT_OPTS='--multi --reverse --border' #--cycle
 eval "$(fzf --bash)"
 
-# ripgrep->fzf->vim [QUERY]
+export SKIM_DEFAULT_COMMAND='fd -u'
+export SKIM_DEFAULT_OPTIONS='--multi --reverse --border'
+
+# ripgrep->fzf->hx [QUERY]
 rfv() (
   RELOAD='reload:rg --column --color=always --smart-case {q} || :'
   OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
@@ -223,7 +231,7 @@ eval "$(mcfly init bash)"
 
 # eval "$(navi widget bash)"
 
-# eval "$(eww shell-completions --shell bash)"
+eval "$(eww shell-completions --shell bash)"
 
 eval -- "$(starship init bash --print-full-init)"
 
