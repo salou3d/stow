@@ -154,7 +154,7 @@ end:
     type: upower
   - max_items: 10
     type: clipboard
-  - direction: left_to_right
+  - direction: h
     type: tray
   - format: '%H:%M — %a %d-%m'
     format_popup: |-
@@ -162,7 +162,7 @@ end:
       %B %d-%m
     type: clock
   - class: power-menu
-    tooltip: 'Up: {{30000:uptime | cut -d'','' -f1 | cut -d'' '' -f5-}}'
+    tooltip: "Up: {{30000:uptime | cut -d'','' -f1 | cut -d'' '' -f5-}}"
     type: label
     label: 
     on_click_left: wleave

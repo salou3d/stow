@@ -1,0 +1,31 @@
+/* Scheme name: akJj-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #1e2541;
+@define-color fg-color #eeeff2;
+@define-color primary-color #725e91;
+@define-color secondary-color #a0451e;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;
+
+
+@define-color base00 #1e2541;
+@define-color base01 #3b415a;
+@define-color base02 #595e73;
+@define-color base03 #777b8c;
+@define-color base04 #9498a6;
+@define-color base05 #b2b5bf;
+@define-color base06 #d0d2d8;
+@define-color base07 #eeeff2;
+@define-color base08 #ea4408;
+@define-color base09 #ea8519;
+@define-color base0A #f3a13c;
+@define-color base0B #20ad6e;
+@define-color base0C #3fd8b1;
+@define-color base0D #0b5dc2;
+@define-color base0E #725e91;
+@define-color base0F #a0451e;

@@ -1,0 +1,59 @@
+# base16 nature-15-jpg 256 - alacritty color config
+# Tinty
+
+# Default colors
+[colors.primary]
+background = '0x35221b'
+foreground = '0xa0978c'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x35221b'
+cursor = '0xa0978c'
+
+# Normal colors
+[colors.normal]
+black = '0x35221b'
+red = '0x687d96'
+green = '0x239e95'
+yellow = '0xe1d168'
+blue = '0x1e2e99'
+magenta = '0x4a489b'
+cyan = '0x18e9e5'
+#white = '0xa0978c'
+white = '0xccc7ba'
+
+# Bright colors
+[colors.bright]
+black = '0x75685f'
+red = '0x687d96'
+green = '0x239e95'
+yellow = '0xe1d168'
+blue = '0x1e2e99'
+magenta = '0x4a489b'
+cyan = '0x18e9e5'
+white = '0xccc7ba'
+
+[[colors.indexed_colors]]
+index = 16
+color = "0x91a3a5"
+
+[[colors.indexed_colors]]
+index = 17
+color = "0xa12928"
+
+[[colors.indexed_colors]]
+index = 18
+color = "0x4a3931"
+
+[[colors.indexed_colors]]
+index = 19
+color = "0x605148"
+
+[[colors.indexed_colors]]
+index = 20
+color = "0x8b8075"
+
+[[colors.indexed_colors]]
+index = 21
+color = "0xb6afa3"

@@ -25,17 +25,27 @@
   background: alpha(@bg-color, 0.8);
 }
 
-/* -- workspaces -- */
+#start-menu {
+  background: alpha(@bg-color, 0.8);
 
+  color: @fg-color;
+  border: 1px solid @border-color;
+  border-radius: 5px;
+  padding: 0 5px;
+  margin: 3px 5px;
+}
+
+/* -- workspaces -- */
 .workspaces {
-  margin-left: 2px;
+/*   margin-left: 2px; */
   margin-right: 5px;
 }
 
 .workspaces .item {
-  background: alpha(@bg-color, 0.33);
+  background: alpha(@bg-color, 0.8);
   border: 1px solid alpha(@fg-color, 0.333);
-  border-radius: 10px;
+/*   border-radius: 10px; */
+  border-radius: 50%;
   color: @selected-fg-color;
   padding: 1px 4px;
   margin: 4px 2px;
@@ -210,6 +220,28 @@
 /*   opacity: 0.7; */
 }
 
+/* -- Volume -- */
+
+.volume {
+  /*   margin: 0 3px; */
+  margin: 1px 7px 1px 2px;
+  padding: 0;
+/*     background: @bg-color; */
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: @fg-color;
+
+}
+
+.popup-volume {
+  background: @bg-color;
+  border-radius: 5px;
+  border: 1px solid @border-color;
+
+  padding: 5px 7px;
+}
+
 /* -- Upower -- */
 
 .upower {
@@ -269,8 +301,8 @@
   padding: 5px 7px;
 }
 .popup-clock .calendar-clock {
-  font-size: 1em;
-  font-weight: bold;
+/*   font-size: 2em; */
+/*   font-weight: bold; */
   padding: 5px;
 }
 

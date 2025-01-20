@@ -11,7 +11,7 @@
 
 /* ---- Configuration ---- */
 configuration {
-    modi:                       "drun,filebrowser,window,run";
+    modi:                       "drun,run,window,filebrowser";
     font:                       "Fira Sans 11";
     show-icons:                 true;
     icon-theme:                 "Papirus-Dark";

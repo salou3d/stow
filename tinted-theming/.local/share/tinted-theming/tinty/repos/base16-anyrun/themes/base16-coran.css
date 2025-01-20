@@ -1,0 +1,31 @@
+/* Scheme name: coran */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #21234a;
+@define-color fg-color #f1f0ec;
+@define-color primary-color #454891;
+@define-color secondary-color #b92928;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;
+
+
+@define-color base00 #21234a;
+@define-color base01 #3e4061;
+@define-color base02 #5c5d78;
+@define-color base03 #7a7a8f;
+@define-color base04 #9798a6;
+@define-color base05 #b5b5bd;
+@define-color base06 #d3d2d4;
+@define-color base07 #f1f0ec;
+@define-color base08 #b5370c;
+@define-color base09 #fac82f;
+@define-color base0A #d7d15e;
+@define-color base0B #358e4f;
+@define-color base0C #21e8e3;
+@define-color base0D #002bd0;
+@define-color base0E #454891;
+@define-color base0F #b92928;

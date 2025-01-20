@@ -1,0 +1,21 @@
+
+* {
+    color0:     #242918;
+    color1:     #3b3f2e;
+    color2:     #535544;
+    color3:     #6a6c5b;
+    color4:     #828271;
+    color5:     #999988;
+    color6:     #b1af9e;
+    color7:     #c9c6b5;
+    color8:     #8d955a;
+    color9:     #b3c95b;
+    color10:    #d0ec6b;
+    color11:    #8f9f52;
+    color12:    #928cb9;
+    color12:    #2f1294;
+    color14:    #4c279a;
+    color15:    #80698e;
+    background: @color0;
+    foreground: @color7;
+}

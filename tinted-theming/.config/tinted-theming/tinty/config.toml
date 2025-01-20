@@ -21,7 +21,7 @@ hook = "cp -r %f ~/.config/rofi/colors.rasi"
 name = "base16-ironbar"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-ironbar"
 themes-dir = "themes"
-hook = "cp -r %f ~/.config/ironbar/colors.css"
+hook = "cp -r %f ~/.config/ironbar/colors.css; ironbar load-css ~/.config/ironbar/style.css"
 supported-systems = ["base16"]
 
 [[items]]

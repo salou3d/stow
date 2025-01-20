@@ -1,4 +1,4 @@
-// Scheme name: 2715611-jpg
+// Scheme name: minimal-5-jpg
 // Scheme system: base16
 // Scheme author: Tinty
 // Theme based on Onagre's Hollow theme
@@ -11,9 +11,9 @@
     // --icon-theme: "breeze-dark";
     // --icon-size: 28px;
     --font-family: "Iosevka Nerd Font Mono";
-    background: #172838;
-    color: #dedbd3;
-    // border-color: #6c747a;
+    background: #0d2733;
+    color: #e4eaeb;
+    // border-color: #697a81;
     // border-width: 2px;
     border-radius: 0%;
     padding: 5px;
@@ -22,16 +22,16 @@
         padding: 8px;
         .search {
             --spacing: 1;
-            background: #888e90;
+            background: #87969c;
             border-radius: 10.0%;
-            color: #dedbd3;
+            color: #e4eaeb;
             --height: fill-portion 1;
 
             .plugin-hint {
                 font-size: 14px;
-                background: #4f5b64;
-                color: #dedbd3;
-                border-color: #6c747a;
+                background: #4a5e67;
+                color: #e4eaeb;
+                border-color: #697a81;
                 --align-x: center;
                 --align-y: center;
                 --width: fill-portion 1;
@@ -40,7 +40,7 @@
 
             .input {
                 font-size: 14px;
-                background: #888e90;
+                background: #87969c;
                 --width: fill-portion 11;
             }
         }
@@ -50,8 +50,8 @@
             border-radius: 8.0%;
 
             .row-selected {
-                background: #934e69;
-                color: #dedbd3;
+                background: #8b4a42;
+                color: #e4eaeb;
                 --spacing: 3px;
                 --align-y: center;
 
@@ -85,9 +85,9 @@
         }
 
         .scrollable {
-            background: #172838;
+            background: #0d2733;
             .scroller {
-                color: #888e90;
+                color: #87969c;
             }
         }
     }

@@ -7,10 +7,28 @@ let {
     right = 0
   }
   
+  $start_menu = {
+    type = "label"
+    name = "start-menu"
+    label = "Apps"
+    on_click_left = "anyrun"
+  }
+
+  $volume = {
+    type = "volume"
+    format = "{icon} {percentage}%"
+    max_volume = 100
+    icons.volume_high = "󰕾"
+    icons.volume_medium = "󰖀"
+    icons.volume_low = "󰕿"
+    icons.muted = "󰝟"
+  }
+
   $clock = {
     type = "clock"
     name = "time-widget"
     format = "<span font-weight='bold'>%H:%M</span>, %a %d-%m-%y"
+    format_popup = "<span font-weight='bold' font='14'>%H:%M:%S</span>\n%A %d, %B %Y"
   }
 
   $launcher = {
@@ -27,7 +45,9 @@ let {
     show_icon = true
     show_title = true
     icon_size = 16
+    truncate.mode = "end"
     truncate = "end"
+
   }
 
   $sys_info = {
@@ -78,10 +98,11 @@ let {
 
   }
 
-  $center = []
-  $end = [$sys_info $notifs $clipboard $upower $tray $clock ]
+  $center = [ ]
+  $end = [$sys_info $notifs $clipboard $volume $upower $tray $clock ]
 } in {
   monitors.eDP-1 = {
+    layer = "bottom"
     position = $position
     height = $height
     margin = $margin
@@ -89,6 +110,7 @@ let {
     popup_gap = 0
     icon_theme = "Papirus-Dark"
     start = [
+      $start_menu
       {
         type = "workspaces"
       }

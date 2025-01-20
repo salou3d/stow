@@ -34,13 +34,16 @@ export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 #alias ls="eza --group-directories-first --icons"
 alias ls="lsd --group-directories-first"
-alias l="ls"
-alias dir='ls -l'
-alias ll='ls -l'
-alias la='ls -a'
-alias laf='ls -alF'
-alias lal='ls -al'
+alias sl="lsd --group-directories-first"
+alias l="lsd --group-directories-first"
+alias dir='lsd --group-directories-first'
+alias ll='lsd -l --group-directories-first'
+alias la='lsd -a --group-directories-first'
+alias lt='lsd -a --tree --depth 1 --group-directories-first'
+alias laf='lsd -alF --group-directories-first'
+alias lal='lsd -al --group-directories-first'
 alias ..="cd .."
+alias handlr="handlr-regex"
 
 alias shutdown="systemctl shutdown"
 alias reboot="systemctl reboot"
@@ -59,6 +62,7 @@ alias mkdir='mkdir -p'
 alias less='less -R'
 alias rt="trash put"
 alias tp="trash put"
+
 
 if ! command -v kate >/dev/null 2>&1; then
 	if command -v org.kde.kate >/dev/null 2>&1; then
@@ -79,7 +83,7 @@ fi
 
 
 alias iron-restart="pkill ironbar && ironbar"
-alias iron-reload="ironbar reload"
+alias iron-reload="ironbar reload && ironbar load-css ~/.config/ironbar/style.css "
 
 if [ ! -f ~/.local/bin/python ]; then
 	ln -s $(which python3) ~/.local/bin/python
@@ -173,9 +177,7 @@ function yy() {
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
-if [ ! -f ~/.local/share/bash-completion/completions/pipx.bash ]; then
-	register-python-argcomplete pipx > ~/.local/share/bash-completion/completions/pipx.bash
-fi
+eval "$(register-python-argcomplete pipx)"
 
 # eval "$(batman --export-env)"
 
@@ -192,7 +194,7 @@ export _ZO_FZF_OPTS='--no-multi --reverse --border'
 eval "$(zoxide init bash)"
 
 export FZF_DEFAULT_COMMAND='fd -u'
-export FZF_DEFAULT_OPTS='--multi --reverse --border' #--cycle
+export FZF_DEFAULT_OPTS='--multi --reverse --border --marker="+ "' #--cycle
 eval "$(fzf --bash)"
 
 export SKIM_DEFAULT_COMMAND='fd -u'
