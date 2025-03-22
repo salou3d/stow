@@ -1,0 +1,95 @@
+// Scheme name: akFlQGFb-jpg
+// Scheme system: base16
+// Scheme author: Tinty
+// Theme based on Onagre's Hollow theme
+// Template author: Tinted Theming (https://github.com/tinted-theming)
+
+.onagre {
+    --exit-unfocused: false;
+    height: 375px;
+    width: 600px;
+    // --icon-theme: "breeze-dark";
+    // --icon-size: 28px;
+    --font-family: "Iosevka Nerd Font Mono";
+    background: #28262e;
+    color: #d5cbc6;
+    // border-color: #726c6f;
+    // border-width: 2px;
+    border-radius: 0%;
+    padding: 5px;
+
+    .container {
+        padding: 8px;
+        .search {
+            --spacing: 1;
+            background: #8a8484;
+            border-radius: 10.0%;
+            color: #d5cbc6;
+            --height: fill-portion 1;
+
+            .plugin-hint {
+                font-size: 14px;
+                background: #595559;
+                color: #d5cbc6;
+                border-color: #726c6f;
+                --align-x: center;
+                --align-y: center;
+                --width: fill-portion 1;
+                --height: fill;
+            }
+
+            .input {
+                font-size: 14px;
+                background: #8a8484;
+                --width: fill-portion 11;
+            }
+        }
+
+        .rows {
+            --height: fill-portion 8;
+            border-radius: 8.0%;
+
+            .row-selected {
+                background: #777086;
+                color: #d5cbc6;
+                --spacing: 3px;
+                --align-y: center;
+
+                border-radius: 8.0%;
+                .title {
+                    font-size: 14px;
+                }
+
+                .description {
+                    font-size: 12px;
+                }
+
+                .category-icon {
+                    --icon-size: 15px;
+                }
+            }
+
+            .row {
+                .title {
+                    font-size: 14px;
+                }
+
+                .description {
+                    font-size: 12px;
+                }
+
+                .category-icon {
+                    --icon-size: 15px;
+                }
+            }
+        }
+
+        .scrollable {
+            background: #28262e;
+            .scroller {
+                color: #8a8484;
+            }
+        }
+    }
+}
+

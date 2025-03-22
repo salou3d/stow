@@ -1,0 +1,31 @@
+/* Scheme name: photo-1508166159374-08190ea39268-jpeg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #21282a;
+@define-color fg-color #d8d8ca;
+@define-color primary-color #89728c;
+@define-color secondary-color #8a8a78;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;
+
+
+@define-color base00 #21282a;
+@define-color base01 #3b4140;
+@define-color base02 #555a57;
+@define-color base03 #6f736e;
+@define-color base04 #898c85;
+@define-color base05 #a3a59c;
+@define-color base06 #bdbeb3;
+@define-color base07 #d8d8ca;
+@define-color base08 #9b4751;
+@define-color base09 #c6906c;
+@define-color base0A #cc9d79;
+@define-color base0B #5b8e84;
+@define-color base0C #7cc3ba;
+@define-color base0D #3a719a;
+@define-color base0E #89728c;
+@define-color base0F #8a8a78;

@@ -1,0 +1,31 @@
+/* Scheme name: grass-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* GTK Vars */
+@define-color bg-color #2b2524;
+@define-color fg-color #d8d2ca;
+@define-color primary-color #895194;
+@define-color secondary-color #a95c6a;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;
+
+
+@define-color base00 #2b2524;
+@define-color base01 #433d3b;
+@define-color base02 #5c5653;
+@define-color base03 #756f6b;
+@define-color base04 #8d8782;
+@define-color base05 #a6a09a;
+@define-color base06 #bfb9b2;
+@define-color base07 #d8d2ca;
+@define-color base08 #c95527;
+@define-color base09 #f67c25;
+@define-color base0A #f7b74c;
+@define-color base0B #3fae75;
+@define-color base0C #36aad7;
+@define-color base0D #083ed4;
+@define-color base0E #895194;
+@define-color base0F #a95c6a;

@@ -1,0 +1,59 @@
+# base16 fly-jpeg 256 - alacritty color config
+# Tinty
+
+# Default colors
+[colors.primary]
+background = '0x222829'
+foreground = '0xb1b4b5'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x222829'
+cursor = '0xb1b4b5'
+
+# Normal colors
+[colors.normal]
+black = '0x222829'
+red = '0x8b7a74'
+green = '0x748e82'
+yellow = '0xb1a18f'
+blue = '0x667c93'
+magenta = '0x89787d'
+cyan = '0x9eaaae'
+#white = '0xb1b4b5'
+white = '0xebeced'
+
+# Bright colors
+[colors.bright]
+black = '0x787c7d'
+red = '0x8b7a74'
+green = '0x748e82'
+yellow = '0xb1a18f'
+blue = '0x667c93'
+magenta = '0x89787d'
+cyan = '0x9eaaae'
+white = '0xebeced'
+
+[[colors.indexed_colors]]
+index = 16
+color = "0xa69889"
+
+[[colors.indexed_colors]]
+index = 17
+color = "0x8b7a74"
+
+[[colors.indexed_colors]]
+index = 18
+color = "0x3e4445"
+
+[[colors.indexed_colors]]
+index = 19
+color = "0x5b6061"
+
+[[colors.indexed_colors]]
+index = 20
+color = "0x949899"
+
+[[colors.indexed_colors]]
+index = 21
+color = "0xced0d1"

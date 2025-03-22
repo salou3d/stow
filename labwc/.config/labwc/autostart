@@ -22,7 +22,7 @@ swaybg -o "*" -m fill -i "$(xdg-user-dir PICTURES)/current-wallpaper"  >/dev/nul
 if command -v sfwbar >/dev/null 2>&1; then
     sfwbar -f ~/.config/sfwbar/sflab.config >/dev/null 2>&1 &
 elif command -v waybar >/dev/null 2>&1; then
-    waybar >/dev/null 2>&1 &
+    waybar -c ~/.config/waybar/hyprdots/config.jsonc -s ~/.config/waybar/hyprdots/style.css >/dev/null 2>&1 &
 fi
 
 # Lock screen after 5 minutes; turn off display after another 5 minutes.

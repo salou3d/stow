@@ -1,0 +1,38 @@
+# base16 pastel-png - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x152646'
+foreground = '0xabaab6'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x152646'
+cursor = '0xabaab6'
+
+# Normal colors
+[colors.normal]
+black = '0x152646'
+red = '0xb57d3c'
+green = '0x389559'
+yellow = '0xeeb167'
+blue = '0x104e98'
+magenta = '0x877e3f'
+cyan = '0x4a81c3'
+#white = '0xabaab6'
+white = '0xe8dfe4'
+
+# Bright colors
+[colors.bright]
+black = '0x6f7589'
+red = '0xdc994f'
+green = '0x33405c'
+yellow = '0x515a73'
+blue = '0x8d8fa0'
+magenta = '0xc9c4cd'
+cyan = '0x997c3c'
+white = '0xe8dfe4'

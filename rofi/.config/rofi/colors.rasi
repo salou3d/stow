@@ -1,21 +1,21 @@
 
 * {
-    color0:     #0d2733;
-    color1:     #2b424d;
-    color2:     #4a5e67;
-    color3:     #697a81;
-    color4:     #87969c;
-    color5:     #a6b2b6;
-    color6:     #c5ced0;
-    color7:     #e4eaeb;
-    color8:     #b8511a;
-    color9:     #e57b42;
-    color10:    #ea9760;
-    color11:    #0e6b83;
-    color12:    #47aee4;
-    color12:    #14679f;
-    color14:    #8b4a42;
-    color15:    #9c3e22;
+    color0:     #1d282f;
+    color1:     #373f44;
+    color2:     #51565a;
+    color3:     #6b6d70;
+    color4:     #868585;
+    color5:     #a09c9b;
+    color6:     #bab3b1;
+    color7:     #d5cbc7;
+    color8:     #a75169;
+    color9:     #ae917b;
+    color10:    #bbb491;
+    color11:    #38976d;
+    color12:    #65b49e;
+    color12:    #5a6492;
+    color14:    #977388;
+    color15:    #956b79;
     background: @color0;
     foreground: @color7;
 }

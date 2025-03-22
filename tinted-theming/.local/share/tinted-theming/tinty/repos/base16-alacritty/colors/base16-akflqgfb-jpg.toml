@@ -1,0 +1,38 @@
+# base16 akFlQGFb-jpg - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x28262e'
+foreground = '0xa39b9a'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x28262e'
+cursor = '0xa39b9a'
+
+# Normal colors
+[colors.normal]
+black = '0x28262e'
+red = '0xdb285b'
+green = '0x07c374'
+yellow = '0xdfa673'
+blue = '0x225f96'
+magenta = '0x777086'
+cyan = '0x23d6a3'
+#white = '0xa39b9a'
+white = '0xd5cbc6'
+
+# Bright colors
+[colors.bright]
+black = '0x726c6f'
+red = '0xe3735e'
+green = '0x403d43'
+yellow = '0x595559'
+blue = '0x8a8484'
+magenta = '0xbcb3b0'
+cyan = '0xb13654'
+white = '0xd5cbc6'

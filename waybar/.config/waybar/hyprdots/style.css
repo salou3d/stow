@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "Noto Sans";
     font-weight: bold;
     font-size: 10px;
     min-height: 10px;
@@ -16,7 +16,7 @@ window#waybar {
 tooltip {
     background: @main-bg;
     color: @main-fg;
-    border-radius: 7px;
+    border-radius: 3px;
     border-width: 0px;
 }
 

@@ -1,0 +1,38 @@
+# base16 wallhaven-3lp2md-jpg - alacritty color config
+# Tinty
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+# Default colors
+[colors.primary]
+background = '0x29201b'
+foreground = '0xa29c93'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x29201b'
+cursor = '0xa29c93'
+
+# Normal colors
+[colors.normal]
+black = '0x29201b'
+red = '0xc33400'
+green = '0x62b001'
+yellow = '0xeea25b'
+blue = '0x0000ff'
+magenta = '0x61138c'
+cyan = '0x16dffd'
+#white = '0xa29c93'
+white = '0xd3cec4'
+
+# Bright colors
+[colors.bright]
+black = '0x716a63'
+red = '0xce8d31'
+green = '0x413833'
+yellow = '0x59514b'
+blue = '0x8a837b'
+magenta = '0xbab5ab'
+cyan = '0xc24e15'
+white = '0xd3cec4'

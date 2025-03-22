@@ -43,7 +43,7 @@ alias lt='lsd -a --tree --depth 1 --group-directories-first'
 alias laf='lsd -alF --group-directories-first'
 alias lal='lsd -al --group-directories-first'
 alias ..="cd .."
-alias handlr="handlr-regex"
+#alias handlr="handlr-regex"
 
 alias shutdown="systemctl shutdown"
 alias reboot="systemctl reboot"
@@ -194,19 +194,21 @@ export _ZO_FZF_OPTS='--no-multi --reverse --border'
 eval "$(zoxide init bash)"
 
 export FZF_DEFAULT_COMMAND='fd -u'
-export FZF_DEFAULT_OPTS='--multi --reverse --border --marker="+ "' #--cycle
+export FZF_DEFAULT_OPTS='--multi --reverse --border' # --cycle --marker="+"
 eval "$(fzf --bash)"
 
 export SKIM_DEFAULT_COMMAND='fd -u'
-export SKIM_DEFAULT_OPTIONS='--multi --reverse --border'
+export SKIM_DEFAULT_OPTIONS='--no-multi --reverse --border'
+
+# eval "$(tv init bash)"
 
 # ripgrep->fzf->hx [QUERY]
-rfv() (
+rfv() {
   RELOAD='reload:rg --column --color=always --smart-case {q} || :'
   OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
             hx {1} +{2}     # No selection. Open the current line in Vim.
           else
-            hx +cw -q {+f}  # Build quickfix list for the selected items.
+            hx -q {+f}  # Build quickfix list for the selected items.
           fi'
   fzf --disabled --ansi --multi \
       --bind "start:$RELOAD" --bind "change:$RELOAD" \
@@ -217,13 +219,13 @@ rfv() (
       --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
       --preview-window '~4,+{2}+4/3,<80(up)' \
       --query "$*"
-)
+}
 
 
 # export MCFLY_LIGHT=TRUE
-# export MCFLY_KEY_SCHEME=vim # Default; emacs
-# export MCFLY_FUZZY=3
-export MCFLY_RESULTS=20
+export MCFLY_KEY_SCHEME=vim # Default; emacs
+# export MCFLY_FUZZY=2
+# export MCFLY_RESULTS=20 # Default: 30
 # export MCFLY_DELETE_WITHOUT_CONFIRM=true
 # export MCFLY_INTERFACE_VIEW=TOP
 # export MCFLY_DISABLE_MENU=TRUE
@@ -239,8 +241,6 @@ eval -- "$(starship init bash --print-full-init)"
 
 # eval "$(wl-screenrec --generate-completions bash)"
 
-# eval "$(fx --init)"
-
 
 if [ -f  ~/.config/broot/launcher/bash/br ]; then
 	source ~/.config/broot/launcher/bash/br
@@ -254,3 +254,7 @@ if [ -f  ~/.sweep.sh ]; then
   source ~/.sweep.sh
 fi
 
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

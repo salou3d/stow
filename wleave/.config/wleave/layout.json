@@ -1,0 +1,58 @@
+{
+    "buttons": [
+        {
+            "label" : "lock",
+            "action" : "hyprlock",
+            "text" : "Lock",
+            "keybind" : "l",
+            "height" : 1,
+            "width" : 1,
+            "circular" : false
+        },
+        {
+            "label" : "logout",
+            "action" : "wayland-logout",
+            "text" : "Logout",
+            "keybind" : "e",
+            "height" : 1,
+            "width" : 1,
+            "circular" : false
+        },
+        {
+            "label" : "hibernate",
+            "action" : "systemctl hibernate",
+            "text" : "Hibernate",
+            "keybind" : "h",
+            "height" : 1,
+            "width" : 1,
+            "circular" : false
+        },
+        {
+            "label" : "suspend",
+            "action" : "systemctl suspend",
+            "text" : "Suspend",
+            "keybind" : "u",
+            "height" : 1,
+            "width" : 1,
+            "circular" : false
+        },
+        {
+            "label" : "reboot",
+            "action" : "systemctl reboot",
+            "text" : "Reboot",
+            "keybind" : "r",
+            "height" : 1,
+            "width" : 1,
+            "circular" : false
+        },
+        {
+            "label" : "shutdown",
+            "action" : "systemctl poweroff",
+            "text" : "Shutdown",
+            "keybind" : "s",
+            "height" : 1,
+            "width" : 1,
+            "circular" : false
+        }
+    ]
+}

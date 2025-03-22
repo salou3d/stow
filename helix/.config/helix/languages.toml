@@ -1,0 +1,5 @@
+
+use-grammars = { only = [ "awk", "bash", "c", "css", "html", "hyprland", "java",
+    "json", "lua", "python", "ron", "rust", "scss", "sway", "toml", "yaml",
+    "xml", "zig"
+  ] }
