@@ -12,12 +12,6 @@ hook = "source %f"
 supported-systems = ["base16"]
 
 [[items]]
-name = "base16-rofi"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-rofi"
-themes-dir = "colors"
-hook = "cp -r %f ~/.config/rofi/colors.rasi"
-
-[[items]]
 name = "base16-ironbar"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-ironbar"
 themes-dir = "themes"
@@ -25,18 +19,24 @@ hook = "cp -r %f ~/.config/ironbar/colors.css; ironbar load-css ~/.config/ironba
 supported-systems = ["base16"]
 
 [[items]]
-name = "base16-anyrun"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-anyrun"
-themes-dir = "themes"
-hook = "cp -r %f ~/.config/anyrun/colors.css"
-supported-systems = ["base16"]
+name = "base16-rofi"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-rofi"
+themes-dir = "colors"
+hook = "cp -r %f ~/.config/rofi/colors.rasi"
 
-[[items]]
-name = "base16-onagre"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-onagre"
-themes-dir = "themes"
-hook = "cp -r %f ~/.config/onagre/tinted.scss"
-supported-systems = ["base16"]
+# [[items]]
+# name = "base16-anyrun"
+# path = "~/.local/share/tinted-theming/tinty/repos/base16-anyrun"
+# themes-dir = "themes"
+# hook = "cp -r %f ~/.config/anyrun/colors.css"
+# supported-systems = ["base16"]
+
+# [[items]]
+# name = "base16-onagre"
+# path = "~/.local/share/tinted-theming/tinty/repos/base16-onagre"
+# themes-dir = "themes"
+# hook = "cp -r %f ~/.config/onagre/tinted.scss"
+# supported-systems = ["base16"]
 
 [[items]]
 name = "base16-fzf"
@@ -45,12 +45,12 @@ themes-dir = "bash"
 hook = "cp -r %f ~/.fzfcolors.sh && source ~/.fzfcolors.sh"
 supported-systems = ["base16"]
 
-[[items]]
-name = "base16-sweep"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-sweep"
-themes-dir = "themes"
-hook = "cp -r %f ~/.sweep.sh && source ~/.sweep.sh"
-supported-systems = ["base16"]
+# [[items]]
+# name = "base16-sweep"
+# path = "~/.local/share/tinted-theming/tinty/repos/base16-sweep"
+# themes-dir = "themes"
+# hook = "cp -r %f ~/.sweep.sh && source ~/.sweep.sh"
+# supported-systems = ["base16"]
 
 [[items]]
 name = "base16-kitty"
@@ -59,12 +59,12 @@ themes-dir = "colors"
 hook = "cp -r %f ~/.config/kitty/tinted.conf"
 supported-systems = ["base16"]
 
-[[items]]
-name = "base16-alacritty"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-alacritty"
-themes-dir = "colors"
-hook = "cp -r %f ~/.config/alacritty/colors.toml"
-supported-systems = ["base16"]
+# [[items]]
+# name = "base16-alacritty"
+# path = "~/.local/share/tinted-theming/tinty/repos/base16-alacritty"
+# themes-dir = "colors"
+# hook = "cp -r %f ~/.config/alacritty/colors.toml"
+# supported-systems = ["base16"]
 
 # [[items]]
 # name = "base16-konsole"
@@ -104,12 +104,12 @@ themes-dir = "colors"
 hook = "cp -r %f ~/.local/share/themes/breeze-dark-ob-tinted/openbox-3/themerc && labwc -r"
 supported-systems = ["base16"]
 
-[[items]]
-name = "base16-sway"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-sway"
-themes-dir = "themes"
-hook = "cp -r %f ~/.config/sway/config.d/colors.conf && swaymsg reload"
-supported-systems = ["base16"]
+# [[items]]
+# name = "base16-sway"
+# path = "~/.local/share/tinted-theming/tinty/repos/base16-sway"
+# themes-dir = "themes"
+# hook = "cp -r %f ~/.config/sway/config.d/colors.conf && swaymsg reload"
+# supported-systems = ["base16"]
 
 # [[items]]
 # name = "base16-swaylock"
