@@ -1,0 +1,165 @@
+@import "macchiato.css";
+
+* {
+  font-family: MesloLGS Nerd Font, Noto Sans, monospace;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: @crust;
+  border-bottom: 1px solid @overlay0;
+}
+
+#clock,
+#pulseaudio,
+#tray,
+#language,
+#window,
+#cpu,
+#memory,
+#battery,
+#bat2,
+#network,
+#backlight,
+#custom-dnf,
+#custom-pacman,
+#custom-vpn,
+#custom-media,
+#custom-spotify,
+#idle_inhibitor
+{
+  color: @text;
+  padding: 0px 10px;
+  margin: 0;
+}
+
+#tray {
+  padding: 0px 0px 0px 10px;
+}
+
+#language,
+#battery,
+#bat2,
+#network,
+#backlight,
+#custom-vpn,
+#custom-dnf,
+#custom-pacman,
+#idle_inhibitor,
+#pulseaudio
+{
+  background-color: @base;
+  margin-bottom: 1px;
+}
+
+#window {
+  color: @text;
+}
+
+#window label {
+  font-size: 14px;
+}
+
+#window.empty {
+  padding: 0;
+}
+
+#workspaces {
+  margin: 0px 0px 0px 3px;
+}
+
+#workspaces button {
+  padding: 4px 0px 5px;
+  margin: 0px 5px 0px -2px;
+  color: @subtext0;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+#workspaces button:not(:first-child) {
+  margin: 0px 5px;
+}
+
+#workspaces button:hover {
+  color: @text;
+  border-color: transparent;
+  background: transparent;
+}
+
+#workspaces button.focused {
+  color: @text;
+  border-bottom: 1px solid @mauve;
+}
+
+#workspaces button.urgent label {
+  color: @peach;
+  background-color: alpha(@peach, 0.12);
+}
+
+#workspaces button label {
+  border-radius: 6px;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+#workspaces button:hover:not(.urgent) label {
+  background-color: alpha(@overlay0, 0.12);
+}
+
+#custom-right,
+#custom-right2,
+#custom-left,
+#custom-left2,
+#custom-left3,
+#custom-left4
+{
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+#custom-right {
+  background-color: @base; 
+  color: @text;
+}
+
+#custom-right2 {
+  color: @base; 
+}
+
+#custom-left {
+  color: @crust;
+  background-color: @base;
+  margin-bottom: 1px;
+}
+
+#custom-left2, #custom-left4 {
+  color: @text;
+}
+
+#custom-left3 {
+  color: @base;
+}
+
+#custom-left4 {
+  background-color: @base;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+@keyframes blink {
+  to {
+    color: @red;
+  }
+}
+
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

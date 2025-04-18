@@ -15,7 +15,7 @@
         "spacing": 0,
         "revert": false,
         "margins": {
-          "top": 250
+          "top": 150
         },
         "bar": {
           "name": "bar",

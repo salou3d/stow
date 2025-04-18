@@ -1,0 +1,238 @@
+{
+    "layer": "top",
+    "name": "internal",
+    "height": 25,
+    "margin-left": 7,
+    "margin-right": 7,
+
+    "modules-left": [
+        "sway/workspaces"
+    ],
+
+    "modules-center": [
+      "custom/spotify"
+    ],
+
+    "modules-right": [
+        "cpu",
+        "memory",
+        "custom/left3",
+        "idle_inhibitor",
+        "network",
+        "custom/pacman",
+        "pulseaudio",
+        "battery",
+        "battery#bat2",
+        "custom/left",
+        "clock",
+        "tray"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon} {name}", 
+        "format-icons": {
+            "1:www": "",
+            "2:editor": "",
+            "3:terminals": "",
+            "4:messengers": "",
+            "5:music": "",
+            "urgent": "",
+            "focused": "",
+            "default": "",
+	    "high-priority-named": ["1:www", "2:editor", "3:terminals", "4:messengers", "5:music"]
+        }
+    },
+
+    "bluetooth": {
+	    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	    "format": " {status}",
+	    "format-disabled": "", // an empty format will hide the module
+	    "format-connected": " {num_connections} connected",
+	    "tooltip-format": "{controller_alias}\t{controller_address}",
+	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "America/Sao_Paulo",
+        "interval": 1,
+        "format": " {:%H:%M:%S}",
+        "format-alt": "  {:%d/%m/%Y}"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "󰍛 {}%"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "sway/language": {
+        "format": "  {}",
+        "tooltip": false
+    },
+
+    "battery": {
+        "interval": 20,
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "plugged": "󰂄",
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉","󰢞", "󰂋", "󰂅"],
+            "empty": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+	    "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        },
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    "network": {
+        "format": "{icon}",
+        "format-linked": "{ifname} ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-icons": {
+          "wifi": "",
+          "linked": "",
+          "ethernet": "",
+          "disconnected": ""
+        }
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        "format-bluetooth-muted": "{icon} {volume}%  {format_source}",
+        "format-muted": "󰝟 {volume}% {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "󱡏",
+            "car": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/spotify": {
+        "format": " {}",
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "escape": true,
+        "exec": "/home/flaviotux/.config/waybar/mediaplayer.py 2> /dev/null",
+        "exec-if": "pgrep spotify"
+    },
+
+    "custom/dnf": {
+        "format": " {}",
+        "interval": 36000,
+        "exec": "dnf check-update | grep 'updates' | wc -l",
+        "signal": 8
+    },
+
+    "custom/pacman": {
+       "format": " {}",
+       "interval": 3600,
+       "exec": "yay -Qyu | wc -l",
+       "signal": 8
+    },
+
+    "custom/vpn": {
+        "format": "{icon}",
+        "format-icons": {
+          "connected": "",
+          "disconnected": ""
+        },
+        "exec": "/home/flaviotux/.config/waybar/vpn-status.sh 2> /dev/null",
+        "return-type": "json",
+        "interval": 5
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 40,
+        "tooltip": false,
+        "icon": false
+    },
+
+    "upower": {
+        "icon-size": 20,
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-spacing": 20
+    },
+
+    "custom/left": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/left2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/left3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/left4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/right": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/right2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/right3": {
+        "format": "",
+        "tooltip": false
+    }
+}
