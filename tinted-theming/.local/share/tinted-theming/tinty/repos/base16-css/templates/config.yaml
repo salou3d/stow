@@ -1,0 +1,6 @@
+base16:
+    extension: .css
+    output: colors
+base24:
+    extension: .css
+    output: colors

@@ -12,6 +12,13 @@ hook = "source %f"
 supported-systems = ["base16"]
 
 [[items]]
+name = "base16-css"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-css"
+themes-dir = "colors"
+hook = "cp -r %f ~/.config/colors/colors.css"
+supported-systems = ["base16", "base24"]
+
+[[items]]
 name = "base16-ironbar"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-ironbar"
 themes-dir = "themes"

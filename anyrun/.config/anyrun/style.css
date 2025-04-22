@@ -1,4 +1,12 @@
-@import "colors.css";
+@import "../colors/colors.css";
+
+@define-color bg-color @base00;
+@define-color fg-color @base07;
+@define-color primary-color @base0E;
+@define-color secondary-color @base0F;
+@define-color border-color @primary-color;
+@define-color selected-bg-color @primary-color;
+@define-color selected-fg-color @bg-color;
 
 * {
   all: unset;

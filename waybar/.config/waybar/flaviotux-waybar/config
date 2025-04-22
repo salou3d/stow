@@ -1,48 +1,62 @@
 {
     "layer": "top",
     "name": "internal",
-    "height": 25,
-    "margin-left": 7,
-    "margin-right": 7,
+    "height": 24,
+    "margin-left": 0,
+    "margin-right": 0,
 
     "modules-left": [
-        "sway/workspaces"
-    ],
-
-    "modules-center": [
-      "custom/spotify"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
 
     "modules-right": [
         "cpu",
         "memory",
+        "temperature",
         "custom/left3",
+        "hyprland/language",
         "idle_inhibitor",
-        "network",
-        "custom/pacman",
-        "pulseaudio",
         "battery",
-        "battery#bat2",
+        "pulseaudio",
+        "custom/pacman",
         "custom/left",
-        "clock",
-        "tray"
+        "tray",
+        "clock"
     ],
 
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{icon} {name}", 
+        "format": "{name}: {icon}",
         "format-icons": {
-            "1:www": "",
-            "2:editor": "",
-            "3:terminals": "",
-            "4:messengers": "",
-            "5:music": "",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
             "urgent": "",
-            "focused": "",
-            "default": "",
-	    "high-priority-named": ["1:www", "2:editor", "3:terminals", "4:messengers", "5:music"]
+            "active": "",
+            "default": ""
         }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 40,
+        "tooltip": false,
+        "icon": true,
+        "icon-size": 16
+    },
+    "hyprland/language": {
+        "format": " {}",
+        "format-fr": "FR",
+        "format-ar": "ARA",
+    },
+    "sway/language": {
+        "format": " {}",
+        "format-fr": "FR",
+        "format-ar": "ARA",
+        "tooltip": false
     },
 
     "bluetooth": {
@@ -55,10 +69,6 @@
 	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -68,14 +78,15 @@
     },
 
     "tray": {
-        "spacing": 10
+        "spacing": 7
     },
 
     "clock": {
-        "timezone": "America/Sao_Paulo",
+        "timezone": "Africa/Casablanca",
         "interval": 1,
-        "format": " {:%H:%M:%S}",
-        "format-alt": "  {:%d/%m/%Y}"
+        //"format": " {:%H:%M:%S}",
+        "format": " {:%H:%M, %a %d-%m-%y}",
+        "format-alt": "  {:%H:%M:%S %A %d, %B %Y}"
     },
 
     "cpu": {
@@ -98,11 +109,6 @@
         "format-icons": ["", "", ""]
     },
 
-    "sway/language": {
-        "format": "  {}",
-        "tooltip": false
-    },
-
     "battery": {
         "interval": 20,
         "format": "{icon} {capacity}%",
@@ -116,10 +122,6 @@
             "warning": 30,
             "critical": 15
         }
-    },
-
-    "battery#bat2": {
-        "bat": "BAT2"
     },
 
     "network": {
@@ -152,16 +154,6 @@
         "on-click": "pavucontrol"
     },
 
-    "custom/spotify": {
-        "format": " {}",
-        "return-type": "json",
-        "max-length": 40,
-        "on-click": "playerctl play-pause",
-        "escape": true,
-        "exec": "/home/flaviotux/.config/waybar/mediaplayer.py 2> /dev/null",
-        "exec-if": "pgrep spotify"
-    },
-
     "custom/dnf": {
         "format": " {}",
         "interval": 36000,
@@ -172,7 +164,7 @@
     "custom/pacman": {
        "format": " {}",
        "interval": 3600,
-       "exec": "yay -Qyu | wc -l",
+       "exec": "paru -Qyu | wc -l",
        "signal": 8
     },
 
@@ -185,13 +177,6 @@
         "exec": "/home/flaviotux/.config/waybar/vpn-status.sh 2> /dev/null",
         "return-type": "json",
         "interval": 5
-    },
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 40,
-        "tooltip": false,
-        "icon": false
     },
 
     "upower": {

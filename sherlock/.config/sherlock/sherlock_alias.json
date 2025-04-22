@@ -1,0 +1,10 @@
+{
+    "kitty": {
+        "name": "Terminal",
+        "icon": "terminal"
+    },
+    "Tweaks": {
+        "name": "GTK Settings",
+        "icon": "settings"
+    }
+}

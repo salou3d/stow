@@ -1,0 +1,45 @@
+[default_apps]
+teams = "teams-for-linux --enable-features=UseOzonePlatform --ozone-platform=wayland --url {meeting_url}"
+calendar_client = "org.mozilla.Thunderbird"
+terminal = "konsole"
+
+[debug]
+try_suppress_errors     =   false                                   
+try_suppress_warnings   =   false
+app_paths               =   ["~/.local/share/applications/"]        
+
+[units]
+lengths                 =   "meter"
+weights                 =   "kg"
+volumes                 =   "l"
+temperatures            =   "C"
+
+[appearance]
+width                   =   700
+height                  =   500
+gsk_renderer            =   "cairo"                                   
+recolor_icons           =   false                                     
+icon_paths              =   [ "~/.config/sherlock/icons", "~/.local/share/icons" ]
+icon_size               =   22                                        
+search_icon             =   true                                        
+use_base_css            =   true
+status_bar              =   false
+
+[behavior]
+caching                 =   true                                    
+cache                   =   "~/.cache/sherlock/sherlock_desktop_cache.json"
+daemonize               =   false                                   
+animation               =   true                                    
+global_prefix           =   ""                                   
+global_flags            =   ""                                    
+
+[binds]
+prev                    =   "None"
+next                    =   "None"                                  
+modifier                =   "control"                               
+
+[files]
+fallback                =   "~/.config/sherlock/fallback.json"
+css                     =   "~/.config/sherlock/tinted.css"
+alias                   =   "~/.config/sherlock/sherlock_alias.json"
+ignore                  =   "~/.config/sherlock/sherlockignore"

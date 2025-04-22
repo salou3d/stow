@@ -1,117 +1,187 @@
+@import "../colors/colors.css";
+
+@define-color base   @base02;
+@define-color mantle @base01;
+@define-color crust  @base00;
+
+@define-color text     @base07;
+@define-color subtext0 @base05;
+@define-color subtext1 @base06;
+
+@define-color overlay0 @base03;
+@define-color overlay1 @base04;
+
+@define-color green     @base0B;
+@define-color peach     @base09;
+@define-color red       @base08;
+@define-color mauve     @base0C;
+
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "Noto Sans", "Font Awesome 6 Free Solid";
-    font-size: 9pt;
-    min-height: 0;
+  font-family: Noto Sans Regular;
+  font-size: 12px;
+  border-radius: 0;
 }
 
 window#waybar {
-    background-color: alpha(@theme_bg_color, 1);
-    color: @theme_fg_color;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: @crust;
+  border-bottom: 1px solid @overlay0;
 }
 
-window#waybar.empty {
-    color: rgba(0,0,0,0);
+#clock,
+#pulseaudio,
+#tray,
+#language,
+#window,
+#cpu,
+#memory,
+#battery,
+#bat2,
+#network,
+#backlight,
+#custom-dnf,
+#custom-pacman,
+#custom-vpn,
+#custom-media,
+#custom-spotify,
+#idle_inhibitor,
+#temperature
+{
+  color: @text;
+  padding: 0px 5px;
+  margin: 0;
 }
 
-.topbar {
-    border-bottom: 1px solid alpha(@borders, 1);
+#clock {
+  font-weight: 500;
+  margin: 0 5px 0 0;
+}
+
+#tray {
+  padding: 0px 10px;
+}
+
+#language,
+#battery,
+#network,
+#backlight,
+#custom-vpn,
+#custom-dnf,
+#custom-pacman,
+#idle_inhibitor,
+#pulseaudio
+{
+  background-color: @base;
+  margin-bottom: 1px;
+}
+
+#window {
+  color: @text;
+}
+
+#window label {
+  font-size: 12px;
+}
+
+#window.empty {
+  padding: 0;
+}
+
+#workspaces {
+  margin: 0px 0px 0px 5px;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: @theme_fg_color;
+  padding: 4px 0px 5px;
+  margin: 0px 2px 0px -2px;
+  color: @subtext0;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+#workspaces button:not(:first-child) {
+  margin: 0px 2px;
 }
 
 #workspaces button:hover {
-    background: @theme_selected_bg_color;
-    box-shadow: inset 0 1px @theme_selected_bg_color;
+  color: @text;
+  border-color: transparent;
+  background: transparent;
 }
 
-#workspaces button.active {
-    background-color: alpha(@theme_selected_bg_color, 0.333);
-    border-top: 2px solid @theme_selected_bg_color;
-    /*box-shadow: inset 0 3px #ffffff;*/
+#workspaces button.focused {
+  color: @text;
+  border-bottom: 1px solid @mauve;
 }
 
-#workspaces button.urgent {
-    background-color: @warning_color;
+#workspaces button.urgent label {
+  color: @peach;
+  background-color: alpha(@peach, 0.12);
 }
 
-#mode {
-    background-color: #64727D;
-    border-top: 1px solid #ffffff;
+#workspaces button label {
+  border-radius: 6px;
+  padding: 1px 10px;
+  background-color: transparent;
 }
 
-#backlight,
-#battery.bat1,
-#battery.bat2,
-#clock,
-#cpu,
-#custom-mail,
-#custom-poweroff,
-#custom-weather,
-#disk,
-#idle_inhibitor,
-#memory,
-#mode,
-#network.vpn,
-#network.wifi,
-#network.ethernet,
-#network.disconnected,
-#pulseaudio,
-#taskbar,
-#temperature,
-#tray {
-    padding: 0 3px;
-    margin: 0 0px;
-    color: @theme_fg_color;
+#workspaces button:hover:not(.urgent) label {
+  background-color: alpha(@overlay0, 0.12);
 }
 
-#taskbar button {
-    padding: 3px 5px;
-    margin: 0 0px;
+#custom-right,
+#custom-right2,
+#custom-left,
+#custom-left2,
+#custom-left3,
+#custom-left4
+{
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+#custom-right {
+  background-color: @base; 
+  color: @text;
+}
+
+#custom-right2 {
+  color: @base; 
+}
+
+#custom-left {
+  color: @crust;
+  background-color: @base;
+  margin-bottom: 1px;
+}
+
+#custom-left2, #custom-left4 {
+  color: @text;
+}
+
+#custom-left3 {
+  color: @base;
+}
+
+#custom-left4 {
+  background-color: @base;
+}
+
+#battery.charging {
+  color: @green;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    color: @red;
+  }
 }
 
-#battery.bat2.critical:not(.charging) {
-    background-color: @error_color;
-    color: @theme_fg_color;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#temperature.critical {
-    background-color: @warning_color;
-}
-
-#taskbar button:hover {
-/*  background: rgba(0, 0, 0, 0.2); */
-    background: alpha(@theme_selected_bg_color, 0.5);
-    border-top: @theme_selected_bg_color;
-    box-shadow: inset 0 2px @theme_selected_bg_color;
-}
-
-#taskbar button.active {
-    background-color:  alpha(@theme_selected_bg_color, 0.333);
-    box-shadow: inset 0 1px @theme_selected_bg_color;
-}
-
-#language {
-    border-radius: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }

@@ -156,26 +156,17 @@
         <to>left</to>
         <wrap>no</wrap>
       </action>
-      <action name="Execute">
-        <command>current_ws.sh left</command>
-      </action>
     </keybind>
     <keybind key="C-A-Right">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
-      <action name="Execute">
-        <command>current_ws.sh right</command>
-      </action>
     </keybind>
     <keybind key="C-A-Home">
       <action name="GoToDesktop">
         <to>current</to>
         <wrap>no</wrap>
-      </action>
-      <action name="Execute">
-        <command>current_ws.sh current</command>
       </action>
     </keybind>
     <!--    <keybind key="C-A-Up">
@@ -227,32 +218,20 @@
       <action name="GoToDesktop">
         <to>1</to>
       </action>
-      <action name="Execute">
-        <command>current_ws.sh 1</command>
-      </action>
     </keybind>
     <keybind key="C-F2">
       <action name="GoToDesktop">
         <to>2</to>
-      </action>
-      <action name="Execute">
-        <command>current_ws.sh 2</command>
       </action>
     </keybind>
     <keybind key="C-F3">
       <action name="GoToDesktop">
         <to>3</to>
       </action>
-      <action name="Execute">
-        <command>current_ws.sh 3</command>
-      </action>
     </keybind>
     <keybind key="C-F4">
       <action name="GoToDesktop">
         <to>4</to>
-      </action>
-      <action name="Execute">
-        <command>current_ws.sh 4</command>
       </action>
     </keybind>
     <keybind key="S-F1">
@@ -410,12 +389,12 @@
     </keybind>
     <keybind key="Super_L" onRelease="yes">
       <action name="Execute">
-        <command>anyrun</command>
+        <command>albert</command>
       </action>
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>anyrun</command>
+        <command>albert</command>
       </action>
     </keybind>
     <keybind key="W-S-Return">
@@ -425,7 +404,7 @@
     </keybind>
     <keybind key="W-C-Return">
       <action name="Execute">
-        <command>onagre -t ~/.config/onagre/tinted.scss</command>
+        <command>walker</command>
       </action>
     </keybind>
     <keybind key="W-A-Return">
@@ -456,30 +435,14 @@
 
     <keybind key="W-C-I">
       <action name="Execute">
-        <command>vigiland</command>
+        <command>killall swayidle</command>
       </action>
     </keybind>
     <keybind key="W-S-I">
       <action name="Execute">
-        <command>killall vigiland</command>
+        <command>swayidle</command>
       </action>
     </keybind>
-
-    <!--<keybind key="W-b">
-      <action name="Execute">
-        <command>flatpak run org.mozilla.firefox</command>
-      </action>
-    </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>flatpak run org.mozilla.Thunderbird</command>
-      </action>
-    </keybind>
-    <keybind key="W-p">
-      <action name="Execute">
-        <command>/media/Apps/appimages/sayonara-1.9.0-stable1-ge5e5dfc5.AppImage</command>
-      </action>
-    </keybind>-->
 
     <!-- SnapToRegion via W-Numpad -->
     <!-- <keybind key="A-Left">

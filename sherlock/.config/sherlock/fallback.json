@@ -1,0 +1,207 @@
+[
+    {
+        "name": "Categories",
+        "alias": "cat",
+        "type": "categories",
+        "args": {
+            "Kill Processes": {
+                "icon": "process",
+                "icon_class": "reactive",
+                "exec": "kill",
+                "search_string": "terminate;kill;process"
+                },
+            "Power Menu": {
+                "icon": "battery-full-symbolic",
+                "icon_class": "reactive",
+                "exec": "pm",
+                "search_string": "powermenu;"
+                }
+        },
+        "priority": 3,
+        "home": true
+    },
+    {
+        "name": "Clipboard",
+        "type": "clipboard-execution",
+        "args": {
+            "capabilities": ["url", "hex", "calc.math", "calc.lengths", "calc.weights"]
+        },
+        "priority": 1,
+        "home": true
+    },
+    {
+        "name": "Spotify",
+        "type": "audio_sink",
+        "args": {},
+        "async": true,
+        "priority": 1,
+        "home": true,
+        "spawn_focus": false
+    },
+    {
+        "name": "Calculator",
+        "type": "calculation",
+        "args": {},
+        "priority": 1
+    },
+    {
+        "name": "App Launcher",
+        "alias": "app",
+        "type": "app_launcher",
+        "args": {},
+        "priority": 2,
+        "home": true
+    },
+    {
+        "name": "Bookmarks",
+        "alias": "",
+        "type": "command",
+        "args": {
+            "commands": {
+                "ChatGPT": {
+                    "icon": "chat-gpt",
+                    "exec": "xdg-open https://chatgpt.com &",
+                    "search_string": "chatgpt;ai;"
+                },
+                "Github": {
+                    "icon": "github",
+                    "exec": "xdg-open https://github.com/skxxtz &",
+                    "search_string": "github;"
+                }
+            }
+        },
+        "priority": 3
+    },
+    {
+        "name": "Network Management",
+        "alias": "nm",
+        "type": "command",
+        "args": {
+            "commands": {
+                "Soifi": {
+                    "icon": "network-connect",
+                    "exec": "nmcli d wifi c soifi &",
+                    "search_string": "wifi;waves"
+                },
+                "Soifi-AP": {
+                    "icon": "network-connect",
+                    "exec": "nmcli d wifi c soifi &",
+                    "search_string": "wifi;soifi"
+                }
+            }
+        },
+        "priority": 4
+    },
+    {
+        "name": "Power Management",
+        "alias": "pm",
+        "type": "command",
+        "args": {
+            "commands": {
+                "Shutdown": {
+                    "icon": "system-shutdown",
+                    "exec": "systemctl poweroff",
+                    "search_string": "Poweroff;Shutdownl"
+                },
+                "Sleep": {
+                    "icon": "system-suspend",
+                    "exec": "systemctl suspend",
+                    "search_string": "Sleep;"
+                },
+                "Lock": {
+                    "icon": "system-lock-screen",
+                    "exec": "systemctl suspend & hyprlock",
+                    "search_string": "Lock Screen;"
+                },
+                "Reboot": {
+                    "icon": "system-reboot",
+                    "exec": "systemctl reboot",
+                    "search_string": "reboot"
+                }
+            }
+        },
+        "priority": 4
+    },
+    {
+        "name": "OBS Studio",
+        "alias": "",
+        "type": "command",
+        "args": {
+            "commands": {
+                "Start Recording": {
+                    "icon": "record",
+                    "exec": "obs --startrecording &",
+                    "search_string": "recording;start recording;startrecording;obs studio;"
+                }
+            }
+        },
+        "priority": 5
+    },
+    {
+        "name": "Utilities",
+        "alias": "",
+        "type": "command",
+        "args": {
+            "commands": {
+                "Color Picker": {
+                    "icon": "colorgrab",
+                    "exec": "hyprpicker -a &",
+                    "search_string": "colorpicker"
+                }
+            }
+        },
+        "priority": 5
+    },
+    {
+        "name": "Web Search",
+        "display_name": "DuckDuckGo Search",
+        "tag_start": "{keyword}",
+        "alias": "gg",
+        "type": "web_launcher",
+        "args": {
+            "search_engine": "duckduckgo",
+            "icon": "duckduckgo"
+        },
+        "priority": 100
+    },
+    {
+        "name": "YouTube Search",
+        "display_name": "Youtube Search",
+        "tag_start": "{keyword}",
+        "alias": "yt",
+        "type": "web_launcher",
+        "args": {
+            "search_engine": "https://www.youtube.com/results?search_query={keyword}",
+            "icon": "youtube"
+        },
+        "priority": 0
+    },
+    {
+        "name": "Wikipedia Search",
+        "alias": "wiki",
+        "type": "bulk_text",
+        "on_return": "next",
+        "async": true,
+        "args": {
+            "icon": "wikipedia",
+            "exec": "sherlock-wiki",
+            "exec-args": "'{keyword}'"
+        },
+        "priority": 0,
+        "shortcut": false
+    },
+    {
+        "name": "Weather",
+        "type": "weather",
+        "args": {
+            "location": "tangier",
+            "update_interval": 1440
+        },
+        "priority": 1,
+        "home": true,
+        "only_home": true,
+        "async": true,
+        "shortcut": false,
+        "spawn_focus": false
+    }
+]

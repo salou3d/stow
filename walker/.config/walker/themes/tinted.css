@@ -1,0 +1,149 @@
+@import url("file:///home/salo/.config/colors/colors.css");
+
+/* tinted-theming based on a rosepine theme */
+/* base background color */
+@define-color base @base00;
+@define-color surface @base01;
+@define-color overlay @base02;
+
+@define-color bg_semi_level1 alpha(@base00, 0.9);
+@define-color bg_semi_level2 alpha(@base00, 0.8);
+
+/* text color for entries that are unselected */
+@define-color muted @base04;
+@define-color subtle @base05;
+
+/* text color for entries, views and content in general */
+@define-color text @base07;
+
+@define-color love @base08;
+@define-color gold @base09;
+@define-color rose @base0A;
+@define-color pine @base0B;
+@define-color foam @base0C;
+@define-color iris @base0E;
+
+#window,
+#box,
+#search,
+#password,
+#input,
+#typeahead,
+#spinner,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#listplaceholder,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#window {
+  background: none;
+}
+
+#box {
+/*   background: @overlay; */
+  background: @base;
+  padding: 10px;
+  border-radius: 10px;
+/*   border: 2px solid @pine; */
+  border: 2px solid @iris;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#bar {
+  padding: 6px 0;
+}
+
+scrollbar {
+}
+
+slider {
+  min-width: 3px;
+  background: @rose;
+}
+
+#search {
+  margin: 0 10px;
+}
+
+#password,
+#input,
+#typeahead {
+  box-shadow: none;
+  border-radius: 5px;
+  color: @rose;
+  padding: 12px 24px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#input placeholder {
+  color: @subtle;
+}
+
+#spinner {
+}
+
+/* Type Ahead has never worked for me */
+#typeahead {
+}
+
+#list {
+  padding: 0 10px;
+}
+
+child {
+  border-radius: 5px;
+  color: #9ccfd8;
+  padding: 4px;
+}
+
+child:selected {
+/*   background: linear-gradient(180deg, @bg_semi_level1, @bg_semi_level2); */
+  background: @iris;
+  box-shadow: none;
+}
+
+#item {
+  padding: 5px;
+}
+
+#icon {
+}
+
+#text {
+}
+#label {
+  font-size: 15px;
+  color: @text;
+}
+#sub {
+  font-size: 11px;
+  color: @subtle;
+}
+
+/* child:selected #label {
+  color: @text;
+}
+child:selected #sub {
+  color: @subtle;
+} */
+
+#activationlabel {
+  color: @subtle;
+}
+.activation #activationlabel {
+  color: @rose;
+}
+.activation #text,
+.activation #icon,
+.activation #search {
+}
