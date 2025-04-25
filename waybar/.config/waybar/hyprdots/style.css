@@ -1,3 +1,16 @@
+@import "../../colors/colors.css";
+
+@define-color bar-bg @base00;
+
+@define-color main-bg @base01;
+@define-color main-fg @base07;
+
+@define-color wb-act-bg @base0E;
+@define-color wb-act-fg @base07;
+
+@define-color wb-hvr-bg @base0E;
+@define-color wb-hvr-fg @base07;
+
 * {
     border: none;
     border-radius: 0px;
@@ -6,8 +19,6 @@
     font-size: 10px;
     min-height: 10px;
 }
-
-@import "theme.css";
 
 window#waybar {
     background: @bar-bg;
@@ -36,8 +47,9 @@ tooltip {
 }
 
 #workspaces button.active {
-    background: @wb-act-bg;
-    color: @wb-act-fg;
+    background: alpha(@wb-act-fg, 0.66);
+    /*color: @wb-act-bg;*/
+    color: @main-bg;
     margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;
@@ -69,8 +81,10 @@ tooltip {
 }
 
 #taskbar button.active {
-    background: @wb-act-bg;
-    color: @wb-act-color;
+    /*background: @wb-act-bg;
+    color: @wb-act-color;*/
+    background: alpha(@wb-act-fg, 0.66);
+    color: @main-bg;
     margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;
@@ -87,11 +101,11 @@ tooltip {
 }
 
 #tray menu * {
-    min-height: 16px
+    min-height: 20px
 }
 
 #tray menu separator {
-    min-height: 10px
+    min-height: 2px
 }
 
 #backlight,
@@ -106,9 +120,11 @@ tooltip {
 #custom-keybindhint,
 #language,
 #memory,
+#temperature,
 #mpris,
 #network,
 #custom-notifications,
+#custom-notification,
 #custom-power,
 #pulseaudio,
 #custom-spotify,
@@ -129,7 +145,8 @@ tooltip {
     color: @main-fg;
     background: @main-bg;
     opacity: 1;
-    margin: 4px 0px 4px 0px;
+/*     margin: 4px 0px 4px 0px; */
+    margin: 1px 0;
     padding-left: 4px;
     padding-right: 4px;
 }
@@ -139,38 +156,42 @@ tooltip {
     padding: 0px;
 }
 
+#custom-power {
+    color: @base08;
+}
+
 #custom-r_end {
     border-radius: 0px 21px 21px 0px;
-    margin-right: 9px;
+    margin-right: 5px;
     padding-right: 3px;
 }
 
 #custom-l_end {
     border-radius: 21px 0px 0px 21px;
-    margin-left: 9px;
+    margin-left: 5px;
     padding-left: 3px;
 }
 
 #custom-sr_end {
     border-radius: 0px;
-    margin-right: 9px;
+    margin-right: 5px;
     padding-right: 3px;
 }
 
 #custom-sl_end {
     border-radius: 0px;
-    margin-left: 9px;
+    margin-left: 5px;
     padding-left: 3px;
 }
 
 #custom-rr_end {
     border-radius: 0px 7px 7px 0px;
-    margin-right: 9px;
+    margin-right: 5px;
     padding-right: 3px;
 }
 
 #custom-rl_end {
     border-radius: 7px 0px 0px 7px;
-    margin-left: 9px;
+    margin-left: 5px;
     padding-left: 3px;
 }

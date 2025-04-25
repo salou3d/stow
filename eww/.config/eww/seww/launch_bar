@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+## Files and cmd
+FILE="$HOME/.cache/eww_sewwbar.xyz"
+EWW="eww -c $HOME/.config/eww/seww"
+
+## Run eww daemon if not running already
+if [[ ! `pidof eww` ]]; then
+	if [[ -f "$FILE" ]]; then
+		rm "$FILE"
+	fi
+	${EWW} --force-wayland daemon
+	sleep 1
+fi
+
+## Open widgets 
+run_eww() {
+	${EWW} open sewwbar
+}
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	run_eww
+else
+	${EWW} close-all && ${EWW} kill
+	rm "$FILE"
+fi

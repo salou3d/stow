@@ -1,0 +1,157 @@
+@import "../../colors/colors.css";
+
+@define-color base @base00;
+@define-color blue @base0D;
+@define-color surface0 @base00;
+@define-color surface1 @base00;
+@define-color text @base07;
+@define-color overlay0 @base02;
+@define-color red @base08;
+@define-color peach @base0A;
+@define-color yellow @base0A;
+@define-color mauve @base0C;
+@define-color green @base0B;
+@define-color mantle #292a37;
+@define-color crust #2e303e;
+@define-color light-gray @base03;
+
+/*
+@define-color base #44465c;
+@define-color blue #3fc6de;
+@define-color surface0 #44465c;
+@define-color surface1 #44465c;
+@define-color text #d9e0ee;
+@define-color overlay0 #6e738d;
+@define-color red #ec6a88;
+@define-color peach #efb993;
+@define-color yellow #efb993;
+@define-color mauve #b072d1;
+@define-color green #3fdaa4;
+@define-color mantle #292a37;
+@define-color crust #2e303e;
+@define-color light-gray @base03;
+*/
+
+* {
+  font-family: "Noto Sans";
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  background: @overlay0;
+  border: none;
+  color: @text;
+}
+
+.bar-layout {
+  background-color: @base;
+  padding: 2px 5px;
+  color: @text;
+}
+
+.workspaces-widget {
+  background-color: @overlay0;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0 5px;
+}
+
+.workspace-entry {
+  margin: 1px 0;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
+.workspace-entry:hover {
+  background: @light-gray;
+}
+
+.workspace-entry .current {
+  background: @green;
+  margin: 0 3px;
+  padding: 0 12px;
+}
+
+.active-window {
+  background: @overlay0;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.date-time {
+  background: @overlay0;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+.sys-info-box {
+  background-color: @overlay0;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0 7px;
+}
+
+.info-lbl, .language, .notification {
+  margin: 1px 0;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
+.info-lbl.warning {
+  background: @yellow;
+  color: @light-gray;
+}
+
+.info-lbl.critical {
+  background: @red;
+  color: @light-gray;
+}
+
+.notification-icon {
+  font-weight: 900;
+}
+
+.notification-count {
+  font-weight: 700;
+  color: @yellow;
+  border-radius: 100%;
+  margin-left: 2px;
+}
+
+.cal {
+  color: @text;
+  background-color: @base;
+  padding: 5px;
+  padding-bottom: 1px;
+  border-radius: 5px;
+  border: 1px solid @light-gray;
+}
+
+calendar:selected {
+  color: @blue;
+}
+
+calendar.header {
+  color: @text;
+  font-weight: 900;
+}
+
+calendar.button {
+  color: @text;
+}
+
+calendar.highlight {
+  color: @text;
+  font-weight: 900;
+}
+
+.calendar:selected {
+  background: @green;
+  color: @text;
+}
+
+calendar:indeterminate {
+  color: @light-gray;
+}

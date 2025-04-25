@@ -1,0 +1,9 @@
+(defwidget battery []
+  (button
+    ;:onrightclick "./eww-launch lxqt-powermanagement"
+    (label :text "B ${EWW_BATTERY["BAT0"].capacity}%"
+      :tooltip "Battery (${EWW_BATTERY["BAT0"].status}): ${EWW_BATTERY["BAT0"].capacity}%"
+      :class "info-lbl normal"
+    )
+  )
+)

@@ -1,0 +1,273 @@
+(defvar eww "eww -c $HOME/.config/eww/seww")
+(deflisten notifications_pol :initial "0" "swaync-client -s")
+
+;; ----- EWW WIDGETS -----
+;; ----- WORKSPACES -----
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/hypr-get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/hypr-get-active-workspace")
+
+(defwidget workspaces []
+  (eventbox :onscroll "bash ~/.config/eww/scripts/hypr-change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+    (box :space-evenly false
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}" :class "workspace-entry"
+          (box :class "workspace-entry ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id}" :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""}" )
+            )
+          )
+        )
+      )
+    )
+  )
+
+(deflisten window :initial "..." "sh ~/.config/eww/scripts/hypr-get-window-title")
+(defwidget active_window []
+  (box
+    (label
+      :class "active-window"
+      :text "${window}"
+      :limit-width 50
+    )
+  )
+)
+
+;; ----- CLOCK -----
+(defwidget time []
+  (eventbox
+    :class "clock"
+    :onclick "${eww} open calendar --toggle"
+    :tooltip "${formattime(EWW_TIME, '%H:%M, %A %d %B %Y')}"
+    ;(box :orientation "h" :space-evenly false
+      (label :text "${formattime(EWW_TIME, '%H:%M, %a %d-%m-%y')}" :class "date-time")
+    ;)
+
+  )
+)
+
+;; ----- CALENDAR -----
+(defwidget cal []
+  (calendar :halign "center" :valign "center" :class "cal" ))
+
+;; ----- CPU -----
+(defwidget cpu []
+  (button
+    :onrightclick "./eww-launch qps"
+    (label
+      :class "info-lbl ${round(EWW_CPU.avg, 0) <= 50 ? 'normal': 50 < round(EWW_CPU.avg, 0) && round(EWW_CPU.avg, 0) <= 90 ? 'warning' : 'critical' }"
+      :tooltip "CPU usage: ${round(EWW_CPU.avg, 0)}%"
+      :text " ${round(EWW_CPU.avg, 0)}%")
+  )
+)
+
+;; ----- MEMORY -----
+(defwidget mem []
+  (button
+    :onrightclick "./eww-launch qps"
+    (label
+      :class "info-lbl ${round(EWW_RAM.used_mem_perc, 0) <= 50 ? "normal" : 50 < round(EWW_RAM.used_mem_perc, 0) && round(EWW_RAM.used_mem_perc, 0) < 90 ? "warning" : "critical" }"
+      :tooltip "Memory usage: ${round(EWW_RAM.used_mem_perc, 0)}%"
+      :text " ${round(EWW_RAM.used_mem_perc, 0)}%")
+
+  )
+)
+
+;; ----- TEMPERATURE -----
+(defwidget temperature []
+  (button
+    :onrightclick "./eww-launch qps"
+    (label
+      :class "info-lbl ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0 <= 50 ? 'normal': 50 < EWW_TEMPS.CORETEMP_PACKAGE_ID_0 && EWW_TEMPS.CORETEMP_PACKAGE_ID_0 < 80 ? 'warning' : 'critical' }"
+      :tooltip "Package temperature: ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C"
+      :text " ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C"
+    )
+  )
+)
+
+;; ----- BATTERY -----
+(defpoll battery_poll :interval "60s" "./battery.sh")
+;(include "./battery.yuck")
+
+(defwidget battery []
+   (label :text "${battery_poll.icon} ${battery_poll.percent}%"
+          :limit-width 10
+          :tooltip "${battery_poll.status}: ${battery_poll.percent}"
+          :class "info-lbl battery_poll.percent <= 95 ? 'normal': 15 < EWW_TEMPS.CORETEMP_PACKAGE_ID_0 && EWW_TEMPS.CORETEMP_PACKAGE_ID_0 <= 94 ? 'warning' : 'critical' }"
+  )
+)
+
+;; ----- BRIGHTNESS -----
+(defpoll brightness_var :interval "60s" "brightnessctl -m | awk -F, '{print $4}'")
+(defwidget brightness []
+  (label :text " ${brightness_var}"
+    :tooltip "Current screen brightness: ${brightness_var}"
+    :class "info-lbl normal"
+  )
+)
+
+;; ----- VOLUME -----
+(defpoll volume_var :interval "999h" :initial 0 'pamixer --get-volume')
+(defpoll micvolume_var :interval "999h" :initial 0 'pamixer --get-volume --source 0')
+
+(defwidget volume []
+  (label :text "  ${volume_var}%"
+    :tooltip "Current Volume: ${volume_var}%"
+    :class "info-lbl normal"
+  )
+)
+(defwidget micvolume []
+  (label :text " ${micvolume_var}%"
+    :tooltip "Current input (microphone volume): ${micvolume_var}%"
+    :class "info-lbl normal"
+  )
+)
+
+;; ----- LANGUAGE -----
+(defpoll lang_var :interval "1m" :initial "Fr" `hyprctl devices -j | jq -r '.keyboards | .[] | select( .name == "at-translated-set-2-keyboard") | .active_keymap'`)
+(defwidget language []
+  (button :class "language"
+    :onclick "hyprctl switchxkblayout current next"
+    (label :text " ${substring(lang_var, 0, 2)}"
+        :tooltip "Current keyboard layout: ${lang_var}"
+    )
+  )
+)
+
+;; ----- TRAY -----
+(defwidget ewwtray []
+  (systray :class "ewwtray"
+    :spacing 7
+    :orientation "h"
+    :space-evenly false
+    :icon-size 14
+    :prepend-new true
+  )
+)
+
+;; ----- NOTIFICATIONS -----
+(defwidget notifications []
+  (button :class "notification"
+    :onclick "swaync-client -t -sw"
+    :onrightclick "swaync-client -d -sw"
+    (box
+      :space-evenly false
+      :spacing 2
+      :tooltip "Notifications count: ${notifications_pol.count}"
+      (label
+        :class "notification-icon"
+        :text "${notifications_pol.inhibited || notifications_pol.dnd ? "󱏨" : notifications_pol.count > 0 ? "󰅸" : "󰂜" }")
+      (label
+        :class "notification-count"
+        :visible {notifications_pol.count > 0 ? true : false}
+        :markup "<sup>${notifications_pol.count > 0 ? notifications_pol.count : ""}</sup>"
+      )
+    )
+  )
+)
+
+;; ----- SYS INFO -----
+(defwidget sys_info []
+  (box :class "sys-info"
+    :space-evenly false
+    :orientation "h"
+    :spacing 10
+    (box :class "sys-info-box"
+        :halign "start"
+        :space-evenly false
+        :orientation "h"
+        :spacing 0
+        (cpu)
+        (mem)
+        (temperature)
+        (battery)
+    )
+    (box :class "sys-info-box"
+        :halign "start"
+        :space-evenly false
+        :orientation "h"
+        :spacing 0
+        (brightness)
+        (volume)
+        (micvolume)
+        (language)
+    )
+    (box :class "sys-info-box"
+        :halign "start"
+        :space-evenly false
+        :orientation "h"
+        :spacing 7
+        (notifications)
+        (ewwtray)
+    )
+  )
+)
+
+;; ----- LAYOUT WIDGETS -----
+
+(defwidget left_eww []
+  (box :class "left-eww"
+    :halign "start"
+    :space-evenly false
+    :orientation "h"
+    :spacing 10
+    (workspaces)
+    (active_window)
+  )
+)
+
+(defwidget center_eww []
+  (box :class "center-eww"
+    :halign "center"
+    :space-evenly false
+    :orientation "h"
+    (time)
+  )
+)
+
+(defwidget right_eww []
+  (box :class "right-eww"
+    :halign "end"
+    :space-evenly false
+    :orientation "h"
+    :spacing 10
+    (sys_info)
+  )
+)
+
+;; ----- BAR LAYOUT -----
+
+(defwidget bar_layout []
+  (centerbox :class "bar-layout"
+    :orientation "h"
+    (left_eww)
+    (center_eww)
+    (right_eww)
+  )
+)
+
+;; ----- WINDOW -----
+
+(defwindow calendar
+  ;:wm-ignore: true
+  :monitor 0
+  ;:windowtype "dock"
+  :geometry (geometry
+    :x "0%"
+    :y "0%"
+    :width "270px"
+    :height "60px"
+    :anchor "top center")
+(cal))
+
+(defwindow sewwbar
+  :monitor 0
+  :geometry (geometry :x "0%"
+    :y "0%"
+    :width "100%"
+    :height "24px"
+    :anchor "top center")
+  :stacking "bg"
+  :exclusive true
+  ;:focusable false
+  (bar_layout)
+)

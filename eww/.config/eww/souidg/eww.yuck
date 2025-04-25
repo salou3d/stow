@@ -1,0 +1,90 @@
+(defvar eww "eww -c $HOME/.config/eww/souidg")
+
+;;; -----------------   Calendar   ----------------- ;;;
+
+(defwidget cal []
+  (calendar :halign "center" :valign "center" :class "cal" ))
+
+(defwindow calendar
+  ;:wm-ignore: true
+  :monitor 0
+  ;:windowtype "dock"
+  :geometry (geometry
+    :x "0%"
+    :y "0%"
+    :width "270px"
+    :height "60px"
+    :anchor "top right")
+(cal))
+
+
+;;; -----------------   Power menu   ----------------- ;;;
+
+(defwidget powermenucontent []
+  (box :orientation "h"
+    :class "powermenu-container"
+      (box :class "lock-btn-box"
+          :orientation "h"
+          (button :class "btn"
+              :tooltip "Lock"
+              :onclick "${eww} close powermenu && hyprlock &"
+          "L")
+      )
+      (box :class "logout-btn-box"
+          :orientation "h"
+          (button :class "btn"
+              :tooltip "Logout"
+              :onclick "${eww} close powermenu && wayland-logout"
+          "Lo")
+      )
+      (box :class "suspend-btn-box"
+          :orientation "h"
+          (button :class "btn"
+              :tooltip "Suspend"
+              :onclick "${eww} close powermenu && systemctl suspend"
+          "S")
+      )
+      (box :class "hibernate-btn-box"
+          :orientation "h"
+          (button :class "btn"
+              :tooltip "Hibernate"
+              :onclick "${eww} close powermenu && systemctl hibernate"
+          "H")
+      )
+      (box :class "shutdown-btn-box"
+          :orientation "h"
+          (button :class "btn"
+              :tooltip "Shutdown"
+              :onclick "${eww} close powermenu && systemctl poweroff"
+          "⏻")
+      )
+      (box :class "reboot-btn-box"
+         :orientation "h"
+          (button :class "btn"
+              :tooltip "Reboot"
+              :onclick "${eww} close powermenu && systemctl reboot"
+          "")
+      )
+      (box :class "cancel-btn-box"
+          :orientation "h"
+          (button :class "btn"
+              :tooltip "Cancel"
+              :onclick "${eww} close powermenu"
+          "X")
+      )
+  )
+)
+
+(defwindow powermenu
+  :monitor 0
+  :geometry (geometry :x "0%"
+    :y "0%"
+    :width "100%"
+    :height "100%"
+    :anchor "center center"
+  )
+  :stacking "fg"
+  :exclusive true
+  :focusable true
+  (powermenucontent)
+)

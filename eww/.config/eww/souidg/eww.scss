@@ -1,0 +1,133 @@
+$base: #44465c;
+$blue: #3fc6de;
+$surface0: #44465c;
+$surface1: #44465c;
+$text: #d9e0ee;
+$overlay0: #6e738d;
+$red: #ec6a88;
+$peach: #efb993;
+$yellow: #efb993;
+$mauve: #b072d1;
+$green: #3fdaa4;
+$mantle: #292a37;
+$crust: #2e303e;
+$light-gray: #9699b7;
+
+* {
+    all: unset; //Unsets everything so you can style everything from scratch
+    font-family: "Noto Sans"
+}
+
+button {
+    transition: background-color 200ms, color 200ms;
+}
+
+.cal {
+    // color: #8fbcbb;
+    color: $text;
+    background-color: $base;
+    padding: 5px;
+    padding-bottom: 1px;
+    border-radius: 5px;
+    border: 1px solid $light-gray;
+}
+
+.powerbutton {
+    color: $red;
+}
+
+.powerbutton:hover {
+    background-color: $base;
+}
+
+.powerbutton:active {
+    background-color: $red;
+    color: $mantle;
+}
+
+// Credits AlphaTechnolog
+.powermenu-box {
+    padding: 0 2px;
+    margin: 7px 7px 7px 0px;
+    background: inherit;
+    .dispatcher {
+        border-radius: 15px;
+        background: $base;
+        color: $red;
+        font-size: 14px;
+        padding: 0 14px 0 10px;
+        &:hover { background-color: $surface0; }
+        &:active { background-color: $surface1; }
+    }
+}
+
+// powermenu
+.powermenu-container {
+    background: $crust;
+    color: $text;
+    padding: 10px;
+    font-size: 55px;
+
+    transition: all 200ms cubic-bezier(.1,-0.00,.0,1.49);
+
+    .btn { margin: 1rem;}
+    // lock
+    .lock-btn-box .btn {
+        color: white;
+        border-radius: 15px;
+        background-color: $mantle;
+        &:hover { background-color: $base; }
+        &:active { background-color: $surface1; }
+    }
+    // logout
+    .logout-btn-box .btn {
+        color: $green;
+        border-radius: 15px;
+        background-color: $mantle;
+        &:hover { background-color: $base; }
+        &:active { background-color: $surface1; }
+    }
+    // hibernate
+    .hibernate-btn-box .btn {
+        color: $yellow;
+        border-radius: 15px;
+        background-color: $mantle;
+        &:hover { background-color: $base; }
+        &:active { background-color: $surface1; }
+    }
+    // suspend
+    .suspend-btn-box .btn {
+        color: $peach;
+        border-radius: 15px;
+        background-color: $mantle;
+        &:hover { background-color: $base; }
+        &:active { background-color: $surface1; }
+    }
+    // shutdown
+    .shutdown-btn-box .btn {
+        color: $red;
+        border-radius: 15px;
+        background-color: $mantle;
+        &:hover { background-color: $base; }
+        &:active { background-color: $surface1; }
+    }
+    // reboot
+    .reboot-btn-box .btn {
+        color: $mauve;
+        border-radius: 15px;
+        background-color: $mantle;
+        &:hover { background-color: $base; }
+        &:active { background-color: $surface1; }
+    }
+    // exit
+    .cancel-btn-box .btn {
+        color: red;
+        border-radius: 15px;
+        background-color: $mantle;
+        &:hover { color: white; background-color: red; }
+        &:active { background-color: $surface1; }
+    }
+}
+
+
+

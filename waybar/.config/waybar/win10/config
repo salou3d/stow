@@ -38,7 +38,7 @@
     },
     "custom/os_button": {
         "format": "",
-        "on-click": "walker",
+        "on-click": "albert toggle",
         "tooltip": false
     },
     "cpu": {

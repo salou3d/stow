@@ -1,0 +1,6 @@
+    "upower": {
+        "icon-size": 16,
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-spacing": 20
+    },
