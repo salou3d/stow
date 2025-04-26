@@ -1,4 +1,4 @@
-@import "../../colors/colors.css";
+@import url("/home/salo/.config/colors/colors.css");
 
 @define-color base @base00;
 @define-color blue @base0D;
@@ -15,8 +15,8 @@
 @define-color crust #2e303e;
 @define-color light-gray @base03;
 
-/*
-@define-color base #44465c;
+
+/*@define-color base #44465c;
 @define-color blue #3fc6de;
 @define-color surface0 #44465c;
 @define-color surface1 #44465c;
@@ -29,8 +29,8 @@
 @define-color green #3fdaa4;
 @define-color mantle #292a37;
 @define-color crust #2e303e;
-@define-color light-gray @base03;
-*/
+@define-color light-gray @base03;*/
+
 
 * {
   font-family: "Noto Sans";

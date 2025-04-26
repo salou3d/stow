@@ -92,16 +92,16 @@
    (label :text "${battery_poll.icon} ${battery_poll.percent}%"
           :limit-width 10
           :tooltip "${battery_poll.status}: ${battery_poll.percent}"
-          :class "info-lbl battery_poll.percent <= 95 ? 'normal': 15 < EWW_TEMPS.CORETEMP_PACKAGE_ID_0 && EWW_TEMPS.CORETEMP_PACKAGE_ID_0 <= 94 ? 'warning' : 'critical' }"
+          :class "info-lbl ${battery_poll.percent >= 70 ? 'normal': 15 <= battery_poll.percent && battery_poll.percent < 70 ? 'warning' : 'critical' }"
   )
 )
 
 ;; ----- BRIGHTNESS -----
-(defpoll brightness_var :interval "60s" "brightnessctl -m | awk -F, '{print $4}'")
+(defpoll brightness_var :interval "1s" "brightnessctl -m | awk -F, '{gsub(/%/, \"\", $4); print $4}'")
 (defwidget brightness []
-  (label :text " ${brightness_var}"
-    :tooltip "Current screen brightness: ${brightness_var}"
-    :class "info-lbl normal"
+  (label :text " ${brightness_var}%"
+    :tooltip "Current screen brightness: ${brightness_var}%"
+    :class "info-lbl ${ brightness_var <= 50 ? 'normal': 50 < brightness_var && brightness_var <= 75 ? 'warning' : 'critical' }"
   )
 )
 
