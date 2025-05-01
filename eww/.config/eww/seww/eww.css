@@ -1,9 +1,10 @@
-@import url("/home/salo/.config/colors/colors.css");
+/* @import url("/home/salo/.config/colors/colors.css"); */
+@import "../../../../colors/.config/colors/colors.css";
 
 @define-color base @base00;
 @define-color blue @base0D;
-@define-color surface0 @base00;
-@define-color surface1 @base00;
+@define-color surface0 @base0E;
+@define-color surface1 @base0F;
 @define-color text @base07;
 @define-color overlay0 @base02;
 @define-color red @base08;
@@ -50,6 +51,7 @@ button {
   color: @text;
 }
 
+/* *** WORKSPACES *** */
 .workspaces-widget {
   background-color: @overlay0;
   border-radius: 10px;
@@ -68,36 +70,85 @@ button {
 }
 
 .workspace-entry .current {
-  background: @green;
+  background: @surface0;
   margin: 0 3px;
   padding: 0 12px;
 }
 
+.workspace-entry .empty, .workspace-entry .occupied { }
+
+/* *** WORKSPACE OVERVIEW *** */
+.workspacewin {
+  background-color: @base;
+  margin: 10px;
+}
+
+.workspaces-overview-box {
+  background-color: @overlay0;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.workspace-overview-entry {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.workspace-overview-entry:hover {
+  background: @light-gray;
+}
+
+.workspace-overview-entry .current {
+  background: @surface0;
+}
+
+.workspace-overview-entry .occupied, .workspace-overview-entry .empty { }
+
+.ws-overview-client-btn:hover {
+  background-color: @surface1;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+
+/* *** WINDOW *** */
 .active-window {
   background: @overlay0;
   border-radius: 10px;
   padding: 0 10px;
 }
 
-.date-time {
-  background: @overlay0;
-  border-radius: 10px;
-  padding: 0 10px;
-  font-weight: bold;
+
+/* *** TASK BAR *** */
+.taskswin {
+  background: @base;
+  padding: 10px 10px;
+  border-bottom: 1px solid @overlay0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
+
+.tasks-box {}
+
+.task-btn { padding: 5px 10px; }
+
+.task-btn:hover { background: @green; }
+
+/* *** SYSTEM INFO *** */
 
 .sys-info-box {
   background-color: @overlay0;
   border-radius: 10px;
   margin: 0;
-  padding: 0 7px;
+  padding: 0 5px;
 }
 
-.info-lbl, .language, .notification {
+.info-lbl {
   margin: 1px 0;
   padding: 0 5px;
   border-radius: 10px;
 }
+
+.info-lbl.normal { }
 
 .info-lbl.warning {
   background: @yellow;
@@ -106,20 +157,64 @@ button {
 
 .info-lbl.critical {
   background: @red;
-  color: @light-gray;
+  color: @text;
 }
 
-.notification-icon {
-  font-weight: 900;
+/* *** SYS INFO PANEL *** */
+
+.sys-info-panel {
+  border-radius: 10px;
+  border: 1px solid @overlay0;
+  background-color: @base;
+  padding: 10px 10px;
+}
+
+.panel-layout { }
+
+.info-panel {
+  background-color: @text;
+  color: @green;
+}
+
+.info-panel.warning {
+  color: @yellow;
+}
+
+.info-panel.critical {
+  color: @red;
+}
+
+/* *** NOTIFICATIONS *** */
+
+.notification {
+  margin: 1px 0;
+/*   padding: 0 5px; */
+/*   border-radius: 10px; */
+}
+
+.notification-icon-image {
+  background-repeat: no-repeat;
 }
 
 .notification-count {
   font-weight: 700;
+  background: none;
   color: @yellow;
   border-radius: 100%;
-  margin-left: 2px;
+  margin-left: 0px;
 }
 
+/* *** CLOCK *** */
+.clock { }
+
+.date-time {
+  background: @overlay0;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+/* *** CALENDAR *** */
 .cal {
   color: @text;
   background-color: @base;
@@ -129,15 +224,29 @@ button {
   border: 1px solid @light-gray;
 }
 
+calendar {
+  all: unset;
+  background-color: @base00;
+  /*   font-size: 20; */
+  color: @text;
+}
+
 calendar:selected {
-  color: @blue;
+  color: @text;
+  background-color: @surface0;
+  border-radius: 25px;
 }
 
 calendar.header {
   color: @text;
-  font-weight: 900;
+  font-weight: bold;
 }
 
+calendar:indeterminate {
+  color: @light-gray;
+}
+
+/*
 calendar.button {
   color: @text;
 }
@@ -146,12 +255,4 @@ calendar.highlight {
   color: @text;
   font-weight: 900;
 }
-
-.calendar:selected {
-  background: @green;
-  color: @text;
-}
-
-calendar:indeterminate {
-  color: @light-gray;
-}
+*/

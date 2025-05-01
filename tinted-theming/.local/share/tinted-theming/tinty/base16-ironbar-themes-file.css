@@ -1,23 +1,23 @@
-/* Scheme name: minimal-14-jpg */
+/* Scheme name: yosemite-png */
 /* Scheme system: base16 */
 /* Scheme author: Tinty */
 /* Template author: Tinted Theming (https://github.com/tinted-theming) */
 
 /* GTK Vars */
 
-@define-color base00 #2f251f;
-@define-color base01 #453d39;
-@define-color base02 #5c5554;
-@define-color base03 #736d6f;
-@define-color base04 #89858a;
-@define-color base05 #a09da5;
-@define-color base06 #b7b5c0;
-@define-color base07 #cecedb;
-@define-color base08 #aa7551;
-@define-color base09 #f2ad64;
-@define-color base0A #ffc46f;
-@define-color base0B #76956d;
-@define-color base0C #5e90b2;
-@define-color base0D #003b90;
-@define-color base0E #566595;
-@define-color base0F #9c7f71;
+@define-color base00 #132648;
+@define-color base01 #31405e;
+@define-color base02 #4f5b75;
+@define-color base03 #6e758c;
+@define-color base04 #8c90a3;
+@define-color base05 #abaaba;
+@define-color base06 #c9c5d1;
+@define-color base07 #e8e0e8;
+@define-color base08 #b37938;
+@define-color base09 #e18e4c;
+@define-color base0A #e7ab5e;
+@define-color base0B #379759;
+@define-color base0C #4c86c7;
+@define-color base0D #1753a1;
+@define-color base0E #868967;
+@define-color base0F #9c7432;

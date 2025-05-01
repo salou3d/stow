@@ -1,0 +1,124 @@
+;; ----- SYS INFO PANEL -----
+;; ----- PANEL WIDGETS -----
+;; ----- CPU -----
+(defwidget cpu_panel []
+  (circular-progress
+    :class "info-panel ${round(EWW_CPU.avg, 0) <= 50 ? 'normal': 50 < round(EWW_CPU.avg, 0) && round(EWW_CPU.avg, 0) <= 90 ? 'warning' : 'critical' }"
+    :value "${round(EWW_CPU.avg, 0)}"
+    :start-at "0"
+    :thickness 7
+    " ${round(EWW_CPU.avg, 0)}%"
+))
+
+;; ----- MEMORY -----
+(defwidget mem_panel []
+  (circular-progress
+    :class "info-panel ${round(EWW_RAM.used_mem_perc, 0) <= 50 ? "normal" : 50 < round(EWW_RAM.used_mem_perc, 0) && round(EWW_RAM.used_mem_perc, 0) < 90 ? "warning" : "critical" }"
+    :value "${round(EWW_RAM.used_mem_perc, 0)}"
+    :start-at 0
+    :thickness 7
+    " ${round(EWW_RAM.used_mem_perc, 0)}%"
+))
+
+;; ----- TEMPERATURE -----
+(defwidget temperature_panel []
+  (circular-progress
+    :class "info-panel ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0 <= 50 ? 'normal': 50 < EWW_TEMPS.CORETEMP_PACKAGE_ID_0 && EWW_TEMPS.CORETEMP_PACKAGE_ID_0 < 80 ? 'warning' : 'critical' }"
+    :value "${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}"
+    :start-at 0
+    :thickness 7
+    " ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C"
+))
+
+;; ----- BATTERY -----
+
+(defwidget battery_panel []
+  (circular-progress
+    :limit-width 10
+    :class "info-panel ${battery_poll.percent >= 70 ? 'normal': 15 <= battery_poll.percent && battery_poll.percent < 70 ? 'warning' : 'critical' }"
+    :start-at 0
+    :thickness 7
+    :value "${battery_poll.percent}"
+    "${battery_poll.icon} ${battery_poll.percent}%"
+))
+
+;; ----- BRIGHTNESS -----
+(defwidget brightness_panel []
+  (circular-progress
+    :class "info-panel ${ brightness_var <= 50 ? 'normal': 50 < brightness_var && brightness_var <= 75 ? 'warning' : 'critical' }"
+    :value "${brightness_var}"
+    :start-at 0
+    :thickness 7
+    " ${brightness_var}%"
+))
+
+;; ----- VOLUME -----
+
+(defwidget volume_panel []
+  (circular-progress
+    :class "info-panel ${ volume_var <= 50 ? 'normal': 50 < volume_var && volume_var <= 75 ? 'warning' : 'critical' }"
+    :value "${volume_var}"
+    :start-at 0
+    :thickness 7
+    "  ${volume_var}%"
+))
+
+(defwidget micvolume_panel []
+  (circular-progress
+    :value "${micvolume_var}"
+    :start-at 0
+    :thickness 7
+    :class "info-panel ${ micvolume_var <= 50 ? 'normal': 50 < micvolume_var && micvolume_var <= 75 ? 'warning' : 'critical' }"
+    " ${micvolume_var}%"
+))
+
+;; ----- PANEL LAYOUT -----
+
+(defwidget panel_layout []
+  (box
+    :class "panel-layout"
+    :orientation "v"
+    :spacing 10
+    ;:space-evenly false
+    (box
+      :class "panel-box"
+      ;:orientation "v"
+      :spacing 5
+      (battery_panel)
+      (box
+
+      )
+    )
+    (box
+      :class "panel-box"
+      :spacing 5
+      (cpu_panel)
+      (mem_panel)
+    )
+    (box
+      :class "panel-box"
+      :spacing 5
+      (temperature_panel)
+      (brightness_panel)
+    )
+    (box
+      :class "panel-box"
+      :spacing 5
+      (volume_panel)
+      (micvolume_panel)
+    )
+))
+
+;; ----- PANEL WINDOW -----
+(defwindow sys-info-panel
+  :monitor 0
+  :stacking "fg"
+  ;:focusable false
+  :geometry (geometry :x "0.5%"
+    :y "0%"
+    :width "25%"
+    :height "96%"
+    :anchor "right center"
+  )
+  (panel_layout)
+)

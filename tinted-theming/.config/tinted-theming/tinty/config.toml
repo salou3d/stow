@@ -18,12 +18,12 @@ themes-dir = "colors"
 hook = "cp -r %f ~/.config/colors/colors.css"
 supported-systems = ["base16", "base24"]
 
-[[items]]
-name = "base16-ironbar"
-path = "~/.local/share/tinted-theming/tinty/repos/base16-ironbar"
-themes-dir = "themes"
-hook = "cp -r %f ~/.config/ironbar/colors.css; ironbar load-css ~/.config/ironbar/style.css"
-supported-systems = ["base16"]
+# [[items]]
+# name = "base16-ironbar"
+# path = "~/.local/share/tinted-theming/tinty/repos/base16-ironbar"
+# themes-dir = "themes"
+# hook = "cp -r %f ~/.config/ironbar/colors.css; ironbar load-css ~/.config/ironbar/style.css"
+# supported-systems = ["base16"]
 
 [[items]]
 name = "base16-rofi"

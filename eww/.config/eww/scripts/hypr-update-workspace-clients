@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# clients=$(hyprctl clients -j | jaq "[ .[] | select(.workspace.id == $(hyprctl activeworkspace -j | jaq -r '.id')) ]")
+
+# eww -c "$1" update workspace_clients="$clients"
+# eww -c "$1" open taskswin --toggle
+
+if [ ! -z "$2" ]; then
+    clients=$(hyprctl clients -j | jaq "[ .[] | select(.workspace.id == $2) ]")
+    eww -c "$1" update workspace_clients="$clients"
+    eww -c "$1" open taskswin --toggle
+else
+    clients=$(hyprctl clients -j)
+    eww -c "$1" update workspace_clients="$clients"
+    eww -c "$1" close taskswin
+    eww -c "$1" open workspacewin --toggle
+fi

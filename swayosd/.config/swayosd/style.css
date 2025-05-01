@@ -1,29 +1,30 @@
 window#osd {
-  /*padding: 12px 20px;*/
-/*   border-radius: 999px; */
-  border-radius: 3px;
+/*   padding: 12px 20px; */
+  border-radius: 5px;
   border: 1px solid @borders;
-/*   background: alpha(@theme_bg_color, 0.8); */
-  background: @theme_bg_color;
+  background: alpha(@theme_bg_color, 1);
 }
+
 window#osd #container {
-/*   margin: 16px; */
-  margin: 10px;
+    margin: 10px;
 }
-window#osd image,
-window#osd label {
+
+window#osd image, window#osd label {
   color: @theme_fg_color;
 }
+
 window#osd progressbar:disabled,
 window#osd image:disabled {
   opacity: 0.5;
 }
+
 window#osd progressbar {
   min-height: 6px;
   border-radius: 999px;
   background: transparent;
   border: none;
 }
+
 window#osd trough {
   min-height: inherit;
   border-radius: inherit;
@@ -34,6 +35,6 @@ window#osd progress {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-/*   background: @theme_fg_color; */
-background: @theme_selected_bg_color;
+  /*background: @theme_fg_color;*/
+  background: @theme_selected_bg_color;
 }
