@@ -188,11 +188,6 @@ help() {
 
 # eval "$(jay generate-completion bash)"
 
-export _ZO_ECHO=1
-export _ZO_FZF_OPTS='--no-multi --reverse --border'
-#eval "$(zoxide init --cmd cd bash)"
-eval "$(zoxide init bash)"
-
 export FZF_DEFAULT_COMMAND='fd -u'
 export FZF_DEFAULT_OPTS='--multi --reverse --border' # --cycle --marker="+"
 eval "$(fzf --bash)"
@@ -258,3 +253,9 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export _ZO_ECHO=1
+export _ZO_FZF_OPTS='--no-multi --reverse --border'
+#eval "$(zoxide init --cmd cd bash)"
+eval "$(zoxide init bash)"
+

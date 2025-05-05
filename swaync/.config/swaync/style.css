@@ -4,7 +4,8 @@
   outline: none;
 }
 
-.notification-row:focus, .notification-row:hover {
+.notification-row:focus,
+.notification-row:hover {
   background: @noti-bg-focus;
 }
 
@@ -36,7 +37,7 @@
 
 .notification-row .notification-background .notification {
   /* The actual notification */
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid @noti-border-color;
   padding: 0;
   transition: background 0.15s ease-in-out;
@@ -56,7 +57,8 @@
   /* Critical Priority Notification */
 }
 
-.notification-row .notification-background .notification .notification-action, .notification-row .notification-background .notification .notification-default-action {
+.notification-row .notification-background .notification .notification-action,
+.notification-row .notification-background .notification .notification-default-action {
   padding: 4px;
   margin: 0;
   box-shadow: none;
@@ -66,7 +68,8 @@
   transition: background 0.15s ease-in-out;
 }
 
-.notification-row .notification-background .notification .notification-action:hover, .notification-row .notification-background .notification .notification-default-action:hover {
+.notification-row .notification-background .notification .notification-action:hover,
+.notification-row .notification-background .notification .notification-default-action:hover {
   -gtk-icon-effect: none;
   background: @noti-bg-hover;
 }
@@ -209,7 +212,8 @@
   /* Low Priority Group */
 }
 
-.notification-group .notification-group-buttons, .notification-group .notification-group-headers {
+.notification-group .notification-group-buttons,
+.notification-group .notification-group-headers {
   margin: 0 16px;
   color: @text-color;
 }
@@ -301,7 +305,7 @@
   font-size: 1rem;
 }
 
-.widget-title > button {
+.widget-title>button {
   font-size: initial;
   color: @text-color;
   text-shadow: none;
@@ -311,7 +315,7 @@
   border-radius: 3px;
 }
 
-.widget-title > button:hover {
+.widget-title>button:hover {
   background: @noti-bg-hover;
 }
 
@@ -322,7 +326,7 @@
   font-size: 1rem;
 }
 
-.widget-dnd > switch {
+.widget-dnd>switch {
   font-size: initial;
   border-radius: 12px;
   background: @noti-bg;
@@ -330,11 +334,11 @@
   box-shadow: none;
 }
 
-.widget-dnd > switch:checked {
+.widget-dnd>switch:checked {
   background: @bg-selected;
 }
 
-.widget-dnd > switch slider {
+.widget-dnd>switch slider {
   background: @noti-bg-hover;
   border-radius: 12px;
 }
@@ -344,7 +348,7 @@
   margin: 8px;
 }
 
-.widget-label > label {
+.widget-label>label {
   font-size: 1rem;
 }
 
@@ -382,19 +386,19 @@
   font-size: 1rem;
 }
 
-.widget-mpris .widget-mpris-player > box > button {
+.widget-mpris .widget-mpris-player>box>button {
   /* Change player control buttons */
 }
 
-.widget-mpris .widget-mpris-player > box > button:hover {
+.widget-mpris .widget-mpris-player>box>button:hover {
   background-color: @mpris-button-hover;
 }
 
-.widget-mpris > box > button {
+.widget-mpris>box>button {
   /* Change player side buttons */
 }
 
-.widget-mpris > box > button:disabled {
+.widget-mpris>box>button:disabled {
   /* Change player side buttons insensitive */
 }
 
@@ -406,17 +410,17 @@
   background-color: @noti-bg;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
+.widget-buttons-grid>flowbox>flowboxchild>button {
   background: @noti-bg;
   border-radius: 10px;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+.widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked {
   /* style given to the active toggle button */
 }
 
 /* Menubar widget */
-.widget-menubar > box > .menu-button-bar > button {
+.widget-menubar>box>.menu-button-bar>button {
   border: none;
   background: transparent;
 }
@@ -436,7 +440,7 @@
 .AnyName>button:hover {
   background-color: @noti-bg-hover;
 } */
-.topbar-buttons > button {
+.topbar-buttons>button {
   /* Name defined in config after # */
   border: none;
   background: transparent;
@@ -450,7 +454,7 @@
   border-radius: 10px;
 }
 
-.widget-volume > box > button {
+.widget-volume>box>button {
   background: transparent;
   border: none;
 }
@@ -476,7 +480,7 @@
   font-size: 1rem;
 }
 
-.widget-inhibitors > button {
+.widget-inhibitors>button {
   font-size: initial;
   color: @text-color;
   text-shadow: none;
@@ -486,6 +490,6 @@
   border-radius: 3px;
 }
 
-.widget-inhibitors > button:hover {
+.widget-inhibitors>button:hover {
   background: @noti-bg-hover;
 }
