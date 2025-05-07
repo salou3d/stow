@@ -10,6 +10,17 @@
     " ${round(EWW_CPU.avg, 0)}%"
 ))
 
+(defwidget cpu_panel_prog []
+  (scale
+    :class "info-panel ${round(EWW_CPU.avg, 0) <= 50 ? 'normal': 50 < round(EWW_CPU.avg, 0) && round(EWW_CPU.avg, 0) <= 90 ? 'warning' : 'critical' }"
+    :value "${round(EWW_CPU.avg, 0)}"
+    :min 0
+    :max 100
+    :draw-value true
+    :value-pos "right"
+    " ${round(EWW_CPU.avg, 0)}%"
+))
+
 ;; ----- MEMORY -----
 (defwidget mem_panel []
   (circular-progress
@@ -20,6 +31,17 @@
     " ${round(EWW_RAM.used_mem_perc, 0)}%"
 ))
 
+(defwidget mem_panel_prog []
+  (scale
+    :class "info-panel ${round(EWW_RAM.used_mem_perc, 0) <= 50 ? "normal" : 50 < round(EWW_RAM.used_mem_perc, 0) && round(EWW_RAM.used_mem_perc, 0) < 90 ? "warning" : "critical" }"
+    :value "${round(EWW_RAM.used_mem_perc, 0)}"
+    :min 0
+    :max 100
+    :draw-value true
+    :value-pos "right"
+    " ${round(EWW_RAM.used_mem_perc, 0)}%"
+))
+
 ;; ----- TEMPERATURE -----
 (defwidget temperature_panel []
   (circular-progress
@@ -27,6 +49,17 @@
     :value "${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}"
     :start-at 0
     :thickness 7
+    " ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C"
+))
+
+(defwidget temperature_panel_prog []
+  (scale
+    :class "info-panel ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0 <= 50 ? 'normal': 50 < EWW_TEMPS.CORETEMP_PACKAGE_ID_0 && EWW_TEMPS.CORETEMP_PACKAGE_ID_0 < 80 ? 'warning' : 'critical' }"
+    :value "${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}"
+    :min 0
+    :max 100
+    :draw-value true
+    :value-pos "right"
     " ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C"
 ))
 
@@ -84,26 +117,29 @@
       :class "panel-box"
       ;:orientation "v"
       :spacing 5
-      (battery_panel)
       (box
-
+        :class "panel-box"
+        :spacing 5
+        (battery_panel)
+        (box
+          :class "panel-box"
+          :orientation "v"
+          :spacing 5
+          ;:space-evenly false
+          (cpu_panel_prog)
+          (mem_panel_prog)
+          (temperature_panel_prog)
+        )
       )
     )
+    ;(box
+    ;  :class "panel-box"
+    ;  :spacing 5
+    ;)
     (box
       :class "panel-box"
       :spacing 5
-      (cpu_panel)
-      (mem_panel)
-    )
-    (box
-      :class "panel-box"
-      :spacing 5
-      (temperature_panel)
       (brightness_panel)
-    )
-    (box
-      :class "panel-box"
-      :spacing 5
       (volume_panel)
       (micvolume_panel)
     )

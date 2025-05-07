@@ -13,6 +13,8 @@
     background-color: #323232;
     min-width:640px;
     max-width:640px;
+    min-height:320px;
+    max-height:320px;
 }
 
 #inputLine {

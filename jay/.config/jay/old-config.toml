@@ -1,0 +1,190 @@
+# The keymap that is used for shortcuts and also sent to clients.
+keymap = """
+    xkb_keymap {
+        xkb_keycodes { include "evdev+aliases(azerty)" };
+        xkb_types    { include "complete"              };
+        xkb_compat   { include "complete"              };
+        xkb_symbols  { include "pc+fr+inet(evdev)"     };
+    };
+    """
+
+# An action that will be executed when the GPU has been initialized.
+on-graphics-initialized = [
+    { type = "exec", exec = "at-start.sh" }
+]
+
+on-idle = { type = "exec", exec = {
+    prog = "hyprlock",
+    privileged = "true" }
+}
+
+# Shortcuts that are processed by the compositor.
+# The left hand side should be a key, possibly prefixed with modifiers.
+# The right hand side should be an action.
+[shortcuts]
+# The focus-X actions move the keyboard focus to next window on the X.
+# mod4-h = "focus-left"
+# mod4-j = "focus-down"
+# mod4-k = "focus-up"
+# mod4-l = "focus-right"
+
+mod4-Left = "focus-left"
+mod4-Down = "focus-down"
+mod4-Up = "focus-up"
+mod4-Right = "focus-right"
+
+# The move-X actions move window that has the keyboard focus to the X.
+# alt-shift-h = "move-left"
+# alt-shift-j = "move-down"
+# alt-shift-k = "move-up"
+# alt-shift-l = "move-right"
+
+mod4-shift-Left = "move-left"
+mod4-shift-Down = "move-down"
+mod4-shift-Up = "move-up"
+mod4-shift-Right = "move-right"
+
+# The split-X action places the currently focused window in a container
+# and sets the split direction of the container to X.
+mod4-h = "split-horizontal"
+mod4-v = "split-vertical"
+
+# The toggle-split action changes the split direction of the current
+# container.
+alt-t = "toggle-split"
+# The toggle-mono action changes whether the current container shows
+# a single window or all windows next to each other.
+alt-m = "toggle-mono"
+# The toggle-fullscreen action toggles the current window between
+# windowed and fullscreen.
+alt-u = "toggle-fullscreen"
+
+# The focus-parent action moves the keyboard focus to the parrent of
+# the currently focused window.
+alt-f = "focus-parent"
+
+# The close action requests the currently focused window to close.
+mod4-q = "close"
+
+# The toggle-floating action changes the currently focused window between
+# floating and tiled.
+# alt-ctrl-f = "toggle-floating"
+mod4-shift-f = "toggle-floating"
+
+# All actions above are so-called simple actions that are identified by
+# a string. More complex actions take parameters and are written as a table.
+# For example, the exec action spawns an application and has the exec field
+# that describes how to spawn the application.
+
+### Menus and Launchers
+# Super_L = { type = "exec", exec = ["rofi", "-show", "drun", "-show-icons"] }
+mod4-Return = { type = "exec", exec = ["rofi", "-show", "drun", "-show-icons"] }
+alt-Return = { type = "exec", exec = ["rofi", "-show", "drun", "-show-icons"] }
+mod4-alt-Return = { type = "exec", exec = "rofi-cliphist" }
+
+### Launching applications
+mod-Backspace = { type = "exec", exec = "konsole" }
+mod4-alt-backspace = { type = "exec", exec = "kitty" }
+alt-shift-f = { type = "exec", exec = [ "bash", "-c", "xdg-open ~" ] }
+mod4-b = { type = "exec", exec = [ "xdg-open", "https://www.gnu.org" ] }
+
+mod4-l = { type = "exec", exec = [ "jay", "run-privileged", "hyprlock" ] }
+
+### Media keys
+XF86AudioNext = { type = "exec", exec = [ "so-volume-yad.sh", "next" ] }
+XF86AudioPlay = { type = "exec", exec = [ "so-volume-yad.sh", "play-pause" ] }
+XF86AudioPrev = { type = "exec", exec = [ "so-volume-yad.sh", "prev" ] }
+
+# Volume keys
+XF86AudioLowerVolume = { type = "exec", exec = [ "so-volume-yad.sh", "down" ] }
+XF86AudioRaiseVolume = { type = "exec", exec = [ "so-volume-yad.sh", "up" ] }
+XF86AudioMute = { type = "exec", exec = [ "so-volume-yad.sh", "mute" ] }
+
+# brightness keys
+XF86MonBrightnessUp = { type = "exec", exec = [ "so-brightnessctl.sh", "up" ] }
+XF86MonBrightnessDown = { type = "exec", exec = [ "so-brightnessctl.sh", "down" ] }
+
+
+### Compositor keys
+# The quit action terminates the compositor.
+alt-ctrl-shift-q = "quit"
+mod4-Escape = { type = "exec", exec = "wleave" }
+# The reload-config-toml action reloads the TOML configuration file.
+alt-shift-r = "reload-config-toml"
+
+# The switch-to-vt action switches to a different virtual terminal.
+ctrl-alt-F1 = { type = "switch-to-vt", num = 1 }
+ctrl-alt-F2 = { type = "switch-to-vt", num = 2 }
+ctrl-alt-F3 = { type = "switch-to-vt", num = 3 }
+ctrl-alt-F4 = { type = "switch-to-vt", num = 4 }
+ctrl-alt-F5 = { type = "switch-to-vt", num = 5 }
+ctrl-alt-F6 = { type = "switch-to-vt", num = 6 }
+ctrl-alt-F7 = { type = "switch-to-vt", num = 7 }
+ctrl-alt-F8 = { type = "switch-to-vt", num = 8 }
+ctrl-alt-F9 = { type = "switch-to-vt", num = 9 }
+ctrl-alt-F10 = { type = "switch-to-vt", num = 10 }
+ctrl-alt-F11 = { type = "switch-to-vt", num = 11 }
+ctrl-alt-F12 = { type = "switch-to-vt", num = 12 }
+
+# The show-workspace action switches to a workspace. If the workspace is not
+# currently being used, it is created on the output that contains the pointer.
+alt-F1 = { type = "show-workspace", name = "1" }
+alt-F2 = { type = "show-workspace", name = "2" }
+alt-F3 = { type = "show-workspace", name = "3" }
+alt-F4 = { type = "show-workspace", name = "4" }
+alt-F5 = { type = "show-workspace", name = "5" }
+alt-F6 = { type = "show-workspace", name = "6" }
+alt-F7 = { type = "show-workspace", name = "7" }
+alt-F8 = { type = "show-workspace", name = "8" }
+alt-F9 = { type = "show-workspace", name = "9" }
+alt-F10 = { type = "show-workspace", name = "10" }
+alt-F11 = { type = "show-workspace", name = "11" }
+alt-F12 = { type = "show-workspace", name = "12" }
+
+# The move-to-workspace action moves the currently focused window to a workspace.
+alt-shift-F1 = { type = "move-to-workspace", name = "1" }
+alt-shift-F2 = { type = "move-to-workspace", name = "2" }
+alt-shift-F3 = { type = "move-to-workspace", name = "3" }
+alt-shift-F4 = { type = "move-to-workspace", name = "4" }
+alt-shift-F5 = { type = "move-to-workspace", name = "5" }
+alt-shift-F6 = { type = "move-to-workspace", name = "6" }
+alt-shift-F7 = { type = "move-to-workspace", name = "7" }
+alt-shift-F8 = { type = "move-to-workspace", name = "8" }
+alt-shift-F9 = { type = "move-to-workspace", name = "9" }
+alt-shift-F10 = { type = "move-to-workspace", name = "10" }
+alt-shift-F11 = { type = "move-to-workspace", name = "11" }
+alt-shift-F12 = { type = "move-to-workspace", name = "12" }
+
+[[inputs]]
+tag = "mice"
+match.is-pointer = true
+left-handed = false
+# transform-matrix = [[0.35, 0], [0, 0.35]]
+tap-enabled = true
+natural-scrolling = false
+
+[env]
+GTK_THEME = "Breeze-Dark"
+XDG_SESSION_DESKTOP = "Jay"
+XDG_CURRENT_DESKTOP = "Jay"
+#XDG_SESSION_TYPE = "wayland"
+
+XCURSOR_SIZE = 24
+#HYPRCURSOR_SIZE = 24
+XCURSOR_THEME,Breeze_Light
+
+QT_QPA_PLATFORM = "wayland"
+QT_QPA_PLATFORMTHEME = "qt6ct"
+QT_EXCLUDE_GENERIC_BEARER = 1
+QT_AUTO_SCREEN_SCALE_FACTOR = 1 # previous value: 0
+QT_ACCESSIBILITY = 1
+# QT_QUICK_CONTROLS_STYLE,org.kde.desktop
+
+QT_WAYLAND_DISABLE_WINDOWDECORATION = 1
+MOZ_ENABLE_WAYLAND = 1
+GDK_SCALE = 1
+
+[status]
+format = "i3bar"
+exec = "i3status-rs"
+3bar-separator = " | "

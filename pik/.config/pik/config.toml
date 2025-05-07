@@ -17,17 +17,17 @@ icons = "ascii" # nerd_font_v3 or custom (see below)
 
 [ui.process_table]
 title = { alignment = "left", position = "top" }
-border = { type = "rounded", style = { fg = "#60A5FA" } }
+border = { type = "rounded", style = { fg = "#6e738d" } }
 
 [ui.process_table.row]
 selected_symbol = " "
-even = { fg = "#E2E8F0", bg = "#0F172A" }
-odd = { fg = "#E2E8F0", bg = "#020617" }
-selected = { fg = "#60A5FA", add_modifier = "REVERSED" }
+even = { fg = "#cad3f5", bg = "#24273a" }
+odd = { fg = "#cad3f5", bg = "#181926" }
+selected = { fg = "#8aadf4", add_modifier = "REVERSED" }
 
 [ui.process_table.cell]
 # normal = {}
-highlighted = { bg = "Yellow", add_modifier = "ITALIC" }
+highlighted = { bg = "#eed49f", add_modifier = "ITALIC" }
 
 [ui.process_table.scrollbar]
 # style = {}
@@ -39,7 +39,7 @@ margin = {horizontal = 0, vertical = 1}
 
 [ui.process_details]
 title = { alignment = "left", position = "top" }
-border = { type = "rounded", style = {fg = "#60A5FA"}}
+border = { type = "rounded", style = {fg = "#6e738d"}}
 
 [ui.process_details.scrollbar]
 # style = {}
@@ -54,7 +54,7 @@ margin = {horizontal = 0, vertical = 1}
 cursor_style = {add_modifier = "REVERSED"}
 
 [ui.popups]
-border = {type = "rounded", style = {fg = "#4ade80"}}
+border = {type = "rounded", style = {fg = "#a6da95"}}
 selected_row = { bg = "#1e293b", add_modifier = "BOLD"}
 primary = { fg = "#60A5FA" }
 # secondary = {}

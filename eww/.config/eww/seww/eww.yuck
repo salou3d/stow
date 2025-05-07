@@ -314,7 +314,7 @@
 
 ;; ----- WINDOWS -----
 
-(include "./sys-info-panel.yuck")
+;(include "./sys-info-panel.yuck")
 
 (defwindow calendar
   :monitor 0

@@ -16,6 +16,7 @@ enabled=true
 
 [datetime]
 enabled=true
+show_date_on_empty_query=true
 
 [files]
 enabled=true
@@ -28,6 +29,13 @@ enabled=true
 enabled=false
 
 [python]
+enabled=true
+
+[python.emoji]
+enabled=true
+use_derived=false
+
+[system]
 enabled=false
 
 [websearch]
@@ -46,4 +54,4 @@ itemCount=5
 lightTheme=Tinted Spotlight Dark
 quitOnClose=false
 showCentered=true
-systemShadow=true
+systemShadow=false
