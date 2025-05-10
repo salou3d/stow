@@ -10,6 +10,8 @@
 # : Flavor {{{
 
 [flavor]
+# dark = "catppuccin-macchiato"
+# dark = "dracula"
 dark  = ""
 light = ""
 

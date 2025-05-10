@@ -24,11 +24,6 @@ rev = "beb586a"
 hash = "aef2b1a805b80cce573bb766f1459d88"
 
 [[plugin.deps]]
-use = "Reledia/glow"
-rev = "5ce76dc"
-hash = "52e5f5c602962e7cbf874da28f52ba45"
-
-[[plugin.deps]]
 use = "KKV9/compress"
 rev = "60b24af"
 hash = "ee025be766240cc98e671754ac836da3"
@@ -43,7 +38,27 @@ use = "grappas/wl-clipboard"
 rev = "c4edc4f"
 hash = "51ff959c3c26cb3889589a0f8d394f14"
 
+[[plugin.deps]]
+use = "macydnah/office"
+rev = "d1e3e51"
+hash = "35241f7d85abc5a0d2441020bc597ceb"
+
+[[plugin.deps]]
+use = "boydaihungst/simple-mtpfs"
+rev = "1e504be"
+hash = "f38c83bf58790013fcf6ffb8d4009421"
+
 [[flavor.deps]]
 use = "kalidyasin/yazi-flavors:tokyonight-night"
 rev = "92a09a6"
 hash = "845c5ee33e147b1a57f48728e42600ee"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-macchiato"
+rev = "68326b4"
+hash = "3ec21bcfd2735cfcbab61faaf43e59e4"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "68326b4"
+hash = "53e1f10ae0f6abd406e463fceca8622a"

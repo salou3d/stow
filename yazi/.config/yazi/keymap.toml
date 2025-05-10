@@ -61,7 +61,6 @@ keymap = [
 	# Operation
 	{ on = "o",         run = "open",                        desc = "Open selected files" },
 	{ on = "O",         run = "open --interactive",          desc = "Open selected files interactively" },
-	{ on = "<Enter>",   run = "open",                        desc = "Open selected files" },
 	{ on = "<S-Enter>", run = "open --interactive",          desc = "Open selected files interactively" },
 	{ on = "y",         run = "yank",                        desc = "Yank selected files (copy)" },
 	{ on = "x",         run = "yank --cut",                  desc = "Yank selected files (cut)" },
@@ -79,6 +78,7 @@ keymap = [
 	{ on = ";",         run = "shell --interactive",         desc = "Run a shell command" },
 	{ on = ":",         run = "shell --block --interactive", desc = "Run a shell command (block until finishes)" },
 	{ on = ".",         run = "hidden toggle",               desc = "Toggle the visibility of hidden files" },
+	{ on = "<C-h>",     run = "hidden toggle",               desc = "Toggle the visibility of hidden files" },
 	{ on = "s",         run = "search --via=fd",             desc = "Search files by name via fd" },
 	{ on = "S",         run = "search --via=rg",             desc = "Search files by content via ripgrep" },
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
@@ -154,6 +154,15 @@ keymap = [
 	# Help
 	{ on = "~",    run = "help", desc = "Open help" },
 	{ on = "<F1>", run = "help", desc = "Open help" },
+
+	### Custom / Plugins
+	{ on = "<Enter>"   , run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+	{ on = "<C-x>"     , run = "plugin chmod", desc = "Chmod on selected files" },
+	{ on = [ "c", "m" ], run = "plugin mount" },
+	{ on = "<C-t>"     , run = "plugin hide-preview", desc = "Hide or show preview" },
+	{ on = [ "c", "a" ], run = "plugin compress", desc = "Archive selected files" },
+	{ on = [ "c", "i" ], run = "plugin lazygit", desc = "run lazygit" },
+	{ on = "<C-y>"     , run = "plugin wl-clipboard" },
 ]
 
 [tasks]
@@ -271,8 +280,8 @@ keymap = [
 	# Delete
 	{ on = "<Backspace>", run = "backspace",         desc = "Delete the character before the cursor" },
 	{ on = "<Delete>",    run = "backspace --under", desc = "Delete the character under the cursor" },
-	{ on = "<C-h>",       run = "backspace",         desc = "Delete the character before the cursor" },
-	{ on = "<C-d>",       run = "backspace --under", desc = "Delete the character under the cursor" },
+	# { on = "<C-h>",       run = "backspace",         desc = "Delete the character before the cursor" },
+	# { on = "<C-d>",       run = "backspace --under", desc = "Delete the character under the cursor" },
 
 	# Kill
 	{ on = "<C-u>", run = "kill bol",      desc = "Kill backwards to the BOL" },

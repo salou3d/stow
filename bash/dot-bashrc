@@ -228,6 +228,8 @@ export MCFLY_KEY_SCHEME=vim # Default; emacs
 export MCFLY_PROMPT="❯ "
 eval "$(mcfly init bash)"
 
+# eval "$(atuin init bash)"
+
 # eval "$(navi widget bash)"
 
 eval "$(eww shell-completions --shell bash)"
@@ -253,6 +255,8 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+eval "$(luarocks path)"
 
 export _ZO_ECHO=1
 export _ZO_FZF_OPTS='--no-multi --reverse --border'
