@@ -8,3 +8,4 @@ helix/.config/helix/runtime/*
 anyrun/.config/anyrun/plugins/*
 tinted-theming/.local/share/tinted-theming/tinty/custom-schemes/*
 tinted-theming/.local/share/tinted-theming/tinty/repos/schemes/*
+micro/.config/micro/buffers/*
