@@ -1,0 +1,17 @@
+;; ----- WIDGETS IN BAR'S LEFT -----
+
+(defpoll user :interval "24h" "whoami")
+
+(defwidget left_eww []
+  (box :class "left-eww"
+    :halign "start"
+    :space-evenly false
+    :orientation "h"
+    :spacing 10
+    (box
+      :class "sys-info-box"
+      (label
+        :text "${user}"
+        :class "info-lbl"
+    ))
+))

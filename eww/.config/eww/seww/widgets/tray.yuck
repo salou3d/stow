@@ -1,0 +1,10 @@
+;; ----- TRAY -----
+
+(defwidget ewwtray []
+  (systray :class "ewwtray"
+    :spacing 7
+    :orientation "h"
+    :space-evenly false
+    :icon-size 14
+    :prepend-new true
+))

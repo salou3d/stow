@@ -17,7 +17,7 @@
   <!-- <font><theme> can be defined without an attribute to set all places -->
   <theme>
     <name>breeze-dark-ob-tinted</name>
-    <icon>breeze-dark</icon>
+    <icon>Papirus-Dark</icon>
     <cornerRadius>8</cornerRadius>
     <keepBorder>yes</keepBorder>
     <font place="ActiveWindow">
@@ -45,6 +45,20 @@
       <weight>normal</weight>
     </font>
   </theme>
+
+  <menu>
+    <ignoreButtonReleasePeriod>250</ignoreButtonReleasePeriod>
+    <showIcons>yes</showIcons>
+  </menu>
+
+  <magnifier>
+    <width>400</width>
+    <height>400</height>
+    <initScale>2</initScale>
+    <increment>0.2</increment>
+    <useFilter>true</useFilter>
+  </magnifier>
+
   <!--
     Just as for window-rules, 'identifier' relates to app_id for native Wayland
     windows and WM_CLASS for XWayland clients.
@@ -52,7 +66,8 @@
   <windowSwitcher show="yes" preview="yes" outlines="yes">
     <fields>
       <field content="type_short" width="5%"/>
-      <field content="state" width="10%"/>
+      <field content="state" width="5%"/>
+      <field content="icon" width="5%"/>
       <field content="identifier" width="30%"/>
       <field content="title" width="55%"/>
       <!--<field content="custom" format="%W-%O" width="40%"/>-->
@@ -65,7 +80,7 @@
   <!-- Show a simple resize and move indicator -->
   <resize popupShow="Never"/>
   <focus>
-    <followMouse>no</followMouse>
+    <followMouse>yes</followMouse>
     <followMouseRequiresMovement>yes</followMouseRequiresMovement>
     <raiseOnFocus>no</raiseOnFocus>
   </focus>
@@ -105,6 +120,11 @@
       <name>2</name>
       <name>3</name>
       <name>4</name>
+      <name>5</name>
+      <name>6</name>
+      <name>7</name>
+      <name>8</name>
+      <name>9</name>
     </names>
   </desktops>
   <!--
@@ -151,13 +171,13 @@
     <keybind key="W-C-r">
       <action name="Reconfigure"/>
     </keybind>
-    <keybind key="C-A-Left">
+    <keybind key="W-Prior">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
+    <keybind key="W-Next">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -214,54 +234,120 @@
         <wrap>no</wrap>
       </action>
     </keybind>-->
-    <keybind key="C-F1">
-      <action name="GoToDesktop">
-        <to>1</to>
-      </action>
-    </keybind>
-    <keybind key="C-F2">
-      <action name="GoToDesktop">
-        <to>2</to>
-      </action>
-    </keybind>
-    <keybind key="C-F3">
-      <action name="GoToDesktop">
-        <to>3</to>
-      </action>
-    </keybind>
-    <keybind key="C-F4">
-      <action name="GoToDesktop">
-        <to>4</to>
-      </action>
-    </keybind>
+
+    <!--GO TO DESKTOP using SHIFT +F[1-9] -->
     <keybind key="S-F1">
-      <action name="SendToDesktop">
+      <action name="GoToDesktop">
         <to>1</to>
-        <wrap>no</wrap>
-        <follow>no</follow>
       </action>
     </keybind>
     <keybind key="S-F2">
+      <action name="GoToDesktop">
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="S-F3">
+      <action name="GoToDesktop">
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="S-F4">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="S-F5">
+      <action name="GoToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="S-F6">
+      <action name="GoToDesktop">
+        <to>6</to>
+      </action>
+    </keybind>
+    <keybind key="S-F7">
+      <action name="GoToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
+    <keybind key="S-F8">
+      <action name="GoToDesktop">
+        <to>8</to>
+      </action>
+    </keybind>
+    <keybind key="S-F9">
+      <action name="GoToDesktop">
+        <to>9</to>
+      </action>
+    </keybind>
+
+    <!-- SEND TO DESKTOP using CTRL+F[1-9] -->
+    <keybind key="C-F1">
+      <action name="SendToDesktop">
+        <to>1</to>
+        <wrap>no</wrap>
+        <follow>no</follow>
+      </action>
+    </keybind>
+    <keybind key="C-F2">
       <action name="SendToDesktop">
         <to>2</to>
         <wrap>no</wrap>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="S-F3">
+    <keybind key="C-F3">
       <action name="SendToDesktop">
         <to>3</to>
         <wrap>no</wrap>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="S-F4">
+    <keybind key="C-F4">
       <action name="SendToDesktop">
         <to>4</to>
         <wrap>no</wrap>
         <follow>no</follow>
       </action>
     </keybind>
+    <keybind key="C-F5">
+      <action name="SendToDesktop">
+        <to>5</to>
+        <wrap>no</wrap>
+        <follow>no</follow>
+      </action>
+    </keybind>
+    <keybind key="C-F6">
+      <action name="SendToDesktop">
+        <to>6</to>
+        <wrap>no</wrap>
+        <follow>no</follow>
+      </action>
+    </keybind>
+    <keybind key="C-F7">
+      <action name="SendToDesktop">
+        <to>7</to>
+        <wrap>no</wrap>
+        <follow>no</follow>
+      </action>
+    </keybind>
+    <keybind key="C-F8">
+      <action name="SendToDesktop">
+        <to>8</to>
+        <wrap>no</wrap>
+        <follow>no</follow>
+      </action>
+    </keybind>
+    <keybind key="C-F9">
+      <action name="SendToDesktop">
+        <to>9</to>
+        <wrap>no</wrap>
+        <follow>no</follow>
+      </action>
+    </keybind>
+
+    <!-- RESIZE WINDOWS -->
     <keybind key="C-W-A-Left">
       <action name="ResizeRelative" left="5"/>
     </keybind>
@@ -304,7 +390,7 @@
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
-    <keybind key="C-q">
+    <keybind key="W-q">
       <action name="Close"/>
     </keybind>
     <keybind key="W-m">
@@ -313,7 +399,7 @@
     <keybind key="W-i">
       <action name="Iconify"/>
     </keybind>
-    <keybind key="W-Prior">
+    <!--<keybind key="W-Prior">
       <action name="Focus"/>
       <action name="Raise"/>
       <action name="Shade"/>
@@ -322,7 +408,7 @@
       <action name="Focus"/>
       <action name="Raise"/>
       <action name="Unshade"/>
-    </keybind>
+    </keybind>-->
     <keybind key="W-c">
       <action name="ShowMenu">
         <menu>client-menu</menu>
@@ -333,6 +419,14 @@
         <menu>client-list-combined-menu</menu>
       </action>
     </keybind>-->
+
+    <keybind key="W-C-equal">
+      <action name="ZoomIn" />
+    </keybind>
+    <keybind key="W-S-equal">
+      <action name="ZoomOut" />
+    </keybind>
+
     <keybind key="W-Escape">
       <action name="Execute">
         <command>wleave</command>
@@ -387,6 +481,18 @@
         <command>bash -c 'wayshot -s "$(waysip -d)" -f "$(xdg-user-dir PICTURES)/wayshot_$(date +%F-%T)".png'</command>
       </action>
     </keybind>
+
+    <keybind key="W-O">
+      <action name="Execute">
+        <command>screen-rec.sh -o</command>
+      </action>
+    </keybind>
+    <keybind key="W-C-O">
+      <action name="Execute">
+        <command>screen-rec.sh -g</command>
+      </action>
+    </keybind>
+
     <keybind key="Super_L" onRelease="yes">
       <action name="Execute">
         <command>albert toggle</command>
@@ -409,7 +515,7 @@
     </keybind>
     <keybind key="W-A-Return">
       <action name="Execute">
-        <command>dmenu-wrapper select</command>
+        <command>rofi-cliphist</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -419,7 +525,7 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>pcmanfm-qt</command>
+        <command>flatpak run org.kde.dolphin</command>
       </action>
     </keybind>
     <keybind key="W-Backspace">
@@ -444,7 +550,6 @@
       </action>
     </keybind>
 
-    <!-- SnapToRegion via W-Numpad -->
     <!-- <keybind key="A-Left">
     <action name="MoveToEdge" direction="left" />
     </keybind>
@@ -457,18 +562,35 @@
     <keybind key="A-Down">
     <action name="MoveToEdge" direction="down" />
     </keybind>-->
+
     <keybind key="W-Left">
-      <action name="SnapToEdge" direction="left"/>
+      <action name="PreviousWindow"/>
     </keybind>
     <keybind key="W-Right">
-      <action name="SnapToEdge" direction="right"/>
+      <action name="NextWindow"/>
     </keybind>
-    <keybind key="W-Up">
+    <!--<keybind key="W-Up">
       <action name="SnapToEdge" direction="up"/>
     </keybind>
     <keybind key="W-Down">
       <action name="SnapToEdge" direction="down"/>
+    </keybind>-->
+
+
+    <keybind key="W-S-Left">
+      <action name="SnapToEdge" direction="left"/>
     </keybind>
+    <keybind key="W-S-Right">
+      <action name="SnapToEdge" direction="right"/>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="SnapToEdge" direction="up"/>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="SnapToEdge" direction="down"/>
+    </keybind>
+
+
     <keybind key="W-A-Left">
       <action name="SnapToRegion" region="top-left"/>
     </keybind>
@@ -484,6 +606,8 @@
     <keybind key="W-Home">
       <action name="SnapToRegion" region="center"/>
     </keybind>
+
+    <!-- SnapToRegion via W-Numpad -->
     <!--
     <keybind key="W-KP_7"><action name="SnapToRegion" region="top-left" /></keybind>
     <keybind key="W-KP_8"><action name="SnapToRegion" region="top" /></keybind>
@@ -705,35 +829,26 @@
     </windowRules>
   -->
   <windowRules>
-    <!-- <windowRule identifier="*" matchOnce="false">
+    <!--<windowRule identifier="*" matchOnce="false">
       <action name="ToggleDecorations"/>
     </windowRule>
-    <windowRule identifier="xdman-Main" title="*" serverDecoration="no" />-->
-    <windowRule identifier="org.kde.dolphin" matchOnce="true">
+    <windowRule identifier="albert" matchOnce="false">
+      <action name="ToggleDecorations"/>
+    </windowRule>-->
+
+    <!--<windowRule identifier="org.kde.dolphin" matchOnce="true">
       <action name="SnapToRegion" region="top-left"/>
-    </windowRule>
-    <windowRule identifier="org.kde.konsole" matchOnce="true">
+    </windowRule>-->
+    <!--<windowRule identifier="org.kde.konsole" matchOnce="true">
       <action name="SnapToRegion" region="bottom-left"/>
-    </windowRule>
+    </windowRule>-->
     <windowRule identifier="org.kde.kate" matchOnce="true">
       <action name="SnapToEdge" direction="right"/>
-    </windowRule>
-    <windowRule identifier="org.mozilla.firefox" matchOnce="false">
-      <action name="Maximize"/>
-    </windowRule>
-    <windowRule identifier="org.mozilla.Thunderbird" matchOnce="false">
-      <action name="Maximize"/>
-    </windowRule>
-    <windowRule identifier="org.mozilla.Thunderbird" title="Password Required - Mozilla Thunderbird" matchOnce="false">
-      <action name="UnMaximize"/>
-      <action name="AutoPlace" policy="center"/>
     </windowRule>
     <windowRule identifier="yad" title="so-confirm-logout-dialog">
       <action name="ToggleAlwaysOnTop"/>
       <action name="ToggleOmnipresent"/>
       <action name="AutoPlace" policy="center"/>
-      <!--<action name="ResizeTo" width="370" height="100"/>
-      <action name="MoveTo" x="483" y="334"/>-->
     </windowRule>
   </windowRules>
 </labwc_config>

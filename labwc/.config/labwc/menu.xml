@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/">
   <menu id="root-menu" label="Openbox 3">
-    <separator label="Openbox 3 Menu" />
+    <separator label="LABWC Menu" />
     <item label="Run command" icon="system-run">
       <action name="Execute">
-        <command>anyrun</command>
+        <command>albert toggle</command>
       </action>
     </item>
     <item label="File Manager" icon="system-file-manager">
@@ -37,6 +37,11 @@
     </menu>
     <separator />
     <menu id="session-menu" label="Session" icon="system-reboot">
+      <item label="Lock" icon="system-lock-screen">
+        <action name="Execute">
+          <command>so-confirm-logout-yad.sh lock</command>
+        </action>
+      </item>
       <item label="Logout" icon="system-log-out">
         <action name="Execute">
           <command>so-confirm-logout-yad.sh logout</command>
@@ -60,11 +65,6 @@
       <item label="Shutdown" icon="system-shutdown">
         <action name="Execute">
           <command>so-confirm-logout-yad.sh shutdown</command>
-        </action>
-      </item>
-      <item label="Lock" icon="system-lock-screen">
-        <action name="Execute">
-          <command>so-confirm-logout-yad.sh lock</command>
         </action>
       </item>
     </menu>

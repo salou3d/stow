@@ -5,6 +5,14 @@ padding.width: 2
 # Menu
 menu.border.width: 1
 menu.border.color: #868967
+# menu.width.min: 20
+# menu.width.max: 200
+# menu.items.padding.x: 7
+# menu.items.padding.y: 4
+# menu.separator.width: 1
+# menu.separator.padding.width: 6
+# menu.separator.padding.height: 3
+# menu.separator.color: #888888
 menu.items.active.bg: flat
 menu.items.active.bg.color: #868967
 menu.items.active.text.color: #FFFFFF

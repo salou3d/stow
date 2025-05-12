@@ -1,0 +1,16 @@
+;; ----- CLOCK -----
+(defwidget time []
+  (eventbox
+    :class "clock"
+    :onclick "${EWW_CMD} open calendar --toggle"
+    :tooltip "${formattime(EWW_TIME, '%H:%M, %A %d %B %Y')}"
+    (label
+      :class "date-time"
+      :text "${formattime(EWW_TIME, '%H:%M, %a %d-%m-%y')}"
+)))
+
+;; ----- CALENDAR -----
+(defwidget cal []
+  (box
+    (calendar :halign "center" :valign "center" :class "cal" )
+))

@@ -1,0 +1,48 @@
+;; ----- SYS INFO -----
+
+(include "../widgets/cpu.yuck")
+(include "../widgets/memory.yuck")
+(include "../widgets/temperature.yuck")
+(include "../widgets/battery.yuck")
+(include "../widgets/brightness.yuck")
+(include "../widgets/volume.yuck")
+(include "../widgets/notifications.yuck")
+(include "../widgets/tray.yuck")
+
+(defwidget sys_info []
+  (box :class "sys-info"
+    :space-evenly false
+    :orientation "h"
+    :spacing 10
+    (eventbox
+        :halign "start"
+        :space-evenly false
+        :orientation "h"
+        :onclick '${EWW_CMD} open sys-info-panel --toggle'
+        (box :class "sys-info-box"
+          :spacing 0
+          (cpu)
+          (mem)
+          (temperature)
+          (battery)
+    ))
+    (eventbox
+        :halign "start"
+        :space-evenly false
+        :orientation "h"
+        :onclick '${EWW_CMD} open sys-info-panel --toggle'
+        (box :class "sys-info-box"
+          :spacing 0
+          (brightness)
+          (volume)
+          (micvolume)
+    ))
+    (box :class "sys-info-box"
+        :halign "start"
+        :space-evenly false
+        :orientation "h"
+        :spacing 7
+        (language)
+        (notifications)
+        (ewwtray)
+)))

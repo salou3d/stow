@@ -1,0 +1,15 @@
+;; ----- TASKS WINDOWS -----
+(defwindow taskswin
+  :monitor 0
+  :stacking "fg"
+  :exclusive false
+  ;:focusable true
+  :geometry (geometry
+    :x "0%"
+    :y "0%"
+    :width "100%"
+    :height "64px"
+    :anchor "top center"
+  )
+  (tasks)
+)

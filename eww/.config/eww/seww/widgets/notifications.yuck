@@ -1,0 +1,24 @@
+;; ----- NOTIFICATIONS -----
+
+(deflisten notifications_pol
+  :initial '{ "count": 0, "dnd": false, "visible": false, "inhibited": false }'
+  "swaync-client -s"
+)
+
+(defwidget notifications []
+  (button :class "notification"
+    :onclick "swaync-client -t -sw"
+    :onrightclick "swaync-client -d -sw"
+    (box
+      :space-evenly false
+      :spacing 0
+      :tooltip "Notifications count: ${notifications_pol.count}"
+      (image
+        :class "notification-icon-image"
+        :style "background-image: -gtk-icontheme('${notifications_pol.inhibited || notifications_pol.dnd ? "notification-disabled" : notifications_pol.count > 0 ? "notification-active" : "notification-inactive" }');"
+      )
+      (label
+        :class "notification-count"
+        :visible {notifications_pol.count > 0 ? true : false}
+        :markup "<sup>${notifications_pol.count > 0 ? notifications_pol.count : ""}</sup>"
+))))

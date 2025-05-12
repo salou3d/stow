@@ -1,0 +1,13 @@
+;; ----- WIDGETS IN BAR'S LEFT -----
+
+(include "../widgets/hypr-widgets.yuck")
+
+(defwidget left_eww []
+  (box :class "left-eww"
+    :halign "start"
+    :space-evenly false
+    :orientation "h"
+    :spacing 10
+    (workspaces)
+    (active_window)
+))

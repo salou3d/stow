@@ -1,0 +1,12 @@
+
+;; ----- WINDOWS -----
+
+(defwidget language []
+  (label
+    :text "LANG"
+    :class "info-lbl"
+))
+
+(include "../windows/calendar.yuck")
+
+(include "../windows/default-bar.yuck")

@@ -1,0 +1,27 @@
+;; ----- BAR LAYOUT -----
+
+;(include "../widgets/lab-left-widgets.yuck")
+;(include "../widgets/center-widgets.yuck")
+;(include "../widgets/right-widgets.yuck")
+
+(defwidget bar_layout []
+  (centerbox :class "bar-layout"
+    :orientation "h"
+    (left_eww)
+    (center_eww)
+    (right_eww)
+))
+
+(defwindow sewwbar
+  :monitor 0
+  :stacking "bg"
+  :exclusive true
+  ;:focusable false
+  :geometry (geometry :x "0%"
+    :y "0%"
+    :width "100%"
+    :height "24px"
+    :anchor "top center"
+  )
+  (bar_layout)
+)

@@ -1,0 +1,9 @@
+;; ----- MEMORY -----
+(defwidget mem []
+  (button
+    :onrightclick "~/.config/eww/scripts/eww-launch qps"
+    :class "info-lbl ${round(EWW_RAM.used_mem_perc, 0) <= 50 ? 'normal' : 50 < round(EWW_RAM.used_mem_perc, 0) && round(EWW_RAM.used_mem_perc, 0) < 90 ? 'warning' : 'critical' }"
+    (label
+      :tooltip "Memory usage: ${round(EWW_RAM.used_mem_perc, 0)}%"
+      :text " ${round(EWW_RAM.used_mem_perc, 0)}%"
+)))

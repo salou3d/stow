@@ -1,0 +1,9 @@
+;; ----- CPU -----
+(defwidget cpu []
+  (button
+    :onrightclick "~/.config/scripts/eww-launch qps"
+    :class "info-lbl ${round(EWW_CPU.avg, 0) <= 50 ? 'normal': 50 < round(EWW_CPU.avg, 0) && round(EWW_CPU.avg, 0) <= 90 ? 'warning' : 'critical' }"
+    (label
+      :tooltip "CPU usage: ${round(EWW_CPU.avg, 0)}%"
+      :text " ${round(EWW_CPU.avg, 0)}%"
+)))

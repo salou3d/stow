@@ -26,6 +26,13 @@ supported-systems = ["base16", "base24"]
 # supported-systems = ["base16"]
 
 [[items]]
+name = "base16-albert"
+path = "~/.local/share/tinted-theming/tinty/repos/base16-albert"
+themes-dir = "themes"
+hook = "cp -r %f ~/.local/share/albert/widgetsboxmodel/themes/Tinted\ Spotlight\ Dark.qss"
+supported-systems = ["base16"]
+
+[[items]]
 name = "base16-rofi"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-rofi"
 themes-dir = "colors"

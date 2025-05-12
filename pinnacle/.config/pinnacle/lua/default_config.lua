@@ -20,7 +20,7 @@ Pinnacle.setup(function()
         mod_key = "alt"
     end
 
-    local terminal = "konsole"
+    local terminal = "alacritty"
 
     --------------------
     -- Mousebinds     --
@@ -103,8 +103,8 @@ Pinnacle.setup(function()
         description = "Close the focused window",
     })
 
-    -- mod_key + BackSpace = Spawn `terminal`
-    Input.keybind({ mod_key }, key.backspace, function()
+    -- mod_key + Return = Spawn `terminal`
+    Input.keybind({ mod_key }, key.Return, function()
         Process.spawn(terminal)
     end, {
         group = "Process",
@@ -145,15 +145,6 @@ Pinnacle.setup(function()
     end, {
         group = "Window",
         description = "Toggle maximized on the focused window",
-    })
-
-    Input.keybind({ mod_key }, key.Return, function()
-        Process.spawn(
-            "albert toggle"
-        )
-    end, {
-        group = "Process",
-        description = "Spawn a terminal",
     })
 
     ----------------------
@@ -335,16 +326,9 @@ Pinnacle.setup(function()
     Libinput.for_each_device(function(device)
         -- Enable natural scroll for touchpads
         if device:device_type() == "touchpad" then
-            device:set_natural_scroll(false)
-            device:set_tap(true)
+            device:set_natural_scroll(true)
         end
     end)
-
-    Input.set_xkb_config({
-        layout = "fr,ara",
-        variant = "azerty",
-        options = "grp:alt_space_toggle"
-    })
 
     -- There are no server-side decorations yet, so request all clients use client-side decorations.
     Window.add_window_rule(function(window)
@@ -360,5 +344,4 @@ Pinnacle.setup(function()
 
     -- Spawning should happen after you add tags, as Pinnacle currently doesn't render windows without tags.
     Process.spawn_once(terminal)
-    Process.spawn_once("at-start.sh")
 end)

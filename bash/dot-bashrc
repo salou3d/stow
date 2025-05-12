@@ -201,9 +201,9 @@ export SKIM_DEFAULT_OPTIONS='--no-multi --reverse --border'
 rfv() {
   RELOAD='reload:rg --column --color=always --smart-case {q} || :'
   OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
-            hx {1} +{2}     # No selection. Open the current line in Vim.
+            hx {1}:+{2}     # No selection. Open the current line in Vim.
           else
-            hx -q {+f}  # Build quickfix list for the selected items.
+            hx {+f}  # Build quickfix list for the selected items.
           fi'
   fzf --disabled --ansi --multi \
       --bind "start:$RELOAD" --bind "change:$RELOAD" \
@@ -247,16 +247,12 @@ if [ -f  ~/.fzfcolors.sh ]; then
 	source ~/.fzfcolors.sh
 fi
 
-if [ -f  ~/.sweep.sh ]; then
-  source ~/.sweep.sh
-fi
-
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-eval "$(luarocks path)"
+# eval "$(luarocks path)"
 
 export _ZO_ECHO=1
 export _ZO_FZF_OPTS='--no-multi --reverse --border'

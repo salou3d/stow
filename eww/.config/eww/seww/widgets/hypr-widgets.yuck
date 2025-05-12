@@ -1,0 +1,53 @@
+
+(deflisten workspaces
+  :initial "[]"
+  "bash ~/.config/eww/scripts/hypr-get-workspaces"
+)
+(deflisten current_workspace
+  :initial "1"
+  "bash ~/.config/eww/scripts/hypr-get-active-workspace"
+)
+
+(deflisten window :initial "..." "sh ~/.config/eww/scripts/hypr-get-window-title")
+
+(defvar workspace_clients '[{"title": "NO CLIENTS"}]' )
+
+(defvar monitors '[]' )
+
+(defpoll lang_var :interval "1s" :initial "Fr" `hyprctl devices -j | jaq -r '.keyboards | .[] | select( .main )'`)
+
+;; ----- WORKSPACES -----
+(defwidget workspaces []
+  (eventbox
+    :onscroll "bash ~/.config/eww/scripts/hypr-change-active-workspace {} ${current_workspace}"
+    ;:onrightclick "bash ~/.config/eww/scripts/hypr-update-workspace-clients ${EWW_CONFIG_DIR}"
+    :class "workspaces-widget"
+    (box :space-evenly false
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          :class "workspace-entry"
+          (box
+            :class "workspace-entry ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id}"
+              :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""}"
+)))))))
+
+;; ----- ACTIVE WINDOW -----
+(defwidget active_window []
+  (eventbox
+    ;:onclick "bash ~/.config/eww/scripts/hypr-update-workspace-clients ${EWW_CONFIG_DIR} ${current_workspace}"
+    (label
+      :class "active-window"
+      :text "${window}"
+      :limit-width 50
+)))
+
+;; ----- LANGUAGE -----
+(defwidget language []
+  (button
+    :class "info-lbl normal"
+    :onclick "hyprctl switchxkblayout current next"
+    (label :text " ${substring(lang_var.active_keymap, 0, 2)}"
+      :tooltip "Current keyboard layout: ${lang_var.active_keymap}"
+)))

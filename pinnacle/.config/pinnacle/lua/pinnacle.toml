@@ -12,7 +12,7 @@
 # The command Pinnacle will run on startup and when you reload your config.
 # Paths are relative to the directory this file is in.
 # This must be an array.
-run = ["cargo", "run"]
+run = ["lua", "default_config.lua"]
 
 ### Socket directory ###
 # Pinnacle will open a Unix socket at `$XDG_RUNTIME_DIR` by default, falling back to `/tmp` if it doesn't exist.
@@ -24,25 +24,6 @@ run = ["cargo", "run"]
 # If you need to spawn your config with any environment variables, list them here.
 [envs]
 # key = "value"
-GTK_THEME = "Breeze-Dark"
-# XDG_SESSION_DESKTOP = "Pinnacle"
-# XDG_CURRENT_DESKTOP = "Pinnacle"
-# XDG_SESSION_TYPE = "wayland"
-
-XCURSOR_SIZE = 24
-# HYPRCURSOR_SIZE = 24
-XCURSOR_THEME = "Breeze_Light"
-
-QT_QPA_PLATFORM = "wayland"
-QT_QPA_PLATFORMTHEME = "qt6ct"
-QT_EXCLUDE_GENERIC_BEARER = 1
-QT_AUTO_SCREEN_SCALE_FACTOR = 1 # previous value: 0
-QT_ACCESSIBILITY = 1
-# QT_QUICK_CONTROLS_STYLE,org.kde.desktop
-
-QT_WAYLAND_DISABLE_WINDOWDECORATION = 1
-MOZ_ENABLE_WAYLAND = 1
-GDK_SCALE = 1
 
 ### No xwayland ###
 # If you want to stop xwayland from starting, uncomment the field below.

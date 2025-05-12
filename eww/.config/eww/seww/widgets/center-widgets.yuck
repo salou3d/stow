@@ -1,0 +1,11 @@
+;; ----- WIDGETS IN BAR'S CENTER -----
+
+(include "../widgets/clock.yuck")
+
+(defwidget center_eww []
+  (box :class "center-eww"
+    :halign "center"
+    :space-evenly false
+    :orientation "h"
+    (time)
+))

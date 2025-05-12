@@ -1,0 +1,12 @@
+;; ----- WIDGETS IN BAR'S RIGHT -----
+
+(include "../widgets/sysinfo.yuck")
+
+(defwidget right_eww []
+  (box :class "right-eww"
+    :halign "end"
+    :space-evenly false
+    :orientation "h"
+    :spacing 10
+    (sys_info)
+))

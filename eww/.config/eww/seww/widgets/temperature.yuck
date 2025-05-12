@@ -1,0 +1,9 @@
+;; ----- TEMPERATURE -----
+(defwidget temperature []
+  (button
+    :onrightclick "~/.config/eww/scripts/eww-launch qps"
+    :class "info-lbl ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0 <= 50 ? 'normal': 50 < EWW_TEMPS.CORETEMP_PACKAGE_ID_0 && EWW_TEMPS.CORETEMP_PACKAGE_ID_0 < 80 ? 'warning' : 'critical' }"
+    (label
+      :tooltip "Package temperature: ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C"
+      :text " ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C"
+)))

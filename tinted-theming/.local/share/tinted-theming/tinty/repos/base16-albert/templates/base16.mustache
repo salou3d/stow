@@ -1,16 +1,22 @@
+/* Scheme name: {{scheme-name}} */
+/* Scheme system: {{scheme-system}} */
+/* Scheme author: {{scheme-author}} */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
 /* Copyright Manuel Schneider */
+/* Tinty adaptation for Spotlight Dark theme for Albert Launcher */
 
 * {
     border: none;
-    color : #e8e0e8;
-    background-color: #132648;
+    color : #{{base07-hex}};
+    background-color: #{{base00-hex}};
 }
 
 #frame {
     padding: 8px 8px;
     border-radius: 5px;
-    border: 1px solid #868967;
-    background-color: #132648;
+    border: 1px solid #{{base0E-hex}};
+    background-color: #{{base00-hex}};
     min-width:640px;
     max-width:640px;
     min-height:350px;
@@ -20,15 +26,15 @@
 #inputLine {
     padding: 8px 22px;
     font-size: 28px;
-    selection-color: #132648;
-    selection-background-color: #e8e0e8;
+    selection-color: #{{base00-hex}};
+    selection-background-color: #{{base07-hex}};
     background-color: transparent;
     border-radius: 22px;
 }
 
 #settingsButton {
     margin: 6px 6px 0px 0px;
-    color: #e8e0e8;
+    color: #{{base07-hex}};
     background-color: transparent;
     padding: 2px;
     min-width:14px;
@@ -41,12 +47,12 @@
 
 QListView {
     background: transparent;
-    selection-color: #e8e0e8;
+    selection-color: #{{base07-hex}};
 }
 
 QListView::item:selected {
-    background: #868967;
-    color: #e8e0e8;
+    background: #{{base0E-hex}};
+    color: #{{base07-hex}};
 }
 
 QListView QScrollBar:vertical  {
@@ -55,7 +61,7 @@ QListView QScrollBar:vertical  {
 }
 
 QListView QScrollBar::handle:vertical  {
-    background: #6e758c;
+    background: #{{base03-hex}};
     border-radius: 1px;
     min-height: 24px;
 }
@@ -87,3 +93,4 @@ QListView#resultsList::item {
 QListView#actionList {
     font-size: 20px;
 }
+

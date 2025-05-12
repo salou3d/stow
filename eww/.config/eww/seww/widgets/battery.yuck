@@ -1,0 +1,11 @@
+;; ----- BATTERY -----
+
+(defpoll battery_poll :interval "60s" "~/.config/eww/scripts/battery.sh")
+
+(defwidget battery []
+  (button
+    :class "info-lbl ${battery_poll.percent >= 70 ? 'normal': 15 <= battery_poll.percent && battery_poll.percent < 70 ? 'warning' : 'critical' }"
+    (label :text "${battery_poll.icon} ${battery_poll.percent}%"
+      :limit-width 10
+      :tooltip "${battery_poll.status}: ${battery_poll.percent}"
+)))

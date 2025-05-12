@@ -1,0 +1,7 @@
+;; ----- BAR LAYOUT -----
+
+(include "../widgets/lab-left-widgets.yuck")
+(include "../widgets/center-widgets.yuck")
+(include "../widgets/right-widgets.yuck")
+
+(include "../windows/bar.yuck")

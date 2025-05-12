@@ -1,12 +1,25 @@
 #!/usr/bin/env bash
 
-if command -v pactl &>/dev/null; then
-    if [ true == $(LANG=C pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}') ]; then
-        echo 0
-        exit
-    else
-        pactl get-sink-volume @DEFAULT_SINK@ | grep "Volume:" | awk '{gsub(/%/, "", $5); print $5}'
+if [ ! -z "$1" -a "$1"  = "sink" ]; then
+    if command -v pactl &>/dev/null; then
+        if [ true == $(LANG=C pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}') ]; then
+            echo 0
+            exit
+        else
+            pactl get-sink-volume @DEFAULT_SINK@ | grep "Volume:" | awk '{gsub(/%/, "", $5); print $5}'
+        fi
+        else
+        amixer -D default sget Master | awk -F '[^0-9]+' '/Left:/{print $3}'
     fi
-else
-    amixer -D default sget Master | awk -F '[^0-9]+' '/Left:/{print $3}'
+elif [ ! -z "$1" -a "$1"  = "source" ]; then
+    if command -v pactl &>/dev/null; then
+        if [ true == $(LANG=C pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}') ]; then
+            echo 0
+            exit
+        else
+            pactl get-source-volume @DEFAULT_SOURCE@ | grep "Volume:" | awk '{gsub(/%/, "", $5); print $5}'
+        fi
+        else
+        amixer -D default sget Capture | awk -F '[^0-9]+' '/Left:/{print $3}'
+    fi
 fi

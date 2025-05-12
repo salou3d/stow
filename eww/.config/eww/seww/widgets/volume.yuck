@@ -1,0 +1,20 @@
+;; ----- VOLUME -----
+
+(defpoll volume_var :interval "1s" :initial 0 '~/.config/eww/scripts/getvol sink')
+(defpoll micvolume_var :interval "1s" :initial 0 '~/.config/eww/scripts/getvol source')
+
+(defwidget volume []
+  (button
+    :onrightclick "~/.config/eww/scripts/eww-launch pavucontrol"
+    :class "info-lbl ${ volume_var <= 50 ? 'normal': 50 < volume_var && volume_var <= 75 ? 'warning' : 'critical' }"
+    (label :text "  ${volume_var}%"
+      :tooltip "Current Volume: ${volume_var}%"
+)))
+
+(defwidget micvolume []
+  (button
+    :onrightclick "~/.config/eww/scripts/eww-launch pavucontrol"
+    :class "info-lbl ${ micvolume_var <= 50 ? 'normal': 50 < micvolume_var && micvolume_var <= 75 ? 'warning' : 'critical' }"
+    (label :text " ${micvolume_var}%"
+      :tooltip "Current input (microphone volume): ${micvolume_var}%"
+)))

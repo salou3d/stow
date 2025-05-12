@@ -1,0 +1,10 @@
+;; ----- BRIGHTNESS -----
+
+(defpoll brightness_var :interval "1s" "brightnessctl -m | awk -F, '{gsub(/%/, \"\", $4); print $4}'")
+
+(defwidget brightness []
+  (button
+    :class "info-lbl ${ brightness_var <= 50 ? 'normal': 50 < brightness_var && brightness_var <= 75 ? 'warning' : 'critical' }"
+    (label :text " ${brightness_var}%"
+      :tooltip "Current screen brightness: ${brightness_var}%"
+)))
