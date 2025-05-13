@@ -3,6 +3,7 @@
 from functools import partial
 
 import json
+from os.path import expanduser, join
 
 from wl_framework.network.connection import WaylandConnection
 from wl_framework.protocols.base import UnsupportedProtocolError
@@ -35,7 +36,7 @@ class ToplevelManager(ForeignTopLevel):
 
 		# print( json.dumps( {"clients": windows} ) )
 
-		with open("../seww/lab/clients.txt", "a") as fin:
+		with open(join(expanduser("~"), ".config/eww/seww/lab/clients.txt"), "a") as fin:
 			fin.write( json.dumps( {"clients": windows} ) + "\n" )
 		fin.close()
 

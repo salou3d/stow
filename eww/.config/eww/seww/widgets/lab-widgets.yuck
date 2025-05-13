@@ -44,12 +44,12 @@
       :limit-width 50
 )))
 
-(defwidget active_window_tmp []
-  (eventbox
-    (label
-      :class "active-window"
-      :text "Active Window"
-)))
+;(defwidget active_window_tmp []
+;  (eventbox
+;    (label
+;      :class "active-window"
+;      :text "Active Window"
+;)))
 
 ;; ----- LANGUAGE -----
 ;(defpoll lang_var :interval "1s" :initial "Fr" `hyprctl devices -j | jaq -r '.keyboards | .[] | select( .main )'`)

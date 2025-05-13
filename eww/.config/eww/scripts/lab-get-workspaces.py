@@ -3,6 +3,7 @@
 from functools import partial
 
 import json
+from os.path import expanduser, join
 
 from wl_framework.network.connection import WaylandConnection
 from wl_framework.protocols.base import UnsupportedProtocolError
@@ -40,7 +41,7 @@ class WorkspaceManager(CosmicWorkspaceManager):
 			grp["workspaces"] = ws
 			grps_ws.append(grp)
 
-		with open("../seww/lab/workspaces.txt", "a") as fin:
+		with open(join(expanduser("~"), ".config/eww/seww/lab/workspaces.txt"), "a") as fin:
 			fin.write( json.dumps(grps_ws) + "\n" )
 		fin.close()
 

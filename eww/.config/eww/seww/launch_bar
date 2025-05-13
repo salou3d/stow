@@ -7,6 +7,9 @@ if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
 	EWW="eww -c $HOME/.config/eww/seww/hypr"
 elif [ "$XDG_CURRENT_DESKTOP" = "labwc" ]; then
 	EWW="eww -c $HOME/.config/eww/seww/lab"
+
+	echo '["1"]' > "$HOME/.config/eww/seww/lab/workspaces.txt"
+	echo '[{"title": "...", "states": [""]}]' > "$HOME/.config/eww/seww/lab/clients.txt"
 else
 	EWW="eww -c $HOME/.config/eww/seww/default"
 fi
@@ -18,16 +21,23 @@ open_eww() {
 
 start_eww() {
 	touch "$FILE"
-	lslab ~/.config/eww/scripts/lab-get-workspaces.py &
-	lslab ~/.config/eww/scripts/lab-get-clients.py &
+
+	if [ "$XDG_CURRENT_DESKTOP" = "labwc" ]; then
+		lslab ~/.config/eww/scripts/lab-get-workspaces.py &
+		lslab ~/.config/eww/scripts/lab-get-clients.py &
+	fi
+
 	sleep 1
 	${EWW} --force-wayland daemon
 }
 
 kill_eww() {
 	${EWW} close-all && ${EWW} kill
-	pkill -f $HOME/.config/eww/scripts/lab-get-workspaces.py
-	pkill -f $HOME/.config/eww/scripts/lab-get-clients.py
+
+	if [ "$XDG_CURRENT_DESKTOP" = "labwc" ]; then
+		pkill -f $HOME/.config/eww/scripts/lab-get-workspaces.py
+		pkill -f $HOME/.config/eww/scripts/lab-get-clients.py
+	fi
 }
 
 ## Run eww daemon if not running already
@@ -35,12 +45,7 @@ if [[ ! `pidof eww` ]]; then
 	if [[ -f "$FILE" ]]; then
 		rm "$FILE"
 	fi
-	if [[ -f "$HOME/.config/eww/seww/lab/workspaces.txt" ]]; then
-		echo '["1"]' > "$HOME/.config/eww/seww/lab/workspaces.txt"
-	fi
-# 	if [[ -f "$HOME/.config/eww/seww/lab/clients.txt" ]]; then
-# 		echo '[{"title": "...", "states": [""]}]' > "$HOME/.config/eww/seww/lab/clients.txt"
-# 	fi
+
 	start_eww
 	open_eww
 else

@@ -1,5 +1,6 @@
 ;; ----- WIDGETS IN BAR'S CENTER -----
 
+(include "../widgets/weather.yuck")
 (include "../widgets/clock.yuck")
 
 (defwidget center_eww []
@@ -7,5 +8,6 @@
     :halign "center"
     :space-evenly false
     :orientation "h"
+    (weather)
     (time)
 ))

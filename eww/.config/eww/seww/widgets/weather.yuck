@@ -1,0 +1,13 @@
+;; ----- WEATHER -----
+
+(defpoll weather_data :interval "24h" "bash ~/.local/bin/weather -o tangier" )
+
+(defwidget weather []
+    (button
+    :class "info-lbl"
+    (label
+      :text `${ replace( jq(weather_data,'.current_condition[] | .weatherDesc[].value, " ", .temp_C, "°C"'), '"', "" ) }`
+      :limit-width 20
+      :tooltip "Weather"
+))
+)
