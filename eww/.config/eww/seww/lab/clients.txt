@@ -1,1 +1,2 @@
 [{"title": "...", "states": [""]}]
+{"clients": [{"id": 4278190080, "app_idd": "pcmanfm-qt", "title": "Hitoribocchi no Isekai Kouryaku", "states": ["maximized", "activated"]}]}

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+get_niri_info (){
+  echo "{\"workspaces\": $(niri msg -j workspaces), \"windows\": $(niri msg -j windows), \"keyboard-layouts\": $(niri msg -j keyboard-layouts)}"
+}
+
+spaces
+
+niri msg -j event-stream | while read -r line; do
+  get_niri_info
+done
+

@@ -1,0 +1,6 @@
+
+;; ----- WINDOWS -----
+
+(include "../windows/calendar.yuck")
+
+(include "../windows/niri-bar.yuck")

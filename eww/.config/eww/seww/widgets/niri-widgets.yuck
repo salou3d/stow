@@ -1,0 +1,54 @@
+
+(deflisten niri_info
+  :initial '{}'
+  '~/.config/eww/scripts/niri-get-info'
+)
+
+;(deflisten window
+;  :initial '{"title": "..."}'
+;  '~/.config/eww/scripts/niri-active-window.py'
+;)
+
+;(defpoll workspaces :interval "1s" :initial `[{"id": 1}, {"id": 2}]` `niri msg -j workspaces | jaq 'sort_by(.id)'`)
+
+;(defpoll window :interval "1s" :initial "..." `niri msg -j focused-window`)
+
+;(defpoll lang_var :interval "1s" :initial "Fr" `niri msg -j keyboard-layouts`)
+
+;; ----- WORKSPACES -----
+(defwidget workspaces []
+  (eventbox
+    ;:onscroll "bash ~/.config/eww/scripts/hypr-change-active-workspace {} ${current_workspace}"
+    ;:onrightclick "bash ~/.config/eww/scripts/hypr-update-workspace-clients ${EWW_CONFIG_DIR}"
+    :class "workspaces-widget"
+    (box :space-evenly false
+      ;(label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in {jq(niri_info.workspaces,'sort_by(.id)')}
+        (eventbox :onclick "niri msg action focus-workspace ${workspace.idx}"
+          :class "workspace-entry"
+          (box
+            :class "workspace-entry ${workspace.active_window_id == "null" ? "empty" : "occupied" }"
+            (label :text "${workspace.idx}"
+              :class "workspace-entry ${workspace.is_active ? 'current' : ''}"
+))))
+)))
+
+;; ----- ACTIVE WINDOW -----
+(defwidget active_window []
+  (eventbox
+    (label
+      :class "active-window"
+      ;:text "${window.title}"
+      :text "${replace(jq(niri_info.windows,'.[] | select (.is_focused) | .title'), '^"|"$', '')}"
+      :limit-width 50
+)))
+
+;; ----- LANGUAGE -----
+(defwidget language []
+  (button
+    :class "info-lbl normal"
+    :onclick "niri msg action switch-layout next"
+    (label :text " ${substring(niri_info.keyboard-layouts.names[niri_info.keyboard-layouts.current_idx], 0, 2)}"
+      :tooltip "Current keyboard layout: ${niri_info.keyboard-layouts.names[niri_info.keyboard-layouts.current_idx]}"
+    )
+))

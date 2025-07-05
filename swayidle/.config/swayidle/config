@@ -1,5 +1,5 @@
 timeout 300 'pidof hyprlock || hyprlock'
-timeout 600 'wayout --off $(wlr-randr --json | jq -r ".[].name")' resume 'wayout --on $(wlr-randr --json | jq -r ".[].name")'
+timeout 600 'so-output-power-manager.sh off' resume 'so-output-power-manager.sh on'
 before-sleep 'hyprlock'
 
 # timeout 600 'wlopm --toggle \*' resume 'wlopm --toggle \*'

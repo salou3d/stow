@@ -7,7 +7,7 @@
     :halign "start"
     :space-evenly false
     :orientation "h"
-    :spacing 10
+    :spacing 5
     (workspaces)
     (active_window)
 ))

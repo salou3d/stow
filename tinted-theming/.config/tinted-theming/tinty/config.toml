@@ -29,7 +29,7 @@ supported-systems = ["base16", "base24"]
 name = "base16-albert"
 path = "~/.local/share/tinted-theming/tinty/repos/base16-albert"
 themes-dir = "themes"
-hook = "cp -r %f ~/.local/share/albert/widgetsboxmodel/themes/Tinted\ Spotlight\ Dark.qss"
+hook = "cp -r %f '~/.local/share/albert/widgetsboxmodel/themes/Tinted Spotlight Dark.qss'"
 supported-systems = ["base16"]
 
 [[items]]

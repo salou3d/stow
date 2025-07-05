@@ -10,6 +10,8 @@ elif [ "$XDG_CURRENT_DESKTOP" = "labwc" ]; then
 
 	echo '["1"]' > "$HOME/.config/eww/seww/lab/workspaces.txt"
 	echo '[{"title": "...", "states": [""]}]' > "$HOME/.config/eww/seww/lab/clients.txt"
+elif [ "$XDG_CURRENT_DESKTOP" = "niri" ]; then
+	EWW="eww -c $HOME/.config/eww/seww/niri"
 else
 	EWW="eww -c $HOME/.config/eww/seww/default"
 fi

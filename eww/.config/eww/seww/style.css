@@ -69,13 +69,21 @@ button {
   background: @light-gray;
 }
 
+/*.workspace-entry .empty {
+  margin: 0 3px;
+  padding: 0 5px;
+}*/
+
+/*.workspace-entry .occupied {
+  margin: 0 3px;
+  padding: 0 5px;
+}*/
+
 .workspace-entry .current {
   background: @surface0;
   margin: 0 3px;
   padding: 0 12px;
 }
-
-.workspace-entry .empty, .workspace-entry .occupied { }
 
 /* *** WORKSPACE OVERVIEW *** */
 .workspacewin {

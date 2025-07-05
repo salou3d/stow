@@ -26,7 +26,7 @@ paths=@Invalid()
 enabled=true
 
 [path]
-enabled=false
+enabled=true
 
 [python]
 enabled=true
@@ -51,7 +51,7 @@ followCursor=false
 hideOnFocusLoss=false
 historySearch=true
 itemCount=5
-lightTheme=Tinted Spotlight Dark
+lightTheme=Tinted Spotlight
 quitOnClose=false
 showCentered=true
 systemShadow=false

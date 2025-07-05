@@ -1,10 +1,20 @@
 #openbox themerc edited with obtheme
 border.width: 2
 padding.width: 2
+magnifier.border.width: 2
+magnifier.border.color: #b57d3c
 
 # Menu
 menu.border.width: 1
 menu.border.color: #877e3f
+# menu.width.min: 20
+# menu.width.max: 200
+# menu.items.padding.x: 7
+# menu.items.padding.y: 4
+# menu.separator.width: 1
+# menu.separator.padding.width: 6
+# menu.separator.padding.height: 3
+# menu.separator.color: #e8dfe4
 menu.items.active.bg: flat
 menu.items.active.bg.color: #877e3f
 menu.items.active.text.color: #FFFFFF
@@ -63,12 +73,34 @@ window.inactive.title.bg.colorTo: #515a73
 # OSD
 osd.bg: Solid Flat
 osd.bg.color: #152646
-#osd.border.color: #877e3f
-#osd.border.width: 2
+# osd.border.color: #877e3f
+# osd.border.width: 2
+osd.label.text.color: #e8dfe4
+# osd.window-switcher.width: 600
+# osd.window-switcher.padding: 4
+# osd.window-switcher.item.padding.x: 10
+# osd.window-switcher.item.padding.y: 1
+# osd.window-switcher.item.active.border.width: 2
+# osd.window-switcher.item.icon.size: 16
+# osd.window-switcher.preview.border.width: 2
+# osd.window-switcher.preview.border.color: #152646
+# osd.workspace-switcher.boxes.width: 20
+# osd.workspace-switcher.boxes.height: 20
+# osd.workspace-switcher.boxes.border.width: 2
 osd.hilight.bg: Solid Raised
 osd.hilight.bg.color: #877e3f
 osd.unhilight.bg: Solid Sunken Bevel2 Border
 osd.unhilight.bg.color: #6f7589
 osd.label.bg: Solid Flat
 osd.label.bg.color: #877e3f
-osd.label.text.color: white
+
+# snapping.overlay.region.bg.enabled: yes
+# snapping.overlay.edge.bg.enabled: yes
+# snapping.overlay.region.border.enabled: no
+# snapping.overlay.edge.border.enabled: no
+# snapping.overlay.region.bg.color: #15264680
+# snapping.overlay.edge.bg.color: #15264680
+# snapping.overlay.region.border.width: 2
+# snapping.overlay.edge.border.width: 2
+# snapping.overlay.region.border.color: #152646
+# snapping.overlay.edge.border.color: #877e3f

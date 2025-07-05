@@ -13,7 +13,7 @@
   (box :class "sys-info"
     :space-evenly false
     :orientation "h"
-    :spacing 10
+    :spacing 5
     (eventbox
         :halign "start"
         :space-evenly false

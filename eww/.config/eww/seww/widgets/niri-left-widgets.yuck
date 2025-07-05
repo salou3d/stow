@@ -1,0 +1,13 @@
+;; ----- WIDGETS IN BAR'S LEFT -----
+
+(include "../widgets/niri-widgets.yuck")
+
+(defwidget left_eww []
+  (box :class "left-eww"
+    :halign "start"
+    :space-evenly false
+    :orientation "h"
+    :spacing 5
+    (workspaces)
+    (active_window)
+))

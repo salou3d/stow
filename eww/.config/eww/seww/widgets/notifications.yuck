@@ -2,7 +2,7 @@
 
 (deflisten notifications_pol
   :initial '{ "count": 0, "dnd": false, "visible": false, "inhibited": false }'
-  "swaync-client -s"
+  "killall swaync-client || swaync-client -s"
 )
 
 (defwidget notifications []

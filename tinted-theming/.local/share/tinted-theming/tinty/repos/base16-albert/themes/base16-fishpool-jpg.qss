@@ -1,0 +1,96 @@
+/* Scheme name: fishpool-jpg */
+/* Scheme system: base16 */
+/* Scheme author: Tinty */
+/* Template author: Tinted Theming (https://github.com/tinted-theming) */
+
+/* Copyright Manuel Schneider */
+/* Tinty adaptation for Spotlight Dark theme for Albert Launcher */
+
+* {
+    border: none;
+    color : #e7ece6;
+    background-color: #2d261a;
+}
+
+#frame {
+    padding: 8px 8px;
+    border-radius: 5px;
+    border: 1px solid #7b6297;
+    background-color: #2d261a;
+    min-width:640px;
+    max-width:640px;
+    min-height:350px;
+    max-height:350px;
+}
+
+#inputLine {
+    padding: 8px 22px;
+    font-size: 28px;
+    selection-color: #2d261a;
+    selection-background-color: #e7ece6;
+    background-color: transparent;
+    border-radius: 22px;
+}
+
+#settingsButton {
+    margin: 6px 6px 0px 0px;
+    color: #e7ece6;
+    background-color: transparent;
+    padding: 2px;
+    min-width:14px;
+    min-height:14px;
+    max-width:14px;
+    max-height:14px;
+}
+
+/********** ListViews ************/
+
+QListView {
+    background: transparent;
+    selection-color: #e7ece6;
+}
+
+QListView::item:selected {
+    background: #7b6297;
+    color: #e7ece6;
+}
+
+QListView QScrollBar:vertical  {
+    width: 3px;
+    background: transparent;
+}
+
+QListView QScrollBar::handle:vertical  {
+    background: #7c7a71;
+    border-radius: 1px;
+    min-height: 24px;
+}
+
+QListView QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
+QListView QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical,
+QListView QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    border: 0px;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}
+
+/********** resultsList **********/
+
+QListView#resultsList {
+    icon-size: 40px;
+    font-size: 20px;
+}
+
+QListView#resultsList::item {
+    padding: 5px 22px;
+    height: 48px;
+    border-radius: 22px;
+}
+
+/********** actionList **********/
+
+QListView#actionList {
+    font-size: 20px;
+}
+

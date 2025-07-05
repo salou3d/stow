@@ -35,29 +35,35 @@ button:focus, button:active, button:hover {
 #lock {
 /* 	background-image: image(url("icons/lock.svg"), url("icons/lock.png"), url("/usr/share/wlogout/icons/lock.png")); */
 	background-image: url("icons/lock.svg");
+/* 	background-image: -gtk-icontheme("lock"); */
 }
 
 #logout {
 /*     background-image: image(url("icons/logout.svg"), url("icons/logout.png"), url("/usr/share/wlogout/icons/logout.png")); */
 	background-image: url("icons/logout.svg");
+/* 	background-image: -gtk-icontheme("system-logout"); */
 }
 
 #suspend {
 /* 	background-image: image(url("icons/suspend.svg"), url("icons/suspend.png"), url("/usr/share/wlogout/icons/suspend.png")); */
 	background-image: url("icons/suspend.svg");
+/* 	background-image: -gtk-icontheme("system-suspend"); */
 }
 
 #hibernate {
 /* 	background-image: image(url("icons/hibernate.svg"), url("icons/hibernate.png"), url("/usr/share/wlogout/icons/hibernate.png")); */
 	background-image: url("icons/logout.svg");
+/* 	background-image: -gtk-icontheme("system-hibernate"); */
 }
 
 #shutdown {
 /* 	background-image: image(url("icons/shutdown.svg"), url("icons/shutdown.png"), url("/usr/share/wlogout/icons/shutdown.png")); */
 	background-image: url("icons/shutdown.svg");
+/* 	background-image: -gtk-icontheme("system-shutdown"); */
 }
 
 #reboot {
 /* 	background-image: image(url("icons/reboot.svg"), url("icons/reboot.png"), url("/usr/share/wlogout/icons/reboot.png")); */
 	background-image: url("icons/reboot.svg");
+/* 	background-image: -gtk-icontheme("system-reboot"); */
 }

@@ -473,21 +473,21 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>bash -c 'wayshot -f "$(xdg-user-dir PICTURES)/wayshot_$(date +%F-%T)".png'</command>
+        <command>bash -c &apos;wayshot -f &quot;$(xdg-user-dir PICTURES)/wayshot_$(date +%F-%T)&quot;.png&apos;</command>
       </action>
     </keybind>
     <keybind key="W-C-Print">
       <action name="Execute">
-        <command>bash -c 'wayshot -s "$(waysip -d)" -f "$(xdg-user-dir PICTURES)/wayshot_$(date +%F-%T)".png'</command>
+        <command>bash -c &apos;wayshot -s &quot;$(waysip -d)&quot; -f &quot;$(xdg-user-dir PICTURES)/wayshot_$(date +%F-%T)&quot;.png&apos;</command>
       </action>
     </keybind>
 
-    <keybind key="W-O">
+    <keybind key="W-P">
       <action name="Execute">
         <command>screen-rec.sh -o</command>
       </action>
     </keybind>
-    <keybind key="W-C-O">
+    <keybind key="W-C-P">
       <action name="Execute">
         <command>screen-rec.sh -g</command>
       </action>
@@ -525,7 +525,12 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>flatpak run org.kde.dolphin</command>
+        <command>pcmanfm-qt</command>
+      </action>
+    </keybind>
+    <keybind key="W-e">
+      <action name="Execute">
+        <command>flatpak run org.kde.kate</command>
       </action>
     </keybind>
     <keybind key="W-Backspace">

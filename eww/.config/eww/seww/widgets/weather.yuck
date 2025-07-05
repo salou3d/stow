@@ -1,13 +1,15 @@
 ;; ----- WEATHER -----
 
-(defpoll weather_data :interval "24h" "bash ~/.local/bin/weather -o tangier" )
+(defpoll weather_data :interval "1h" "bash ~/.local/bin/weather -o tangier" )
 
 (defwidget weather []
     (button
-    :class "info-lbl"
-    (label
-      :text `${ replace( jq(weather_data,'.current_condition[] | .weatherDesc[].value, " ", .temp_C, "°C"'), '"', "" ) }`
-      :limit-width 20
-      :tooltip "Weather"
+      :class "info-lbl"
+      :onclickright '${EWW_CMD} update weather_data="\$(bash ~/.local/bin/weather -o tangier)"'
+      (label
+        :class "info-lbl"
+        :text `${ replace( jq(weather_data,'.current_condition[] | .weatherDesc[].value, " ", .temp_C, "°C"'), '"', "" ) }`
+        :limit-width 20
+        :tooltip `Weather: ${ replace( jq(weather_data,'.current_condition[] | .weatherDesc[].value, " ", .temp_C, "°C"'), '"', "" ) }`
 ))
 )
